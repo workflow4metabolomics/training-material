@@ -24,8 +24,24 @@ github_organization_name: "galaxyproject"
 gitter_url: "https://gitter.im/Galaxy-Training-Network/Lobby"
 logo: "assets/images/GTN.png"
 small_logo: "assets/images/GTN-60px.png"
-biostars_url: https://biostar.usegalaxy.org/
+biostars_url: https://biostar.usegalaxy.org/ "fr, ja, es, pt, ar"
 other_languages: "fr, ja, es, pt, ar"
+words_to_not_translate: 
+- bed
+- dna
+- expression
+- downstream
+- galaxy
+- history
+- mapping
+- reads
+- rna
+- single cell
+- tool
+- toolshed
+- upstream
+- wiggle
+- workflow
 
 # Where things are
 source: .

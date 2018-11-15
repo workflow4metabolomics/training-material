@@ -198,7 +198,8 @@ layout: base
         </blockquote>
 
         {{ content 
-            | replace: '<blockquote class="hands_on">', '<blockquote class="notranslate hands_on">' }}
+            | replace: '<blockquote class="hands_on">', '<blockquote class="notranslate hands_on">' 
+            | no_translate:site.words_to_not_translate }}
 
         {% if page.key_points %}
         <blockquote class="key_points">
