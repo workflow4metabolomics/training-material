@@ -1,14 +1,13 @@
 ---
 layout: tutorial_hands_on
-enable: false
 
 title: 'Mass spectrometry: LC-MS preprocessing - advanced'
 zenodo_link: 'https://zenodo.org/record/3757956'
 questions:
-- What are the main steps of untargeted LC-MS data preprocessing for metabolomic analysis?
+- What are the main steps of untargeted LC-MS data preprocessing for metabolomic analyses?
 - How to conduct metabolomic data preprocessing using Galaxy?
 objectives:
-- To comprehend the diversity of steps necessary to perform untargetted LC-MS metabolomic preprocessing.
+- To comprehend the diversity of steps necessary to perform untargeted LC-MS metabolomic preprocessing.
 - To get familiar with the way to use XCMS-based Galaxy modules dedicated to LC-MS data preprocessing.
 - To evaluate the potential of a workflow approach when dealing with LC-MS preprocessing.
 time_estimation: '3h'
@@ -32,8 +31,8 @@ Metabolomics is a *-omic* science known for being one of the most closely relate
 It involves the study of different types of matrices, such as blood, urine, tissues, in various organisms including plants.
 It focuses on studying the very small molecules which are called *metabolites*, to better understand matters linked to the metabolism.
 
-One of the three main technologies used to perform metabolomic analysis is **Liquid-Chromatography Mass Spectrometry** (LC-MS). Data analysis
-for this technology requires a large variety of steps, ranging from extracting information from the raw data, to statistical analysis and annotation.
+One of the three main technologies used to perform metabolomic analyses is **Liquid-Chromatography Mass Spectrometry** (LC-MS). Data analysis
+for this technology requires a large variety of steps, ranging from extracting information from the raw data to statistical analysis and annotation.
 To be able to perform a complete LC-MS analysis in a single environment, the [Wokflow4Metabolomics](http://workflow4metabolomics.org/)
 team provides Galaxy tools dedicated to metabolomics. This tutorial details the steps involved in the first part of untargeted LC-MS 
 data processing: extracting information from raw data to obtain what is called a peak table. This step is commonly refered to as
@@ -45,7 +44,7 @@ from 183 employees from the French Alternative Energies and Atomic Energy Commis
 (negative ionization mode).
 
 Since the original dataset takes a few hours to be processed, we chose to take a limited subset of individuals for this tutorial.
-This will allow you to perform an example of metabolomic preprocessing workflow in a limited time, even though
+This will enable you to perform an example of metabolomic preprocessing workflow in a limited time, even though
 the results obtained may not be reliable enough for biological interpretation due to the small sample size.
 Nevertheless, the chosen diversity of sample will allow you to explore the basics of a preprocessing workflow.
 
@@ -107,8 +106,8 @@ First of all, you need to upload your data (that must be in one of the cited ope
 
 In metabolomics studies, the number of samples can vary a lot (from a handful to several hundreds). Thus, extracting your
 data from the raw files can be very fast, or take quite a long time. To optimise the computation time as much as possible,
-the W4M core team chose to develop tools that can run single raw files for the first steps of
-pre-processing in parallel, since the initial actions in the extraction process treat files independently.
+the W4M core team chose to develop tools that can run single raw files in parallel for the first steps of
+pre-processing, since the initial actions in the extraction process treat files independently.
 
 Since the first steps can be run on each file independently, the use of **Dataset collections** in Galaxy is recommended, to avoid
 having to launch jobs manually for each sample. You can start using the dataset collection option from the very beginning of your analysis, when uploading your data into Galaxy.
@@ -171,7 +170,7 @@ This first step is only meant to read your `mzXML` file and generate an object u
 
 > ### {% icon hands_on %} Hands-on: MSnbase readMSData
 >
-> **MSnbase readMSData** {% icon tool %} with the following parameters:
+> Run **MSnbase readMSData** {% icon tool %} with the following parameters:
 >   - *"File(s) from your history containing your chromatograms"*: the `mzML` dataset collection
 >
 >   {% include snippets/select_collection.md %}
@@ -515,7 +514,7 @@ with the second column defining theses classes.
 
 > ### {% icon hands_on %} Hands-on: xcms findChromPeaks Merger
 >
-> **xcms findChromPeaks Merger** {% icon tool %} with the following parameters:
+> 1. **xcms findChromPeaks Merger** {% icon tool %} with the following parameters:
 >   - *"RData file"*: `mzML.raw.xset.RData` (collection)
 >   - *"Sample metadata file"*: `sampleMetadata_completed.tsv`
 >
@@ -552,7 +551,7 @@ model to group together peaks with similar retention time.
 
 The inclusion of ions in a group is defined by the standard deviation of the Gaussian model, called bandwidth. This parameter has a large weight
 on the resulting matrix. It must be chosen according to the quality of the chromatography. To be valid, the number of ions in a group must be greater
-than a given number of samples. Either a percentage of the total number of samples or an absolute value of samples can be given. This is defined by the user.
+than a given number of samples. Either a percentage of the total number of samples or an absolute number of samples can be given. This is defined by the user.
 
 > ### {% icon hands_on %} Hands-on: xcms groupChromPeaks (group)
 >
@@ -563,18 +562,18 @@ than a given number of samples. Either a percentage of the total number of sampl
 >     - *"Minimum fraction of samples"*: `0.9`
 >     - *"Width of overlapping m/z slices"*: `0.01`
 >   - *"Get the Peak List"*: `Yes`
->     - *"Replace the remain NA by 0 in the dataMatrix"*: `No`
+>     - *"If NA values remain, replace them by 0 in the dataMatrix"*: `No`
 >
 > > ### {% icon comment %} Minimum fraction of samples
 > >
-> > This parameter sets the minimum proportion of samples in a class where a peak should have been found to keep the corresponding ion in the peaktable.
+> > This parameter sets the minimum proportion of samples in a class where a peak should be found to keep the corresponding ion in the peaktable.
 > > The idea is to look inside each class (*i.e.* each group of samples defined in the second column of the sampleMetadata file) and to keep
 > > an ion if there is at least one class where the ion is found in at least the specified proportion of samples.
 > >
 > > In this tutorial, we considered three classes: one for samples, one for pools and one for blanks. Since pools are a mix of all biological samples,
-> > we may want to consider an ion only if it is find in every pools. Thus, we may consider setting the 'Minimum fraction of samples' parameter to 1.
+> > we may want to consider an ion only if it is found in every pools. Thus, we may consider setting the 'Minimum fraction of samples' parameter to 1.
 > > Considering that it sometimes happens that one sample can be a little out of the box for various reasons (pools do not make exception),
-> > we may consider to lower a little this threshold, for example using a proportion of 0.9.
+> > we may consider to lower a little this threshold, for example using a proportion of 0.9. 
 > >
 > > Please note that in our example, since the dataset contains only 3 pools, this would make no difference to 1.0 concerning the 'pools' class.
 > {: .comment}
@@ -592,8 +591,9 @@ This grouping step is very important because it defines the data matrix which wi
 User has to check the effect of parameter values on the result.
 
 In order to check the result of the grouping function, a pdf file is created. It provides one plot per m/z slice found in the data. Each picture
-represents the peak density across samples, plotting the corresponding Gaussian model which width is defined by the bandwidth parameter. Each red
-dot corresponds to a sample. The plot allows to assess the quality of alignment. The grey areas' width is associated with the bandwidth parameter.
+represents the peak density across samples, plotting the corresponding Gaussian model which width is defined by the bandwidth parameter. Each dot
+corresponds to a sample, with colours corresponding to defined classes if any. The plot allows to assess the quality of alignment.
+The grey areas' width is associated with the bandwidth parameter.
 
 Here is an example of two m/z slides obtained from the hands-on:
 
@@ -619,7 +619,7 @@ previous peak group, thus not assigned to any peak group due to the 0.9 minimum 
 {: .question}
 
 When performing a grouping step, you construct a peak table. Even if this step may not be the final extraction step, you can take this opportunity
-to check how your peak table looks like at this point of the XCMS extraction. For this, you need to set the 'Get the Peak List' option to `Yes`
+to check how your peak table looks at this point of the XCMS extraction. For this, you need to set the 'Get the Peak List' option to `Yes`
 as done in this tutorial hands-on. This option generates two additional tables:
 - a data matrix (xset.merged.group.dataMatrix.tsv) with intensities for each ion and each sample;
 - a variable metadata file (xset.merged.group.variableMetadata.tsv) with information concerning the ions.
@@ -631,16 +631,16 @@ The variable metadata file contains various information that can be of interest:
 - the number of samples in which each ion has been found, for each class (one column per class).
 
 The data matrix contains the intensities for each ion and each sample. When no peak was found in a sample for a specific ion, value is given as NA
-(you can choose to get a '0' value instead, using the 'Replace the remain NA by 0 in the dataMatrix' option). You can get a summary of NA proportions
+(you can choose to get a '0' value instead, using the 'If NA values remain, replace them by 0 in the dataMatrix' option). You can get a summary of NA proportions
 using the **Intensity Check** {% icon tool %} module.
 
 > ### {% icon tip %} Optional: Getting an overview of the proportion of NA in your data
 >
 > When you choose to export the peak list while using the **xcms groupChromPeaks (group)** {% icon tool %} module, you can have a first level of
-> information regarding the proportion of NA by looking at the columns of classes you specified (or the `.` column when no class where given) in
+> information regarding the proportion of NA by looking at the columns of classes you specified (or the `.` column when no class were given) in
 > the variable metadata file ('variableMetadata').
 > However, since the number of ions can be of hundreds or thousands, it can be difficult to evaluate the overall proportion in the dataset.
-> Thus, one way to go is to use the variableMetadata to check specific ions (ones you may have chosen a priori and/or ones you spotted due to
+> Thus, one way to go is to use the variableMetadata to check specific ions (ones you may have chosen *a priori* and/or ones you spotted due to
 > outstanding behaviour), and to use the **Intensity Check** {% icon tool %} module to get an overview of the whole dataset.
 >
 > > ### {% icon hands_on %} Hands-on: Intensity Check
@@ -692,12 +692,13 @@ a second grouping step on the corrected data.
 Sometimes with LC-MS techniques, a deviation in retention time occurs from a sample to another. In particular, this is likely to be observed when you
 inject large sequences of samples.
 
-This optional step aims to correct retention time drift for each peak among samples. The correction is based on what is called *well behaved peaks*,
-that are peaks found in all samples or at least in most of the samples.
-
+This optional step aims at correcting retention time drift for each peak among samples. The XCMS package provides two algorithms to do so. 
 [Check slides from 20 to 22](../../tutorials/lcms-preprocessing/slides.html#20),
-you will find additional material to help you understand the retention time correction algorithm.
+you will find additional material to help you understand the retention time correction algorithms.
+In this training material we will focus on the "PeakGroups" method. 
 
+This correction is based on what is called *well behaved peaks*. 
+One characteristic of these peaks is that they are found in all samples or at least in most of the samples.
 Sometimes it is difficult to find enough peaks present in all samples. The user can define a percentage of the total number of samples in which
 a peak should be found to be considered a well behaved peak. This parameter is called *minimum required fraction of samples*.
 
@@ -765,7 +766,7 @@ the datasets number 66 and 67.
 {: .tip}
 
 
-The retention time correction step is not mandatory. However, when it is used retention time are modified.
+The retention time correction step is not mandatory. However, when it is used retention time values are modified.
 Consequently, applying this step on your data requires to complete it with an additional 'grouping' step using the
 **xcms groupChromPeaks (group)** {% icon tool %} tool again.
 
@@ -787,12 +788,12 @@ to get an illustration of grouping before/after retention time correction.
 >    - *"Get the Peak List"*: `Yes`
 >        - *"Convert retention time (seconds) into minutes"*: `Yes`
 >        - *"Number of decimal places for retention time values reported in ions' identifiers."*: `2`
->        - *"Replace the remain NA by 0 in the dataMatrix"*: `No`
+>        - *"If NA values remain, replace them by 0 in the dataMatrix"*: `No`
 >
 >    > ### {% icon comment %} Comment
 >    >
 >    > When performing this second grouping, similarly to the first grouping you can take this opportunity to check how your peak table
-looks like at this point of the XCMS extraction, setting the 'Get the Peak List' option to `Yes`. As previously explained, you can
+looks at this point of the XCMS extraction, setting the 'Get the Peak List' option to `Yes`. As previously explained, you can
 look at your variableMetadata file as well as perform an NA diagnostic using the **Intensity Check** {% icon tool %} module.
 >    {: .comment}
 >
@@ -811,12 +812,12 @@ last adjustRtime step and thus your last grouping step, you will obtain your fin
 >
 > 1. How many ions did you obtained with the final grouping step?
 > 2. Open the dataMatrix file you obtained with the final grouping. This table corresponds to intensities for each ion and each
-sample. What do you notice when looking at the intensity of the first ion regarding the first sample?
+sample. What do you notice when looking at the intensity of the forth ion regarding the first sample?
 >
 > > ### {% icon solution %} Solution
 > >
-> > 1. The final grouping step led to 8105 ions.
-> > 2. The first ion (M58T69) has a 'NA' value for the first sample (QC1_014). This is also the case for several other ions
+> > 1. The final grouping step led to 5100 ions.
+> > 2. The first ion (M74T317) has a 'NA' value for the first sample (QC1_014). This is also the case for several other ions
 and samples.
 > >
 > {: .solution}
@@ -845,24 +846,24 @@ of the proportion of NA in your dataset at this step.
 
 # Final XCMS step: *integrating areas of missing peaks*
 
-The idea of the XCMS step is to integrate signal in the mz-rt area of an ion (chromatographic peak group) for samples in which no
+The idea of this XCMS step is to integrate signal in the mz-rt area of an ion (chromatographic peak group) for samples in which no
 chromatographic peak for this ion was identified.
 To do so, you can use the *xcms fillChromPeaks (fillPeaks)* tool
-([check slide 23](../../tutorials/lcms-preprocessing/slides.html)).
+([check slide 24](../../tutorials/lcms-preprocessing/slides.html#24)).
 
 However, before any automatic filling of missing values, you may be interested in an overview of the NA distribution in your data.
 Indeed, depending on you extraction parameters, you may have an unexpectedly high proportion of NAs in your data. If that is the case,
 you may consider reviewing your previous extraction parameters and re-running previous steps to obtain consistant results before
 proceeding to the integration of missing peak areas.
 
-To get an overview of your missing data, as specified previously you can use the **Intensity check** module.
+To get an overview of your missing data, as specified previously you can use the **Intensity check** {% icon tool %} module.
 
 Once you are satisfied with the optimisation of previous extraction parameters, you can proceed to the integration of missing peak areas.
 
 > ### {% icon hands_on %} Hands-on: xcms fillChromPeaks (fillPeaks)
 >
 > **xcms fillChromPeaks (fillPeaks)** {% icon tool %} with the following parameters:
->    - *"RData file"*: `xset.merged.groupChromPeaks.*.RData`
+>    - *"RData file"*: `xset.merged.groupChromPeaks.*.RData` (last step of your previous XCMS step)
 >    - In *"Peak List"*:
 >        - *"Convert retention time (seconds) into minutes"*: `Yes`
 >        - *"Number of decimal places for retention time values reported in ions' identifiers."*: `2`
@@ -907,7 +908,7 @@ for a first attempt to run this function. Nevertheless, a few parameters have to
 
  Apart from the PDF file, the main three outcomes from **CAMERA.annotate** {% icon tool %} are three columns added in the variableMetadata file:
  - **isotopes:** the name says everything
- - **adduct:** same here; this column is filled only in the 'All functions' mode
+ - **adduct:** same here; this column is filled in the 'All functions' mode only
  - **pcgroup:** this stands for Pearson's correlation group; it corresponds to groups of ions that match regarding retention time and intensity
  correlations, leading to think that maybe they could come from the same original metabolite.
 
@@ -936,7 +937,7 @@ the datasets number 75 and 76.
 >
 {: .hands_on}
 
-The information given by this tool is not mandatory for the next step of the metabolomic workflow. Commonly, annotation is considered a later
+The information given by this tool is not mandatory for the next step of a metabolomic workflow. Commonly, annotation is considered a later
 step in the pipeline, but since CAMERA uses the outputs of XCMS, if you want to use it you better do it at this step, allowing you to have the
 corresponding information in your variableMetadata file for later use.
 
