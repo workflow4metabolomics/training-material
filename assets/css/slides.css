@@ -1,10 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 body {
   font-family: 'Droid Serif';
 }
+
+body.theme-night div.remark-slide-content {
+	background-color: #000 !important;
+	color: orange !important;
+}
+
+body.theme-night .footnote {
+	color: #999;
+}
+
+body.theme-night a {
+	color: white;
+}
+
+
+body.theme-midnight div.remark-slide-content, body.theme-halloween div.remark-slide-content {
+	background-color: #000 !important;
+	color: orange !important;
+}
+
+body.theme-midnight .footnote, body.theme-halloween .footnote {
+	color: #222;
+}
+
+body.theme-midnight a, body.theme-halloween a {
+	color: white;
+}
+
+body div.remark-slide-number {
+	color: white;
+}
+
+body.theme-rainbow div.my-header {
+	background: linear-gradient(to bottom,#e2453c 0,#e2453c 16%,#e07e39 16%,#e07e39 32%,#e5d667 32%,#e5d667 48%,#51b95b 48%,#51b95b 66%,#1e72b7 66%,#1e72b7 86%,#6f5ba7 86%) no-repeat !important;
+}
+body.theme-rainbow .my-header i {color: black;}
+
 
 h1,
 h2,
@@ -40,7 +76,7 @@ h3 {
 
 .remark-code,
 .remark-inline-code {
-  font-family: 'Ubuntu Mono', 'Courier';
+  font-family: 'Courier', monospace;
   text-align: left;
 }
 
@@ -63,6 +99,10 @@ img {
   border: 0 !important;
   box-shadow: none !important;
   background: none !important;
+}
+
+img.cover-logo {
+  max-height: 12em;
 }
 
 .image-05 img {
@@ -102,6 +142,10 @@ img {
 }
 
 .image-100 img {
+  width: 100%;
+}
+
+.table-100 table {
   width: 100%;
 }
 
@@ -178,6 +222,22 @@ img {
   vertical-align: top !important;
 }
 
+.red{
+  color: red;
+}
+
+.green{
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.blue{
+  color: blue;
+}
+
 a {
   text-decoration: none;
 }
@@ -210,6 +270,16 @@ th {
   float: right;
 }
 
+.left-column40 {
+  width: 40%;
+  float: left;
+}
+
+.right-column40 {
+  width: 40%;
+  float: right;
+}
+
 .left-column50 {
   width: 50%;
   float: left;
@@ -217,6 +287,16 @@ th {
 
 .right-column50 {
   width: 50%;
+  float: right;
+}
+
+.left-column60 {
+  width: 60%;
+  float: left;
+}
+
+.right-column60 {
+  width: 60%;
   float: right;
 }
 
@@ -280,8 +360,23 @@ th {
   font-size: 30px;
 }
 
+.enlarge200 {
+  font-size: 200%;
+}
+
+.enlarge200 .remark-code {
+  font-size: 36px;
+}
+
 .strike {
   text-decoration: line-through;
+}
+
+.pull-left-large {
+    /* this does not break compatibility with .pull-right */
+    float: left;
+    margin-left: -3em;
+    width: 60%;
 }
 
 .pull-left {
@@ -292,6 +387,11 @@ th {
 .pull-right {
   float: right;
   width: 47%;
+}
+
+.force-right {
+  position: absolute;
+  left: 47%;
 }
 
 .pull-right ~ p {
@@ -319,6 +419,10 @@ th {
 
 .me li a {
   margin-left: 15px;
+}
+
+blockquote {
+  font-style: italic;
 }
 
 /* for icons */
@@ -349,4 +453,55 @@ th {
   border-radius: 50%;
   padding-right: 0.25em;
   padding-left: 0.25em;
+}
+
+
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .5rem .75rem;
+	font-size: 1rem;
+	line-height: 1.25;
+	border-radius: .25rem;
+	transition: all .15s ease-in-out;
+}
+
+.remark-code .btn-light {
+	color: #111;
+	background-color: #f8f9fa;
+	border-color: #f8f9fa;
+}
+
+.remark-code {
+	position: relative;
+}
+
+.remark-code .btn{
+	-webkit-transition:opacity .3s ease-in-out;
+	-o-transition:opacity .3s ease-in-out;
+	transition:opacity .3s ease-in-out;
+	opacity:0;
+	padding:2px 6px;
+	position:absolute;
+	right:4px;
+	top:4px;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.remark-code:hover .btn,.remark-code .btn:focus{
+	opacity:1
+}
+
+/* via https://github.com/gnab/remark/issues/481#issuecomment-340313168 */
+.remark-slide-container:nth-last-child(1) .my-footer ,
+.remark-slide-container:nth-child(1) .my-footer {
+	display: none;
 }
