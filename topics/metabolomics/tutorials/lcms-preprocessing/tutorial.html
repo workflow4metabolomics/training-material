@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
         <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
 
         
         
@@ -28,30 +29,8 @@
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
     </head>
     <body data-spy="scroll" data-target="#toc">
-        
-
-
-
-
-
-
-
-
-
-
-
-<!-- Gitter -->
-
-
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+        <header>
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
@@ -64,11 +43,12 @@
             <div class="collapse navbar-collapse" id="top-navbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        
                         <a class="nav-link" href="/training-material/topics/metabolomics" title="Go back to list of tutorials">
-                            <i class="far fa-folder" aria-hidden="true"></i><span class="visually-hidden">topic</span> Metabolomics
+                            <i class="far fa-folder" aria-hidden="true"></i> Metabolomics
                         </a>
+                        
                     </li>
-
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -111,13 +91,19 @@
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
-        <a class="dropdown-item" href="/training-material/stats.html" title="Show view statistics about this rrepository">
+        <a class="dropdown-item" href="/training-material/stats.html" title="Show view statistics about this repository">
             <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN statistics
         </a>
 
         <a class="dropdown-item" href="https://plausible.galaxyproject.eu/training.galaxyproject.org?period=12mo&page=/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html" title="Show view statistics of this page">
             <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> Page Metrics
         </a>
+
+        
+            <a class="dropdown-item" href="/training-material/feedback.html" title="Show feedback statistics about this repository">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
+            </a>
+        
 
         <div class="dropdown-item">
             <div>
@@ -205,15 +191,8 @@
     </div>
 </li>
 
-                    <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/galaxyproject/training-material/edit/main/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.md">
-                            <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit
-                        </a>
-                    </li>
-                    -->
 
-                     <!-- Search bar-->
+                    <!-- Search bar-->
                     <li class="nav-item">
                       <div id="navbarSupportedContent">
                         <!-- Search form -->
@@ -225,16 +204,37 @@
                         </form>
                       </div>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-<div class="container main-content">
-    <script type="application/ld+json">
+        <div class="container main-content" role="main">
         
+
+
+
+
+
+
+
+
+
+
+
+<!-- Gitter -->
+
+
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+  room: 'Galaxy-Training-Network/Lobby'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<script type="application/ld+json">
+    
 
 
 {
@@ -382,49 +382,50 @@
   ],
   "skillLevel": "Intermediate"
 }
-    </script>
+</script>
 
-    <section class="tutorial topic-metabolomics">
-        <h1 data-toc-skip>Mass spectrometry: LC-MS preprocessing with XCMS</h1>
-        
+<section class="tutorial topic-metabolomics">
+    <h1 data-toc-skip>Mass spectrometry: LC-MS preprocessing with XCMS</h1>
+    
 
-        <div class="contributors-line">By: 
+    <div class="contributors-line">By: 
 
- <a href="/training-material/hall-of-fame/melpetera/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/melpetera" alt="Mélanie Petera">Mélanie Petera</a> <a href="/training-material/hall-of-fame/jfrancoismartin/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jfrancoismartin" alt="Jean-François Martin">Jean-François Martin</a> <a href="/training-material/hall-of-fame/lecorguille/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/lecorguille" alt="Gildas Le Corguillé">Gildas Le Corguillé</a> <a href="/training-material/hall-of-fame/workflow4metabolomics/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/workflow4metabolomics" alt="Workflow4Metabolomics core team">Workflow4Metabolomics core team</a>
+ <a href="/training-material/hall-of-fame/melpetera/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/melpetera" alt="Avatar">Mélanie Petera</a> <a href="/training-material/hall-of-fame/jfrancoismartin/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jfrancoismartin" alt="Avatar">Jean-François Martin</a> <a href="/training-material/hall-of-fame/lecorguille/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/lecorguille" alt="Avatar">Gildas Le Corguillé</a> <a href="/training-material/hall-of-fame/workflow4metabolomics/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/workflow4metabolomics" alt="Avatar">Workflow4Metabolomics core team</a>
 
 </div>
 
-        <blockquote class="overview">
-            <h3>Overview</h3>
-            <strong><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</strong>
-            <ul>
-            
-            <li><p>What are the main steps of untargeted LC-MS data preprocessing for metabolomic analyses?</p>
+    <blockquote class="overview">
+        <h3>Overview</h3>
+        <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions</strong>
+        <ul>
+        
+        <li><p>What are the main steps of untargeted LC-MS data preprocessing for metabolomic analyses?</p>
 </li>
-            
-            <li><p>How to conduct metabolomic data preprocessing using Galaxy?</p>
+        
+        <li><p>How to conduct metabolomic data preprocessing using Galaxy?</p>
 </li>
-            
-            </ul>
+        
+        </ul>
 
-            <strong><i class="fas fa-bullseye" aria-hidden="true"></i><span class="visually-hidden">objectives</span> Objectives</strong>
-            <ul>
-            
-            <li><p>To comprehend the diversity of steps necessary to perform untargeted LC-MS metabolomic preprocessing.</p>
+        <strong><i class="fas fa-bullseye" aria-hidden="true"></i> Objectives</strong>
+        <ul>
+        
+        <li><p>To comprehend the diversity of steps necessary to perform untargeted LC-MS metabolomic preprocessing.</p>
 </li>
-            
-            <li><p>To get familiar with the way to use XCMS-based Galaxy modules dedicated to LC-MS data preprocessing.</p>
+        
+        <li><p>To get familiar with the way to use XCMS-based Galaxy modules dedicated to LC-MS data preprocessing.</p>
 </li>
-            
-            <li><p>To evaluate the potential of a workflow approach when dealing with LC-MS preprocessing.</p>
+        
+        <li><p>To evaluate the potential of a workflow approach when dealing with LC-MS preprocessing.</p>
 </li>
-            
-            </ul>
+        
+        </ul>
 
-            
-            <strong><i class="fas fa-check-circle" aria-hidden="true"></i><span class="visually-hidden">requirements</span> Requirements</strong>
-            <ul>
-            
+        
+        <strong><i class="fas fa-check-circle" aria-hidden="true"></i> Requirements</strong>
+        <ul>
+        
     <li>
     
         
@@ -434,56 +435,55 @@
     
     </li>
 
-            
-            </ul>
-            
+        
+        </ul>
+        
 
-            
-            <div><strong><i class="fas fa-hourglass-half" aria-hidden="true"></i><span class="visually-hidden">time</span> Time estimation:</strong> 3 hours</div>
-            
+        
+        <div><strong><i class="fas fa-hourglass-half" aria-hidden="true"></i> Time estimation:</strong> 3 hours</div>
+        
 
-            
-            <div><strong><i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> Level: </strong>
-             Intermediate 
+        
+        <div><strong><i class="fas fa-graduation-cap" aria-hidden="true"></i> Level: </strong>
+         Intermediate 
 <span class="level intermediate" title="Intermediate Tutorial">
-  <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span>
+  <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i>
 </span>
 
 </div>
+        
+
+        
+        
+
+        
+        <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials</strong></div>
+        <ul class="supporting_material">
+            
+                <li class="btn btn-default"><a href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides.html">
+                    <i class="fab fa-slideshare" aria-hidden="true"></i> Slides
+                </a></li>
             
 
             
-            
-
-            
-            <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials</strong></div>
-            <ul>
-                <div class="supporting_material">
-                
-                    <li class="btn btn-default"><a href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides.html" title="Slides for this tutorial">
-                        <i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> Slides
-                    </a></li>
-                
-
-                
-                    <li class="btn btn-default supporting_material">
+                <li class="btn btn-default supporting_material">
 <a class="topic-icon" href="https://zenodo.org/record/3757956">
-    <i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">zenodo_link</span> Datasets
+    <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
 </li>
-                
+            
 
-                
+            
 
-                
+            
 
-                
-                
-                
+            
+            
+            
 
-                
-                    <li class="btn btn-default supporting_material">
+            
+                <li class="btn btn-default supporting_material">
 
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
         <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span> Available on these Galaxies
@@ -501,22 +501,23 @@
 
 
 </li>
-                
-                </div>
-            </ul>
             
+        </ul>
+        
 
-            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Mar 23, 2021 </div>
-        </blockquote>
+        <div><strong> <i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jul 1, 2021 </div>
+        <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong> Tutorial Content is licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> The GTN Framework is <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a></div>
 
-        <div class="container">
-            <div class="row">
-                <!-- sidebar, which will move to the top on a small screen -->
-                <div class="col-sm-2">
-                    <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
-                </div>
-                <div class="col-sm-10">
-                    <h1 class="no_toc" id="introduction">Introduction</h1>
+    </blockquote>
+
+    <div class="container">
+        <div class="row">
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-2">
+                <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
+            </div>
+            <div class="col-sm-10">
+                <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>Metabolomics is a <em>-omic</em> science known for being one of the most closely related to phenotypes.
 It involves the study of different types of matrices, such as blood, urine, tissues, in various organisms including plants.
@@ -545,7 +546,7 @@ biological samples) and 3 blank samples (‘blanks’ - injection solvent).</p>
 <p>To analyze these data, we will then follow a <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span>
 developed by the <a href="http://workflow4metabolomics.org/">Wokflow4metabolomics group</a> (<a class="citation" href="#Giacomoni2014">Giacomoni <i>et al.</i> 2014</a>, <a class="citation" href="#Guitton2017">Guitton <i>et al.</i> 2017</a>).</p>
 
-<p><a href="../../images/lcmspreproc_wf.png"><img src="../../images/lcmspreproc_wf.png" alt="The full tutorial workflow" /></a></p>
+<p><a href="../../images/lcmspreproc_wf.png"><img src="../../images/lcmspreproc_wf.png" alt="The full tutorial workflow" loading="lazy" /></a></p>
 
 <blockquote class="comment">
   <h3 id="comment-workflow4metabolomics-public-history"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Workflow4Metabolomics public history</h3>
@@ -553,7 +554,7 @@ developed by the <a href="http://workflow4metabolomics.org/">Wokflow4metabolomic
   <p>This training material can be followed running it on any <span class="notranslate">Galaxy</span> instance holding the <span class="notranslate">Galaxy</span> modules needed.
 Nonetheless, if you happen to be a W4M user and do not want to run the hands-on yourself, please note that
 you can find the entire history in the ‘published histories’ section:
-<a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a></p>
+<a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a></p>
 
 </blockquote>
 
@@ -632,7 +633,7 @@ having to launch jobs manually for each sample. You can start using the dataset 
         <li>
           <p>Option 2: from Zenodo using the URLs given below</p>
 
-          <p><a href="https://doi.org/10.5281/zenodo.3757956"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3757956.svg" alt="DOI" /></a></p>
+          <p><a href="https://doi.org/10.5281/zenodo.3757956"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3757956.svg" alt="DOI" loading="lazy" /></a></p>
           <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/record/3757956/files/Blanc05.mzML
 https://zenodo.org/record/3757956/files/Blanc10.mzML
 https://zenodo.org/record/3757956/files/Blanc16.mzML
@@ -650,7 +651,7 @@ https://zenodo.org/record/3757956/files/QC1_014.mzML
       </ul>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>    <p>Click on <strong>Collection</strong> on the top</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Change <strong>Type</strong> from “Auto-detect” to <code class="language-plaintext highlighter-rouge">mzml</code></p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p>Click on <strong>Build</strong> when available</p>  </li>  <li>    <p>Enter a name for the collection</p>    <ul>      <li>mzML</li>    </ul>  </li>  <li>Click on <strong>Create list</strong> (and wait a bit)</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>    <p>Click on <strong>Collection</strong> on the top</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Change <strong>Type (set all):</strong> from “Auto-detect” to <code class="language-plaintext highlighter-rouge">mzml</code></p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p>Click on <strong>Build</strong> when available</p>  </li>  <li>    <p>Enter a name for the collection</p>    <ul>      <li>mzML</li>    </ul>  </li>  <li>Click on <strong>Create list</strong> (and wait a bit)</li></ul></blockquote>
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>    <p>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></p>  </li>  <li>    <p>Find the correct folder (ask your instructor)</p>  </li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as a Collection</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
@@ -669,10 +670,10 @@ https://zenodo.org/record/3757956/files/QC1_014.mzML
     <h3 id="tip-comment-to-w4m-users"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
     <p>If you happen to be a W4M user, please note that you can find at the following link a ready-to-start history:
-<a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessingmzml">GTN_LCMSpreprocessing_mzML</a>.
+<a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessingmzml">GTN_LCMSpreprocessing_mzML</a>.
 We highly recommend to get started by importing this history.</p>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
 this step corresponds to the dataset collection number 13.</p>
   </blockquote>
 
@@ -705,7 +706,7 @@ this step corresponds to the dataset collection number 13.</p>
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-1"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
 this step corresponds to the dataset collection number 14.</p>
   </blockquote>
 
@@ -782,7 +783,7 @@ Below is an optional hands-on explaining how to get a template to fill, with the
     <blockquote class="tip">
       <h3 id="tip-comment-to-w4m-users-2"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
+      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
 this step corresponds to the dataset number 27.</p>
     </blockquote>
 
@@ -1160,7 +1161,7 @@ right away if you appear to get one of these obvious issues.</p>
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-3"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
 this step corresponds to the dataset number 28.</p>
   </blockquote>
 
@@ -1225,7 +1226,7 @@ The tool automatically takes the second column as colour groups when a file is p
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-4"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
 this step corresponds to the datasets number 29 and 30.</p>
   </blockquote>
 
@@ -1234,7 +1235,7 @@ this step corresponds to the datasets number 29 and 30.</p>
 <p>This tool generates Base Peak Intensity Chromatograms (BPIs) and Total Ion Chromatograms (TICs). If you provide groups as we do here, you obtain two plots:
 one with colours based on provided groups, one with one colour per sample.</p>
 
-<p><img src="../../images/lcmspreproc_BPC12samp.png" alt="Base Peak Intensity Chromatograms" /></p>
+<p><img src="../../images/lcmspreproc_BPC12samp.png" alt="Base Peak Intensity Chromatograms" loading="lazy" /></p>
 
 <p>How BPIs and TICs look like is dependant of the kind of data you have: LC-MS technology used, study design, type of samples, events that may have occured during the analysis…
 It can vary a lot from one experiment to another due to these characteristics.
@@ -1309,7 +1310,7 @@ ranges, or <em>Noise filter</em> (as in this hands-on) not to use low intensity 
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-5"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the dataset collections number 31 and 32.</p>
   </blockquote>
 
@@ -1353,7 +1354,7 @@ with the second column defining theses classes.</p>
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-6"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the dataset number 57.</p>
   </blockquote>
 
@@ -1432,7 +1433,7 @@ we may consider to lower a little this threshold, for example using a proportion
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-7"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets number 58 to 61.</p>
   </blockquote>
 
@@ -1448,7 +1449,7 @@ The grey areas’ width is associated with the bandwidth parameter.</p>
 
 <p>Here is an example of two m/z slices obtained from the hands-on:</p>
 
-<p><img src="../../images/lcmspreproc_group12samp.png" alt="plotChromPeakDensity.pdf" /></p>
+<p><img src="../../images/lcmspreproc_group12samp.png" alt="plotChromPeakDensity.pdf" loading="lazy" /></p>
 
 <blockquote class="question">
   <h3 id="question-questions"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1524,7 +1525,7 @@ outstanding behaviour), and to use the <strong>Intensity Check</strong> <i class
     <blockquote class="tip">
       <h3 id="tip-comment-to-w4m-users-8"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets number 62 and 63.</p>
     </blockquote>
 
@@ -1534,7 +1535,7 @@ the datasets number 62 and 63.</p>
 With the example provided in this tutorial, you can notice that the blk class containing blanks has a high number of NA with 4394 ions
 that have not been found, in any blank.</p>
 
-  <p><img src="../../images/lcmspreproc_ICgp1.png" alt="IC_Graphs.pdf" /></p>
+  <p><img src="../../images/lcmspreproc_ICgp1.png" alt="IC_Graphs.pdf" loading="lazy" /></p>
 
   <blockquote class="question">
     <h3 id="question-question-2"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Question</h3>
@@ -1606,7 +1607,7 @@ A special attention should also be given to this parameter when you expect a lar
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-9"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets number 64 and 65.</p>
   </blockquote>
 
@@ -1638,7 +1639,7 @@ correction by comparing the chromatogram you obtained previously to a new one ge
     <blockquote class="tip">
       <h3 id="tip-comment-to-w4m-users-10"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets number 66 and 67.</p>
     </blockquote>
 
@@ -1690,7 +1691,7 @@ look at your variableMetadata file as well as perform an NA diagnostic using the
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-11"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets from number 68 to number 71.</p>
   </blockquote>
 
@@ -1785,7 +1786,7 @@ proceeding to the integration of missing peak areas.</p>
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-12"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets number 72 to 74.</p>
   </blockquote>
 
@@ -1857,7 +1858,7 @@ In particular, the <strong>Mode</strong> parameter will influence a lot your res
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-13"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the datasets number 75 and 76.</p>
   </blockquote>
 
@@ -1893,7 +1894,7 @@ With only one single HTML file generated, you have access to all this informatio
   <blockquote class="tip">
     <h3 id="tip-comment-to-w4m-users-14"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
+    <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a>, this step corresponds to
 the dataset number 77.</p>
   </blockquote>
 
@@ -1926,7 +1927,7 @@ You can use this column to switch automatic ion IDs to these customised ones, us
     <blockquote class="tip">
       <h3 id="tip-comment-to-w4m-users-15"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Comment to W4M users</h3>
 
-      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/m.petera/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
+      <p>In the <a href="https://workflow4metabolomics.usegalaxy.fr/u/peteram/h/gtnlcmspreprocessing">GTN_LCMSpreprocessing</a> history,
 this step corresponds to the datasets number 78 and 79.</p>
     </blockquote>
 
@@ -1959,34 +1960,34 @@ that <span class="notranslate">Galaxy</span> is, all that remains for you to mak
 and create, run and share!</p>
 
 
-                    
-                    <blockquote class="key_points">
-                        <h3><i class="fas fa-key" aria-hidden="true"></i><span class="visually-hidden">keypoints</span> Key points</h3>
-                        <ul>
-                            
-                            <li><p>To process untargeted LC-MS metabolomic data preprocessing, you need a large variety of steps and tools.</p>
+                
+                <blockquote class="key_points">
+                    <h3><i class="fas fa-key" aria-hidden="true"></i> Key points</h3>
+                    <ul>
+                        
+                        <li><p>To process untargeted LC-MS metabolomic data preprocessing, you need a large variety of steps and tools.</p>
 </li>
-                            
-                            <li><p>Although main steps are standard, various ways to combine and to set parameters for tools exist, depending on your data.</p>
+                        
+                        <li><p>Although main steps are standard, various ways to combine and to set parameters for tools exist, depending on your data.</p>
 </li>
-                            
-                            <li><p>Resources are available in Galaxy, but do not forget that you need appropriate knowledge to perform a relevant analysis.</p>
+                        
+                        <li><p>Resources are available in Galaxy, but do not forget that you need appropriate knowledge to perform a relevant analysis.</p>
 </li>
-                            
-                        </ul>
-                    </blockquote>
-                    
+                        
+                    </ul>
+                </blockquote>
+                
 
-                    <h1>Frequently Asked Questions</h1>
-                    Have questions about this tutorial? Check out the  <a href="/training-material/topics/metabolomics/faqs/">FAQ page for the Metabolomics topic</a> to see if your question is listed there.
-                    If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
-                    <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
+                <h1>Frequently Asked Questions</h1>
+                Have questions about this tutorial? Check out the  <a href="/training-material/topics/metabolomics/faqs/">FAQ page for the Metabolomics topic</a> to see if your question is listed there.
+                If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
+                <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
-                    
+                
 
-                    
-                    <h1 id="bibliography">References</h1>
-                    <ol class="bibliography"><li><span id="Smith2006">Smith, C. A., E. J. Want, G. O’Maille, R. Abagyan, and G. Siuzdak, 2006 <b>XCMS:  Processing Mass Spectrometry Data for Metabolite Profiling Using Nonlinear Peak Alignment,  Matching,  and Identification</b>. Analytical Chemistry 78: 779–787.</span>
+                
+                <h1 id="bibliography">References</h1>
+                <ol class="bibliography"><li><span id="Smith2006">Smith, C. A., E. J. Want, G. O’Maille, R. Abagyan, and G. Siuzdak, 2006 <b>XCMS:  Processing Mass Spectrometry Data for Metabolite Profiling Using Nonlinear Peak Alignment,  Matching,  and Identification</b>. Analytical Chemistry 78: 779–787.</span>
     
     
     <a href="https://doi.org/10.1021/ac051437y">10.1021/ac051437y</a>
@@ -2054,85 +2055,85 @@ and create, run and share!</p>
     
 
 </li></ol>
-                    
+                
 
-                    
+                
 
-                    <h1>Feedback</h1>
-                    <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <h1>Feedback</h1>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
 
-                    <div id="feedback-button">
-                        <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
-                    </div>
-                    <div id="feedback-form">
-                    </div>
-                    <script type="text/javascript">
-                        (function (window, document) {
-                            function onDocumentReady(fn) {
-                                if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-                                    fn();
-                                } else {
-                                    document.addEventListener('DOMContentLoaded', fn);
-                                }
+                <div id="feedback-button">
+                    <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
+                </div>
+                <div id="feedback-form">
+                </div>
+                <script type="text/javascript">
+                    (function (window, document) {
+                        function onDocumentReady(fn) {
+                            if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+                                fn();
+                            } else {
+                                document.addEventListener('DOMContentLoaded', fn);
                             }
+                        }
 
-                            onDocumentReady(function () {
-                                $("#feedback-button").click(function(evt){
-                                    var e = $(evt.target)
-                                    e.hide();
+                        onDocumentReady(function () {
+                            $("#feedback-button").click(function(evt){
+                                var e = $(evt.target)
+                                e.hide();
 
-                                    $("#feedback-form").html(`
-                                        <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=Mass spectrometry: LC-MS preprocessing with XCMS (Metabolomics)">Loading...</iframe>
-                                    `)
-                                })
-                            });
-                        })(window, document);
-                    </script>
-
-
-
-                    <h1>Citing this Tutorial</h1>
-                    <p>
-                        <ol>
-                            <li id="citation-text">Mélanie Petera, Jean-François Martin, Gildas Le Corguillé, Workflow4Metabolomics core team, 2021 <b>Mass spectrometry: LC-MS preprocessing with XCMS (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html">https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html</a> Online; accessed TODAY
-                            </li>
-                            <li>
-                            Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
-                            </li>
-                        </ol>
-                    </p>
+                                $("#feedback-form").html(`
+                                    <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=Mass spectrometry: LC-MS preprocessing with XCMS (Metabolomics)">Loading...</iframe>
+                                `)
+                            })
+                        });
+                    })(window, document);
+                </script>
 
 
-                    <blockquote class="details">
-                      <h3><i class="fa fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> BibTeX</h3>
-                      <p style="display: none;">
 
-                    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
+                <h1>Citing this Tutorial</h1>
+                <p>
+                    <ol>
+                        <li id="citation-text">Mélanie Petera, Jean-François Martin, Gildas Le Corguillé, Workflow4Metabolomics core team, 2021 <b>Mass spectrometry: LC-MS preprocessing with XCMS (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html">https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html</a> Online; accessed TODAY
+                        </li>
+                        <li>
+                        Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
+                        </li>
+                    </ol>
+                </p>
+
+
+                <blockquote class="details">
+                  <h3><i class="fa fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> BibTeX</h3>
+                  <p style="display: none;">
+
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
 <code id="citation-code">@misc{metabolomics-lcms-preprocessing,
-    author = "Mélanie Petera and Jean-François Martin and Gildas Le Corguillé and Workflow4Metabolomics core team",
-    title = "Mass spectrometry: LC-MS preprocessing with XCMS (Galaxy Training Materials)",
-    year = "2021",
-    month = "03",
-    day = "23"
-    url = "\url{https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html}",
-    note = "[Online; accessed TODAY]"
+author = "Mélanie Petera and Jean-François Martin and Gildas Le Corguillé and Workflow4Metabolomics core team",
+title = "Mass spectrometry: LC-MS preprocessing with XCMS (Galaxy Training Materials)",
+year = "2021",
+month = "07",
+day = "01"
+url = "\url{https://training.galaxyproject.org/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html}",
+note = "[Online; accessed TODAY]"
 }
 @article{Batut_2018,
-        doi = {10.1016/j.cels.2018.05.012},
-        url = {https://doi.org/10.1016%2Fj.cels.2018.05.012},
-        year = 2018,
-        month = {jun},
-        publisher = {Elsevier {BV}},
-        volume = {6},
-        number = {6},
-        pages = {752--758.e1},
-        author = {B{\'{e}}r{\'{e}}nice Batut and Saskia Hiltemann and Andrea Bagnacani and Dannon Baker and Vivek Bhardwaj and Clemens Blank and Anthony Bretaudeau and Loraine Brillet-Gu{\'{e}}guen and Martin {\v{C}}ech and John Chilton and Dave Clements and Olivia Doppelt-Azeroual and Anika Erxleben and Mallory Ann Freeberg and Simon Gladman and Youri Hoogstrate and Hans-Rudolf Hotz and Torsten Houwaart and Pratik Jagtap and Delphine Larivi{\`{e}}re and Gildas Le Corguill{\'{e}} and Thomas Manke and Fabien Mareuil and Fidel Ram{\'{\i}}rez and Devon Ryan and Florian Christoph Sigloch and Nicola Soranzo and Joachim Wolff and Pavankumar Videm and Markus Wolfien and Aisanjiang Wubuli and Dilmurat Yusuf and James Taylor and Rolf Backofen and Anton Nekrutenko and Björn Grüning},
-        title = {Community-Driven Data Analysis Training for Biology},
-        journal = {Cell Systems}
+    doi = {10.1016/j.cels.2018.05.012},
+    url = {https://doi.org/10.1016%2Fj.cels.2018.05.012},
+    year = 2018,
+    month = {jun},
+    publisher = {Elsevier {BV}},
+    volume = {6},
+    number = {6},
+    pages = {752--758.e1},
+    author = {B{\'{e}}r{\'{e}}nice Batut and Saskia Hiltemann and Andrea Bagnacani and Dannon Baker and Vivek Bhardwaj and Clemens Blank and Anthony Bretaudeau and Loraine Brillet-Gu{\'{e}}guen and Martin {\v{C}}ech and John Chilton and Dave Clements and Olivia Doppelt-Azeroual and Anika Erxleben and Mallory Ann Freeberg and Simon Gladman and Youri Hoogstrate and Hans-Rudolf Hotz and Torsten Houwaart and Pratik Jagtap and Delphine Larivi{\`{e}}re and Gildas Le Corguill{\'{e}} and Thomas Manke and Fabien Mareuil and Fidel Ram{\'{\i}}rez and Devon Ryan and Florian Christoph Sigloch and Nicola Soranzo and Joachim Wolff and Pavankumar Videm and Markus Wolfien and Aisanjiang Wubuli and Dilmurat Yusuf and James Taylor and Rolf Backofen and Anton Nekrutenko and Björn Grüning},
+    title = {Community-Driven Data Analysis Training for Biology},
+    journal = {Cell Systems}
 }</code>
-                    </pre></div></div>
-                    </p>
-                    </blockquote>
+                </pre></div></div>
+                </p>
+                </blockquote>
 
 
 <script type="text/javascript">
@@ -2142,36 +2143,22 @@ document.getElementById("citation-code").innerHTML = document.getElementById("ci
 document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
 </script>
 
-                    <h3><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3>
+                <h3><i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!</h3>
 
-                    
+                
 
-                    
+                
 
-                </div>
             </div>
         </div>
-    </section>
-</div>
-
-
-<footer>
-    <div class="container">
-        <p>
-            This material is the result of a collaborative work. Thanks to the
-            <a href="https://wiki.galaxyproject.org/Teach/GTN">Galaxy Training Network</a>
-            and all the <a href="/training-material/hall-of-fame">contributors</a> (Mélanie Petera, Jean-François Martin, Gildas Le Corguillé, Workflow4Metabolomics core team)!
-        </p>
-        <p>
-            Found a typo? Something is wrong in this tutorial? Edit it on
-            <a href="https://github.com/galaxyproject/training-material/tree/main/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.md">GitHub</a>.
-        </p>
-        <p>
-    The content of the tutorials and website is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-</p>
     </div>
-</footer>
+</section>
+<br/>
+<br/>
+<br/>
 
+        </div>
+        
     </body>
     <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
     <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
