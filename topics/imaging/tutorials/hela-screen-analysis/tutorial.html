@@ -226,6 +226,8 @@
 <!-- Gitter -->
 
 
+
+
 <script>
   ((window.gitter = {}).chat = {}).options = {
   room: 'Galaxy-Training-Network/Lobby'
@@ -272,16 +274,13 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "dateModified": "2021-03-23 18:12:58 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Analyse HeLa fluorescence siRNA screen",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
   "interactivityType": "mixed",
   "isAccessibleForFree": true,
-  "license": "https://github.com/galaxyproject/training-material/blob/main/LICENSE.md",
+  "isFamilyFriendly": true,
+  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
   "producer": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
@@ -312,6 +311,11 @@
   "url": "https://training.galaxyproject.org//training-material/topics/imaging/tutorials/hela-screen-analysis/tutorial.html",
   "timeRequired": "PT1H",
   "description": "The questions this  addresses are:\n - How do I analyze a HeLa fluorescence siRNA screen?\n - How do I segment cell nuclei?\n - How do I extract features from segmentations?\n - How do I filter segmentations by morphological features?\n - How do I apply a feature extraction workflow to a screen?\n - How do I visualize feature extraction results?\n\n\\nThe objectives are:\n - How to segment cell nuclei in Galaxy.\n - How to extract features from segmentations in Galaxy.\n - How to filter segmentations by morphological features in Galaxy.\n - How to extract features from an imaging screen in Galaxy.\n - How to analyse extracted features from an imaging screen in Galaxy.\n\n",
+  "inLanguage": {
+    "@type": "Language",
+    "name": "English",
+    "alternateName": "en"
+  },
   "coursePrerequisites": [
     {
       "@type": "CreativeWork",
@@ -371,7 +375,7 @@
     <h1 data-toc-skip>Analyse HeLa fluorescence siRNA screen</h1>
     
 
-    <div class="contributors-line">By: 
+    <div class="contributors-line">Authors: 
 
  <a href="/training-material/hall-of-fame/thomaswollmann/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/thomaswollmann" alt="Avatar">Thomas Wollmann</a>
 
@@ -380,7 +384,7 @@
     <blockquote class="overview">
         <h3>Overview</h3>
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
-        <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions</strong>
+        <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
         <li><p>How do I analyze a HeLa fluorescence siRNA screen?</p>
@@ -403,7 +407,7 @@
         
         </ul>
 
-        <strong><i class="fas fa-bullseye" aria-hidden="true"></i> Objectives</strong>
+        <strong><i class="fas fa-bullseye" aria-hidden="true"></i> Objectives: </strong>
         <ul>
         
         <li><p>How to segment cell nuclei in Galaxy.</p>
@@ -424,7 +428,7 @@
         </ul>
 
         
-        <strong><i class="fas fa-check-circle" aria-hidden="true"></i> Requirements</strong>
+        <strong><i class="fas fa-check-circle" aria-hidden="true"></i> Requirements:</strong>
         <ul>
         
     <li>
@@ -479,7 +483,10 @@
 
         
         <div><strong><i class="fas fa-graduation-cap" aria-hidden="true"></i> Level: </strong>
-         Intermediate 
+        
+
+
+ Intermediate <span class="visually-hidden">Intermediate</span>
 <span class="level intermediate" title="Intermediate Tutorial">
   <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i>
 </span>
@@ -491,12 +498,14 @@
         
 
         
-        <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials</strong></div>
+        <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials:</strong></div>
         <ul class="supporting_material">
             
 
             
                 <li class="btn btn-default supporting_material">
+
+
 <a class="topic-icon" href="https://zenodo.org/record/3362976">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
@@ -506,6 +515,8 @@
 
             
                 <li class="btn btn-default supporting_material">
+
+
     <a class="topic-icon" href="/training-material/topics/imaging/tutorials/hela-screen-analysis/workflows/" title="Workflows" alt="Analyse HeLa fluorescence siRNA screen workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i> Workflows
     </a>
@@ -522,8 +533,9 @@
             
                 <li class="btn btn-default supporting_material">
 
+
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span> Available on these Galaxies
+        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span> Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
     
@@ -533,6 +545,8 @@
             </a>
         </li>
     
+    
+        
     
         
     
@@ -655,21 +669,11 @@
         
     
         
-    
-        
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
         
     
         
@@ -704,9 +708,11 @@
         </ul>
         
 
-        <div><strong> <i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 23, 2021 </div>
-        <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong> Tutorial Content is licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> The GTN Framework is <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a></div>
-
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 23, 2021 </div>
+        <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+        </div>
     </blockquote>
 
     <div class="container">
@@ -764,7 +770,7 @@
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>    <p>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></p>  </li>  <li>    <p>Find the correct folder (ask your instructor)</p>  </li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>  <li>Navigate to the correct folder as indicated by your instructor</li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
     </li>
     <li><strong>Unzip file</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
       <ul>
@@ -803,7 +809,7 @@
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>    <p>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></p>  </li>  <li>    <p>Find the correct folder (ask your instructor)</p>  </li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>  <li>Navigate to the correct folder as indicated by your instructor</li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
     </li>
     <li><strong>Unzip</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> to extract the zipped screen:
       <ul>

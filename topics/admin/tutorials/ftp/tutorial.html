@@ -226,6 +226,8 @@
 <!-- Gitter -->
 
 
+
+
 <script>
   ((window.gitter = {}).chat = {}).options = {
   room: 'galaxyproject/admins'
@@ -272,16 +274,13 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "dateModified": "2021-07-23 18:08:50 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Enable upload via FTP",
-  "inLanguage": {
-    "@type": "Language",
-    "name": "English",
-    "alternateName": "en"
-  },
   "interactivityType": "mixed",
   "isAccessibleForFree": true,
-  "license": "https://github.com/galaxyproject/training-material/blob/main/LICENSE.md",
+  "isFamilyFriendly": true,
+  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
   "producer": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
@@ -312,6 +311,11 @@
   "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ftp/tutorial.html",
   "timeRequired": "PT1H",
   "description": "The questions this  addresses are:\n - How can I setup FTP to be easy for my users?\n - Can I authenticate ftp users with Galaxy credentials?\n\n\\nThe objectives are:\n - Configure galaxy and install a FTP server.\n - Use an Ansible playbook for this.\n\n",
+  "inLanguage": {
+    "@type": "Language",
+    "name": "English",
+    "alternateName": "en"
+  },
   "coursePrerequisites": [
     {
       "@type": "Course",
@@ -428,7 +432,7 @@
     <h1 data-toc-skip>Enable upload via FTP</h1>
     
 
-    <div class="contributors-line">By: 
+    <div class="contributors-line">Authors: 
 
  <a href="/training-material/hall-of-fame/lldelisle/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/lldelisle" alt="Avatar">Lucille Delisle</a>
 
@@ -437,7 +441,7 @@
     <blockquote class="overview">
         <h3>Overview</h3>
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
-        <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions</strong>
+        <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
         <li><p>How can I setup FTP to be easy for my users?</p>
@@ -448,7 +452,7 @@
         
         </ul>
 
-        <strong><i class="fas fa-bullseye" aria-hidden="true"></i> Objectives</strong>
+        <strong><i class="fas fa-bullseye" aria-hidden="true"></i> Objectives: </strong>
         <ul>
         
         <li><p>Configure galaxy and install a FTP server.</p>
@@ -460,7 +464,7 @@
         </ul>
 
         
-        <strong><i class="fas fa-check-circle" aria-hidden="true"></i> Requirements</strong>
+        <strong><i class="fas fa-check-circle" aria-hidden="true"></i> Requirements:</strong>
         <ul>
         
         
@@ -672,10 +676,10 @@
         
 
         
-        <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials</strong></div>
+        <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials:</strong></div>
         <ul class="supporting_material">
             
-                <li class="btn btn-default supporting_material"><a href="/training-material/topics/admin/slides/introduction.html">
+                <li class="btn btn-default supporting_material"><a href="/training-material/topics/admin/slides/introduction.html" title="Topic Overview slides">
                     <i class="fab fa-slideshare" aria-hidden="true"></i> Topic Overview slides
                 </a></li>
             
@@ -694,9 +698,11 @@
         </ul>
         
 
-        <div><strong> <i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jul 2, 2021 </div>
-        <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong> Tutorial Content is licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> The GTN Framework is <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a></div>
-
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jul 23, 2021 </div>
+        <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+        </div>
     </blockquote>
 
     <div class="container">
@@ -778,7 +784,7 @@
 </span><span class="p">@@ -36,3 +36,5 @@</span>
    version: 0.12.0
  - src: use<span class="notranslate">galaxy</span>_eu.tiaas2
-   version: 0.0.6
+   version: 0.0.8
 <span class="gi">+- src: <span class="notranslate">galaxy</span>project.proftpd
 +  version: 0.3.1
 </span>   
@@ -798,7 +804,7 @@
 
       <div data-commit="Add proftpd in certbot" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -157,9 +157,11 @@</span> certbot_well_known_root: /srv/nginx/_well-known_root
+</span><span class="p">@@ -162,9 +162,11 @@</span> certbot_well_known_root: /srv/nginx/_well-known_root
  certbot_share_key_users:
    - nginx
    - rabbitmq
@@ -820,7 +826,7 @@
 
       <div data-commit="Add ftp vars in galaxy" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -93,6 +93,9 @@</span> <span class="notranslate">galaxy</span>_config:
+</span><span class="p">@@ -98,6 +98,9 @@</span> <span class="notranslate">galaxy</span>_config:
      allow_user_impersonation: true
      # Tool security
      outputs_to_working_directory: true
@@ -843,7 +849,7 @@
 
       <div data-commit="Add proftpd variables" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -226,6 +226,27 @@</span> rabbitmq_users:
+</span><span class="p">@@ -231,6 +231,27 @@</span> rabbitmq_users:
      password: "{{ vault_rabbitmq_password_vhost }}"
      vhost: /pulsar/<span class="notranslate">galaxy</span>_au
     
@@ -1273,7 +1279,7 @@ author = "Lucille Delisle",
 title = "Enable upload via FTP (Galaxy Training Materials)",
 year = "2021",
 month = "07",
-day = "02"
+day = "23"
 url = "\url{https://training.galaxyproject.org/training-material/topics/admin/tutorials/ftp/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }
