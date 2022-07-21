@@ -17,16 +17,30 @@
         <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/get-data/slides-plain.html" />
+        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="Getting data into Galaxy" />
+<meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:33:41 +0000" />
+<meta name="DC.creator" content="Anne Pajon" />
+<meta name="DC.creator" content="Dave Clements" />
+<meta name="DC.creator" content="Maria Doyle" />
+<meta name="DC.creator" content="Saskia Hiltemann" />
 
         
         
         
         
         
-        <meta name="description" content="A collection of microtutorials explaining various feature..." />
+        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
+        <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Getting data into Galaxy" />
-        <meta property="og:description" content="A collection of microtutorials explaining various feature..." />
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
     </head>
     <body data-spy="scroll" data-target="#toc">
         <header>
@@ -47,8 +61,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -64,10 +114,6 @@
 
         <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
-        </a>
-        
-        <a class="dropdown-item" href="/training-material/topics/galaxy-interface/faqs/" title="Check our FAQs for the Using Galaxy and Managing your Data topic">
-           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Topic FAQs
         </a>
         
         <a class="dropdown-item" href="https://help.galaxyproject.org/" title="Discuss on Galaxy Help">
@@ -104,41 +150,6 @@
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
             </a>
         
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/get-data/slides-plain.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fget-data%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown-item">
             <div>
@@ -179,9 +190,11 @@
             
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2019-05-01/topics/galaxy-interface/tutorials/get-data/slides-plain.html" title="Version 2019-05-01">2019-05-01</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-05-01/topics/galaxy-interface/tutorials/get-data/slides-plain.html" title="Version 2022-05-01">2022-05-01</a>
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2019-02-07/topics/galaxy-interface/tutorials/get-data/slides-plain.html" title="Version 2019-02-07">2019-02-07</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-04-01/topics/galaxy-interface/tutorials/get-data/slides-plain.html" title="Version 2022-04-01">2022-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-03-01/topics/galaxy-interface/tutorials/get-data/slides-plain.html" title="Version 2022-03-01">2022-03-01</a>
             
                 <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
             </div>
@@ -194,7 +207,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -215,7 +228,30 @@
 	<a href="https://github.com/galaxyproject/training-material/blob/main//topics/galaxy-interface/tutorials/get-data/slides.html">View markdown source on GitHub</a>
 	<h1>Getting data into Galaxy</h1>
 		<h2>Contributors</h2>
-		Anne Pajon, Dave Clements, Maria Doyle, Saskia Hiltemann
+<div markdown="0">
+
+	<div class="contributors-line">
+		Authors: 
+<a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge contributor-pajanne"><img src="https://avatars.githubusercontent.com/pajanne?s=27" alt="Avatar">Anne Pajon</a>
+
+
+
+<a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="https://avatars.githubusercontent.com/tnabtaf?s=27" alt="Avatar">Dave Clements</a>
+
+
+
+<a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="https://avatars.githubusercontent.com/mblue9?s=27" alt="Avatar">Maria Doyle</a>
+
+
+
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+
+	</div>
+
+</div>
+
 
 		
 		<h2>Questions</h2>
@@ -276,7 +312,7 @@
 
 <h3 id="best-method-depends-on-where-the-data-is-and-how-big-it-is">Best method depends on where the data is, and how big it is</h3>
 
-<p><img src="../../images/get_data_upload_logic.png" alt="flowchart for getting data into galaxy. SRA datasets should use the upload tool, if you have many or big datasets use FTP, if they're from the web use the URL upload." loading="lazy" /></p>
+<p><img src="../../images/get_data_upload_logic.png" alt="flowchart for getting data into galaxy. SRA datasets should use the upload tool, if you have many or big datasets use FTP, if they're from the web use the URL upload." /></p>
 
 <p>.footnote[<a href="https://galaxyproject.org/tutorials/upload/">Source: Galaxy Community Hub</a>]</p>
 
@@ -290,11 +326,11 @@
   <li><em>Click</em> on the <strong>Get Data</strong> toolbox in the toolbox (the left panel)</li>
 </ul>
 
-<p><img src="../../images/get_data_boxed.png" alt="Click on Get Data to expand it" loading="lazy" /></p>
+<p><img src="../../images/get_data_boxed.png" alt="Click on Get Data to expand it" /></p>
 
 <hr />
 
-<p>.pull-right[.image-75[<img src="../../images/get_data_expanded.png" alt="A typical list of data sources" loading="lazy" />]]</p>
+<p>.pull-right[.image-75[<img src="../../images/get_data_expanded.png" alt="A typical list of data sources" />]]</p>
 
 <ul>
   <li>Expands to show data sources
@@ -314,8 +350,8 @@
 
 <p>Two large data sources you can access through Galaxy are UCSC and SRA</p>
 
-<p>.pull-right[<img src="../../images/get_data_ucsc.png" alt="Screenshot of toolbox with ucsc entered in search" loading="lazy" />]
-.pull-left[<img src="../../images/get_data_sra.png" alt="galaxy toolbox with sra entered in search box." loading="lazy" />]</p>
+<p>.pull-right[<img src="../../images/get_data_ucsc.png" alt="Screenshot of toolbox with ucsc entered in search" />]
+.pull-left[<img src="../../images/get_data_sra.png" alt="galaxy toolbox with sra entered in search box." />]</p>
 
 <hr />
 
@@ -340,13 +376,13 @@
   </li>
 </ul>
 
-<p>.pull-right[<img src="../../images/get_data_data_libraries.png" alt="galaxy top menu dropdown shared data, showing Data Libraries" loading="lazy" />]</p>
+<p>.pull-right[<img src="../../images/get_data_data_libraries.png" alt="galaxy top menu dropdown shared data, showing Data Libraries" />]</p>
 
 <hr />
 
 <p>You can select the files you want and send to History as datasets or collection</p>
 
-<p>.image-75[<img src="../../images/get_data_import_library.png" alt="data library screenshot with a number of datasets selected and export to history menu open" loading="lazy" />]</p>
+<p>.image-75[<img src="../../images/get_data_import_library.png" alt="data library screenshot with a number of datasets selected and export to history menu open" />]</p>
 
 <hr />
 
@@ -354,9 +390,9 @@
 
 <hr />
 
-<p>.image-50[<img src="../../images/upload_button.png" alt="click on upload button" loading="lazy" />]</p>
+<p>.image-50[<img src="../../images/upload_button.png" alt="click on upload button" />]</p>
 
-<p><img src="../../images/upload_file_form_empty.png" alt="Upload file form" loading="lazy" /></p>
+<p><img src="../../images/upload_file_form_empty.png" alt="Upload file form" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -377,7 +413,7 @@
 
 <h1 id="choose-files">Choose files</h1>
 
-<p><img src="../../images/upload_file_form_empty_local_choices.png" alt="Options for importing files from your laptop" loading="lazy" /></p>
+<p><img src="../../images/upload_file_form_empty_local_choices.png" alt="Options for importing files from your laptop" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -403,7 +439,7 @@
   </li>
 </ul>
 
-<p><img src="../../images/upload_file_file_list.png" alt="upload dialog from galaxy with a number of files queued." loading="lazy" /></p>
+<p><img src="../../images/upload_file_file_list.png" alt="upload dialog from galaxy with a number of files queued." /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -426,7 +462,7 @@
   <li>Can be set for all files at once:</li>
 </ul>
 
-<p><img src="../../images/upload_file_set_all_datatype.png" alt="Set datatype for all imported datasets" loading="lazy" /></p>
+<p><img src="../../images/upload_file_set_all_datatype.png" alt="Set datatype for all imported datasets" /></p>
 
 <hr />
 
@@ -434,7 +470,7 @@
   <li>Or per file:</li>
 </ul>
 
-<p><img src="../../images/upload_file_set_individual_file_type.png" alt="Manually set datatype for one dataset" loading="lazy" /></p>
+<p><img src="../../images/upload_file_set_individual_file_type.png" alt="Manually set datatype for one dataset" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -450,7 +486,7 @@
   <li>Once everything is ready, click the <strong>Start</strong> button</li>
 </ul>
 
-<p><img src="../../images/upload_file_ready.png" alt="Ready to upload files. Click on start" loading="lazy" /></p>
+<p><img src="../../images/upload_file_ready.png" alt="Ready to upload files. Click on start" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -461,7 +497,7 @@
 <hr />
 <p>You can then close the form</p>
 
-<p><img src="../../images/upload_file_in_progress.png" alt="Ready to upload files. Click on start" loading="lazy" /></p>
+<p><img src="../../images/upload_file_in_progress.png" alt="Ready to upload files. Click on start" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -469,7 +505,7 @@
 
 <p>All the items will appear in your history</p>
 
-<p><img src="../../images/files_uploaded_into_history.png" alt="Files are loaded into your current history." loading="lazy" /></p>
+<p><img src="../../images/files_uploaded_into_history.png" alt="Files are loaded into your current history." /></p>
 
 <p>and are ready to use when green.</p>
 
@@ -488,13 +524,13 @@
   </li>
 </ul>
 
-<p><img src="../../images/upload_file_form_empty_paste.png" alt="Select Paste/Fetch data" loading="lazy" /></p>
+<p><img src="../../images/upload_file_form_empty_paste.png" alt="Select Paste/Fetch data" /></p>
 
 <hr />
 
 <p>Enter the data by typing (or pasting) it in the input box:</p>
 
-<p><img src="../../images/upload_paste_direct.png" alt="Select Paste/Fetch data" loading="lazy" /></p>
+<p><img src="../../images/upload_paste_direct.png" alt="Select Paste/Fetch data" /></p>
 
 <p>You can also set the datatype and build.
 <em>Click</em> <strong>Start</strong>, and then <strong>Close</strong>, and the new item shows up as <strong>Pasted Entry</strong> in your history.</p>
@@ -509,7 +545,7 @@
 to your computer and uploading to Galaxy in two steps, you can instruct Galaxy to
 directly fetch the data from a given URL.</p>
 
-<p><img src="../../images/upload_file_form_empty_paste.png" alt="Select Paste/Fetch data" loading="lazy" /></p>
+<p><img src="../../images/upload_file_form_empty_paste.png" alt="Select Paste/Fetch data" /></p>
 
 <p>Select <strong>Paste/Fetch data</strong></p>
 
@@ -517,7 +553,7 @@ directly fetch the data from a given URL.</p>
 
 <p>Enter the URLs (one per line) into the input box:</p>
 
-<p><img src="../../images/fetch_from_url.png" alt="Select Paste/Fetch data" loading="lazy" /></p>
+<p><img src="../../images/fetch_from_url.png" alt="Select Paste/Fetch data" /></p>
 
 <p><em>Click</em> <strong>Start</strong>, and then <strong>Close</strong>, and the new items show up in your history with the URL as their name.</p>
 
@@ -548,7 +584,7 @@ directly fetch the data from a given URL.</p>
 
 <h2 id="make-sure-you-have-an-ftp-client-installed">Make sure you have an FTP client installed</h2>
 
-<p>.pull-right[.image-25[<img src="../../images/FileZilla_logo.png" alt="FileZilla" loading="lazy" />]]</p>
+<p>.pull-right[.image-25[<img src="../../images/FileZilla_logo.png" alt="FileZilla" />]]</p>
 
 <ul>
   <li><a href="https://filezilla-project.org/">FileZilla</a> is a free FTP client that is available on <a href="https://filezilla-project.org/download.php?platform=win64">Windows</a>, <a href="https://filezilla-project.org/download.php?platform=osx">MacOS</a>, and <a href="https://filezilla-project.org/download.php?platform=linux">Linux</a></li>
@@ -569,29 +605,29 @@ directly fetch the data from a given URL.</p>
   </li>
 </ul>
 
-<p><img src="../../images/ftp_client_connect.png" alt="FTP Connection Params" loading="lazy" /></p>
+<p><img src="../../images/ftp_client_connect.png" alt="FTP Connection Params" /></p>
 
 <hr />
 
-<p><img src="../../images/ftp_client_connected.png" alt="Successfully connect" loading="lazy" /></p>
+<p><img src="../../images/ftp_client_connected.png" alt="Successfully connect" /></p>
 
 <p>Successfully connected</p>
 
 <hr />
 
-<p><img src="../../images/ftp_client_upload.png" alt="Navigate to the files you want to transfer" loading="lazy" /></p>
+<p><img src="../../images/ftp_client_upload.png" alt="Navigate to the files you want to transfer" /></p>
 
 <p>Right click on the files and upload them.</p>
 
 <hr />
 
-<p><img src="../../images/ftp_client_transferring.png" alt="FTP transfer in progress" loading="lazy" /></p>
+<p><img src="../../images/ftp_client_transferring.png" alt="FTP transfer in progress" /></p>
 
 <p>FTP Transfer in progress…</p>
 
 <hr />
 
-<p><img src="../../images/ftp_client_transferred.png" alt="FTP transfer complete" loading="lazy" /></p>
+<p><img src="../../images/ftp_client_transferred.png" alt="FTP transfer complete" /></p>
 
 <p>… and transfer complete.</p>
 
@@ -603,7 +639,7 @@ directly fetch the data from a given URL.</p>
   <li>File Upload menu -&gt; <strong>Choose FTP files</strong></li>
 </ul>
 
-<p><img src="../../images/upload_ftp_import.png" alt="choose FTP files" loading="lazy" /></p>
+<p><img src="../../images/upload_ftp_import.png" alt="choose FTP files" /></p>
 
 <hr />
 
@@ -612,7 +648,7 @@ directly fetch the data from a given URL.</p>
   <li>Click <strong>Start</strong></li>
 </ul>
 
-<p><img src="../../images/upload_ftp_import2.png" alt="choose FTP files" loading="lazy" /></p>
+<p><img src="../../images/upload_ftp_import2.png" alt="choose FTP files" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -629,7 +665,7 @@ directly fetch the data from a given URL.</p>
   <li>Add files as before (upload from computer, paste/fetch, FTP)</li>
 </ul>
 
-<p><img src="../../images/get_data_direct_collection1.png" alt="Direct collection Start" loading="lazy" /></p>
+<p><img src="../../images/get_data_direct_collection1.png" alt="Direct collection Start" /></p>
 
 <hr />
 
@@ -639,7 +675,7 @@ directly fetch the data from a given URL.</p>
   <li>Click “Build”</li>
 </ul>
 
-<p><img src="../../images/get_data_direct_collection2.png" alt="Direct collection Build" loading="lazy" /></p>
+<p><img src="../../images/get_data_direct_collection2.png" alt="Direct collection Build" /></p>
 
 <hr />
 
@@ -648,7 +684,7 @@ directly fetch the data from a given URL.</p>
   <li>Click <strong>Create</strong> button</li>
 </ul>
 
-<p><img src="../../images/get_data_direct_collection3.png" alt="Direct collection Name" loading="lazy" /></p>
+<p><img src="../../images/get_data_direct_collection3.png" alt="Direct collection Name" /></p>
 
 <hr />
 
@@ -657,7 +693,7 @@ directly fetch the data from a given URL.</p>
   <li>Click on it to expand it and view all files in collection</li>
 </ul>
 
-<p><img src="../../images/get_data_direct_collection4.png" alt="Direct collection History" loading="lazy" /></p>
+<p><img src="../../images/get_data_direct_collection4.png" alt="Direct collection History" /></p>
 
 <hr />
 
@@ -671,7 +707,7 @@ directly fetch the data from a given URL.</p>
   <li>Click <strong>Rule-based</strong> tab at top of file upload window</li>
 </ul>
 
-<p><img src="../../images/get_data_rule_uploader.png" alt="Rule Uploader" loading="lazy" /></p>
+<p><img src="../../images/get_data_rule_uploader.png" alt="Rule Uploader" /></p>
 
 <hr />
 
@@ -695,13 +731,15 @@ directly fetch the data from a given URL.</p>
 This material is the result of a collaborative work. Thanks to the <a href="https://training.galaxyproject.org" aria-label="Visit the GTN">Galaxy Training Network</a> and all the contributors!
 
 
-
-
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
 
 This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </section>
+
+
+
+
 
         </div>
         
@@ -713,9 +751,10 @@ This material is licensed under the <a rel="license" href="https://creativecommo
             provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
         </p>
         <p>
-The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-</p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/a0eb8d243de86bd7aa0100152161d3a515e94871">a0eb8d243de86bd7aa0100152161d3a515e94871</a></p>
+        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
+        </p>
+
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/b3192832de88c502588a977a276ac4ec8ba940b2">b3192832de88c502588a977a276ac4ec8ba940b2</a></p>
     </div>
 </footer>
 

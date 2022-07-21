@@ -1,0 +1,20 @@
+{
+  "layout": "tutorial_slides",
+  "logo": "assets/images/gat.png",
+  "title": "Galaxy on the Cloud",
+  "contributors": [
+    {
+      "name": "Simon Gladman",
+      "email": "simon.gladman@unimelb.edu.au",
+      "joined": "2017-09",
+      "elixir_node": "au",
+      "id": "slugger70",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
+    }
+  ],
+  "subtopic": "cloud",
+  "last_modified_at": "01-Mar-22",
+  "url": "/topics/admin/tutorials/cloudbursting/slides.html",
+  "topic_name": "admin",
+  "tutorial_name": "cloudbursting"
+}

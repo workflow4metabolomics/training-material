@@ -9,6 +9,8 @@
 
 
 
+
+
   <head>
     <meta charset="utf-8">
     <title>Introduction to Genome Annotation</title>
@@ -29,33 +31,23 @@
     <meta property="og:title" content="Galaxy Training: Introduction to Genome Annotation" />
     <meta property="og:description" content="Genome annotation is a multi-level process that includes ..." />
     <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
+    <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/genome-annotation/slides/introduction.html" />
+
     <script type="application/ld+json">
       
 
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -68,7 +60,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:26 +0000",
+  "dateModified": "1970-01-01 00:00:08 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Introduction to Genome Annotation",
   "interactivityType": "mixed",
@@ -93,26 +85,44 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
+  "accessMode": [
+    "textual",
+    "visual"
+  ],
+  "accessModeSufficient": [
+    "textual",
+    "visual"
+  ],
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "alternativeText",
+    "tableOfContents"
+  ],
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Genome Annotation",
     "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
-    "url": "https://training.galaxyproject.org//training-material/topics/genome-annotation/"
+    "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
   },
-  "courseCode": "genome-annotation / introduction / introduction.html",
   "learningResourceType": "slides",
   "name": "Introduction to 'Genome Annotation'",
-  "url": "https://training.galaxyproject.org//training-material/topics/genome-annotation/slides/introduction.html",
+  "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/slides/introduction.html",
   "description": "Slides for Genome Annotation",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
-      "@type": "CreativeWork",
-      "url": "https://training.galaxyproject.org//training-material/topics/introduction/",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
+      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
       "name": "Introduction to Galaxy Analyses",
       "description": "Introduction to Galaxy Analyses",
       "provider": {
@@ -123,27 +133,100 @@
       }
     }
   ],
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Anthony Bretaudeau"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
+      "name": "Anthony Bretaudeau",
+      "image": "https://avatars.githubusercontent.com/abretaud",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0003-0914-2470",
+      "orcid": "https://orcid.org/0000-0003-0914-2470"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Helena Rasche"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "name": "Helena Rasche",
+      "image": "https://avatars.githubusercontent.com/hexylena",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9760-8992",
+      "orcid": "https://orcid.org/0000-0001-9760-8992"
     }
   ],
   "contributor": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Anthony Bretaudeau"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
+      "name": "Anthony Bretaudeau",
+      "image": "https://avatars.githubusercontent.com/abretaud",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0003-0914-2470",
+      "orcid": "https://orcid.org/0000-0003-0914-2470"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Helena Rasche"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "name": "Helena Rasche",
+      "image": "https://avatars.githubusercontent.com/hexylena",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9760-8992",
+      "orcid": "https://orcid.org/0000-0001-9760-8992"
     }
   ],
   "about": [
@@ -151,10 +234,10 @@
       "@type": "CreativeWork",
       "name": "Genome Annotation",
       "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
-      "url": "https://training.galaxyproject.org//training-material/topics/genome-annotation/"
+      "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
     }
   ],
-  "skillLevel": "Intermediate"
+  "educationalLevel": "Intermediate"
 }
     </script>
     <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
@@ -181,34 +264,44 @@ class: center, middle, inverse
 ---
 
 
+
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" class="cover-logo"/>
 
 
 # Introduction to Genome Annotation
 
+<div markdown="0">
 
-<div class="contributors-line">
+	<div class="contributors-line">
+		Authors: 
+<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
 
 
- <a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/abretaud" alt="Avatar">Anthony Bretaudeau</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a>
 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+
+	</div>
 
 </div>
 
 
-<div class="footnote" style="bottom: 3em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Jul 26, 2021</div>
-<div class="footnote" style="bottom: 2em;">Or view the <a href="slides-plain.html">plain-text slides without JS</a></div>
-<div class="footnote" style="bottom: 1em;">Tip: press <kbd>P</kbd> to view the presenter notes</div>
+<div class="footnote" style="bottom: 4 em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Dec 8, 2021</div>
+
+<div class="footnote" style="bottom: 2.5em;"><i class="fas fa-file-alt" aria-hidden="true"></i><span class="visually-hidden">text-document</span><a href="slides-plain.html"> Plain-text slides</a></div>
+<div class="footnote" style="bottom: 1em;"><strong>Tip: </strong>press <kbd>P</kbd> to view the presenter notes</div>
 
 ???
-Presenter notes contain extra information which might be useful if you
-intend to use these slides for teaching.
+Presenter notes contain extra information which might be useful if you intend to use these slides for teaching.
 
 Press `P` again to switch presenter notes off
 
 Press `C` to create a new window where the same presentation will be displayed.
 This window is linked to the main window. Changing slides on one will cause the
-slide to change on the other. Useful when presenting.
+slide to change on the other.
+
+Useful when presenting.
 
 
 
@@ -357,7 +450,7 @@ Multiple pieces of evidence
 
 ---
 
-### *ab initio* Gene Calling
+### *Ab initio* Gene Calling
 
 .pull-left[
 Predictions using:
@@ -365,7 +458,10 @@ Predictions using:
 - Statistical model (specific to organism)
 
 Models:
-- Built from training on evidence-based gene calls (2-3 iterations)
+- Training on the best evidence-based gene calls
+- &quot;Best&quot; = strong evidence, highly conserved
+- Training can be iterative:
+  - train, predict, select best genes, retrain, etc
 ]
 
 .pull-right.image-90[
@@ -380,30 +476,33 @@ Models:
 
 - Integration of evidence and *ab initio* predictions
 - &quot;Consensus&quot; of multiple sources
-- Automated pipelines: Maker, Braker, Pasa, Prokka
+- Automated pipelines
+  - [**Maker**](/training-material/topics/genome-annotation/tutorials/annotation-with-maker-short/tutorial.html), **Braker**, [**Funannotate**](/training-material/topics/genome-annotation/tutorials/funannotate/tutorial.html), **Pasa**, **Prokka**, ...
+  - Align evidences (or use pre-aligned)
+  - Run *ab initio* predictors
+  - Reconciliate gene models
 ]
 
 .pull-right.image-90[
 ![Multiple gene models are shown labelled current evidence, which is complemented by three more gene models from ab initio prediction. Below a final gene model is constructed and labelled current assembly.](../images/intro-consensus.png)
-]
-
 &lt;small&gt;
-Source: [Maker tutorial](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/MAKER_Tutorial_for_WGS_Assembly_and_Annotation_Winter_School_2018)
+Source: [Maker documentation](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/MAKER_Tutorial_for_WGS_Assembly_and_Annotation_Winter_School_2018)
 &lt;/small&gt;
-
+]
 
 ---
 
-### Evaluation of Evidence: metrics
+### Evaluation of annotation: metrics
 
 - Number of genes
 - Average number of exons
 - Average gene length
+- Average protein length
 - ...
 
 ---
 
-### Evaluation of Evidence: BUSCO
+### Evaluation of annotation: BUSCO
 
 #### Benchmarking Universal Single-Copy Orthologs
 
@@ -423,16 +522,24 @@ Genome Browsers (JBrowse, UCSC, ...)
 
 ![Screenshot of Apollo showing a track list on left, and then several rows of evidence like maker annotation and blastn showing gene models, followed by my bam file.](../images/intro-viz.png)
 
+&lt;small&gt;
+**JBrowse**: [Slides](/training-material/topics/visualisation/tutorials/jbrowse/slides.html) - [Tutorial](/training-material/topics/visualisation/tutorials/jbrowse/tutorial.html)
+&lt;/small&gt;
+
 ---
 
-### Repeat Elements
+### Repeated Elements
 
-- Transposons, low complexity regions
+- Transposons, Retrotransposons, low complexity regions
 - Disrupt gene calling
 - Prediction pipelines:
-  - RepeatMasker
+  - [RepeatMasker](/training-material/topics/genome-annotation/tutorials/repeatmasker/tutorial.html)
+  - RepeatModeler
   - REPET
-  - RepBase
+- Databases of repeated elements
+  - Can be used by pipelines
+  - Dfam
+  - RepBase (non free)
 
 ---
 
@@ -448,7 +555,9 @@ Genome Browsers (JBrowse, UCSC, ...)
 
 ### Summary
 
-- Difficult
+- Difficult problem
+- Automated pipelines
+- Need for evidences
 - Never perfect
   - Missing/incomplete genes
   - Split/fused genes
@@ -500,31 +609,31 @@ Annotations steps
 ## Functional Annotation
 
 Collection of information on the function of identified genes
-- biological function
-- regulations, expressions, ...
+- Biological function
+- Regulation, expression, ...
 
 Data Sources
-- wet lab experiments (reliable but long and expensive)
-- manual assignment (cf Apollo)
-- **automatic assignment**
+- Wet lab experiments (reliable but long and expensive)
+- Manual assignment (cf Apollo)
+- **Automatic assignment**
 
 ---
 
 ### Methods
 
-- similarity search / homology
-- pattern search
-- orthologies
-- synteny to related organisms
+- Similarity search / homology
+- Pattern search
+- Orthologies
 - Comparison against databases:
-  - GenBank, NR: sequence bank
-  - InterPro: pattern library (active sites, protein families, peptide signal ...)
+  - GenBank, NR: sequence databanks
+  - InterPro: pattern databank (active sites, protein families, peptide signal ...)
+  - EggNOG: databank of orthology relationships + functional annotation
 
 ---
 
 ### Blast
 
-- Blast against NR
+- Blast/Diamond against NR
   - For each protein (or CDS) of the annotation
   - Find the best xx hits
 - Huge database, good chances to have a match
@@ -541,6 +650,16 @@ Data Sources
 - Many motifs
 - Some of them manually curated
 - Gene Ontology Terms available for domains
+
+---
+
+### EggNOG
+
+- EggNOG: &gt;4M known orthology groups in &gt;5000 organisms
+- Tool using it: **EggNOG-mapper**
+- For each protein of the annotation
+  - Search for matches with known orthology groups
+- Assign corresponding gene name and functional annotation
 
 ---
 
@@ -562,11 +681,17 @@ Controlled vocabulary to describe:
 
 ---
 
-### Blast2GO
+### Gene Ontology
 
+Various sources
+
+- InterProScan
+  - Assigned from matches with annotated motifs
+- EggNOG-mapper
+  - Assigned from matches with annotated orthology groups
 - Blast2GO
+  - Based on Blast (and InterProScan) results
   - For each protein (or CDS) of the annotation, tag with GO terms
-  - Based on Blast and InterProScan results
 
 ---
 
@@ -592,24 +717,41 @@ Controlled vocabulary to describe:
 - Other sites (Tripal sites)
   - reference data (assembly, annotation, ...)
   - interfaces to visualize this data
-  - interfaces for querying
-e.g. [bipaa.genouest.org](https://bipaa.genouest.org)
+  - interfaces for querying (e.g. [bipaa.genouest.org](https://bipaa.genouest.org))
+
+---
+
+### Comparing annotations
+
+- Needed to choose between different results on a same genome sequence
+- Compare general statistics
+  - Number of genes
+  - Average number of exons
+  - Average gene length
+  - Average protein length
+  - ...
+- Compare gene content
+  - Alignment of gene structures
+  - Functional annotation
+    - over/underrepresentation of functions
+- Tools: **AEGeAN**, **Funannotate compare**
 
 ---
 
 ## Genome Annotation
 
-- Very difficult
+- Difficult problem
 - Automatic:
 	- Structural:
+    - EST/RNA-Seq data provides good evidence
 	  - *Ab initio* methods are improving
-	  - EST/RNA-Seq data provides good evidence
 	- Functional:
 	  - Concrete evidence cost-prohibitive to obtain
+    - Various sources of automatic assignment
 	  - Risks of automatically spreading &quot;putative&quot; annotations
 - Manual:
 	- Slow
-	- No expert or evidence available
+	- Requires experts and evidences
 
 
 ---
@@ -646,29 +788,60 @@ e.g. [bipaa.genouest.org](https://bipaa.genouest.org)
         
     
 
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
 
 
 ---
 
-## Thank you!
+## Thank You!
 
 This material is the result of a collaborative work. Thanks to the [Galaxy Training Network](https://training.galaxyproject.org) and all the contributors!
 
+<div markdown="0">
 
-<div class="contributors-line">
+	<div class="contributors-line">
+		Authors: 
+<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
 
 
- <a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/abretaud" alt="Avatar">Anthony Bretaudeau</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a>
 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+
+	</div>
 
 </div>
 
 
+<div style="display: flex;flex-direction: row;align-items: center;justify-content: center;">
 
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
 
-This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</div>
+
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+This material is licensed under the Creative Commons Attribution 4.0 International License</a>.
 
 
     </textarea>

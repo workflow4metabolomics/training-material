@@ -18,17 +18,29 @@
         <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/FNN/slides-plain.html" />
+        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="Feedforward neural networks (FNN) 
+ Deep Learning - Part 1" />
+<meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:33:41 +0000" />
+<meta name="DC.creator" content="Kaivan Kamali" />
 
         
         
         
         
         
-        <meta name="description" content="Statistical Analyses for omics data and machine learning ..." />
+        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
+        <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Feedforward neural networks (FNN) 
  Deep Learning - Part 1" />
-        <meta property="og:description" content="Statistical Analyses for omics data and machine learning ..." />
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
     </head>
     <body data-spy="scroll" data-target="#toc">
         <header>
@@ -49,8 +61,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -66,10 +114,6 @@
 
         <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
-        </a>
-        
-        <a class="dropdown-item" href="/training-material/topics/statistics/faqs/" title="Check our FAQs for the Statistics and machine learning topic">
-           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Topic FAQs
         </a>
         
         <a class="dropdown-item" href="https://help.galaxyproject.org/" title="Discuss on Galaxy Help">
@@ -106,41 +150,6 @@
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
             </a>
         
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/FNN/slides-plain.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FFNN%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown-item">
             <div>
@@ -181,9 +190,11 @@
             
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2019-05-01/topics/statistics/tutorials/FNN/slides-plain.html" title="Version 2019-05-01">2019-05-01</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-05-01/topics/statistics/tutorials/FNN/slides-plain.html" title="Version 2022-05-01">2022-05-01</a>
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2019-02-07/topics/statistics/tutorials/FNN/slides-plain.html" title="Version 2019-02-07">2019-02-07</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-04-01/topics/statistics/tutorials/FNN/slides-plain.html" title="Version 2022-04-01">2022-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-03-01/topics/statistics/tutorials/FNN/slides-plain.html" title="Version 2022-03-01">2022-03-01</a>
             
                 <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
             </div>
@@ -196,7 +207,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -218,7 +229,18 @@
 	<h1>Feedforward neural networks (FNN) 
  Deep Learning - Part 1</h1>
 		<h2>Contributors</h2>
-		Kaivan Kamali
+<div markdown="0">
+
+	<div class="contributors-line">
+		Authors: 
+<a href="/training-material/hall-of-fame/kxk302/" class="contributor-badge contributor-kxk302"><img src="https://avatars.githubusercontent.com/kxk302?s=27" alt="Avatar">Kaivan Kamali</a>
+
+
+
+	</div>
+
+</div>
+
 
 		
 		<h2>Questions</h2>
@@ -268,6 +290,10 @@
         
             <ul>
                 
+                    
+                        
+                    
+                        
                     
                         
                     
@@ -358,7 +384,7 @@
   </li>
 </ul>
 
-<p><img src="/training-material/topics/statistics/images/FNN_bio_neuron.png" alt="Sketch of a biological neuron and its components" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_bio_neuron.png" alt="Sketch of a biological neuron and its components" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
@@ -404,7 +430,7 @@
 
 <h1 id="perceptron">Perceptron</h1>
 
-<p><img src="/training-material/topics/statistics/images/FFNN_no_hidden.png" alt="Neurons forming the input and output layers of a single layer feedforward neural network" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FFNN_no_hidden.png" alt="Neurons forming the input and output layers of a single layer feedforward neural network" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
@@ -448,7 +474,7 @@
 
 <h1 id="multi-layer-fnn">Multi-layer FNN</h1>
 
-<p><img src="/training-material/topics/statistics/images/FFNN.png" alt="Neurons forming the input, output, and hidden layers of a multi-layer feedforward neural network" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FFNN.png" alt="Neurons forming the input, output, and hidden layers of a multi-layer feedforward neural network" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <ul>
   <li>More hidden layers (and more neurons in each hidden layer)
@@ -464,7 +490,7 @@
 
 <h1 id="activation-functions">Activation functions</h1>
 
-<p><img src="/training-material/topics/statistics/images/FNN_activation_functions.png" alt="Table showing the formula, graph, derivative, and range of common activation functions" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_activation_functions.png" alt="Table showing the formula, graph, derivative, and range of common activation functions" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
@@ -492,7 +518,7 @@
 
 <h1 id="classification-problems">Classification problems</h1>
 
-<p><img src="/training-material/topics/statistics/images/FNN_output_encoding.png" alt="Three images illustrating binary, multiclass, and multilabel classifications and their label representation" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_output_encoding.png" alt="Three images illustrating binary, multiclass, and multilabel classifications and their label representation" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
@@ -562,17 +588,17 @@
 
 <h1 id="cross-entropy-losscost-functions">Cross Entropy Loss/Cost functions</h1>
 
-<p><img src="/training-material/topics/statistics/images/FNN_Cross_Entropy_Loss.png" alt="Cross Entropy loss function" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_Cross_Entropy_Loss.png" alt="Cross Entropy loss function" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
-<p><img src="/training-material/topics/statistics/images/FNN_Cross_Entropy_Cost.png" alt="Cross Entropy cost function" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_Cross_Entropy_Cost.png" alt="Cross Entropy cost function" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
 <h1 id="quadratic-losscost-functions">Quadratic Loss/Cost functions</h1>
 
-<p><img src="/training-material/topics/statistics/images/FNN_Quadratic_Loss.png" alt="Quadratic loss function" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_Quadratic_Loss.png" alt="Quadratic loss function" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
-<p><img src="/training-material/topics/statistics/images/FNN_Quadratic_Cost.png" alt="Quadratic cost function" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_Quadratic_Cost.png" alt="Quadratic cost function" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
@@ -599,13 +625,13 @@
 
 <h1 id="backpropagation-error">Backpropagation error</h1>
 
-<p><img src="/training-material/topics/statistics/images/FNN_BP_Error.png" alt="Backpropagation error" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_BP_Error.png" alt="Backpropagation error" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
 <h1 id="backpropagation-formulas">Backpropagation formulas</h1>
 
-<p><img src="/training-material/topics/statistics/images/FNN_BP.png" alt="Backpropagation formulas" loading="lazy" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
+<p><img src="/training-material/topics/statistics/images/FNN_BP.png" alt="Backpropagation formulas" /> <!-- https://pixy.org/3013900/ CC0 license--></p>
 
 <hr />
 
@@ -697,7 +723,7 @@
   <li>Galaxy Training Materials (<a href="https://training.galaxyproject.org">training.galaxyproject.org</a>)</li>
 </ul>
 
-<p><img src="/training-material/topics/introduction/images/gtn_stats.png" alt="Screenshot of the gtn stats page with 21 topics, 170 tutorials, 159 contributors, 16 scientific topics, and a growing community" loading="lazy" /></p>
+<p><img src="/training-material/topics/introduction/images/gtn_stats.png" alt="Screenshot of the gtn stats page with 21 topics, 170 tutorials, 159 contributors, 16 scientific topics, and a growing community" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -714,7 +740,7 @@
   <li>
     <p><strong>Help Forum</strong> (<a href="https://help.galaxyproject.org">help.galaxyproject.org</a>)</p>
 
-    <p><img src="/training-material/topics/introduction/images/galaxy_help.png" alt="Galaxy Help" loading="lazy" /></p>
+    <p><img src="/training-material/topics/introduction/images/galaxy_help.png" alt="Galaxy Help" /></p>
   </li>
   <li>
     <p><strong>Gitter Chat</strong></p>
@@ -743,7 +769,7 @@
   <li>Event Horizon: <a href="https://galaxyproject.org/events">galaxyproject.org/events</a></li>
 </ul>
 
-<p><img src="/training-material/topics/introduction/images/event_horizon.png" alt="Event schedule" loading="lazy" /></p>
+<p><img src="/training-material/topics/introduction/images/event_horizon.png" alt="Event schedule" /></p>
 
 <p><span>Speaker Notes</span></p>
 
@@ -767,13 +793,15 @@
 This material is the result of a collaborative work. Thanks to the <a href="https://training.galaxyproject.org" aria-label="Visit the GTN">Galaxy Training Network</a> and all the contributors!
 
 
-
-
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
 
 This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </section>
+
+
+
+
 
         </div>
         
@@ -785,9 +813,10 @@ This material is licensed under the <a rel="license" href="https://creativecommo
             provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
         </p>
         <p>
-The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-</p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/a0eb8d243de86bd7aa0100152161d3a515e94871">a0eb8d243de86bd7aa0100152161d3a515e94871</a></p>
+        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
+        </p>
+
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/b3192832de88c502588a977a276ac4ec8ba940b2">b3192832de88c502588a977a276ac4ec8ba940b2</a></p>
     </div>
 </footer>
 

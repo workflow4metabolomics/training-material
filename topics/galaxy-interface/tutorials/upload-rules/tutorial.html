@@ -17,6 +17,16 @@
         <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html" />
+        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="Rule Based Uploader" />
+<meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:00:21 +0000" />
+<meta name="DC.creator" content="John Chilton" />
+<meta name="DC.creator" content="Helena Rasche" />
 
         
         
@@ -24,9 +34,11 @@
         
         
         <meta name="description" content="A collection of microtutorials explaining various feature..." />
+        <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Rule Based Uploader" />
         <meta property="og:description" content="A collection of microtutorials explaining various feature..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
     </head>
     <body data-spy="scroll" data-target="#toc">
         <header>
@@ -49,6 +61,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +154,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/upload-rules/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fupload-rules%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -179,9 +191,11 @@
             
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2019-05-01/topics/galaxy-interface/tutorials/upload-rules/tutorial.html" title="Version 2019-05-01">2019-05-01</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-05-01/topics/galaxy-interface/tutorials/upload-rules/tutorial.html" title="Version 2022-05-01">2022-05-01</a>
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2019-02-07/topics/galaxy-interface/tutorials/upload-rules/tutorial.html" title="Version 2019-02-07">2019-02-07</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-04-01/topics/galaxy-interface/tutorials/upload-rules/tutorial.html" title="Version 2022-04-01">2022-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-03-01/topics/galaxy-interface/tutorials/upload-rules/tutorial.html" title="Version 2022-03-01">2022-03-01</a>
             
                 <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
             </div>
@@ -194,7 +208,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -241,27 +255,14 @@
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -274,7 +275,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-06-17 15:35:26 +0000",
+  "dateModified": "1970-01-01 00:00:21 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Rule Based Uploader",
   "interactivityType": "mixed",
@@ -299,28 +300,46 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
+  "accessMode": [
+    "textual",
+    "visual"
+  ],
+  "accessModeSufficient": [
+    "textual",
+    "visual"
+  ],
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "alternativeText",
+    "tableOfContents"
+  ],
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Using Galaxy and Managing your Data",
     "description": "A collection of microtutorials explaining various features of the Galaxy user interface and manipulating data within Galaxy.",
-    "url": "https://training.galaxyproject.org//training-material/topics/galaxy-interface/"
+    "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/"
   },
-  "courseCode": "galaxy-interface / upload-rules / hands-on",
   "learningResourceType": "hands-on tutorial",
   "name": "Hands-on for 'Rule Based Uploader' tutorial",
-  "url": "https://training.galaxyproject.org//training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html",
+  "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html",
   "timeRequired": "PT20M",
-  "keywords": "collections, tags",
+  "keywords": "galaxy-interface, collections, tags",
   "description": "The questions this  addresses are:\n - How to use the rule based uploader to create complex collections\n\n\\nThe objectives are:\n - Learn about the Rule Based Uploader\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/galaxy-interface/tutorials/collections/tutorial.html",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
+      "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html",
       "name": "Using dataset collections",
       "description": "Hands-on for 'Using dataset collections' tutorial",
       "learningResourceType": "hands-on tutorial",
@@ -333,27 +352,100 @@
       }
     }
   ],
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "John Chilton"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/jmchilton/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/jmchilton/",
+      "name": "John Chilton",
+      "image": "https://avatars.githubusercontent.com/jmchilton",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0002-6794-0756",
+      "orcid": "https://orcid.org/0000-0002-6794-0756"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Helena Rasche"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "name": "Helena Rasche",
+      "image": "https://avatars.githubusercontent.com/hexylena",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9760-8992",
+      "orcid": "https://orcid.org/0000-0001-9760-8992"
     }
   ],
   "contributor": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "John Chilton"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/jmchilton/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/jmchilton/",
+      "name": "John Chilton",
+      "image": "https://avatars.githubusercontent.com/jmchilton",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0002-6794-0756",
+      "orcid": "https://orcid.org/0000-0002-6794-0756"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Helena Rasche"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "name": "Helena Rasche",
+      "image": "https://avatars.githubusercontent.com/hexylena",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9760-8992",
+      "orcid": "https://orcid.org/0000-0001-9760-8992"
     }
   ],
   "about": [
@@ -361,10 +453,10 @@
       "@type": "CreativeWork",
       "name": "Using Galaxy and Managing your Data",
       "description": "A collection of microtutorials explaining various features of the Galaxy user interface and manipulating data within Galaxy.",
-      "url": "https://training.galaxyproject.org//training-material/topics/galaxy-interface/"
+      "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/"
     }
   ],
-  "skillLevel": "Intermediate"
+  "educationalLevel": "Intermediate"
 }
 </script>
 
@@ -372,15 +464,28 @@
     <h1 data-toc-skip>Rule Based Uploader</h1>
     
 
-    <div class="contributors-line">Authors: 
+    <div markdown="0">
 
- <a href="/training-material/hall-of-fame/jmchilton/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jmchilton" alt="Avatar">John Chilton</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a>
+	<div class="contributors-line">
+		Authors: 
+<a href="/training-material/hall-of-fame/jmchilton/" class="contributor-badge contributor-jmchilton"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/jmchilton?s=27" alt="Avatar">John Chilton</a>
+
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+
+	</div>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -448,6 +553,8 @@
                         
                     
                         
+                    
+                        
                             
                             <li> Using dataset collections:
                             
@@ -457,6 +564,8 @@
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -492,9 +601,11 @@
 
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jun 17, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Sep 21, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -506,6 +617,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>Through a series of examples, this tutorial aims to familiarize the reader with building <span class="notranslate">Galaxy</span> collections from tabular data containing URLs, sample sheets, list of accessions or identifiers, etc..</p>
@@ -624,7 +737,7 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
     <li>
       <p><strong>Click</strong> <code class="language-plaintext highlighter-rouge">Rule-based</code> as shown below.</p>
 
-      <p><img src="../../images/rules/rules_example_1_1_rules_landing.png" alt="screenshot" loading="lazy" />
+      <p><img src="../../images/rules/rules_example_1_1_rules_landing.png" alt="screenshot. " loading="lazy" />
 As you can see in this dialog, data can be selected from a history dataset or pasted in directly. If <span class="notranslate">Galaxy</span> is configured to allow FTP uploads, the contents of your FTP directory may be loaded directly as well.</p>
     </li>
     <li><strong>Paste</strong> your tabular data right into the textbox on this page as shown below
@@ -641,12 +754,12 @@ PRJDA60709	SAMD00016381	DRX000479	https://zenodo.org/api/files/c07c0fbd-c578-4c8
 PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8c-989d-5181f8824773/DRR000775.fastqsanger.gz
 </code></pre></div>      </div>
 
-      <p><img src="../../images/rules/rules_example_1_2_paste.png" alt="screenshot" loading="lazy" /></p>
+      <p><img src="../../images/rules/rules_example_1_2_paste.png" alt="screenshot. " loading="lazy" /></p>
     </li>
     <li>
       <p><strong>Examine</strong> the  the <code class="language-plaintext highlighter-rouge">rules editor</code> which now pops up.</p>
 
-      <p><img src="../../images/rules/rules_example_1_3_initial_rules.png" alt="screenshot" loading="lazy" /></p>
+      <p><img src="../../images/rules/rules_example_1_3_initial_rules.png" alt="screenshot. " loading="lazy" /></p>
     </li>
   </ol>
 
@@ -655,7 +768,7 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
 <p>At first glance, this may be feel like Excel or another sp<span class="notranslate">reads</span>heet program and you may feel the urge to start editing cells but we strongly encourage defining rules for manipulating the data instead. There are a few reasons for this:</p>
 
 <ul>
-  <li><strong>Manually modifying this metadata is not reproducible</strong> - we will not belabor the point here but check out <a href="/training-material/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html#why-not-use-excel-for-this">Why not use excel for this?</a> for more context. Building up rules for modifying this metadata will allow <span class="notranslate">Galaxy</span> to track and report your manipulations (providing traceability) and apply them to new sets of files (providing reproducibility).</li>
+  <li><strong>Manually modifying this metadata is not reproducible</strong> - we will not belabor the point here but check out <a href="/training-material/faqs/galaxy/why_not_excel.html">Why not use excel for this?</a> for more context. Building up rules for modifying this metadata will allow <span class="notranslate">Galaxy</span> to track and report your manipulations (providing traceability) and apply them to new sets of files (providing reproducibility).</li>
   <li><strong>Manually modifying this metadata is error prone</strong> - we believe defining rules and treating the metadata in a systematic way minimizes the possibility to manual errors. These errors can be very hard to detect for large sets of data.</li>
   <li><strong>Manually modifying data is not scalable</strong> - this rule-based technique potentially scales to importing tens of thousands of datasets.</li>
 </ul>
@@ -681,7 +794,7 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
         <li><em>“Filter which rows?”</em>: <code class="language-plaintext highlighter-rouge">first</code></li>
         <li><em>“Filter how many rows?”</em>: <code class="language-plaintext highlighter-rouge">1</code></li>
         <li>Click <code class="language-plaintext highlighter-rouge">Apply</code>
-<img src="../../images/rules/rules_example_1_4_filter_header.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_1_4_filter_header.png" alt="screenshot. " loading="lazy" /></li>
       </ul>
 
       <p>Next we will define these columns for <span class="notranslate">Galaxy</span>.</p>
@@ -700,11 +813,11 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
         </li>
       </ul>
 
-      <p><img src="../../images/rules/rules_example_1_5_mapping_edit.png" alt="screenshot" loading="lazy" /></p>
+      <p><img src="../../images/rules/rules_example_1_5_mapping_edit.png" alt="screenshot. " loading="lazy" /></p>
     </li>
     <li>
       <p><strong>Click</strong> <code class="language-plaintext highlighter-rouge">Apply</code>, and you should see your new column definitions listed as in the following screenshot.
-<img src="../../images/rules/rules_example_1_6_mapping_set.png" alt="screenshot" loading="lazy" /></p>
+<img src="../../images/rules/rules_example_1_6_mapping_set.png" alt="screenshot. " loading="lazy" /></p>
 
       <p>You are now ready to start the upload</p>
     </li>
@@ -755,7 +868,7 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
         <li><em>“Select dataset to load”</em>: the dataset you just uploaded</li>
       </ul>
 
-      <p><img src="../../images/rules/rules_example_2_1_inputs.png" alt="screenshot" loading="lazy" /></p>
+      <p><img src="../../images/rules/rules_example_2_1_inputs.png" alt="screenshot. " loading="lazy" /></p>
 
       <blockquote class="tip">
         <h3 id="tip-tip-dont-see-your-dataset"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Tip: Don’t see your dataset?</h3>
@@ -763,7 +876,7 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
       </blockquote>
     </li>
     <li><strong>Click</strong> <code class="language-plaintext highlighter-rouge">Build</code> to bring up the rule builder.
-<img src="../../images/rules/rules_example_2_2_initial_rules.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_2_2_initial_rules.png" alt="screenshot. " loading="lazy" /></li>
     <li><strong>Repeat</strong> the steps from last time, except define column <code class="language-plaintext highlighter-rouge">C</code> as a <code class="language-plaintext highlighter-rouge">List Identifier</code> instead of Name:
       <ul>
         <li>From <strong>Filter</strong> menu select <code class="language-plaintext highlighter-rouge">First or Last N Rows</code>
@@ -781,12 +894,12 @@ PRJDA60709	SAMD00016382	DRX000480	https://zenodo.org/api/files/c07c0fbd-c578-4c8
         <li><em>“Type”</em>: <code class="language-plaintext highlighter-rouge">fastqsanger.gz</code></li>
       </ul>
 
-      <p><img src="../../images/rules/rules_example_2_3_rules.png" alt="screenshot" loading="lazy" /></p>
+      <p><img src="../../images/rules/rules_example_2_3_rules.png" alt="screenshot. " loading="lazy" /></p>
 
       <p>Rather than assigning column <code class="language-plaintext highlighter-rouge">C</code> as <code class="language-plaintext highlighter-rouge">Name</code>, in this example we assigned it as a <code class="language-plaintext highlighter-rouge">List Identifier</code>. This is the description of the element in the resulting dataset collection. This identifier is preserved in mapped outputs as you map tools over collections and is useful for tracking sample names, replicate numbers, conditions, etc..</p>
     </li>
     <li><strong>Enter</strong> a name for our collection, for example the ENA study identifier as shown below, <code class="language-plaintext highlighter-rouge">PRJDA60709</code>.
-<img src="../../images/rules/rules_example_2_4_name.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_2_4_name.png" alt="screenshot. " loading="lazy" /></li>
     <li>
       <p><strong>Click</strong> <code class="language-plaintext highlighter-rouge">Upload</code></p>
 
@@ -827,7 +940,7 @@ PRJDB3920	SAMD00034152	DRX036164	https://zenodo.org/api/files/0c8d6a74-23dd-4d36
     </li>
     <li>
       <p><strong>Click</strong> <code class="language-plaintext highlighter-rouge">Build</code> and proceed to the rule builder.
-<img src="../../images/rules/rules_example_3_2_initial_rules.png" alt="screenshot" loading="lazy" /></p>
+<img src="../../images/rules/rules_example_3_2_initial_rules.png" alt="screenshot. " loading="lazy" /></p>
     </li>
     <li><strong>Repeat</strong> the last example with:
       <ul>
@@ -854,7 +967,7 @@ We will build a regular <span class="notranslate">expression</span> that capture
         <li>Select <code class="language-plaintext highlighter-rouge">Create columns matching <span class="notranslate">expression</span> groups</code></li>
         <li><em>“Regular <span class="notranslate">Expression</span>”</em>: <code class="language-plaintext highlighter-rouge">(.*);(.*)</code></li>
         <li><em>“Number of Groups”</em>: <code class="language-plaintext highlighter-rouge">2</code>
-<img src="../../images/rules/rules_example_3_4_regex.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_3_4_regex.png" alt="screenshot. " loading="lazy" /></li>
       </ul>
 
       <blockquote class="comment">
@@ -872,7 +985,7 @@ In his example we have two such matching groups.</p>
     <li>From <strong>Rules</strong> select <code class="language-plaintext highlighter-rouge">Remove Column(s)</code>
       <ul>
         <li><em>“From Column”</em>: <code class="language-plaintext highlighter-rouge">D</code>
-<img src="../../images/rules/rules_example_3_7_removed_column.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_3_7_removed_column.png" alt="screenshot. " loading="lazy" /></li>
       </ul>
 
       <p>We now have two columns containing URLs - but we can only have one URL per row. So we will split each row into two (one for the forward <span class="notranslate">reads</span> and one for the reverse):</p>
@@ -884,7 +997,7 @@ In his example we have two such matching groups.</p>
         <li>Click <code class="language-plaintext highlighter-rouge">Apply</code></li>
       </ul>
 
-      <p><img src="../../images/rules/rules_example_3_9_columns_are_split.png" alt="screenshot" loading="lazy" />
+      <p><img src="../../images/rules/rules_example_3_9_columns_are_split.png" alt="screenshot. " loading="lazy" />
 For every row before the transformation with columns <code class="language-plaintext highlighter-rouge">ABCDE</code>, this will produce two rows, <code class="language-plaintext highlighter-rouge">ABCD</code> and <code class="language-plaintext highlighter-rouge">ABCE</code>. Thus you will have twice as many rows as before.
 <br /><br />
 Now we need to inform <span class="notranslate">Galaxy</span> which of these rows are “forward” <span class="notranslate">reads</span> and which are “reverse” <span class="notranslate">reads</span>. We will do this by adding a new column again using a regular <span class="notranslate">expression</span>. Here we will match on the <code class="language-plaintext highlighter-rouge">_1</code> or <code class="language-plaintext highlighter-rouge">_2</code> in the filename at the end of the URLs.</p>
@@ -895,7 +1008,7 @@ Now we need to inform <span class="notranslate">Galaxy</span> which of these row
         <li>Select <code class="language-plaintext highlighter-rouge">Create columns matching <span class="notranslate">expression</span> groups</code></li>
         <li><em>“Regular <span class="notranslate">Expression</span>”</em>: <code class="language-plaintext highlighter-rouge">.*_(\d).fastq.gz</code></li>
         <li><em>“Number of groups”</em>: <code class="language-plaintext highlighter-rouge">1</code>
-<img src="../../images/rules/rules_example_3_10_regex_paired.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_3_10_regex_paired.png" alt="screenshot. " loading="lazy" /></li>
       </ul>
 
       <blockquote class="comment">
@@ -943,7 +1056,7 @@ In his example we have one matching groups ( contained in the parentheses )</p>
       </blockquote>
     </li>
     <li><strong>Supply</strong> a name for your collection and click <strong>Upload</strong>
-<img src="../../images/rules/rules_example_3_14_paired_identifier_set.png" alt="screenshot" loading="lazy" /></li>
+<img src="../../images/rules/rules_example_3_14_paired_identifier_set.png" alt="screenshot. " loading="lazy" /></li>
   </ol>
 
 </blockquote>
@@ -960,10 +1073,15 @@ In his example we have one matching groups ( contained in the parentheses )</p>
 
                 
 
+
+                
+
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -993,8 +1111,6 @@ In his example we have one matching groups ( contained in the parentheses )</p>
                     })(window, document);
                 </script>
 
-
-
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
@@ -1016,8 +1132,8 @@ In his example we have one matching groups ( contained in the parentheses )</p>
 author = "John Chilton and Helena Rasche",
 title = "Rule Based Uploader (Galaxy Training Materials)",
 year = "2021",
-month = "06",
-day = "17"
+month = "09",
+day = "21"
 url = "\url{https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }
@@ -1037,6 +1153,8 @@ note = "[Online; accessed TODAY]"
                 </pre></div></div>
                 </p>
                 </blockquote>
+
+                
 
 
 <script type="text/javascript">
@@ -1089,6 +1207,8 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                         
                     
                         
+                    
+                        
                             
                             <li> Rule Based Uploader: Advanced:
                             
@@ -1098,6 +1218,8 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
