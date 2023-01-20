@@ -446,48 +446,6 @@
                 Galaxy Server administration
             </a>
 </td>
-        <td><a href="/training-material//topics/admin/tutorials/monitoring/tutorial.html">
-            Galaxy Monitoring with Telegraf and Grafana
-            </a></td>
-      </tr>
-    
-            
-            
-      <tr>
-        <td>Jul 21, 2022</td>
-        <td style="text-align:right">
-            <a href="/training-material/topics/admin">
-                Galaxy Server administration
-            </a>
-</td>
-        <td><a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
-            Running Jobs on Remote Resources with Pulsar
-            </a></td>
-      </tr>
-    
-            
-            
-      <tr>
-        <td>Jul 21, 2022</td>
-        <td style="text-align:right">
-            <a href="/training-material/topics/admin">
-                Galaxy Server administration
-            </a>
-</td>
-        <td><a href="/training-material//topics/admin/tutorials/connect-to-compute-cluster/tutorial.html">
-            Connecting Galaxy to a compute cluster
-            </a></td>
-      </tr>
-    
-            
-            
-      <tr>
-        <td>Jul 21, 2022</td>
-        <td style="text-align:right">
-            <a href="/training-material/topics/admin">
-                Galaxy Server administration
-            </a>
-</td>
         <td><a href="/training-material//topics/admin/tutorials/singularity/tutorial.html">
             Use Singularity containers for running Galaxy jobs
             </a></td>
@@ -502,8 +460,8 @@
                 Galaxy Server administration
             </a>
 </td>
-        <td><a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
-            Galaxy Monitoring with Reports
+        <td><a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
+            Running Jobs on Remote Resources with Pulsar
             </a></td>
       </tr>
     
@@ -544,8 +502,50 @@
                 Galaxy Server administration
             </a>
 </td>
+        <td><a href="/training-material//topics/admin/tutorials/ftp/tutorial.html">
+            Enable upload via FTP
+            </a></td>
+      </tr>
+    
+            
+            
+      <tr>
+        <td>Jul 21, 2022</td>
+        <td style="text-align:right">
+            <a href="/training-material/topics/admin">
+                Galaxy Server administration
+            </a>
+</td>
         <td><a href="/training-material//topics/admin/tutorials/job-destinations/tutorial.html">
             Mapping Jobs to Destinations
+            </a></td>
+      </tr>
+    
+            
+            
+      <tr>
+        <td>Jul 21, 2022</td>
+        <td style="text-align:right">
+            <a href="/training-material/topics/admin">
+                Galaxy Server administration
+            </a>
+</td>
+        <td><a href="/training-material//topics/admin/tutorials/tus/tutorial.html">
+            Performant Uploads with TUS
+            </a></td>
+      </tr>
+    
+            
+            
+      <tr>
+        <td>Jul 21, 2022</td>
+        <td style="text-align:right">
+            <a href="/training-material/topics/admin">
+                Galaxy Server administration
+            </a>
+</td>
+        <td><a href="/training-material//topics/admin/tutorials/tiaas/tutorial.html">
+            Training Infrastructure as a Service (TIaaS)
             </a></td>
       </tr>
     
@@ -630,8 +630,8 @@ var tutorialsBar = new Chart(tutoBar, {
 // Chart displaying number of tutorials per topic
 var tutoBarTechnical = document.getElementById('tutorialsBarTechnical');
 
-var data_tutos = [0,0,22,0,30,6,0,16,22,0,42];
-var labels_topics = ["","","Development in Galaxy","","Foundations of Data Science","Teaching and Hosting Galaxy training","","Contributing to the Galaxy Training Material","Using Galaxy and Managing your Data","","Galaxy Server administration"];
+var data_tutos = [0,0,0,0,22,6,22,0,16,42,30];
+var labels_topics = ["","","","","Using Galaxy and Managing your Data","Teaching and Hosting Galaxy training","Development in Galaxy","","Contributing to the Galaxy Training Material","Galaxy Server administration","Foundations of Data Science"];
 
 var tutorialsBar = new Chart(tutoBarTechnical, {
   type: 'horizontalBar',
