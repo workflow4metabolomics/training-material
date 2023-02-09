@@ -19,14 +19,15 @@
   "contributors": [
     {
       "name": "Wolfgang Maier",
+      "orcid": "0000-0002-9464-6640",
       "joined": "2017-09",
       "elixir_node": "de",
       "id": "wm75",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/wm75.json"
     }
   ],
-  "last_modified_at": "2021-11-05T18:03:42+00:00",
   "url": "/topics/variant-analysis/tutorials/mapping-by-sequencing/tutorial.html",
   "topic_name": "variant-analysis",
-  "tutorial_name": "mapping-by-sequencing"
+  "tutorial_name": "mapping-by-sequencing",
+  "dir": "topics/variant-analysis/tutorials/mapping-by-sequencing"
 }

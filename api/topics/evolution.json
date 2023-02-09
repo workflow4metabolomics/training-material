@@ -68,10 +68,18 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/cstritt.json"
         }
       ],
-      "last_modified_at": "2022-03-16T09:24:13+00:00",
       "url": "/topics/evolution/tutorials/mtb_transmission/tutorial.html",
       "topic_name": "evolution",
       "tutorial_name": "mtb_transmission",
+      "dir": "topics/evolution/tutorials/mtb_transmission",
+      "id": "evolution/mtb_transmission",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
       "hands_on": true,
       "slides": false,
       "workflows": [
@@ -167,10 +175,18 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/GaloGS.json"
         }
       ],
-      "last_modified_at": "2022-03-18T14:05:28+00:00",
       "url": "/topics/evolution/tutorials/mtb_phylogeny/tutorial.html",
       "topic_name": "evolution",
       "tutorial_name": "mtb_phylogeny",
+      "dir": "topics/evolution/tutorials/mtb_phylogeny",
+      "id": "evolution/mtb_phylogeny",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
       "hands_on": true,
       "slides": false,
       "workflows": [

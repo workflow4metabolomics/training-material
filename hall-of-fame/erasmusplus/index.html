@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/" />
@@ -24,8 +23,8 @@
 <meta name="DC.type" content="text" />
 <meta name="DC.title" content="GTN Contributor: Erasmus+ Programme" />
 <meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:00:00 +0000" />
 
-        
         
         
         
@@ -36,8 +35,10 @@
         <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
 
+        
     </head>
     <body data-spy="scroll" data-target="#toc">
+        <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -140,6 +141,7 @@
             <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> Page Metrics
         </a>
 
+        <!-- link to feedback -->
         
             <a class="dropdown-item" href="/training-material/feedback.html" title="Show feedback statistics about this repository">
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
@@ -152,27 +154,14 @@
             </div>
 
             <div id="theme-selector" data-toggle="buttons">
-                <label data-value="default" class="btn btn-secondary">
-                    <input type="radio" name="options" id="default" autocomplete="off"> Default
-                </label>
-                <label data-value="night" class="btn btn-secondary">
-                    <input type="radio" name="options" id="night" autocomplete="off"> Night
-                </label>
-                <label data-value="midnight" class="btn btn-secondary">
-                    <input type="radio" name="options" id="midnight" autocomplete="off"> Midnight
-                </label>
-                <label data-value="rainbow" class="btn btn-secondary">
-                    <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
-                </label>
-                <label data-value="progress" class="btn btn-secondary">
-                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
-                </label>
-                <label data-value="halloween" class="btn btn-secondary">
-                    <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
-                </label>
-                <label data-value="straya" class="btn btn-secondary">
-                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
-                </label>
+                    <button class="btn" data-theme="default">Default</button>
+                    <button class="btn" data-theme="night">Night</button>
+                    <button class="btn" data-theme="midnight">Midnight</button>
+                    <button class="btn" data-theme="rainbow">Rainbow</button>
+                    <button class="btn" data-theme="blm">✊🏿</button>
+                    <button class="btn" data-theme="progress" >🏳️‍🌈</button>
+                    <button class="btn" data-theme="halloween">🎃</button>
+                    <button class="btn" data-theme="straya">🇦🇺</button>
             </div>
 
         </div>
@@ -182,7 +171,6 @@
                 <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
             </div>
 
-            
             <div id="archive-selector">
             
                 <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-05-01/hall-of-fame/erasmusplus/" title="Version 2022-05-01">2022-05-01</a>
@@ -252,7 +240,7 @@
 }
 
 </style>
-<section>
+<section class="contributor-erasmusplus">
 	<div class="stats">
 		<div class="row">
 
@@ -261,9 +249,6 @@
 					<img src="https://www.erasmusplus.nl/assets/images/logo.png" alt="avatar" >
 				
 
-				<h3>
-					Erasmus+ Programme
-				</h3>
                 
 
 				
@@ -290,7 +275,12 @@
 			</div>
 
 			<div class="col-md-9">
-				<h1>Contributions</h1>
+				<h1>
+					Erasmus+ Programme
+				</h1>
+				
+
+				<h2>Contributions</h2>
 
 				<p class="text-muted">
 					
@@ -303,7 +293,7 @@
                 </p>
 
 				
-				<h2>Tutorials</h2>
+				<h3>Tutorials</h3>
 				<ul>
 				
 					<li>
@@ -365,7 +355,24 @@
 						</a>
 						/
 						<a href="/training-material//topics/genome-annotation/tutorials/apollo/tutorial.html">
-						Refining Genome Annotations with Apollo
+						Refining Genome Annotations with Apollo (prokaryotes)
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
+						</a>
+						/
+						<a href="/training-material//topics/genome-annotation/tutorials/apollo-euk/tutorial.html">
+						Refining Genome Annotations with Apollo (eukaryotes)
 						</a>
 						
 						
@@ -697,11 +704,130 @@
 
 					</li>
 				
+					<li>
+						
+						
+						<a href="/training-material/topics/contributing">
+							Contributing to the Galaxy Training Material
+						</a>
+						/
+						<a href="/training-material//topics/contributing/tutorials/learning-principles/tutorial.html">
+						Principles of learning and how they apply to training and teaching
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/contributing">
+							Contributing to the Galaxy Training Material
+						</a>
+						/
+						<a href="/training-material//topics/contributing/tutorials/design/tutorial.html">
+						Design and plan session, course, materials
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/teaching">
+							Teaching and Hosting Galaxy training
+						</a>
+						/
+						<a href="/training-material//topics/teaching/tutorials/motivation_demotivation/tutorial.html">
+						Motivation and Demotivation
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/teaching">
+							Teaching and Hosting Galaxy training
+						</a>
+						/
+						<a href="/training-material//topics/teaching/tutorials/assessment/tutorial.html">
+						Assessment and feedback in training and teachings
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/teaching">
+							Teaching and Hosting Galaxy training
+						</a>
+						/
+						<a href="/training-material//topics/teaching/tutorials/hybrid-training/tutorial.html">
+						Hybrid training
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/teaching">
+							Teaching and Hosting Galaxy training
+						</a>
+						/
+						<a href="/training-material//topics/teaching/tutorials/teaching-online/tutorial.html">
+						Teaching online
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/teaching">
+							Teaching and Hosting Galaxy training
+						</a>
+						/
+						<a href="/training-material//topics/teaching/tutorials/learner_participation_engagement/tutorial.html">
+						Training techniques to enhance learner participation and engagement
+						</a>
+						
+						
+	<abbr title="These individuals or organisations provided funding support for the development of this resource">💵</abbr>
+
+
+					</li>
+				
 				</ul>
 				
 
 				
-				<h2>Slides</h2>
+				<h3>Slides</h3>
 				<ul>
 				
 					<li>
@@ -793,9 +919,79 @@
 				
 
 				
-                <h2>News</h2>
+                <h3>News</h3>
                 <div class="newslist">
                 
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2023/02/08/top-tools.html"><h3 class="card-title">What are the most used tools in the GTN?</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network" loading="lazy">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2023/02/08/top-tools.html"><h4 class="card-title">What are the most used tools in the GTN?</h4></a>-->
+        <div class="text-muted">
+        8 February 2023
+        </div>
+        <div markdown="0">
+
+	<div class="contributors-line">
+		
+<table class="contributions">
+	
+	<tr>
+		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
+		<td>
+			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+		</td>
+	</tr>
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+</table>
+
+
+	</div>
+
+</div>
+
+
+        
+<button class="label label-default tutorial_tag" id="new feature" style="--color-primary: #c3c4ff; --color-darker: #a9acff; --color-dimmed: #b6b8ff;" title="Click to show all tutorials with this tag">new feature</button>
+
+<button class="label label-default tutorial_tag" id="gtn" style="--color-primary: #fff3af; --color-darker: #edd800; --color-dimmed: #fce600;" title="Click to show all tutorials with this tag">gtn</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Did you ever wonder which was the number one most used tool in the GTN? There is a new page of Top Tools where we list all of the top tools in the GTN, and which tutorials use them. We guessed “upload1”, but it seems like not every author annotates that step explicitly in their tutorial, and of course it doesn’t appear in the workflows which we also scan to create this tool listing.
+
+      
+    </p>
+    <a href="/training-material/news/2023/02/08/top-tools.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
                 
                    
 
@@ -807,26 +1003,29 @@
   </div>
  <div class="row no-gutters">
   <div class="col-sm-5">
-   <img class="card-img newscover" src="/training-material/assets/images/cyot.gif" alt="Gif showing a user switching between two branches of a tutorial">
+   <img class="card-img newscover" src="/training-material/assets/images/cyot.gif" alt="Gif showing a user switching between two branches of a tutorial" loading="lazy">
   </div>
   <div class="col-sm-7">
    <div class="card-body">
         <!--<a href="/training-material/news/2022/04/12/cyot.html"><h4 class="card-title">New Tutorial Feature: Choose Your Own Tutorial</h4></a>-->
+        <div class="text-muted">
+        12 April 2022
+        </div>
         <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: 
+		Authors: <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
 	</div>
 
 </div>
 
 
         
-<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="--color-primary: #00e68d; --color-darker: #00cd7c; --color-dimmed: #00d984;" title="Click to show all tutorials with this tag">gtn infrastructure</button>
 
-<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+<button class="label label-default tutorial_tag" id="new feature" style="--color-primary: #c3c4ff; --color-darker: #a9acff; --color-dimmed: #b6b8ff;" title="Click to show all tutorials with this tag">new feature</button>
 
-<button class="label label-default tutorial_tag" id="tutorial authors" style="background-color: hsl(282, 80.0%, 85%); color: #333; border: 1px solid hsl(282, 80.0%, 45%)" title="Click to show all tutorials with this tag">tutorial authors</button>
+<button class="label label-default tutorial_tag" id="tutorial authors" style="--color-primary: #d9bdff; --color-darker: #cba0ff; --color-dimmed: #d2afff;" title="Click to show all tutorials with this tag">tutorial authors</button>
 
     <hr/>
     <p class="card-text">
@@ -853,11 +1052,14 @@
   </div>
  <div class="row no-gutters">
   <div class="col-sm-5">
-   <img class="card-img newscover" src="/training-material/topics/data-science/images/rstudio/r-preview-output.png" alt="Image showing content from a tutorial, rendered as an rmarkdown html via knitting. A table of contents appears on the left, and code and outputs on the right.">
+   <img class="card-img newscover" src="/training-material/topics/data-science/images/rstudio/r-preview-output.png" alt="Image showing content from a tutorial, rendered as an rmarkdown html via knitting. A table of contents appears on the left, and code and outputs on the right." loading="lazy">
   </div>
   <div class="col-sm-7">
    <div class="card-body">
         <!--<a href="/training-material/news/2022/01/28/rmarkdown.html"><h4 class="card-title">New Feature: Automatic RMarkdown</h4></a>-->
+        <div class="text-muted">
+        28 January 2022
+        </div>
         <div markdown="0">
 
 	<div class="contributors-line">
@@ -867,14 +1069,14 @@
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			
-<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
-
-
-
+			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
 		</td>
 	</tr>
 	
+
+
+	
+
 	
 
 	
@@ -891,9 +1093,9 @@
 
 
         
-<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="--color-primary: #00e68d; --color-darker: #00cd7c; --color-dimmed: #00d984;" title="Click to show all tutorials with this tag">gtn infrastructure</button>
 
-<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+<button class="label label-default tutorial_tag" id="new feature" style="--color-primary: #c3c4ff; --color-darker: #a9acff; --color-dimmed: #b6b8ff;" title="Click to show all tutorials with this tag">new feature</button>
 
     <hr/>
     <p class="card-text">
@@ -920,11 +1122,14 @@
   </div>
  <div class="row no-gutters">
   <div class="col-sm-5">
-   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network" loading="lazy">
   </div>
   <div class="col-sm-7">
    <div class="card-body">
         <!--<a href="/training-material/news/2021/12/14/funding.html"><h4 class="card-title">Support for annotating Funding Agencies</h4></a>-->
+        <div class="text-muted">
+        14 December 2021
+        </div>
         <div markdown="0">
 
 	<div class="contributors-line">
@@ -934,14 +1139,14 @@
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			
-<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
-
-
-
+			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
 		</td>
 	</tr>
 	
+
+
+	
+
 	
 
 	
@@ -958,7 +1163,7 @@
 
 
         
-<button class="label label-default tutorial_tag" id="new-feature" style="background-color: hsl(83, 80.0%, 85%); color: #333; border: 1px solid hsl(83, 80.0%, 45%)" title="Click to show all tutorials with this tag">new-feature</button>
+<button class="label label-default tutorial_tag" id="new-feature" style="--color-primary: #fff825; --color-darker: #e3dc00; --color-dimmed: #f1ea00;" title="Click to show all tutorials with this tag">new-feature</button>
 
     <hr/>
     <p class="card-text">
@@ -985,11 +1190,14 @@
   </div>
  <div class="row no-gutters">
   <div class="col-sm-5">
-   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network" loading="lazy">
   </div>
   <div class="col-sm-7">
    <div class="card-body">
         <!--<a href="/training-material/news/2021/10/12/data-science.html"><h4 class="card-title">New Topic: Data Science Survival Kit</h4></a>-->
+        <div class="text-muted">
+        12 October 2021
+        </div>
         <div markdown="0">
 
 	<div class="contributors-line">
@@ -999,38 +1207,14 @@
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			
-<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
-
-
-
-<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
-
-
-
-<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
-
-
-
-<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
-
-
-
-<a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a>
-
-
-
-<a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/fpsom?s=27" alt="Avatar">Fotis E. Psomopoulos</a>
-
-
-
-<a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=27" alt="Avatar">The Carpentries</a>
-
-
-
+			<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a><a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a><a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/fpsom?s=27" alt="Avatar">Fotis E. Psomopoulos</a><a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=27" alt="Avatar">The Carpentries</a>
 		</td>
 	</tr>
 	
+
+
+	
+
 	
 
 	
@@ -1047,9 +1231,9 @@
 
 
         
-<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="--color-primary: #00e68d; --color-darker: #00cd7c; --color-dimmed: #00d984;" title="Click to show all tutorials with this tag">gtn infrastructure</button>
 
-<button class="label label-default tutorial_tag" id="new topic" style="background-color: hsl(267, 80.0%, 85%); color: #333; border: 1px solid hsl(267, 80.0%, 45%)" title="Click to show all tutorials with this tag">new topic</button>
+<button class="label label-default tutorial_tag" id="new topic" style="--color-primary: #c6c4ff; --color-darker: #adaaff; --color-dimmed: #b9b7ff;" title="Click to show all tutorials with this tag">new topic</button>
 
     <hr/>
     <p class="card-text">
@@ -1068,9 +1252,13 @@
                 
                 </div>
 				
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 
-				<script type="text/javascript">
+<script type="text/javascript">
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+if(isReduced){
+    Chart.defaults.global.animation.duration = 0;
+}
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx2 = document.getElementById('slidesVsTutorials').getContext('2d');
@@ -1088,6 +1276,10 @@ var topics = [
 	
 	
 	"Sequence analysis",
+
+	
+	
+	"Genome Annotation",
 
 	
 	
@@ -1169,6 +1361,34 @@ var topics = [
 	
 	"Using Galaxy and Managing your Data",
 
+	
+	
+	"Contributing to the Galaxy Training Material",
+
+	
+	
+	"Contributing to the Galaxy Training Material",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
 
 	
 	
@@ -1240,6 +1460,22 @@ var slidesVsTutos = [
 
 	"Tutorials",
 
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
 
 	"Slides",
 	
@@ -1256,6 +1492,8 @@ var slidesVsTutos = [
 	"Slides",
 	
 
+
+	"News Posts",
 
 	"News Posts",
 
@@ -1353,44 +1591,42 @@ var chart2 = new Chart(ctx2, {
         The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
         </p>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/886decceb6c0558ba6b920bcebb885554ce262fc">886decceb6c0558ba6b920bcebb885554ce262fc</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/cde85338cb45973694a08404fef5ef059d92f215">cde85338cb45973694a08404fef5ef059d92f215</a></p>
     </div>
 </footer>
 
         
+        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
+        <script type="text/javascript">
+        var snippets=document.querySelectorAll('div.highlight');
+        [].forEach.call(snippets,function(snippet){
+            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        });
+
+        var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
+            target:function(trigger){return trigger.nextElementSibling;
+        }});
+        </script>
+        
+
+        <script type="text/javascript">
+            if(window.location.hostname === "galaxyproject.github.io") {
+                // Redirect
+                var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
+                $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
+
+                window.setTimeout(function(){
+                    window.location.href = redirect;
+                }, 5000)
+
+            }
+        </script>
     </body>
-    <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-    <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
-
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
-    var snippets=document.querySelectorAll('div.highlight');
-    [].forEach.call(snippets,function(snippet){
-        snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
-    });
-
-    var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
-        target:function(trigger){return trigger.nextElementSibling;
-    }});
-    </script>
-    
-
-    <script type="text/javascript">
-        if(window.location.hostname === "galaxyproject.github.io") {
-            // Redirect
-            var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
-            $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
-
-            window.setTimeout(function(){
-                window.location.href = redirect;
-            }, 5000)
-
-        }
-    </script>
 </html>

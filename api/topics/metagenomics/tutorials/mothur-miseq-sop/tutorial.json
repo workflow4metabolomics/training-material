@@ -51,8 +51,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/tnabtaf.json"
     }
   ],
-  "last_modified_at": "2019-05-20T10:44:20+00:00",
   "url": "/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html",
   "topic_name": "metagenomics",
-  "tutorial_name": "mothur-miseq-sop"
+  "tutorial_name": "mothur-miseq-sop",
+  "dir": "topics/metagenomics/tutorials/mothur-miseq-sop"
 }

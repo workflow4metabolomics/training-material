@@ -11,11 +11,10 @@
   "key_points": [
     "Quizzes are helpful for both self-directed learning, and ensuring that in synchronous classes, students are all following the material"
   ],
-  "subtopic": "extras",
   "contributors": [
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -25,8 +24,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
     }
   ],
-  "last_modified_at": "2022-05-19T13:08:08+00:00",
   "url": "/topics/contributing/tutorials/create-new-tutorial-quiz/tutorial.html",
   "topic_name": "contributing",
-  "tutorial_name": "create-new-tutorial-quiz"
+  "tutorial_name": "create-new-tutorial-quiz",
+  "dir": "topics/contributing/tutorials/create-new-tutorial-quiz"
 }

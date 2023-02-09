@@ -45,8 +45,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/simonbray.json"
     }
   ],
-  "last_modified_at": "2021-03-12T17:24:55+00:00",
   "url": "/topics/statistics/tutorials/classification_machinelearning/tutorial.html",
   "topic_name": "statistics",
-  "tutorial_name": "classification_machinelearning"
+  "tutorial_name": "classification_machinelearning",
+  "dir": "topics/statistics/tutorials/classification_machinelearning"
 }

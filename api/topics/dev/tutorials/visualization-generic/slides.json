@@ -45,8 +45,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/yhoogstrate.json"
     }
   ],
-  "last_modified_at": "2021-07-26T14:25:22+00:00",
   "url": "/topics/dev/tutorials/visualization-generic/slides.html",
   "topic_name": "dev",
-  "tutorial_name": "visualization-generic"
+  "tutorial_name": "visualization-generic",
+  "dir": "topics/dev/tutorials/visualization-generic"
 }

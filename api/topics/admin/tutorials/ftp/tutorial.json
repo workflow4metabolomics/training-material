@@ -45,8 +45,8 @@
     "data",
     "git-gat"
   ],
-  "last_modified_at": "2022-07-21T12:12:46+00:00",
   "url": "/topics/admin/tutorials/ftp/tutorial.html",
   "topic_name": "admin",
-  "tutorial_name": "ftp"
+  "tutorial_name": "ftp",
+  "dir": "topics/admin/tutorials/ftp"
 }

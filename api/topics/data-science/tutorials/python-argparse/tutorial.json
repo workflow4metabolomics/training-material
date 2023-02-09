@@ -27,10 +27,29 @@
     "It's nice for users of your scripts! They don't have to read the code to know how it behaves if you document it well."
   ],
   "subtopic": "python-modular",
+  "contributions": {
+    "authorship": [
+      "hexylena"
+    ],
+    "editing": [
+      "bazante1"
+    ],
+    "testing": [
+      "dirowa"
+    ],
+    "funding": [
+      "avans-atgm"
+    ]
+  },
+  "priority": 10,
+  "url": "/topics/data-science/tutorials/python-argparse/tutorial.html",
+  "topic_name": "data-science",
+  "tutorial_name": "python-argparse",
+  "dir": "topics/data-science/tutorials/python-argparse",
   "contributors": [
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -38,6 +57,12 @@
       "elixir_node": "nl",
       "id": "hexylena",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+    },
+    {
+      "name": "Bazante Sanders",
+      "joined": "2020-12",
+      "id": "bazante1",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bazante1.json"
     },
     {
       "name": "Donny Vrins",
@@ -48,15 +73,12 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/dirowa.json"
     },
     {
-      "name": "Bazante Sanders",
-      "joined": "2020-12",
-      "id": "bazante1",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bazante1.json"
+      "name": "Avans Hogeschool",
+      "joined": "2020-11",
+      "funder": true,
+      "funding_statement": "A number of our employees contribute directly to the Galaxy Training Network and seek to make our higher education learning materials more accessible to a wider audience through the GTN platform. <a href=\"https://avans.nl/\">avans.nl</a>",
+      "id": "avans-atgm",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/avans-atgm.json"
     }
-  ],
-  "priority": 10,
-  "last_modified_at": "2022-04-25T09:25:02+00:00",
-  "url": "/topics/data-science/tutorials/python-argparse/tutorial.html",
-  "topic_name": "data-science",
-  "tutorial_name": "python-argparse"
+  ]
 }

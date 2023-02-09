@@ -63,7 +63,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -73,8 +73,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
     }
   ],
-  "last_modified_at": "2020-12-14T11:35:05+00:00",
   "url": "/topics/contributing/tutorials/create-new-tutorial-technical/tutorial.html",
   "topic_name": "contributing",
-  "tutorial_name": "create-new-tutorial-technical"
+  "tutorial_name": "create-new-tutorial-technical",
+  "dir": "topics/contributing/tutorials/create-new-tutorial-technical"
 }

@@ -22,7 +22,7 @@
   "contributors": [
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -58,8 +58,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/shiltemann.json"
     }
   ],
-  "last_modified_at": "2021-07-26T10:48:53+00:00",
   "url": "/topics/contributing/tutorials/create-new-tutorial-slides/slides.html",
   "topic_name": "contributing",
-  "tutorial_name": "create-new-tutorial-slides"
+  "tutorial_name": "create-new-tutorial-slides",
+  "dir": "topics/contributing/tutorials/create-new-tutorial-slides"
 }

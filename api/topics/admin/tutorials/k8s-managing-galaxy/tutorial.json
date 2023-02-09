@@ -47,6 +47,7 @@
       "name": "John Davis",
       "email": "jdavcs@gmail.com",
       "joined": "2019-06",
+      "orcid": "0000-0002-1363-1245",
       "id": "jdavcs",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/jdavcs.json"
     }
@@ -65,8 +66,8 @@
     }
   ],
   "priority": 1,
-  "last_modified_at": "2022-05-29T17:03:59+00:00",
   "url": "/topics/admin/tutorials/k8s-managing-galaxy/tutorial.html",
   "topic_name": "admin",
-  "tutorial_name": "k8s-managing-galaxy"
+  "tutorial_name": "k8s-managing-galaxy",
+  "dir": "topics/admin/tutorials/k8s-managing-galaxy"
 }

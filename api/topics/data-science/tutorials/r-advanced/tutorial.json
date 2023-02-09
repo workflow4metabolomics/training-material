@@ -105,8 +105,8 @@
   "tags": [
     "R"
   ],
-  "last_modified_at": "2021-12-14T14:52:15+00:00",
   "url": "/topics/data-science/tutorials/r-advanced/tutorial.html",
   "topic_name": "data-science",
-  "tutorial_name": "r-advanced"
+  "tutorial_name": "r-advanced",
+  "dir": "topics/data-science/tutorials/r-advanced"
 }

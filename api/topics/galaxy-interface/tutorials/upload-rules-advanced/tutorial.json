@@ -38,7 +38,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -49,8 +49,8 @@
     }
   ],
   "subtopic": "upload",
-  "last_modified_at": "2021-09-28T09:47:26+00:00",
   "url": "/topics/galaxy-interface/tutorials/upload-rules-advanced/tutorial.html",
   "topic_name": "galaxy-interface",
-  "tutorial_name": "upload-rules-advanced"
+  "tutorial_name": "upload-rules-advanced",
+  "dir": "topics/galaxy-interface/tutorials/upload-rules-advanced"
 }

@@ -76,8 +76,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
     }
   ],
-  "last_modified_at": "2021-12-14T14:52:15+00:00",
   "url": "/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html",
   "topic_name": "statistics",
-  "tutorial_name": "intro-to-ml-with-r"
+  "tutorial_name": "intro-to-ml-with-r",
+  "dir": "topics/statistics/tutorials/intro-to-ml-with-r"
 }

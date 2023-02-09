@@ -84,8 +84,8 @@
   "tags": [
     "proteogenomics"
   ],
-  "last_modified_at": "2022-02-11T15:00:30+00:00",
   "url": "/topics/proteomics/tutorials/proteogenomics-dbsearch/tutorial.html",
   "topic_name": "proteomics",
-  "tutorial_name": "proteogenomics-dbsearch"
+  "tutorial_name": "proteogenomics-dbsearch",
+  "dir": "topics/proteomics/tutorials/proteogenomics-dbsearch"
 }

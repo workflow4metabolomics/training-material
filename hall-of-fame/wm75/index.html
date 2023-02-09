@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/wm75/" />
@@ -24,8 +23,8 @@
 <meta name="DC.type" content="text" />
 <meta name="DC.title" content="GTN Contributor: Wolfgang Maier" />
 <meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:00:00 +0000" />
 
-        
         
         
         
@@ -36,8 +35,10 @@
         <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
 
+        
     </head>
     <body data-spy="scroll" data-target="#toc">
+        <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -140,6 +141,7 @@
             <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> Page Metrics
         </a>
 
+        <!-- link to feedback -->
         
             <a class="dropdown-item" href="/training-material/feedback.html" title="Show feedback statistics about this repository">
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
@@ -152,27 +154,14 @@
             </div>
 
             <div id="theme-selector" data-toggle="buttons">
-                <label data-value="default" class="btn btn-secondary">
-                    <input type="radio" name="options" id="default" autocomplete="off"> Default
-                </label>
-                <label data-value="night" class="btn btn-secondary">
-                    <input type="radio" name="options" id="night" autocomplete="off"> Night
-                </label>
-                <label data-value="midnight" class="btn btn-secondary">
-                    <input type="radio" name="options" id="midnight" autocomplete="off"> Midnight
-                </label>
-                <label data-value="rainbow" class="btn btn-secondary">
-                    <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
-                </label>
-                <label data-value="progress" class="btn btn-secondary">
-                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
-                </label>
-                <label data-value="halloween" class="btn btn-secondary">
-                    <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
-                </label>
-                <label data-value="straya" class="btn btn-secondary">
-                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
-                </label>
+                    <button class="btn" data-theme="default">Default</button>
+                    <button class="btn" data-theme="night">Night</button>
+                    <button class="btn" data-theme="midnight">Midnight</button>
+                    <button class="btn" data-theme="rainbow">Rainbow</button>
+                    <button class="btn" data-theme="blm">✊🏿</button>
+                    <button class="btn" data-theme="progress" >🏳️‍🌈</button>
+                    <button class="btn" data-theme="halloween">🎃</button>
+                    <button class="btn" data-theme="straya">🇦🇺</button>
             </div>
 
         </div>
@@ -182,7 +171,6 @@
                 <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
             </div>
 
-            
             <div id="archive-selector">
             
                 <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2022-05-01/hall-of-fame/wm75/" title="Version 2022-05-01">2022-05-01</a>
@@ -242,7 +230,9 @@
       "name": "Galaxy Training Network",
       "url": "https://galaxyproject.org/teach/gtn/"
     }
-  ]
+  ],
+  "identifier": "https://orcid.org/0000-0002-9464-6640",
+  "orcid": "https://orcid.org/0000-0002-9464-6640"
 }
 </script>
 
@@ -252,7 +242,7 @@
 }
 
 </style>
-<section>
+<section class="contributor-wm75">
 	<div class="stats">
 		<div class="row">
 
@@ -261,9 +251,6 @@
 					<img src="https://avatars.githubusercontent.com/wm75" alt="github avatar" >
 				
 
-				<h3>
-					Wolfgang Maier
-				</h3>
                 
 
 				
@@ -285,6 +272,12 @@
 				
 
 				
+				<div class="contact-items">
+					<a title="ORCID" href="https://orcid.org/0000-0002-9464-6640">
+						<i class="fab fa-orcid" aria-hidden="true"></i><span class="visually-hidden">orcid</span> 0000-0002-9464-6640
+					</a>
+				</div>
+				
 
 				
 				<div class="contact-items">
@@ -300,7 +293,12 @@
 			</div>
 
 			<div class="col-md-9">
-				<h1>Contributions</h1>
+				<h1>
+					Wolfgang Maier
+				</h1>
+				
+
+				<h2>Contributions</h2>
 
 				<p class="text-muted">
 					
@@ -309,7 +307,7 @@
 
                 
                 <br><br>
-                <h2> GitHub Activity</h2>
+                <h3> GitHub Activity</h4>
                 <ul>
                   <li><a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3Awm75"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Pull Requests</a> </li>
                   <li><a href="https://github.com/galaxyproject/training-material/commits?author=wm75"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Commits</a></li>
@@ -319,8 +317,25 @@
                 </p>
 
 				
-				<h2>Tutorials</h2>
+				<h3>Tutorials</h3>
 				<ul>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/metagenomics">
+							Metagenomics
+						</a>
+						/
+						<a href="/training-material//topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/tutorial.html">
+						Pathogen detection from (direct Nanopore) sequencing data using Galaxy - Foodborne Edition
+						</a>
+						
+						
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
+
+
+					</li>
 				
 					<li>
 						
@@ -331,6 +346,23 @@
 						/
 						<a href="/training-material//topics/assembly/tutorials/assembly-with-preprocessing/tutorial.html">
 						Unicycler assembly of SARS-CoV-2 genome with preprocessing to remove human genome reads
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/scrna-preprocessing/tutorial.html">
+						Pre-processing of Single-Cell RNA Data
 						</a>
 						
 						
@@ -444,12 +476,29 @@
 					<li>
 						
 						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
+						<a href="/training-material/topics/variant-analysis">
+							Variant Analysis
 						</a>
 						/
-						<a href="/training-material//topics/transcriptomics/tutorials/scrna-preprocessing/tutorial.html">
-						Pre-processing of Single-Cell RNA Data
+						<a href="/training-material//topics/variant-analysis/tutorials/aiv-analysis/tutorial.html">
+						Avian influenza viral strain analysis from gene segment sequencing data
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/variant-analysis">
+							Variant Analysis
+						</a>
+						/
+						<a href="/training-material//topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.html">
+						Somatic Variant Discovery from WES Data Using Control-FREEC
 						</a>
 						
 						
@@ -481,9 +530,56 @@
 				
 
 				
-                <h2>News</h2>
+                <h3>News</h3>
                 <div class="newslist">
                 
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2023/01/23/new-covid19-topic.html"><h3 class="card-title">New GTN Feature Tag-based Topics enables new SARS-CoV-2 topic</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network" loading="lazy">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2023/01/23/new-covid19-topic.html"><h4 class="card-title">New GTN Feature Tag-based Topics enables new SARS-CoV-2 topic</h4></a>-->
+        <div class="text-muted">
+        23 January 2023
+        </div>
+        <div markdown="0">
+
+	<div class="contributors-line">
+		Authors: <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/wm75?s=27" alt="Avatar">Wolfgang Maier</a>
+	</div>
+
+</div>
+
+
+        
+<button class="label label-default tutorial_tag" id="new topic" style="--color-primary: #c6c4ff; --color-darker: #adaaff; --color-dimmed: #b9b7ff;" title="Click to show all tutorials with this tag">new topic</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="--color-primary: #c3c4ff; --color-darker: #a9acff; --color-dimmed: #b6b8ff;" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        The GTN has long struggled with the rigid hierarchy of a single level of classification: topics. All materials had to be organised into a single topic, even when their contents sometimes spanned multiple topics! We added subtopics a while back to help further organise these tutorials, but that still did not solve the issue of needing to collect multiple learn materials in a single location for people to access.
+
+      
+    </p>
+    <a href="/training-material/news/2023/01/23/new-covid19-topic.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
                 
                    
 
@@ -495,26 +591,29 @@
   </div>
  <div class="row no-gutters">
   <div class="col-sm-5">
-   <img class="card-img newscover" src="/training-material/topics/variant-analysis/images/sars-cov-2-variant-discovery/schema.png" alt="Analysis flow in the 'Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data' tutorial. It teaches how to obtain, run and combine workflows appropriately for 4 different types of input data. Image adapted from covid19.galaxyproject.org">
+   <img class="card-img newscover" src="/training-material/topics/variant-analysis/images/sars-cov-2-variant-discovery/schema.png" alt="Analysis flow in the 'Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data' tutorial. It teaches how to obtain, run and combine workflows appropriately for 4 different types of input data. Image adapted from covid19.galaxyproject.org" loading="lazy">
   </div>
   <div class="col-sm-7">
    <div class="card-body">
         <!--<a href="/training-material/news/2021/06/30/tutorial-sars-cov-2-variant-discovery.html"><h4 class="card-title">New Tutorial: Mutation calling, viral genome reconstruction and lineage/clade assignment from SARS-CoV-2 sequencing data</h4></a>-->
+        <div class="text-muted">
+        30 June 2021
+        </div>
         <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: 
+		Authors: <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a><a href="/training-material/hall-of-fame/wm75/" class="contributor-badge contributor-wm75"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/wm75?s=27" alt="Avatar">Wolfgang Maier</a>
 	</div>
 
 </div>
 
 
         
-<button class="label label-default tutorial_tag" id="new tutorial" style="background-color: hsl(46, 80.0%, 85%); color: #333; border: 1px solid hsl(46, 80.0%, 45%)" title="Click to show all tutorials with this tag">new tutorial</button>
+<button class="label label-default tutorial_tag" id="new tutorial" style="--color-primary: #ffbc76; --color-darker: #f5a100; --color-dimmed: #ffad3b;" title="Click to show all tutorials with this tag">new tutorial</button>
 
-<button class="label label-default tutorial_tag" id="variant-analysis" style="background-color: hsl(159, 80.0%, 85%); color: #333; border: 1px solid hsl(159, 80.0%, 45%)" title="Click to show all tutorials with this tag">variant-analysis</button>
+<button class="label label-default tutorial_tag" id="variant-analysis" style="--color-primary: #00e3b2; --color-darker: #00cb9e; --color-dimmed: #00d7a8;" title="Click to show all tutorials with this tag">variant-analysis</button>
 
-<button class="label label-default tutorial_tag" id="covid-19" style="background-color: hsl(294, 80.0%, 85%); color: #333; border: 1px solid hsl(294, 80.0%, 45%)" title="Click to show all tutorials with this tag">covid-19</button>
+<button class="label label-default tutorial_tag" id="covid-19" style="--color-primary: #e9b7ff; --color-darker: #e296ff; --color-dimmed: #e5a7ff;" title="Click to show all tutorials with this tag">covid-19</button>
 
     <hr/>
     <p class="card-text">
@@ -533,9 +632,13 @@
                 
                 </div>
 				
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 
-				<script type="text/javascript">
+<script type="text/javascript">
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+if(isReduced){
+    Chart.defaults.global.animation.duration = 0;
+}
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx2 = document.getElementById('slidesVsTutorials').getContext('2d');
@@ -544,7 +647,15 @@ var topics = [
 
 	
 	
+	"Metagenomics",
+
+	
+	
 	"Assembly",
+
+	
+	
+	"Single Cell",
 
 	
 	
@@ -572,7 +683,11 @@ var topics = [
 
 	
 	
-	"Transcriptomics",
+	"Variant Analysis",
+
+	
+	
+	"Variant Analysis",
 
 	
 	
@@ -601,7 +716,15 @@ var slidesVsTutos = [
 
 	"Tutorials",
 
+	"Tutorials",
 
+	"Tutorials",
+
+	"Tutorials",
+
+
+
+	"News Posts",
 
 	"News Posts",
 
@@ -693,44 +816,42 @@ var chart2 = new Chart(ctx2, {
         The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
         </p>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/886decceb6c0558ba6b920bcebb885554ce262fc">886decceb6c0558ba6b920bcebb885554ce262fc</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/cde85338cb45973694a08404fef5ef059d92f215">cde85338cb45973694a08404fef5ef059d92f215</a></p>
     </div>
 </footer>
 
         
+        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
+        <script type="text/javascript">
+        var snippets=document.querySelectorAll('div.highlight');
+        [].forEach.call(snippets,function(snippet){
+            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        });
+
+        var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
+            target:function(trigger){return trigger.nextElementSibling;
+        }});
+        </script>
+        
+
+        <script type="text/javascript">
+            if(window.location.hostname === "galaxyproject.github.io") {
+                // Redirect
+                var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
+                $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
+
+                window.setTimeout(function(){
+                    window.location.href = redirect;
+                }, 5000)
+
+            }
+        </script>
     </body>
-    <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-    <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
-
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
-    var snippets=document.querySelectorAll('div.highlight');
-    [].forEach.call(snippets,function(snippet){
-        snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
-    });
-
-    var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
-        target:function(trigger){return trigger.nextElementSibling;
-    }});
-    </script>
-    
-
-    <script type="text/javascript">
-        if(window.location.hostname === "galaxyproject.github.io") {
-            // Redirect
-            var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
-            $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
-
-            window.setTimeout(function(){
-                window.location.href = redirect;
-            }, 5000)
-
-        }
-    </script>
 </html>

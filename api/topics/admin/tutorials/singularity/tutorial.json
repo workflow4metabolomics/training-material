@@ -11,6 +11,9 @@
   "contributors": [
     {
       "name": "Torfinn Nome",
+      "email": "torfinn.nome@gmail.com",
+      "twitter": "torfinnnome",
+      "orcid": "0000-0003-1659-132X",
       "joined": "2021-01",
       "elixir_node": "no",
       "id": "torfinnnome",
@@ -31,7 +34,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -57,8 +60,8 @@
       ]
     }
   ],
-  "last_modified_at": "2022-07-21T12:12:46+00:00",
   "url": "/topics/admin/tutorials/singularity/tutorial.html",
   "topic_name": "admin",
-  "tutorial_name": "singularity"
+  "tutorial_name": "singularity",
+  "dir": "topics/admin/tutorials/singularity"
 }

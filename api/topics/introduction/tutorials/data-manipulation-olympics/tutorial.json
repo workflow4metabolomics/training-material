@@ -37,10 +37,10 @@
   },
   "level": "Introductory",
   "subtopic": "next-steps",
-  "last_modified_at": "2022-07-21T10:25:33+00:00",
   "url": "/topics/introduction/tutorials/data-manipulation-olympics/tutorial.html",
   "topic_name": "introduction",
   "tutorial_name": "data-manipulation-olympics",
+  "dir": "topics/introduction/tutorials/data-manipulation-olympics",
   "contributors": [
     {
       "name": "Saskia Hiltemann",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",

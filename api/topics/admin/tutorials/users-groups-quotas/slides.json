@@ -23,6 +23,7 @@
       "twitter": "natefoo",
       "email": "nate@bx.psu.edu",
       "joined": "2017-12",
+      "orcid": "0000-0001-8083-2963",
       "id": "natefoo",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json"
     },
@@ -40,7 +41,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -51,8 +52,8 @@
     }
   ],
   "subtopic": "maintenance",
-  "last_modified_at": "2022-03-14T18:19:44+00:00",
   "url": "/topics/admin/tutorials/users-groups-quotas/slides.html",
   "topic_name": "admin",
-  "tutorial_name": "users-groups-quotas"
+  "tutorial_name": "users-groups-quotas",
+  "dir": "topics/admin/tutorials/users-groups-quotas"
 }

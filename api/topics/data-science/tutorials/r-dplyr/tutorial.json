@@ -33,7 +33,7 @@
   "contributors": [
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -73,8 +73,8 @@
     "jupyter-notebook"
   ],
   "license": "MIT",
-  "last_modified_at": "2021-12-21T10:14:03+00:00",
   "url": "/topics/data-science/tutorials/r-dplyr/tutorial.html",
   "topic_name": "data-science",
-  "tutorial_name": "r-dplyr"
+  "tutorial_name": "r-dplyr",
+  "dir": "topics/data-science/tutorials/r-dplyr"
 }

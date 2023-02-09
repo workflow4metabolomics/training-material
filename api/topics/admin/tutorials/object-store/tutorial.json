@@ -20,12 +20,13 @@
       "twitter": "natefoo",
       "email": "nate@bx.psu.edu",
       "joined": "2017-12",
+      "orcid": "0000-0001-8083-2963",
       "id": "natefoo",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json"
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -38,6 +39,7 @@
       "name": "Gianmauro Cuccuru",
       "joined": "2019-03",
       "elixir_node": "de",
+      "orcid": "0000-0002-5335-545X",
       "id": "gmauro",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/gmauro.json"
     }
@@ -57,8 +59,8 @@
       ]
     }
   ],
-  "last_modified_at": "2022-06-14T12:04:29+00:00",
   "url": "/topics/admin/tutorials/object-store/tutorial.html",
   "topic_name": "admin",
-  "tutorial_name": "object-store"
+  "tutorial_name": "object-store",
+  "dir": "topics/admin/tutorials/object-store"
 }

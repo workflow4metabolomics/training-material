@@ -39,7 +39,7 @@
   "contributors": [
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -75,8 +75,8 @@
     "SciWMS": "Scientific Workflow Management System",
     "DAG": "Directed Acyclic Graph"
   },
-  "last_modified_at": "2021-12-14T14:52:15+00:00",
   "url": "/topics/data-science/tutorials/snakemake/tutorial.html",
   "topic_name": "data-science",
-  "tutorial_name": "snakemake"
+  "tutorial_name": "snakemake",
+  "dir": "topics/data-science/tutorials/snakemake"
 }

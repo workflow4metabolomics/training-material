@@ -16,13 +16,14 @@
       "twitter": "natefoo",
       "email": "nate@bx.psu.edu",
       "joined": "2017-12",
+      "orcid": "0000-0001-8083-2963",
       "id": "natefoo",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json"
     }
   ],
   "subtopic": "maintenance",
-  "last_modified_at": "2022-07-20T14:07:14+00:00",
   "url": "/topics/admin/tutorials/troubleshooting/slides.html",
   "topic_name": "admin",
-  "tutorial_name": "troubleshooting"
+  "tutorial_name": "troubleshooting",
+  "dir": "topics/admin/tutorials/troubleshooting"
 }

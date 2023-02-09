@@ -47,7 +47,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -57,8 +57,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
     }
   ],
-  "last_modified_at": "2021-03-23T18:12:58+00:00",
   "url": "/topics/assembly/tutorials/ecoli_comparison/tutorial.html",
   "topic_name": "assembly",
-  "tutorial_name": "ecoli_comparison"
+  "tutorial_name": "ecoli_comparison",
+  "dir": "topics/assembly/tutorials/ecoli_comparison"
 }

@@ -48,14 +48,15 @@
   "contributors": [
     {
       "name": "Wolfgang Maier",
+      "orcid": "0000-0002-9464-6640",
       "joined": "2017-09",
       "elixir_node": "de",
       "id": "wm75",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/wm75.json"
     }
   ],
-  "last_modified_at": "2021-03-12T17:24:55+00:00",
   "url": "/topics/assembly/tutorials/assembly-with-preprocessing/tutorial.html",
   "topic_name": "assembly",
-  "tutorial_name": "assembly-with-preprocessing"
+  "tutorial_name": "assembly-with-preprocessing",
+  "dir": "topics/assembly/tutorials/assembly-with-preprocessing"
 }

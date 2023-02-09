@@ -51,8 +51,11 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/thomaswollmann.json"
     }
   ],
-  "last_modified_at": "2021-03-23T18:12:58+00:00",
+  "tags": [
+    "HeLa"
+  ],
   "url": "/topics/imaging/tutorials/hela-screen-analysis/tutorial.html",
   "topic_name": "imaging",
-  "tutorial_name": "hela-screen-analysis"
+  "tutorial_name": "hela-screen-analysis",
+  "dir": "topics/imaging/tutorials/hela-screen-analysis"
 }

@@ -34,7 +34,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -55,10 +55,13 @@
     },
     {
       "name": "Wendi Bacon",
-      "email": "wendi@open.ac.uk",
+      "email": "wendi.bacon@open.ac.uk",
       "twitter": "WendiBacon1",
+      "gitter": "nomadscientist",
       "joined": "2020-03",
       "elixir_node": "uk",
+      "orcid": "0000-0002-8170-8806",
+      "bio": "Lecturer at The Open University",
       "id": "nomadscientist",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"
     }
@@ -73,8 +76,8 @@
     "lang": "es-US",
     "neural": true
   },
-  "last_modified_at": "2021-12-07T13:05:42+00:00",
   "url": "/topics/introduction/tutorials/galaxy-intro-short/slides_CAT_ES.html",
   "topic_name": "introduction",
-  "tutorial_name": "galaxy-intro-short"
+  "tutorial_name": "galaxy-intro-short",
+  "dir": "topics/introduction/tutorials/galaxy-intro-short"
 }

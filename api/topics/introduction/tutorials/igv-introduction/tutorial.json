@@ -1,6 +1,7 @@
 {
   "layout": "tutorial_hands_on",
   "title": "IGV Introduction",
+  "enable": false,
   "zenodo_link": "",
   "questions": null,
   "objectives": null,
@@ -30,8 +31,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/pajanne.json"
     }
   ],
-  "last_modified_at": "2022-06-29T09:11:04+00:00",
   "url": "/topics/introduction/tutorials/igv-introduction/tutorial.html",
   "topic_name": "introduction",
-  "tutorial_name": "igv-introduction"
+  "tutorial_name": "igv-introduction",
+  "dir": "topics/introduction/tutorials/igv-introduction"
 }

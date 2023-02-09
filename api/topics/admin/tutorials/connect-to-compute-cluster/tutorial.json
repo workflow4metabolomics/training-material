@@ -29,6 +29,7 @@
       "twitter": "natefoo",
       "email": "nate@bx.psu.edu",
       "joined": "2017-12",
+      "orcid": "0000-0001-8083-2963",
       "id": "natefoo",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json"
     },
@@ -46,7 +47,7 @@
     },
     {
       "name": "Helena Rasche",
-      "email": "helena.rasche@gmail.com",
+      "email": "hexylena@galaxians.org",
       "orcid": "0000-0001-9760-8992",
       "maintainer_contact": "gitter",
       "gitter": "hexylena",
@@ -81,8 +82,8 @@
       ]
     }
   ],
-  "last_modified_at": "2022-07-21T12:12:46+00:00",
   "url": "/topics/admin/tutorials/connect-to-compute-cluster/tutorial.html",
   "topic_name": "admin",
-  "tutorial_name": "connect-to-compute-cluster"
+  "tutorial_name": "connect-to-compute-cluster",
+  "dir": "topics/admin/tutorials/connect-to-compute-cluster"
 }

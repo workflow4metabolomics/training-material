@@ -40,8 +40,8 @@
       ]
     }
   ],
-  "last_modified_at": "2021-06-14T09:32:27+00:00",
   "url": "/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html",
   "topic_name": "transcriptomics",
-  "tutorial_name": "rna-seq-viz-with-volcanoplot"
+  "tutorial_name": "rna-seq-viz-with-volcanoplot",
+  "dir": "topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot"
 }
