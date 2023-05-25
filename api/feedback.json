@@ -24308,5 +24308,170 @@
     "topic": "Assembly",
     "month": "2023-05",
     "date": "2023-05-23"
+  },
+  {
+    "": "3061",
+    "note": "5",
+    "pro": "included all technologies ireads (llumina, ONT etc), good explanations",
+    "con": "no idea",
+    "anonymous": null,
+    "tutorial": "Quality Control",
+    "topic": "Sequence analysis",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3062",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Mapping",
+    "topic": "Sequence analysis",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3063",
+    "note": "5",
+    "pro": "Good overview of the tools used and why they were used. ",
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Pathogen detection from (direct Nanopore) sequencing data using Galaxy - Foodborne Edition",
+    "topic": "Metagenomics",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3064",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Quality Control",
+    "topic": "Sequence analysis",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3065",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Reference-based RNA-Seq data analysis",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3066",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Mapping",
+    "topic": "Sequence analysis",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3067",
+    "note": "5",
+    "pro": "It's very intuitive, with very good explanation. Awesome!",
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Reference-based RNA-Seq data analysis",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3068",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Chloroplast genome assembly",
+    "topic": "Assembly",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3069",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Large genome assembly and polishing",
+    "topic": "Assembly",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3070",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Visualization of RNA-Seq results with Volcano Plot",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3071",
+    "note": "5",
+    "pro": "Everything!",
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Introduction to Genomics and Galaxy",
+    "topic": "Introduction to Galaxy Analyses",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3072",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Creating, Editing and Importing Galaxy Workflows",
+    "topic": "Using Galaxy and Managing your Data",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3073",
+    "note": "5",
+    "pro": "The explanation and guidance were great.",
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Reference-based RNA-Seq data analysis",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3074",
+    "note": "5",
+    "pro": "All the steps and the clarifications",
+    "con": null,
+    "anonymous": null,
+    "tutorial": "R basics in Galaxy",
+    "topic": "Foundations of Data Science",
+    "month": "2023-05",
+    "date": "2023-05-24"
+  },
+  {
+    "": "3075",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "De novo transcriptome reconstruction with RNA-Seq",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-24"
   }
 ]

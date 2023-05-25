@@ -2209,3 +2209,18 @@
 3058,5,,,,Pre-processing of 10X Single-Cell RNA Datasets,Single Cell,2023-05,2023-05-23
 3059,4,,,,Introduction to Genomics and Galaxy,Introduction to Galaxy Analyses,2023-05,2023-05-23
 3060,5,,,,Chloroplast genome assembly,Assembly,2023-05,2023-05-23
+3061,5,"included all technologies ireads (llumina, ONT etc), good explanations",no idea,,Quality Control,Sequence analysis,2023-05,2023-05-24
+3062,5,,,,Mapping,Sequence analysis,2023-05,2023-05-24
+3063,5,Good overview of the tools used and why they were used. ,,,Pathogen detection from (direct Nanopore) sequencing data using Galaxy - Foodborne Edition,Metagenomics,2023-05,2023-05-24
+3064,5,,,,Quality Control,Sequence analysis,2023-05,2023-05-24
+3065,5,,,,Reference-based RNA-Seq data analysis,Transcriptomics,2023-05,2023-05-24
+3066,5,,,,Mapping,Sequence analysis,2023-05,2023-05-24
+3067,5,"It's very intuitive, with very good explanation. Awesome!",,,Reference-based RNA-Seq data analysis,Transcriptomics,2023-05,2023-05-24
+3068,5,,,,Chloroplast genome assembly,Assembly,2023-05,2023-05-24
+3069,5,,,,Large genome assembly and polishing,Assembly,2023-05,2023-05-24
+3070,5,,,,Visualization of RNA-Seq results with Volcano Plot,Transcriptomics,2023-05,2023-05-24
+3071,5,Everything!,,,Introduction to Genomics and Galaxy,Introduction to Galaxy Analyses,2023-05,2023-05-24
+3072,5,,,,"Creating, Editing and Importing Galaxy Workflows",Using Galaxy and Managing your Data,2023-05,2023-05-24
+3073,5,The explanation and guidance were great.,,,Reference-based RNA-Seq data analysis,Transcriptomics,2023-05,2023-05-24
+3074,5,All the steps and the clarifications,,,R basics in Galaxy,Foundations of Data Science,2023-05,2023-05-24
+3075,5,,,,De novo transcriptome reconstruction with RNA-Seq,Transcriptomics,2023-05,2023-05-24
