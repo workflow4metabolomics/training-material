@@ -24539,5 +24539,148 @@
     "topic": "Statistics and machine learning",
     "month": "2023-05",
     "date": "2023-05-25"
+  },
+  {
+    "": "3082",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Large genome assembly and polishing",
+    "topic": "Assembly",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3083",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Visualization of RNA-Seq results with Volcano Plot",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3084",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "M. tuberculosis Variant Analysis",
+    "topic": "Variant Analysis",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3085",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Genome annotation with Prokka",
+    "topic": "Genome Annotation",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3086",
+    "note": "4",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Visualization of RNA-Seq results with Volcano Plot",
+    "topic": "Transcriptomics",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3087",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Masking repeats with RepeatMasker",
+    "topic": "Genome Annotation",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3088",
+    "note": "5",
+    "pro": "A really comprehensive breakdown of how to do this analysis. All the steps of the analysis were well laid out in a good amount of detail that if you followed closely you should be equipped with the tools to run the same analysis yourself.  The instructor was excellent and covered a lot of material, maintaining good clarity throughout. ",
+    "con": "I don't think anything could be improved upon. It is a long tutorial but the length of the tutorial is necessary to cover the content in a thorough way, as was done. Thank you.",
+    "anonymous": null,
+    "tutorial": "16S Microbial Analysis with mothur (short)",
+    "topic": "Metagenomics",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3089",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "ATAC-Seq data analysis",
+    "topic": "Epigenetics",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3090",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Visualisation with Circos",
+    "topic": "Visualisation",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3091",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "CRISPR screen analysis",
+    "topic": "Genome Annotation",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3092",
+    "note": "5",
+    "pro": "I liked the simplicity of following the methodology rather than having to focus on the coding",
+    "con": "I got a bit lost during the hyperparameterization section. It would have helped to have more context on how it leads on from the previous machine learning algorithms and whether it is applied to these or whether it is a completely different approach",
+    "anonymous": null,
+    "tutorial": "Classification in Machine Learning",
+    "topic": "Statistics and machine learning",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3093",
+    "note": "5",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Quality Control",
+    "topic": "Sequence analysis",
+    "month": "2023-05",
+    "date": "2023-05-26"
+  },
+  {
+    "": "3094",
+    "note": "4",
+    "pro": null,
+    "con": null,
+    "anonymous": null,
+    "tutorial": "Rule Based Uploader",
+    "topic": "Using Galaxy and Managing your Data",
+    "month": "2023-05",
+    "date": "2023-05-26"
   }
 ]
