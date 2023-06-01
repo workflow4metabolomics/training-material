@@ -8,32 +8,56 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/climate/" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/climate/">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2020-03-05 11:06:40 +0000" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2020-03-05 11:06:40 +0000">
 
         
         
         
         
-        <meta name="description" content="Learn to analyze climate data through Galaxy." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: Climate" />
-        <meta property="og:description" content="Learn to analyze climate data through Galaxy." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Learn to analyze climate data through Galaxy.">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: Climate">
+        <meta property="og:description" content="Learn to analyze climate data through Galaxy.">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -44,7 +68,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,38 +87,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -134,8 +132,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/climate/" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/climate/index.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -215,6 +212,7 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
 
@@ -234,7 +232,8 @@
 
 <section class="tutorials-list climate topic-type-use">
     <h1>Climate</h1>
-    <p>Learn to analyze climate data through Galaxy.</p>
+    <p><p>Learn to analyze climate data through Galaxy.</p>
+</p>
     <i>You can view the tutorial materials in different languages by clicking the dropdown icon next to the slides (<i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span>) and tutorial (<i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>) buttons below. </i>
 
     
@@ -276,719 +275,12 @@
       
 
       
-      <th title="List of public Galaxies on which this tutorial can be performed. ">Galaxy servers</th>
-      
     </tr>
   </thead>
   <tbody class="list">
 
   
   
-        <!-- MAT: climate/pangeo -->
-      
-
-        <tr>
-          <td class="tutorial_title">
-            
-            
-            <a href="/training-material/topics/climate/tutorials/pangeo/tutorial.html">
-                Pangeo ecosystem 101 for everyone - Introduction to Xarray Galaxy Tools
-            </a>
-            
-
-
-            <div class="extra">
-            
-            
-              
-              <a href="/training-material/search?query=pangeo" class="label label-default tutorial_tag" id="pangeo" style="--color-primary: #00f8ab; --color-darker: #00dd97; --color-dimmed: #00eaa1;" title="Click to show all tutorials tagged pangeo">pangeo</a>
-              
-            
-            </div>
-
-            <div class="duplicate">
-              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
-              
-
-
-    <span class="btn-group">
-	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides.html" title="Slides">
-            <i class="fab fa-slideshare" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-
-	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">
-		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
-	</a>
-    </ul>
-    
-    </span>
-
-<!-- video slides -->
-
-<span class="btn-group">
-  <!-- add video button -->
-  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo/slides" title="Video Slides (text-to-speech)">
-    <i class="far fa-play-circle" aria-hidden="true"></i>
-  </a>
-
-
-  <!-- add dropdown with links to different languages for the video-->
-  
-
-
-
-</span>
-</span>
-
-              
-    <span class="btn-group">
-        <a href="/training-material/topics/climate/tutorials/pangeo/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-        </ul>
-    </span>
-
-
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <li class="btn btn-default supporting_material">
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
-        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
-    </a>
-    <ul class="dropdown-menu">
-        
-        
-
-        
-        
-        
-
-        <li>
-            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo/tutorial" title="View GTN Video Library for this Tutorial">
-                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
-            </a>
-        </li>
-        
-        
-        
-        
-    </ul>
-   </li>
-   
-
-
-              
-                  
-
-
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
-
-                  
-
-
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/workflows/" title="Workflows" alt="Pangeo ecosystem 101 for everyone - Introduction to Xarray Galaxy Tools workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
-
-              
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
-
-              
-              </div>
-            </div>
-          </td>
-
-          <td> 
-
-
-    <span class="btn-group">
-	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides.html" title="Slides">
-            <i class="fab fa-slideshare" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-
-	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">
-		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
-	</a>
-    </ul>
-    
-    </span>
-
-<!-- video slides -->
-
-<span class="btn-group">
-  <!-- add video button -->
-  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo/slides" title="Video Slides (text-to-speech)">
-    <i class="far fa-play-circle" aria-hidden="true"></i>
-  </a>
-
-
-  <!-- add dropdown with links to different languages for the video-->
-  
-
-
-
-</span>
-</span>
- </td>
-          <td> 
-    <span class="btn-group">
-        <a href="/training-material/topics/climate/tutorials/pangeo/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-        </ul>
-    </span>
-
- </td>
-          <td> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <li class="btn btn-default supporting_material">
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
-        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
-    </a>
-    <ul class="dropdown-menu">
-        
-        
-
-        
-        
-        
-
-        <li>
-            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo/tutorial" title="View GTN Video Library for this Tutorial">
-                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
-            </a>
-        </li>
-        
-        
-        
-        
-    </ul>
-   </li>
-   
- </td>
-
-          
-          <td> 
-
-
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
- </td>
-          <td> 
-
-
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/workflows/" title="Workflows" alt="Pangeo ecosystem 101 for everyone - Introduction to Xarray Galaxy Tools workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
- </td>
-          
-
-          
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
- </td>
-          
-         </tr>
-       
-    
         <!-- MAT: climate/fates -->
       
 
@@ -1006,7 +298,7 @@
             
             
               
-              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" id="interactive-tools" style="--color-primary: #ffd0c1; --color-darker: #ffae90; --color-dimmed: #ffbfaa;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
+              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffa988; --color-darker: #ff8a46; --color-dimmed: #ff9a6c;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
               
             
             </div>
@@ -1016,9 +308,10 @@
               
 
 
-    <span class="btn-group">
+<div class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/fates/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
+</div>
+    <div class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
@@ -1029,58 +322,68 @@
         
         
 
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
+		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
+		</li>
 
+	<li class="dropdown-item">
 	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
+	</li>
     </ul>
-    
-    </span>
+</div>
+
 
 <!-- video slides -->
 
-<span class="btn-group">
+<div class="btn-group">
   <!-- add video button -->
   <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/fates/slides" title="Video Slides (text-to-speech)">
     <i class="far fa-play-circle" aria-hidden="true"></i>
   </a>
 
-
-  <!-- add dropdown with links to different languages for the video-->
   
 
+</div>
 
-
-</span>
-</span>
 
               
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/climate/tutorials/fates/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -1090,33 +393,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -1134,7 +449,10 @@
 
 
   
-  <li class="btn btn-default supporting_material">
+<!-- GTN Video Library  -->
+  
+<div class="btn-group">
+  
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
         <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
     </a>
@@ -1166,7 +484,9 @@
         
         
     </ul>
-   </li>
+  
+</div>
+  
    
 
 
@@ -1182,186 +502,12 @@
                   
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/workflows/" title="Workflows" alt="Functionally Assembled Terrestrial Ecosystem Simulator (FATES) workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/workflows/" title="Functionally Assembled Terrestrial Ecosystem Simulator (FATES) workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
 
               
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
 
               
               </div>
@@ -1371,9 +517,10 @@
           <td> 
 
 
-    <span class="btn-group">
+<div class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/fates/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
+</div>
+    <div class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
@@ -1384,58 +531,68 @@
         
         
 
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
+		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
+		</li>
 
+	<li class="dropdown-item">
 	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
+	</li>
     </ul>
-    
-    </span>
+</div>
+
 
 <!-- video slides -->
 
-<span class="btn-group">
+<div class="btn-group">
   <!-- add video button -->
   <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/fates/slides" title="Video Slides (text-to-speech)">
     <i class="far fa-play-circle" aria-hidden="true"></i>
   </a>
 
-
-  <!-- add dropdown with links to different languages for the video-->
   
 
+</div>
 
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/climate/tutorials/fates/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -1445,33 +602,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -1489,7 +658,10 @@
 
 
   
-  <li class="btn btn-default supporting_material">
+<!-- GTN Video Library  -->
+  
+<div class="btn-group">
+  
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
         <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
     </a>
@@ -1521,7 +693,9 @@
         
         
     </ul>
-   </li>
+  
+</div>
+  
    
  </td>
 
@@ -1537,7 +711,7 @@
           <td> 
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/workflows/" title="Workflows" alt="Functionally Assembled Terrestrial Ecosystem Simulator (FATES) workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/fates/workflows/" title="Functionally Assembled Terrestrial Ecosystem Simulator (FATES) workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
@@ -1545,192 +719,18 @@
           
 
           
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
- </td>
-          
          </tr>
        
     
-        <!-- MAT: climate/pangeo-notebook -->
+        <!-- MAT: climate/fates-jupyterlab -->
       
 
         <tr>
           <td class="tutorial_title">
             
             
-            <a href="/training-material/topics/climate/tutorials/pangeo-notebook/tutorial.html">
-                Pangeo Notebook in Galaxy - Introduction to Xarray
+            <a href="/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html">
+                Functionally Assembled Terrestrial Ecosystem Simulator (FATES) with Galaxy Climate JupyterLab
             </a>
             
 
@@ -1739,11 +739,7 @@
             
             
               
-              <a href="/training-material/search?query=pangeo" class="label label-default tutorial_tag" id="pangeo" style="--color-primary: #00f8ab; --color-darker: #00dd97; --color-dimmed: #00eaa1;" title="Click to show all tutorials tagged pangeo">pangeo</a>
-              
-              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" id="interactive-tools" style="--color-primary: #ffd0c1; --color-darker: #ffae90; --color-dimmed: #ffbfaa;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
-              
-              <a href="/training-material/search?query=jupyter-notebook" class="label label-default tutorial_tag" id="jupyter-notebook" style="--color-primary: #50eeff; --color-darker: #00d6e7; --color-dimmed: #00e3f5;" title="Click to show all tutorials tagged jupyter-notebook">jupyter-notebook</a>
+              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffa988; --color-darker: #ff8a46; --color-dimmed: #ff9a6c;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
               
             
             </div>
@@ -1753,72 +749,13 @@
               
 
 
-    <span class="btn-group">
-	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides.html" title="Slides">
-            <i class="fab fa-slideshare" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-
-	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">
-		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
-	</a>
-    </ul>
-    
-    </span>
 
 <!-- video slides -->
 
-<span class="btn-group">
-  <!-- add video button -->
-  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo-notebook/slides" title="Video Slides (text-to-speech)">
-    <i class="far fa-play-circle" aria-hidden="true"></i>
-  </a>
-
-
-  <!-- add dropdown with links to different languages for the video-->
-  
-
-
-
-</span>
-</span>
 
               
-    <span class="btn-group">
-        <a href="/training-material/topics/climate/tutorials/pangeo-notebook/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+    <div class="btn-group">
+        <a href="/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
         <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
@@ -1827,33 +764,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -1871,37 +820,13 @@
 
 
   
-  <li class="btn btn-default supporting_material">
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
-        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
-    </a>
-    <ul class="dropdown-menu">
-        
-        
-
-        
-        
-        
-
-        <li>
-            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo-notebook/tutorial" title="View GTN Video Library for this Tutorial">
-                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
-            </a>
-        </li>
-        
-        
-        
-        
-    </ul>
-   </li>
-   
 
 
               
                   
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.4108341">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -1909,386 +834,8 @@
                   
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/workflows/" title="Workflows" alt="Pangeo Notebook in Galaxy - Introduction to Xarray workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
 
               
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-        <a class="dropdown-item" href="http://aspendb.uga.edu:8085/" title="AGEseq @ AspenDB">
-            AGEseq @ AspenDB
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://motherbox.chemeng.ntua.gr/anastasia_dev/" title="ANASTASIA">
-            ANASTASIA
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://apostl.moffitt.org/" title="APOSTL">
-            APOSTL
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://mem.rcees.ac.cn:8083/" title="ARGA">
-            ARGA
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://smile.hku.hk/SARGs" title="ARGs-OAP">
-            ARGs-OAP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://bf2i-galaxy.insa-lyon.fr:8080/" title="BF2I-MAP">
-            BF2I-MAP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://galaxy.ugent.be/" title="BioBix">
-            BioBix
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://143.169.238.104/galaxy/" title="Biomina">
-            Biomina
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://iris.angers.inra.fr/galaxypub-cfbp" title="CIRM-CFBP">
-            CIRM-CFBP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
-            CLIP-Explorer
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://cpt.tamu.edu/galaxy-public/" title="Center for Phage Technology (CPT)">
-            Center for Phage Technology (CPT)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://vm-chemflow-francegrille.eu/" title="ChemFlow">
-            ChemFlow
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://cheminformatics.usegalaxy.eu/" title="ChemicalToolbox">
-            ChemicalToolbox
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://hyperbrowser.uio.no/coloc-stats" title="Coloc-stats">
-            Coloc-stats
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://corgat.cloud.ba.infn.it/galaxy" title="CorGAT">
-            CorGAT
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://cropgalaxy.excellenceinbreeding.org/" title="CropGalaxy">
-            CropGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://dintor.eurac.edu/" title="Dintor">
-            Dintor
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://www.freebioinfo.org/" title="FreeBioinfo">
-            FreeBioinfo
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://igg.cloud.ba.infn.it/galaxy" title="GASLINI">
-            GASLINI
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://gio.sbcs.qmul.ac.uk/" title="Galaxy Integrated Omics (GIO)">
-            Galaxy Integrated Omics (GIO)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.mesocentre.uca.fr" title="Galaxy@AuBi">
-            Galaxy@AuBi
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.pasteur.fr/" title="Galaxy@Pasteur">
-            Galaxy@Pasteur
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxytrakr.org/" title="GalaxyTrakr">
-            GalaxyTrakr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://hyperbrowser.uio.no/hb/" title="Genomic Hyperbrowser">
-            Genomic Hyperbrowser
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://gigagalaxy.net/" title="GigaGalaxy">
-            GigaGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://hicexplorer.usegalaxy.eu" title="HiCExplorer">
-            HiCExplorer
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
-            Human Cell Atlas
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.hyphy.org/" title="HyPhy HIV NGS Tools">
-            HyPhy HIV NGS Tools
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://mem.rcees.ac.cn:8081/" title="IDENAP">
-            IDENAP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://www.immportgalaxy.org/" title="ImmPort Galaxy">
-            ImmPort Galaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://galaxy.interactomix.com/" title="InteractoMIX">
-            InteractoMIX
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ml.usegalaxy.eu/" title="Machine Learning Workbench">
-            Machine Learning Workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://metabolomics.usegalaxy.eu/" title="Metabolomics">
-            Metabolomics
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
-            Metagenomics
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://mapping-by-sequencing.vm.uni-freiburg.de:8080/" title="MiModD NacreousMap">
-            MiModD NacreousMap
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://nanopore.usegalaxy.eu/" title="NanoGalaxy">
-            NanoGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://palfinder.ls.manchester.ac.uk/" title="Palfinder">
-            Palfinder
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://pepsimili.e-nios.com:8080/" title="PepSimili">
-            PepSimili
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.bio.di.uminho.pt/" title="PhagePromotor">
-            PhagePromotor
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://plants.usegalaxy.eu/" title="Plant Anaylsis Workbench">
-            Plant Anaylsis Workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://protologger.de/" title="Protologger">
-            Protologger
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://ribogalaxy.ucc.ie/" title="RiboGalaxy">
-            RiboGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://singlecell.usegalaxy.eu/" title="Single Cell Omics workbench">
-            Single Cell Omics workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://galaxy.bio.ku.dk/" title="Vinther Lab">
-            Vinther Lab
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://viralvariant.anses.fr/" title="Viral Variant Visualizer (VVV)">
-            Viral Variant Visualizer (VVV)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://virology.usegalaxy.eu/" title="Virology">
-            Virology
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://covid19.usegalaxy.fr/" title="covid19.UseGalaxy.fr">
-            covid19.UseGalaxy.fr
-        </a>
-        
-    
-    </ul>
-
-
 
               
               </div>
@@ -2298,72 +845,13 @@
           <td> 
 
 
-    <span class="btn-group">
-	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides.html" title="Slides">
-            <i class="fab fa-slideshare" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-
-	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">
-		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
-	</a>
-    </ul>
-    
-    </span>
 
 <!-- video slides -->
 
-<span class="btn-group">
-  <!-- add video button -->
-  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo-notebook/slides" title="Video Slides (text-to-speech)">
-    <i class="far fa-play-circle" aria-hidden="true"></i>
-  </a>
-
-
-  <!-- add dropdown with links to different languages for the video-->
-  
-
-
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
-        <a href="/training-material/topics/climate/tutorials/pangeo-notebook/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+    <div class="btn-group">
+        <a href="/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
         <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
@@ -2372,33 +860,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -2416,37 +916,13 @@
 
 
   
-  <li class="btn btn-default supporting_material">
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
-        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
-    </a>
-    <ul class="dropdown-menu">
-        
-        
-
-        
-        
-        
-
-        <li>
-            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo-notebook/tutorial" title="View GTN Video Library for this Tutorial">
-                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
-            </a>
-        </li>
-        
-        
-        
-        
-    </ul>
-   </li>
-   
  </td>
 
           
           <td> 
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.4108341">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -2454,387 +930,9 @@
           <td> 
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/workflows/" title="Workflows" alt="Pangeo Notebook in Galaxy - Introduction to Xarray workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
  </td>
           
 
-          
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-        <a class="dropdown-item" href="http://aspendb.uga.edu:8085/" title="AGEseq @ AspenDB">
-            AGEseq @ AspenDB
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://motherbox.chemeng.ntua.gr/anastasia_dev/" title="ANASTASIA">
-            ANASTASIA
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://apostl.moffitt.org/" title="APOSTL">
-            APOSTL
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://mem.rcees.ac.cn:8083/" title="ARGA">
-            ARGA
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://smile.hku.hk/SARGs" title="ARGs-OAP">
-            ARGs-OAP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://bf2i-galaxy.insa-lyon.fr:8080/" title="BF2I-MAP">
-            BF2I-MAP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://galaxy.ugent.be/" title="BioBix">
-            BioBix
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://143.169.238.104/galaxy/" title="Biomina">
-            Biomina
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://iris.angers.inra.fr/galaxypub-cfbp" title="CIRM-CFBP">
-            CIRM-CFBP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
-            CLIP-Explorer
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://cpt.tamu.edu/galaxy-public/" title="Center for Phage Technology (CPT)">
-            Center for Phage Technology (CPT)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://vm-chemflow-francegrille.eu/" title="ChemFlow">
-            ChemFlow
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://cheminformatics.usegalaxy.eu/" title="ChemicalToolbox">
-            ChemicalToolbox
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://hyperbrowser.uio.no/coloc-stats" title="Coloc-stats">
-            Coloc-stats
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://corgat.cloud.ba.infn.it/galaxy" title="CorGAT">
-            CorGAT
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://cropgalaxy.excellenceinbreeding.org/" title="CropGalaxy">
-            CropGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://dintor.eurac.edu/" title="Dintor">
-            Dintor
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://www.freebioinfo.org/" title="FreeBioinfo">
-            FreeBioinfo
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://igg.cloud.ba.infn.it/galaxy" title="GASLINI">
-            GASLINI
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://gio.sbcs.qmul.ac.uk/" title="Galaxy Integrated Omics (GIO)">
-            Galaxy Integrated Omics (GIO)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.mesocentre.uca.fr" title="Galaxy@AuBi">
-            Galaxy@AuBi
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.pasteur.fr/" title="Galaxy@Pasteur">
-            Galaxy@Pasteur
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxytrakr.org/" title="GalaxyTrakr">
-            GalaxyTrakr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://hyperbrowser.uio.no/hb/" title="Genomic Hyperbrowser">
-            Genomic Hyperbrowser
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://gigagalaxy.net/" title="GigaGalaxy">
-            GigaGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://hicexplorer.usegalaxy.eu" title="HiCExplorer">
-            HiCExplorer
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
-            Human Cell Atlas
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.hyphy.org/" title="HyPhy HIV NGS Tools">
-            HyPhy HIV NGS Tools
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://mem.rcees.ac.cn:8081/" title="IDENAP">
-            IDENAP
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://www.immportgalaxy.org/" title="ImmPort Galaxy">
-            ImmPort Galaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://galaxy.interactomix.com/" title="InteractoMIX">
-            InteractoMIX
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://ml.usegalaxy.eu/" title="Machine Learning Workbench">
-            Machine Learning Workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://metabolomics.usegalaxy.eu/" title="Metabolomics">
-            Metabolomics
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
-            Metagenomics
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://mapping-by-sequencing.vm.uni-freiburg.de:8080/" title="MiModD NacreousMap">
-            MiModD NacreousMap
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://nanopore.usegalaxy.eu/" title="NanoGalaxy">
-            NanoGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://palfinder.ls.manchester.ac.uk/" title="Palfinder">
-            Palfinder
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://pepsimili.e-nios.com:8080/" title="PepSimili">
-            PepSimili
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.bio.di.uminho.pt/" title="PhagePromotor">
-            PhagePromotor
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://plants.usegalaxy.eu/" title="Plant Anaylsis Workbench">
-            Plant Anaylsis Workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://protologger.de/" title="Protologger">
-            Protologger
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://ribogalaxy.ucc.ie/" title="RiboGalaxy">
-            RiboGalaxy
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://singlecell.usegalaxy.eu/" title="Single Cell Omics workbench">
-            Single Cell Omics workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://galaxy.bio.ku.dk/" title="Vinther Lab">
-            Vinther Lab
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://viralvariant.anses.fr/" title="Viral Variant Visualizer (VVV)">
-            Viral Variant Visualizer (VVV)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://virology.usegalaxy.eu/" title="Virology">
-            Virology
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://covid19.usegalaxy.fr/" title="covid19.UseGalaxy.fr">
-            covid19.UseGalaxy.fr
-        </a>
-        
-    
-    </ul>
-
-
- </td>
           
          </tr>
        
@@ -2862,16 +960,12 @@
               
 
 
-    </span>
 
 <!-- video slides -->
 
 
-</span>
-</span>
-
               
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/climate/tutorials/climate-101/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -2881,33 +975,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -2931,7 +1037,7 @@
                   
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.3776499">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3776500">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -2939,178 +1045,12 @@
                   
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/climate-101/workflows/" title="Workflows" alt="Getting your hands-on climate data workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/climate-101/workflows/" title="Getting your hands-on climate data workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
 
               
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
 
               
               </div>
@@ -3120,16 +1060,12 @@
           <td> 
 
 
-    </span>
 
 <!-- video slides -->
 
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/climate/tutorials/climate-101/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -3139,33 +1075,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fclimate-101%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -3189,7 +1137,7 @@
           <td> 
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.3776499">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3776500">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -3197,179 +1145,13 @@
           <td> 
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/climate-101/workflows/" title="Workflows" alt="Getting your hands-on climate data workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/climate-101/workflows/" title="Getting your hands-on climate data workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
  </td>
           
 
-          
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
-            Climate Science Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
-            Galaxy for Ecology
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
- </td>
           
          </tr>
        
@@ -3397,9 +1179,10 @@
               
 
 
-    <span class="btn-group">
+<div class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
+</div>
+    <div class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/introduction/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
@@ -3410,55 +1193,65 @@
         
         
 
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
+		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
+		</li>
 
+	<li class="dropdown-item">
 	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
+	</li>
     </ul>
-    
-    </span>
+</div>
+
 
 <!-- video slides -->
 
-<span class="btn-group">
+<div class="btn-group">
   <!-- add video button -->
   <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/introduction/slides" title="Video Slides (text-to-speech)">
     <i class="far fa-play-circle" aria-hidden="true"></i>
   </a>
 
-
-  <!-- add dropdown with links to different languages for the video-->
   
 
+</div>
 
-
-</span>
-</span>
 
               
 
@@ -3489,12 +1282,6 @@
 
 
               
-
-              
-                  
-
-
-
 
               
               </div>
@@ -3504,9 +1291,10 @@
           <td> 
 
 
-    <span class="btn-group">
+<div class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
+</div>
+    <div class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/introduction/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
@@ -3517,55 +1305,65 @@
         
         
 
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
+		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
+		</li>
 
+	<li class="dropdown-item">
 	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
+	</li>
     </ul>
-    
-    </span>
+</div>
+
 
 <!-- video slides -->
 
-<span class="btn-group">
+<div class="btn-group">
   <!-- add video button -->
   <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/introduction/slides" title="Video Slides (text-to-speech)">
     <i class="far fa-play-circle" aria-hidden="true"></i>
   </a>
 
-
-  <!-- add dropdown with links to different languages for the video-->
   
 
+</div>
 
-
-</span>
-</span>
  </td>
           <td> 
  </td>
@@ -3598,11 +1396,851 @@
           
 
           
+         </tr>
+       
+    
+        <!-- MAT: climate/pangeo-notebook -->
+      
+
+        <tr>
+          <td class="tutorial_title">
+            
+            
+            <a href="/training-material/topics/climate/tutorials/pangeo-notebook/tutorial.html">
+                Pangeo Notebook in Galaxy - Introduction to Xarray
+            </a>
+            
+
+
+            <div class="extra">
+            
+            
+              
+              <a href="/training-material/search?query=pangeo" class="label label-default tutorial_tag" style="--color-primary: #00d895; --color-darker: #00c184; --color-dimmed: #00cd8c;" title="Click to show all tutorials tagged pangeo">pangeo</a>
+              
+              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffa988; --color-darker: #ff8a46; --color-dimmed: #ff9a6c;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
+              
+              <a href="/training-material/search?query=jupyter-notebook" class="label label-default tutorial_tag" style="--color-primary: #00d2e2; --color-darker: #00bbca; --color-dimmed: #00c6d6;" title="Click to show all tutorials tagged jupyter-notebook">jupyter-notebook</a>
+              
+            
+            </div>
+
+            <div class="duplicate">
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              
+
+
+<div class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+</div>
+    <div class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                Français
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                Español
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                Português
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+		</li>
+
+	<li class="dropdown-item">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+	</li>
+    </ul>
+</div>
+
+
+<!-- video slides -->
+
+<div class="btn-group">
+  <!-- add video button -->
+  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo-notebook/slides" title="Video Slides (text-to-speech)">
+    <i class="far fa-play-circle" aria-hidden="true"></i>
+  </a>
+
+  
+
+</div>
+
+
+              
+    <div class="btn-group">
+        <a href="/training-material/topics/climate/tutorials/pangeo-notebook/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!-- GTN Video Library  -->
+  
+<div class="btn-group">
+  
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo-notebook/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+  
+</div>
+  
+   
+
+
+              
+                  
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+
+                  
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/workflows/" title="Pangeo Notebook in Galaxy - Introduction to Xarray workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+
+              
+
+              
+              </div>
+            </div>
+          </td>
+
+          <td> 
+
+
+<div class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+</div>
+    <div class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                Français
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                Español
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                Português
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+		</li>
+
+	<li class="dropdown-item">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+	</li>
+    </ul>
+</div>
+
+
+<!-- video slides -->
+
+<div class="btn-group">
+  <!-- add video button -->
+  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo-notebook/slides" title="Video Slides (text-to-speech)">
+    <i class="far fa-play-circle" aria-hidden="true"></i>
+  </a>
+
+  
+
+</div>
+
+ </td>
+          <td> 
+    <div class="btn-group">
+        <a href="/training-material/topics/climate/tutorials/pangeo-notebook/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo-notebook%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+ </td>
           <td> 
 
 
 
+
+
+
+
+
+
+
+
+
+
+  
+<!-- GTN Video Library  -->
+  
+<div class="btn-group">
+  
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo-notebook/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+  
+</div>
+  
+   
  </td>
+
+          
+          <td> 
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+ </td>
+          <td> 
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo-notebook/workflows/" title="Pangeo Notebook in Galaxy - Introduction to Xarray workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+ </td>
+          
+
+          
+         </tr>
+       
+    
+        <!-- MAT: climate/pangeo -->
+      
+
+        <tr>
+          <td class="tutorial_title">
+            
+            
+            <a href="/training-material/topics/climate/tutorials/pangeo/tutorial.html">
+                Pangeo ecosystem 101 for everyone - Introduction to Xarray Galaxy Tools
+            </a>
+            
+
+
+            <div class="extra">
+            
+            
+              
+              <a href="/training-material/search?query=pangeo" class="label label-default tutorial_tag" style="--color-primary: #00d895; --color-darker: #00c184; --color-dimmed: #00cd8c;" title="Click to show all tutorials tagged pangeo">pangeo</a>
+              
+            
+            </div>
+
+            <div class="duplicate">
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              
+
+
+<div class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+</div>
+    <div class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                Français
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                Español
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                Português
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+		</li>
+
+	<li class="dropdown-item">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+	</li>
+    </ul>
+</div>
+
+
+<!-- video slides -->
+
+<div class="btn-group">
+  <!-- add video button -->
+  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo/slides" title="Video Slides (text-to-speech)">
+    <i class="far fa-play-circle" aria-hidden="true"></i>
+  </a>
+
+  
+
+</div>
+
+
+              
+    <div class="btn-group">
+        <a href="/training-material/topics/climate/tutorials/pangeo/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!-- GTN Video Library  -->
+  
+<div class="btn-group">
+  
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+  
+</div>
+  
+   
+
+
+              
+                  
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+
+                  
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/workflows/" title="Pangeo ecosystem 101 for everyone - Introduction to Xarray Galaxy Tools workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+
+              
+
+              
+              </div>
+            </div>
+          </td>
+
+          <td> 
+
+
+<div class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+</div>
+    <div class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                Français
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                Español
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                Português
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+		</li>
+
+	<li class="dropdown-item">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+	</li>
+    </ul>
+</div>
+
+
+<!-- video slides -->
+
+<div class="btn-group">
+  <!-- add video button -->
+  <a class="btn btn-default topic-icon" href="/training-material/videos/watch.html?v=climate/tutorials/pangeo/slides" title="Video Slides (text-to-speech)">
+    <i class="far fa-play-circle" aria-hidden="true"></i>
+  </a>
+
+  
+
+</div>
+
+ </td>
+          <td> 
+    <div class="btn-group">
+        <a href="/training-material/topics/climate/tutorials/pangeo/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpangeo%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+ </td>
+          <td> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!-- GTN Video Library  -->
+  
+<div class="btn-group">
+  
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span>
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/climate/pangeo/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+  
+</div>
+  
+   
+ </td>
+
+          
+          <td> 
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5805953">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+ </td>
+          <td> 
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/climate/tutorials/pangeo/workflows/" title="Pangeo ecosystem 101 for everyone - Introduction to Xarray Galaxy Tools workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+ </td>
+          
+
           
          </tr>
        
@@ -3624,7 +2262,7 @@
             
             
               
-              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" id="interactive-tools" style="--color-primary: #ffd0c1; --color-darker: #ffae90; --color-dimmed: #ffbfaa;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
+              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" style="--color-primary: #ffa988; --color-darker: #ff8a46; --color-dimmed: #ff9a6c;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
               
             
             </div>
@@ -3634,16 +2272,12 @@
               
 
 
-    </span>
 
 <!-- video slides -->
 
 
-</span>
-</span>
-
               
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/climate/tutorials/panoply/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -3653,33 +2287,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -3715,12 +2361,6 @@
               
 
               
-                  
-
-
-
-
-              
               </div>
             </div>
           </td>
@@ -3728,16 +2368,12 @@
           <td> 
 
 
-    </span>
 
 <!-- video slides -->
 
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/climate/tutorials/panoply/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -3747,33 +2383,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Fpanoply%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -3808,223 +2456,6 @@
  </td>
           
 
-          
-          <td> 
-
-
-
- </td>
-          
-         </tr>
-       
-    
-        <!-- MAT: climate/fates-jupyterlab -->
-      
-
-        <tr>
-          <td class="tutorial_title">
-            
-            
-            <a href="/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html">
-                Functionally Assembled Terrestrial Ecosystem Simulator (FATES) with Galaxy Climate JupyterLab
-            </a>
-            
-
-
-            <div class="extra">
-            
-            
-              
-              <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" id="interactive-tools" style="--color-primary: #ffd0c1; --color-darker: #ffae90; --color-dimmed: #ffbfaa;" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
-              
-            
-            </div>
-
-            <div class="duplicate">
-              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
-              
-
-
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
-
-              
-    <span class="btn-group">
-        <a href="/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-        </ul>
-    </span>
-
-
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-              
-                  
-
-
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.4108341">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
-
-                  
-
-
-
-              
-
-              
-                  
-
-
-
-
-              
-              </div>
-            </div>
-          </td>
-
-          <td> 
-
-
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
- </td>
-          <td> 
-    <span class="btn-group">
-        <a href="/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-        </ul>
-    </span>
-
- </td>
-          <td> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- </td>
-
-          
-          <td> 
-
-
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.4108341">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
- </td>
-          <td> 
-
-
- </td>
-          
-
-          
-          <td> 
-
-
-
- </td>
           
          </tr>
        
@@ -4052,7 +2483,7 @@
     <h2 id="maintainers">Maintainers</h2>
     <p>This material is maintained by:</p>
     
-    <a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="https://avatars.githubusercontent.com/annefou?s=27" alt="Avatar">Anne Fouilloux</a>
+    <a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/annefou?s=27" alt="Avatar">Anne Fouilloux</a>
 
     <p>
         <em>For any question related to this topic and the content, you can contact them or visit our <a href="https://gitter.im/Galaxy-Training-Network/Lobby">Gitter channel</a>.</em>
@@ -4061,41 +2492,68 @@
     <h2 id="contributors">Contributors</h2>
     <p>This material was contributed to by:</p>
     
-    <a href="/training-material/hall-of-fame/j34ni/" class="contributor-badge contributor-j34ni"><img src="https://avatars.githubusercontent.com/j34ni?s=27" alt="Avatar">Jean Iaquinta</a><a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="https://avatars.githubusercontent.com/annefou?s=27" alt="Avatar">Anne Fouilloux</a><a href="/training-material/hall-of-fame/huitang-earth/" class="contributor-badge contributor-huitang-earth"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/huitang-earth?s=27" alt="Avatar">Hui Tang</a>
+    <a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/annefou?s=27" alt="Avatar">Anne Fouilloux</a><a href="/training-material/hall-of-fame/j34ni/" class="contributor-badge contributor-j34ni"><img src="https://avatars.githubusercontent.com/j34ni?s=27" alt="Avatar">Jean Iaquinta</a><a href="/training-material/hall-of-fame/huitang-earth/" class="contributor-badge contributor-huitang-earth"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/huitang-earth?s=27" alt="Avatar">Hui Tang</a>
 
     
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/climate/index.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/68264bea90fe177e6ff5a91ddafb1bba86584b98">68264bea90fe177e6ff5a91ddafb1bba86584b98</a></p>
+
     </div>
 </footer>
 
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
@@ -4104,7 +2562,6 @@
         </script>
         
         <script type="text/javascript" src="/training-material/assets/js/list.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/topic.js"></script>
         
 
         <script type="text/javascript">

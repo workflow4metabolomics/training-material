@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,12 +42,12 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/contributing/tutorials/introduction/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Overview of the Galaxy Training Material" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2023-01-12 10:45:52 +0000" />
-<meta name="DC.creator" content="Bérénice Batut" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Overview of the Galaxy Training Material">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-01-12 10:45:52 +0000">
+<meta name="DC.creator" content="Bérénice Batut">
 
         
         
@@ -34,7 +57,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Overview of the Galaxy Training Material" />
         <meta property="og:description" content="Galaxy is a great solution to train the bioinformatics co..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         <script type="application/ld+json">
             
@@ -88,6 +112,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -126,33 +154,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
-      "name": "Bérénice Batut",
-      "image": "https://avatars.githubusercontent.com/bebatut",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9852-1987",
-      "orcid": "https://orcid.org/0000-0001-9852-1987"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/",
@@ -178,11 +181,18 @@
       "description": "Galaxy is a great solution to train the bioinformatics concepts: numerous bioinformatics tools are available (more than 7,000 in the ToolShed), it can be used by people without any computer science skills, it trains to use technology, outlining available resources and efforts that have made them accessible to researchers, it is scalable.<br> In 2016, the Galaxy Training Network decided to set up a new infrastructure for delivering easily Galaxy related training material. The idea was to develop something open and online based on a community effort, as always in Galaxy.",
       "url": "https://training.galaxyproject.org/training-material/topics/contributing/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "### Welcome to the Galaxy Community"
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -276,7 +286,7 @@ Thanks for your interest in contributing to the Galaxy project, and making it ea
 - Do you know the resources of the Galaxy Training Network?
 
 ???
-To make it easier to get started, we'll work you through some of the steps.
+To make it easier to get started, we&apos;ll work you through some of the steps.
 ---
 ### Galaxy Training Material
 
@@ -324,9 +334,9 @@ https://github.com/galaxyproject/training-material
 - Are you using Windows?
 
 ???
-Don't worry if you're new to &quot;open source&quot;, or if you're still a student -- many of our contributors are, too, and we'd be happy to provide mentorship and support if this is your first time contributing to an open-source project.
+Don&apos;t worry if you&apos;re new to &quot;open source&quot;, or if you&apos;re still a student -- many of our contributors are, too, and we&apos;d be happy to provide mentorship and support if this is your first time contributing to an open-source project.
 
-The main thing is that you are passionate about addressing common challenges in data-intensive science and that you're responsible and reliable.
+The main thing is that you are passionate about addressing common challenges in data-intensive science and that you&apos;re responsible and reliable.
 ---
 ### Contributing to Training Material
 
@@ -499,9 +509,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -513,7 +524,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

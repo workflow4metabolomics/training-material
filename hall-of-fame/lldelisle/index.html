@@ -8,32 +8,56 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/lldelisle/" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/lldelisle/">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="GTN Contributor: Lucille Delisle" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="1970-01-01 00:00:00 +0000" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="GTN Contributor: Lucille Delisle">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="1970-01-01 00:00:00 +0000">
 
         
         
         
         
-        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: GTN Contributor: Lucille Delisle" />
-        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Collection of tutorials developed and maintained by the w...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: GTN Contributor: Lucille Delisle">
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -44,7 +68,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,38 +87,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/lldelisle/&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/lldelisle/&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/lldelisle/&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/lldelisle/&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/lldelisle/&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/lldelisle/&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -128,8 +126,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/hall-of-fame/lldelisle/" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainhall-of-fame/lldelisle/index.html" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -206,6 +203,7 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
 
@@ -215,8 +213,8 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-    "@type": "Person"
+    "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+    "@type": "CreativeWork"
   },
   "url": "https://training.galaxyproject.org/training-material/hall-of-fame/lldelisle/",
   "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/lldelisle/",
@@ -247,11 +245,13 @@
 		<div class="row">
 
 			<div class="col-md-3">
+				<div>
 				
 					<img src="https://avatars.githubusercontent.com/lldelisle" alt="github avatar" >
 				
+				</div>
 
-                
+				
 
 				
 
@@ -264,11 +264,15 @@
 				
 
 				
+
+				
 				<div class="contact-items">
 					<a title="E-mail" href="mailto:lucille.delisle@epfl.ch">
 						<i class="far fa-envelope" aria-hidden="true"></i><span class="visually-hidden">email</span> lucille.delisle@epfl.ch
 					</a>
 				</div>
+				
+
 				
 
 				
@@ -303,6 +307,7 @@
 					Lucille Delisle
 				</h1>
 				
+				
 
 				<h2>Contributions</h2>
 
@@ -313,6 +318,7 @@
 
                 
                 <br><br>
+		
                 <h3> GitHub Activity</h4>
                 <ul>
                   <li><a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3Alldelisle"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Pull Requests</a> </li>
@@ -320,6 +326,7 @@
                   <li><a href="https://github.com/galaxyproject/training-material/issues?q=+is%3Aissue+author%3Alldelisle"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Issues Reported</a></li>
                 </ul>
                 
+		
                 </p>
 
 				
@@ -329,33 +336,16 @@
 					<li>
 						
 						
-						<a href="/training-material/topics/epigenetics">
-							Epigenetics
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/epigenetics/tutorials/atac-seq/tutorial.html">
-						ATAC-Seq data analysis
+						<a href="/training-material//topics/admin/tutorials/backup-cleanup/tutorial.html">
+						Server Maintenance: Cleanup, Backup, and Restoration
 						</a>
 						
 						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/contributing">
-							Contributing to the Galaxy Training Material
-						</a>
-						/
-						<a href="/training-material//topics/contributing/tutorials/create-new-tutorial/tutorial.html">
-						Creating a new tutorial
-						</a>
-						
-						
-	
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
 
 
 					</li>
@@ -384,6 +374,23 @@
 							Galaxy Server administration
 						</a>
 						/
+						<a href="/training-material//topics/admin/tutorials/ansible-galaxy/tutorial.html">
+						Galaxy Installation with Ansible
+						</a>
+						
+						
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
 						<a href="/training-material//topics/admin/tutorials/tus/tutorial.html">
 						Performant Uploads with TUS
 						</a>
@@ -401,12 +408,63 @@
 							Transcriptomics
 						</a>
 						/
+						<a href="/training-material//topics/transcriptomics/tutorials/differential-isoform-expression/tutorial.html">
+						Genome-wide alternative splicing analysis
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
 						<a href="/training-material//topics/transcriptomics/tutorials/ref-based/tutorial.html">
 						Reference-based RNA-Seq data analysis
 						</a>
 						
 						
 	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/contributing">
+							Contributing to the Galaxy Training Material
+						</a>
+						/
+						<a href="/training-material//topics/contributing/tutorials/create-new-tutorial/tutorial.html">
+						Creating a new tutorial
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/epigenetics">
+							Epigenetics
+						</a>
+						/
+						<a href="/training-material//topics/epigenetics/tutorials/atac-seq/tutorial.html">
+						ATAC-Seq data analysis
+						</a>
+						
+						
+	
 
 
 					</li>
@@ -439,9 +497,88 @@
 				
 
 				
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+                <h3>News</h3>
+                <div class="newslist">
+                
+                
+                   <article>
 
-<script type="text/javascript">
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2023/03/21/galaxy-trainer-directory.html"><h3 class="card-title">New Feature: Trainer Directory! (Add yourself today!)</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network" loading="lazy">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2023/03/21/galaxy-trainer-directory.html"><h4 class="card-title">New Feature: Trainer Directory! (Add yourself today!)</h4></a>-->
+        <div class="text-muted">
+        21 March 2023
+        </div>
+        <div markdown="0">
+
+	<div class="contributors-line">
+		
+<table class="contributions">
+	
+	<tr>
+		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
+		<td>
+			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/lldelisle/" class="contributor-badge contributor-lldelisle"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/lldelisle?s=27" alt="Avatar">Lucille Delisle</a>
+		</td>
+	</tr>
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+</table>
+
+
+	</div>
+
+</div>
+
+
+        
+<span class="label label-default tutorial_tag" style="--color-primary: #b6b8ff; --color-darker: #9ea0ff; --color-dimmed: #aaacff;">new feature</span>
+
+<span class="label label-default tutorial_tag" style="--color-primary: #8ad200; --color-darker: #7bbb00; --color-dimmed: #82c600;">community building</span>
+
+<span class="label label-default tutorial_tag" style="--color-primary: #a1ce00; --color-darker: #8fb700; --color-dimmed: #98c200;">capacity building</span>
+
+    <hr/>
+    <p class="card-text">
+      
+        Numerous other training groups keep “Trainer Directories” as a way to help students meet trainers in their area, especially for hosting workshops for their local community. There have been a handful of attempts at this in the past, both in galaxyproject/galaxy-maps and in a Google Map on the GTN homepage.
+
+      
+    </p>
+    <a href="/training-material/news/2023/03/21/galaxy-trainer-directory.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+</article>
+
+                
+                </div>
+				
+<script src="/training-material/assets/js/Chart.bundle.js"></script>
+
+<script>
 const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 if(isReduced){
     Chart.defaults.global.animation.duration = 0;
@@ -454,11 +591,11 @@ var topics = [
 
 	
 	
-	"Epigenetics",
+	"Galaxy Server administration",
 
 	
 	
-	"Contributing to the Galaxy Training Material",
+	"Galaxy Server administration",
 
 	
 	
@@ -471,6 +608,18 @@ var topics = [
 	
 	
 	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Contributing to the Galaxy Training Material",
+
+	
+	
+	"Epigenetics",
 
 
 	
@@ -491,10 +640,18 @@ var slidesVsTutos = [
 
 	"Tutorials",
 
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
 
 	"Slides",
 	
 
+
+	"News Posts",
 
 ]
 
@@ -572,35 +729,62 @@ var chart2 = new Chart(ctx2, {
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/hall-of-fame/lldelisle/index.html" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/68264bea90fe177e6ff5a91ddafb1bba86584b98">68264bea90fe177e6ff5a91ddafb1bba86584b98</a></p>
+
     </div>
 </footer>
 
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

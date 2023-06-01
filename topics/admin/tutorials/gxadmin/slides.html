@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,15 +42,15 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/gxadmin/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Galaxy Monitoring with gxadmin" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2021-04-06 11:50:17 +0000" />
-<meta name="DC.creator" content="Nate Coraor" />
-<meta name="DC.creator" content="Björn Grüning" />
-<meta name="DC.creator" content="Simon Gladman" />
-<meta name="DC.creator" content="Helena Rasche" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Galaxy Monitoring with gxadmin">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2021-04-06 11:50:17 +0000">
+<meta name="DC.creator" content="Nate Coraor">
+<meta name="DC.creator" content="Björn Grüning">
+<meta name="DC.creator" content="Simon Gladman">
+<meta name="DC.creator" content="Helena Rasche">
 
         
         
@@ -37,7 +60,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Galaxy Monitoring with gxadmin" />
         <meta property="og:description" content="Resources related to configuration and maintenance of Gal..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/gat.png">
 
         <script type="application/ld+json">
             
@@ -91,6 +115,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -117,6 +145,7 @@
   "learningResourceType": "slides",
   "name": "Slides for 'Galaxy Monitoring with gxadmin' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/admin/tutorials/gxadmin/slides.html",
+  "teaches": "Learn gxadmin basics\n - See some queries and learn how they help debug production issues",
   "keywords": "admin",
   "description": "The questions this  addresses are:\n - What is gxadmin\n - What can it do?\n - How to write a query?\n\n\nThe objectives are:\n - Learn gxadmin basics\n - See some queries and learn how they help debug production issues\n\n",
   "inLanguage": {
@@ -129,8 +158,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
@@ -152,8 +181,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
@@ -175,8 +204,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
@@ -198,102 +227,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
-      "name": "Nate Coraor",
-      "image": "https://avatars.githubusercontent.com/natefoo",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-8083-2963",
-      "orcid": "https://orcid.org/0000-0001-8083-2963"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
-      "name": "Björn Grüning",
-      "image": "https://avatars.githubusercontent.com/bgruening",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-3079-6586",
-      "orcid": "https://orcid.org/0000-0002-3079-6586"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
-      "name": "Simon Gladman",
-      "image": "https://avatars.githubusercontent.com/slugger70",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-6100-4385",
-      "orcid": "https://orcid.org/0000-0002-6100-4385"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
@@ -319,11 +254,18 @@
       "description": "Resources related to configuration and maintenance of Galaxy servers",
       "url": "https://training.galaxyproject.org/training-material/topics/admin/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "# Database Queries"
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -435,7 +377,7 @@ Useful when presenting.
 
 # Database Queries
 
-Sometimes it's the best way to get the exact data you need
+Sometimes it&apos;s the best way to get the exact data you need
 
 Can be very useful for:
 - Debugging
@@ -458,17 +400,17 @@ But consider: [`gxadmin`](https://github.com/usegalaxy-eu/gxadmin) and sharing y
 
 ```sql
 SELECT
-  date_trunc('month', j.create_time) AS month,
+  date_trunc(&apos;month&apos;, j.create_time) AS month,
   j.state,
   COUNT(j.state) AS job_count
 FROM job j
 LEFT OUTER JOIN galaxy_user u
   ON j.user_id = u.id
-WHERE u.email != 'monitor@bx.psu.edu'
+WHERE u.email != &apos;monitor@bx.psu.edu&apos;
 GROUP BY month,
          j.state
-HAVING date_trunc('month', j.create_time) &gt;= '2016-09-01'
-AND date_trunc('month', j.create_time) &lt; '2016-11-01'
+HAVING date_trunc(&apos;month&apos;, j.create_time) &gt;= &apos;2016-09-01&apos;
+AND date_trunc(&apos;month&apos;, j.create_time) &lt; &apos;2016-11-01&apos;
 ORDER BY month, j.state;
 ```
 
@@ -476,7 +418,7 @@ ORDER BY month, j.state;
 
 - We often get requests like how many jobs were run in a time period, and did they finish successfully.
 - So we write some SQL like this.
-- As an admin, you'll want to understand SQL.
+- As an admin, you&apos;ll want to understand SQL.
 
 ---
 # Database Queries
@@ -509,9 +451,9 @@ ORDER BY month, j.state;
 ---
 # gxadmin
 
-- It's unpleasant to write queries every time you need them.
+- It&apos;s unpleasant to write queries every time you need them.
 - So the community collects SQL in `gxadmin`.
-- It's a giant bash script full of SQL and some magic ✨
+- It&apos;s a giant bash script full of SQL and some magic ✨
 - [github.com/usegalaxy-eu/gxadmin](https://github.com/usegalaxy-eu/gxadmin)
 
 ???
@@ -549,7 +491,7 @@ LIMIT 12;
 - However, some of these queries we run over and over.
 - And those we include in gxadmin.
 - This way every admin has access to all of the interesting queries we run.
-- And we don't get repetitive strain injury typing SQL.
+- And we don&apos;t get repetitive strain injury typing SQL.
 
 ---
 # Database Queries
@@ -627,7 +569,7 @@ $ gxadmin query latest-users
 ```sql
 SELECT
 	id,
-	create_time AT TIME ZONE 'UTC' as create_time,
+	create_time AT TIME ZONE &apos;UTC&apos; as create_time,
 	pg_size_pretty(disk_usage) as disk_usage,
 	username,
 	email,
@@ -680,7 +622,7 @@ LIMIT 40
 Converting SQL query output to tabular and other formats
 
 ```SQL
-COPY (...) to STDOUT with CSV DELIMITER E'\t'
+COPY (...) to STDOUT with CSV DELIMITER E&apos;\t&apos;
 ```
 
 **or**
@@ -764,9 +706,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -778,7 +721,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

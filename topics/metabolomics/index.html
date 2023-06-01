@@ -8,32 +8,56 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/metabolomics/" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/metabolomics/">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2018-11-15 14:37:46 +0000" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2018-11-15 14:37:46 +0000">
 
         
         
         
         
-        <meta name="description" content="Training material to analyse Mass spectrometry data in Ga..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: Metabolomics" />
-        <meta property="og:description" content="Training material to analyse Mass spectrometry data in Ga..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Training material to analyse Mass spectrometry data in Ga...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: Metabolomics">
+        <meta property="og:description" content="Training material to analyse Mass spectrometry data in Ga...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -44,7 +68,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,38 +87,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -134,8 +132,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/metabolomics/" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/metabolomics/index.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -215,6 +212,7 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
 
@@ -234,7 +232,8 @@
 
 <section class="tutorials-list metabolomics topic-type-use">
     <h1>Metabolomics</h1>
-    <p>Training material to analyse Mass spectrometry data in Galaxy: Metabolomics (LCMS, FIAMS, GCMS, NMR) and imaging.</p>
+    <p><p>Training material to analyse Mass spectrometry data in Galaxy: Metabolomics (LCMS, FIAMS, GCMS, NMR) and imaging.</p>
+</p>
     <i>You can view the tutorial materials in different languages by clicking the dropdown icon next to the slides (<i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span>) and tutorial (<i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>) buttons below. </i>
 
     
@@ -276,23 +275,21 @@
       
 
       
-      <th title="List of public Galaxies on which this tutorial can be performed. ">Galaxy servers</th>
-      
     </tr>
   </thead>
   <tbody class="list">
 
   
   
-        <!-- MAT: metabolomics/lcms -->
+        <!-- MAT: metabolomics/introduction -->
       
 
         <tr>
           <td class="tutorial_title">
             
             
-            <a href="/training-material/topics/metabolomics/tutorials/lcms/tutorial.html">
-                Mass spectrometry: LC-MS analysis
+            <a href="/training-material/topics/metabolomics/tutorials/introduction/slides.html">
+                Introduction to Metabolomics
             </a>
             
 
@@ -307,53 +304,71 @@
               
 
 
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
-
-              
-    <span class="btn-group">
-        <a href="/training-material/topics/metabolomics/tutorials/lcms/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+<div class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+</div>
+    <div class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
             <span class="sr-only">Toggle Dropdown</span>
         </a>
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+		<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+		</li>
 
+	<li class="dropdown-item">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+	</li>
+    </ul>
+</div>
+
+
+<!-- video slides -->
+
+
+              
 
               
 
@@ -376,186 +391,12 @@
                   
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3244991">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
 
                   
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms/workflows/" title="Workflows" alt="Mass spectrometry: LC-MS analysis workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
 
               
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
 
               
               </div>
@@ -565,17 +406,147 @@
           <td> 
 
 
-    </span>
+<div class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+</div>
+    <div class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
+                Français
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
+                Español
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
+                Português
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+		</li>
+        
+		<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+		</li>
+
+	<li class="dropdown-item">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+	</li>
+    </ul>
+</div>
+
+
+<!-- video slides -->
+
+ </td>
+          <td> 
+ </td>
+          <td> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ </td>
+
+          
+          <td> 
+
+
+ </td>
+          <td> 
+
+
+ </td>
+          
+
+          
+         </tr>
+       
+    
+        <!-- MAT: metabolomics/gcms -->
+      
+    
+        <!-- MAT: metabolomics/msi-analyte-distribution -->
+      
+
+        <tr>
+          <td class="tutorial_title">
+            
+            
+            <a href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.html">
+                Mass spectrometry imaging: Examining the spatial distribution of analytes
+            </a>
+            
+
+
+            <div class="extra">
+            
+              
+
+
+
+<span class="level introductory" title="Introductory Tutorial">
+  <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+</span>
+
+
+            
+            
+            </div>
+
+            <div class="duplicate">
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              
+
+
 
 <!-- video slides -->
 
 
-</span>
-</span>
- </td>
-          <td> 
-    <span class="btn-group">
-        <a href="/training-material/topics/metabolomics/tutorials/lcms/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+              
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
         <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
@@ -584,33 +555,145 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+              
+                  
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/484496">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+
+                  
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/workflows/" title="Mass spectrometry imaging: Examining the spatial distribution of analytes workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+
+              
+
+              
+              </div>
+            </div>
+          </td>
+
+          <td> 
+
+
+
+<!-- video slides -->
+
+ </td>
+          <td> 
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -634,7 +717,7 @@
           <td> 
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3244991">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/484496">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -642,179 +725,13 @@
           <td> 
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms/workflows/" title="Workflows" alt="Mass spectrometry: LC-MS analysis workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/workflows/" title="Mass spectrometry imaging: Examining the spatial distribution of analytes workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
  </td>
           
 
-          
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
- </td>
           
          </tr>
        
@@ -852,16 +769,12 @@
               
 
 
-    </span>
 
 <!-- video slides -->
 
 
-</span>
-</span>
-
               
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -871,33 +784,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -929,182 +854,12 @@
                   
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/workflows/" title="Workflows" alt="Mass spectrometry imaging: Finding differential analytes workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/workflows/" title="Mass spectrometry imaging: Finding differential analytes workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
 
               
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
 
               
               </div>
@@ -1114,16 +869,12 @@
           <td> 
 
 
-    </span>
 
 <!-- video slides -->
 
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -1133,33 +884,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -1191,7 +954,7 @@
           <td> 
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/workflows/" title="Workflows" alt="Mass spectrometry imaging: Finding differential analytes workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/workflows/" title="Mass spectrometry imaging: Finding differential analytes workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
@@ -1199,188 +962,466 @@
           
 
           
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
- </td>
-          
          </tr>
        
     
-        <!-- MAT: metabolomics/msi-analyte-distribution -->
+        <!-- MAT: metabolomics/gc_ms_with_xcms -->
       
 
         <tr>
           <td class="tutorial_title">
             
             
-            <a href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.html">
-                Mass spectrometry imaging: Examining the spatial distribution of analytes
+            <a href="/training-material/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.html">
+                Mass spectrometry: GC-MS data processing (with XCMS, RAMClustR, RIAssigner, and matchms)
+            </a>
+            
+
+
+            <div class="extra">
+            
+              
+
+
+
+<span class="level intermediate" title="Intermediate Tutorial">
+  <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+</span>
+
+
+            
+            
+            </div>
+
+            <div class="duplicate">
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              
+
+
+
+<!-- video slides -->
+
+
+              
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+              
+                  
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/7890956">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+
+                  
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/gc_ms_with_xcms/workflows/" title="Mass spectrometry: GC-MS data processing (with XCMS, RAMClustR, RIAssigner, and matchms) workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+
+              
+
+              
+              </div>
+            </div>
+          </td>
+
+          <td> 
+
+
+
+<!-- video slides -->
+
+ </td>
+          <td> 
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fgc_ms_with_xcms%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+ </td>
+          <td> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ </td>
+
+          
+          <td> 
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/7890956">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+ </td>
+          <td> 
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/gc_ms_with_xcms/workflows/" title="Mass spectrometry: GC-MS data processing (with XCMS, RAMClustR, RIAssigner, and matchms) workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+ </td>
+          
+
+          
+         </tr>
+       
+    
+        <!-- MAT: metabolomics/lcms -->
+      
+
+        <tr>
+          <td class="tutorial_title">
+            
+            
+            <a href="/training-material/topics/metabolomics/tutorials/lcms/tutorial.html">
+                Mass spectrometry: LC-MS analysis
+            </a>
+            
+
+
+            <div class="extra">
+            
+            
+            </div>
+
+            <div class="duplicate">
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              
+
+
+
+<!-- video slides -->
+
+
+              
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/lcms/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+              
+                  
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3244991">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+
+                  
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms/workflows/" title="Mass spectrometry: LC-MS analysis workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+
+              
+
+              
+              </div>
+            </div>
+          </td>
+
+          <td> 
+
+
+
+<!-- video slides -->
+
+ </td>
+          <td> 
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/lcms/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+	</li>
+        
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+	</li>
+    </ul>
+</div>
+
+ </td>
+          <td> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ </td>
+
+          
+          <td> 
+
+
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3244991">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+ </td>
+          <td> 
+
+
+    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms/workflows/" title="Mass spectrometry: LC-MS analysis workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+ </td>
+          
+
+          
+         </tr>
+       
+    
+        <!-- MAT: metabolomics/lcms-dataprocessing -->
+      
+
+        <tr>
+          <td class="tutorial_title">
+            
+            
+            <a href="/training-material/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html">
+                Mass spectrometry: LC-MS data processing
             </a>
             
 
@@ -1405,17 +1446,13 @@
               
 
 
-    </span>
 
 <!-- video slides -->
 
 
-</span>
-</span>
-
               
-    <span class="btn-group">
-        <a href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
         <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
@@ -1424,33 +1461,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -1474,7 +1523,7 @@
                   
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/484496">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/5179809">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -1482,182 +1531,8 @@
                   
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/workflows/" title="Workflows" alt="Mass spectrometry imaging: Examining the spatial distribution of analytes workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
 
               
-
-              
-                  
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
 
               
               </div>
@@ -1667,17 +1542,13 @@
           <td> 
 
 
-    </span>
 
 <!-- video slides -->
 
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
-        <a href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+    <div class="btn-group">
+        <a href="/training-material/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
         <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
@@ -1686,33 +1557,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-analyte-distribution%2Ftutorial.html&edit-text=&act=url" title="">
+	<li class="dropdown-item">
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -1736,7 +1619,7 @@
           <td> 
 
 
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/484496">
+<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/5179809">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -1744,183 +1627,9 @@
           <td> 
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-analyte-distribution/workflows/" title="Workflows" alt="Mass spectrometry imaging: Examining the spatial distribution of analytes workflows">
-        <i class="fas fa-share-alt" aria-hidden="true"></i>
-    </a>
-
  </td>
           
 
-          
-          <td> 
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
-            UseGalaxy.be
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
-            UseGalaxy.fr
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
- </td>
           
          </tr>
        
@@ -1958,9 +1667,10 @@
               
 
 
-    <span class="btn-group">
+<div class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
+</div>
+    <div class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
@@ -1971,47 +1681,58 @@
         
         
 
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
+		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
+		</li>
 
+	<li class="dropdown-item">
 	<a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
+	</li>
     </ul>
-    
-    </span>
+</div>
+
 
 <!-- video slides -->
 
 
-</span>
-</span>
-
               
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -2021,33 +1742,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
 
               
@@ -2083,12 +1816,6 @@
               
 
               
-                  
-
-
-
-
-              
               </div>
             </div>
           </td>
@@ -2096,9 +1823,10 @@
           <td> 
 
 
-    <span class="btn-group">
+<div class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
+</div>
+    <div class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
@@ -2109,47 +1837,58 @@
         
         
 
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
+		</li>
         
+		<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
+		</li>
         
+		<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Fslides.html&edit-text=&act=url" title="">
             More Languages
         </a>
+		</li>
 
+	<li class="dropdown-item">
 	<a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
+	</li>
     </ul>
-    
-    </span>
+</div>
+
 
 <!-- video slides -->
 
-
-</span>
-</span>
  </td>
           <td> 
-    <span class="btn-group">
+    <div class="btn-group">
         <a href="/training-material/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
@@ -2159,33 +1898,45 @@
         <ul class="dropdown-menu">
         
         
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+         <li class="dropdown-item"><strong>Automatic translations</strong></li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
+	</li>
         
+	<li class="dropdown-item">
             <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
+	</li>
         
+	<li class="dropdown-item">
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-preprocessing%2Ftutorial.html&edit-text=&act=url" title="">
             More Languages
         </a>
-        </ul>
-    </span>
+	</li>
+    </ul>
+</div>
 
  </td>
           <td> 
@@ -2220,443 +1971,6 @@
  </td>
           
 
-          
-          <td> 
-
-
-
- </td>
-          
-         </tr>
-       
-    
-        <!-- MAT: metabolomics/introduction -->
-      
-
-        <tr>
-          <td class="tutorial_title">
-            
-            
-            <a href="/training-material/topics/metabolomics/tutorials/introduction/slides.html">
-                Introduction to Metabolomics
-            </a>
-            
-
-
-            <div class="extra">
-            
-            
-            </div>
-
-            <div class="duplicate">
-              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
-              
-
-
-    <span class="btn-group">
-	<a class="visually-hidden" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides.html" title="Slides">
-            <i class="fab fa-slideshare" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-
-	<a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">
-		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
-	</a>
-    </ul>
-    
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
-
-              
-
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-              
-                  
-
-
-
-                  
-
-
-
-              
-
-              
-                  
-
-
-
-
-              
-              </div>
-            </div>
-          </td>
-
-          <td> 
-
-
-    <span class="btn-group">
-	<a class="visually-hidden" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
-    <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides.html" title="Slides">
-            <i class="fab fa-slideshare" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-
-        <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fintroduction%2Fslides.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-
-	<a class="btn btn-default topic-icon" href="/training-material/topics/metabolomics/tutorials/introduction/slides-plain.html" aria-label="more accessible, plain text slides">
-		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
-	</a>
-    </ul>
-    
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
- </td>
-          <td> 
- </td>
-          <td> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- </td>
-
-          
-          <td> 
-
-
- </td>
-          <td> 
-
-
- </td>
-          
-
-          
-          <td> 
-
-
-
- </td>
-          
-         </tr>
-       
-    
-        <!-- MAT: metabolomics/gcms -->
-      
-    
-        <!-- MAT: metabolomics/lcms-dataprocessing -->
-      
-
-        <tr>
-          <td class="tutorial_title">
-            
-            
-            <a href="/training-material/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html">
-                Mass spectrometry: LC-MS data processing
-            </a>
-            
-
-
-            <div class="extra">
-            
-              
-
-
-
-<span class="level introductory" title="Introductory Tutorial">
-  <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i> <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-</span>
-
-
-            
-            
-            </div>
-
-            <div class="duplicate">
-              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
-              
-
-
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
-
-              
-    <span class="btn-group">
-        <a href="/training-material/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-        </ul>
-    </span>
-
-
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-              
-                  
-
-
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/5179809">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
-
-                  
-
-
-
-              
-
-              
-                  
-
-
-
-
-              
-              </div>
-            </div>
-          </td>
-
-          <td> 
-
-
-    </span>
-
-<!-- video slides -->
-
-
-</span>
-</span>
- </td>
-          <td> 
-    <span class="btn-group">
-        <a href="/training-material/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html" class="btn btn-default" title="Follow the tutorial">
-            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
-        </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
-            <span class="sr-only">Toggle Dropdown</span>
-        </a>
-        <ul class="dropdown-menu">
-        
-        
-         <div class="dropdown-item"><strong>Automatic translations</strong></div>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                Français
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                日本語
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                Español
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                Português
-            </a>
-        
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-                العربية
-            </a>
-        
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Flcms-dataprocessing%2Ftutorial.html&edit-text=&act=url" title="">
-            More Languages
-        </a>
-        </ul>
-    </span>
-
- </td>
-          <td> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- </td>
-
-          
-          <td> 
-
-
-<a class="btn btn-default topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/5179809">
-    <i class="far fa-copy" aria-hidden="true"></i>
-</a>
-
- </td>
-          <td> 
-
-
- </td>
-          
-
-          
-          <td> 
-
-
-
- </td>
           
          </tr>
        
@@ -2698,41 +2012,68 @@
     <h2 id="contributors">Contributors</h2>
     <p>This material was contributed to by:</p>
     
-    <a href="/training-material/hall-of-fame/cecilecanlet/" class="contributor-badge contributor-cecilecanlet"><img src="https://avatars.githubusercontent.com/cecilecanlet?s=27" alt="Avatar">Cécile Canlet</a><a href="/training-material/hall-of-fame/melpetera/" class="contributor-badge contributor-melpetera"><img src="https://avatars.githubusercontent.com/melpetera?s=27" alt="Avatar">Mélanie Petera</a><a href="/training-material/hall-of-fame/lecorguille/" class="contributor-badge contributor-lecorguille"><img src="https://avatars.githubusercontent.com/lecorguille?s=27" alt="Avatar">Gildas Le Corguillé</a><a href="/training-material/hall-of-fame/yguitton/" class="contributor-badge contributor-yguitton"><img src="https://avatars.githubusercontent.com/yguitton?s=27" alt="Avatar">Yann Guitton</a><a href="/training-material/hall-of-fame/jsaintvanne/" class="contributor-badge contributor-jsaintvanne"><img src="https://avatars.githubusercontent.com/jsaintvanne?s=27" alt="Avatar">Julien Saint-Vanne</a><a href="/training-material/hall-of-fame/jfrancoismartin/" class="contributor-badge contributor-jfrancoismartin"><img src="https://avatars.githubusercontent.com/jfrancoismartin?s=27" alt="Avatar">Jean-François Martin</a><a href="/training-material/hall-of-fame/workflow4metabolomics/" class="contributor-badge contributor-workflow4metabolomics"><img src="https://avatars.githubusercontent.com/workflow4metabolomics?s=27" alt="Avatar">Workflow4Metabolomics core team</a><a href="/training-material/hall-of-fame/MarenStillger/" class="contributor-badge contributor-MarenStillger"><img src="https://avatars.githubusercontent.com/MarenStillger?s=27" alt="Avatar">Maren Stillger</a><a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge contributor-foellmelanie"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/foellmelanie?s=27" alt="Avatar">Melanie Föll</a>
+    <a href="/training-material/hall-of-fame/yguitton/" class="contributor-badge contributor-yguitton"><img src="https://avatars.githubusercontent.com/yguitton?s=27" alt="Avatar">Yann Guitton</a><a href="/training-material/hall-of-fame/jfrancoismartin/" class="contributor-badge contributor-jfrancoismartin"><img src="https://avatars.githubusercontent.com/jfrancoismartin?s=27" alt="Avatar">Jean-François Martin</a><a href="/training-material/hall-of-fame/melpetera/" class="contributor-badge contributor-melpetera"><img src="https://avatars.githubusercontent.com/melpetera?s=27" alt="Avatar">Mélanie Petera</a><a href="/training-material/hall-of-fame/cecilecanlet/" class="contributor-badge contributor-cecilecanlet"><img src="https://avatars.githubusercontent.com/cecilecanlet?s=27" alt="Avatar">Cécile Canlet</a><a href="/training-material/hall-of-fame/lecorguille/" class="contributor-badge contributor-lecorguille"><img src="https://avatars.githubusercontent.com/lecorguille?s=27" alt="Avatar">Gildas Le Corguillé</a><a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge contributor-foellmelanie"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/foellmelanie?s=27" alt="Avatar">Melanie Föll</a><a href="/training-material/hall-of-fame/jsaintvanne/" class="contributor-badge contributor-jsaintvanne"><img src="https://avatars.githubusercontent.com/jsaintvanne?s=27" alt="Avatar">Julien Saint-Vanne</a><a href="/training-material/hall-of-fame/workflow4metabolomics/" class="contributor-badge contributor-workflow4metabolomics"><img src="https://avatars.githubusercontent.com/workflow4metabolomics?s=27" alt="Avatar">Workflow4Metabolomics core team</a><a href="/training-material/hall-of-fame/xtrojak/" class="contributor-badge contributor-xtrojak"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/xtrojak?s=27" alt="Avatar">Matej Troják</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/maximskorik/" class="contributor-badge contributor-maximskorik"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/maximskorik?s=27" alt="Avatar">Maxim Skoryk</a><a href="/training-material/hall-of-fame/MarenStillger/" class="contributor-badge contributor-MarenStillger"><img src="https://avatars.githubusercontent.com/MarenStillger?s=27" alt="Avatar">Maren Stillger</a><a href="/training-material/hall-of-fame/hechth/" class="contributor-badge contributor-hechth"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hechth?s=27" alt="Avatar">Helge Hecht</a>
 
     
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/metabolomics/index.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/68264bea90fe177e6ff5a91ddafb1bba86584b98">68264bea90fe177e6ff5a91ddafb1bba86584b98</a></p>
+
     </div>
 </footer>
 
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
@@ -2741,7 +2082,6 @@
         </script>
         
         <script type="text/javascript" src="/training-material/assets/js/list.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/topic.js"></script>
         
 
         <script type="text/javascript">

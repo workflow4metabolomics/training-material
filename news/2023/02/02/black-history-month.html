@@ -8,33 +8,57 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/news/2023/02/02/black-history-month.html" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/news/2023/02/02/black-history-month.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="GTN Celebrates Black History Month" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2023-02-06 11:20:58 +0000" />
-<meta name="DC.creator" content="Helena Rasche" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="GTN Celebrates Black History Month">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-05-18 11:55:15 +0000">
+<meta name="DC.creator" content="Helena Rasche">
 
         
         
         
         
-        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: GTN Celebrates Black History Month" />
-        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Collection of tutorials developed and maintained by the w...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: GTN Celebrates Black History Month">
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -45,7 +69,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,38 +88,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2023/02/02/black-history-month.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2023/02/02/black-history-month.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2023/02/02/black-history-month.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2023/02/02/black-history-month.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2023/02/02/black-history-month.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2023/02/02/black-history-month.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -129,8 +127,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/news/2023/02/02/black-history-month.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainnews/_posts/2023-02-02-black-history-month.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -207,17 +204,42 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         <section>
   <h1>GTN Celebrates Black History Month</h1>
 
-  
+  <article>
+
 
 <div class="newsitem">
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+		
+<table class="contributions">
+	
+	<tr>
+		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
+		<td>
+			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+		</td>
+	</tr>
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+</table>
+
+
 	</div>
 
 </div>
@@ -281,6 +303,9 @@
     
 
     
+    
+
+    
   </div>
 
   <div class="col-md-4">
@@ -302,14 +327,14 @@
   "description": "<p>February marks <a href=\"https://en.wikipedia.org/wiki/Black_History_Month\">Black History Month</a>",
   "articleBody": "<p>February marks <a href=\"https://en.wikipedia.org/wiki/Black_History_Month\">Black History Month</a> in the United States. This year we want to celebrate that by introducing a new theme (<a href=\"#\" onclick=\"setTheme('blm')\">Click to Activate</a>), and taking a look at one of the most famous Black figures in Science: <a href=\"https://en.wikipedia.org/wiki/Henrietta_Lacks\">Henrietta Lacks</a> whose contribution to science went unremarked and unappreciated for decades while white scientists took credit for advancements built on her cell line.</p>\n\n<p>Her cell line is the oldest and most commonly used human cell line <span class=\"citation\"><a href=\"#Rahbari_2009\">Rahbari <i>et al.</i> 2009</a></span>, and is the reason for large scale policy change, especially major regulatory changes in informed consent in the United States <span class=\"citation\"><a href=\"#Beskow_2016\">Beskow 2016</a></span>. Unfortunately none of these changes happened quickly, it took until 2013 before her descendants could have a say in how her genetic material is used in NIH research <span class=\"citation\"><a href=\"#lacks_family_2013\">University 2013</a></span>.</p>\n\n<h2 id=\"johns-hopkins\">Johns Hopkins</h2>\n\n<p>Henrietta was a patient at Johns Hopkins Hospital; Johns Hopkins University employs many of the core Galaxy Developers.</p>\n\n<p>Johns Hopkins has announced the construction of a new building named in her honor, specifically focusing on research around bioethics: “The building will support the Berman Institute of Bioethics, the Johns Hopkins University School of Medicine, and additional departments, as well as collaborative space for education, research, and meetings.” <span class=\"citation\"><a href=\"#jhu_construction_announcement\">University 2022</a></span></p>\n\n<h2 id=\"bioethics\">Bioethics</h2>\n\n<blockquote class=\"quote\">\n  <p>Lacks’s case is one of many examples of the lack of informed consent in 20th century medicine. Communication between tissue donors and doctors was virtually nonexistent (i.e. cells were taken without patient consent, nor were they told what the cells would be used for). Johns Hopkins Hospital, where Lacks received treatment and had her tissue harvested, was the only hospital in the Baltimore area where African American patients could receive free care. The patients receiving free care from this segregated sect of the hospital often became research subjects without their knowledge. Lacks’s family also had no access to her patient files and had no say in who received HeLa cells or what they would be used for. Additionally, as HeLa cells were popularized and used more frequently throughout the scientific community, Lacks’s relatives received no financial benefit and continued to live with limited access to healthcare. <a href=\"https://en.wikipedia.org/wiki/HeLa#Controversy\">via Wikipedia</a></p>\n</blockquote>\n\n<p>We recommend the book <a href=\"https://en.wikipedia.org/wiki/The_Immortal_Life_of_Henrietta_Lacks\">“The Immortal Life of Henrietta Lacks”</a> for further reading on the topic.</p>\n\n<h2 id=\"gtn-connection\">GTN Connection</h2>\n\n<p>The GTN has four tutorials that make use of HeLa cell line data. After reading about Henrietta and her impact on science, you might be interested in following one of these tutorials to learn about the applications of her cells, two on imaging analysis:</p>\n\n<ul>\n  <li><a href=\"/training-material/topics/imaging/tutorials/imaging-introduction/tutorial.html\">Introduction to image analysis using Galaxy</a></li>\n  <li><a href=\"/training-material/topics/imaging/tutorials/hela-screen-analysis/tutorial.html\">Analyse HeLa fluorescence siRNA screen</a></li>\n</ul>\n\n<p>And two proteomics tutorials:</p>\n\n<ul>\n  <li><a href=\"/training-material/topics/proteomics/tutorials/protein-id-oms/tutorial.html\">Peptide and Protein ID using OpenMS tools</a></li>\n  <li><a href=\"/training-material/topics/proteomics/tutorials/protein-id-sg-ps/tutorial.html\">Peptide and Protein ID using SearchGUI and PeptideShaker</a></li>\n</ul>\n",
   "datePublished": "2023-02-02 00:00:00 +0000",
-  "dateModified": "2023-02-06 11:20:58 +0000",
+  "dateModified": "2023-05-18 11:55:15 +0000",
   "author": [
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
@@ -363,40 +388,183 @@
   "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users."
 }
 </script>
+</article>
+
+<hr/>
+<h2>Recent News</h2>
+<a href="/training-material/news.html">See all news</a>
+
+<div class="newslist">
+
+
+
+	<article>
+	<h3>
+		<a href="/training-material/news/2023/05/15/isoform-usage-training.html">New Galaxy training: Genome-wide alternative splicing analysis</a>
+	</h3>
+	<p>
+	15 May 2023 &nbsp;
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #ffad3c; --color-darker: #e89800; --color-dimmed: #f6a200;">new tutorial</span>
+	
+	</p>
+	<p class="card-text">
+		
+		The GTN hosts a new training for analyzing alternative splicing at genome-wide scale!
+
+		
+	</p>
+</article>
+
+
+	<article>
+	<h3>
+		<a href="/training-material/news/2023/05/11/ro-crate.html">BY-COVID and RO-Crate collaboration brings new topic: FAIR Data, Workflows & More</a>
+	</h3>
+	<p>
+	11 May 2023 &nbsp;
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #bab7ff; --color-darker: #a39fff; --color-dimmed: #aeabff;">new topic</span>
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #b6b8ff; --color-darker: #9ea0ff; --color-dimmed: #aaacff;">new feature</span>
+	
+	</p>
+	<p class="card-text">
+		
+		As part of the BY-COVID project, the RO-Crate team and BY-COVID members have
+brought several RO-Crate related tutorials into the Galaxy Training Network, under a brand new {FAIR} topic!
+
+		
+	</p>
+</article>
+
+
+	<article>
+	<h3>
+		<a href="/training-material/news/2023/04/20/my-galaxy-training.html">New Feature: my.galaxy.training</a>
+	</h3>
+	<p>
+	20 April 2023 &nbsp;
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #b6b8ff; --color-darker: #9ea0ff; --color-dimmed: #aaacff;">new feature</span>
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #fff098; --color-darker: #ebd600; --color-dimmed: #f9e300;">gtn</span>
+	
+	</p>
+	<p class="card-text">
+		
+		The GTN has set up a very simple “redirection” service based on my.home-assistant.io which Helena discovered after reading some Home Assistant documentation and saw a really neat link which led to her own internal home assistant.
+
+		
+	</p>
+</article>
+
+
+	<article>
+	<h3>
+		<a href="/training-material/news/2023/04/19/shortlinks.html">New Feature: Persistent URLs (PURLs) / Shortlinks</a>
+	</h3>
+	<p>
+	19 April 2023 &nbsp;
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #b6b8ff; --color-darker: #9ea0ff; --color-dimmed: #aaacff;">new feature</span>
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #fff098; --color-darker: #ebd600; --color-dimmed: #f9e300;">gtn</span>
+	
+	</p>
+	<p class="card-text">
+		
+		The GTN has added persistent URL identifiers for our tutorials, slides, and FAQs. Using the gxy.io service, we have reserved GTN namespace for our persistent URLs. These work similarly to DOIs in that they will always point to a specific training material.
+
+		
+	</p>
+</article>
+
+
+	<article>
+	<h3>
+		<a href="/training-material/news/2023/04/19/gtn-rdoc.html">New Feature: GTN Rdoc</a>
+	</h3>
+	<p>
+	19 April 2023 &nbsp;
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #b6b8ff; --color-darker: #9ea0ff; --color-dimmed: #aaacff;">new feature</span>
+	
+	<span class="label label-default tutorial_tag" style="--color-primary: #fff098; --color-darker: #ebd600; --color-dimmed: #f9e300;">gtn</span>
+	
+	</p>
+	<p class="card-text">
+		
+		The internal functions of the GTN have, in the past, not been very well documented. Now we have started the process of fully documenting the functions and modules available to GTN developers.
+
+		
+	</p>
+</article>
+
+
+</div>
+
 
 
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/news/_posts/2023-02-02-black-history-month.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/68264bea90fe177e6ff5a91ddafb1bba86584b98">68264bea90fe177e6ff5a91ddafb1bba86584b98</a></p>
+
     </div>
 </footer>
 
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

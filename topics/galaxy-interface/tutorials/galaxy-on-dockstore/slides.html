@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,15 +42,15 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/galaxy-on-dockstore/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Galaxy workflows in Dockstore" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2022-10-27 11:21:26 +0000" />
-<meta name="DC.creator" content="Avani Khadilkar" />
-<meta name="DC.creator" content="Elizabeth Sheets" />
-<meta name="DC.creator" content="Charles Overbeck" />
-<meta name="DC.creator" content="Enis Afgan" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Galaxy workflows in Dockstore">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2022-10-27 11:21:26 +0000">
+<meta name="DC.creator" content="Avani Khadilkar">
+<meta name="DC.creator" content="Elizabeth Sheets">
+<meta name="DC.creator" content="Charles Overbeck">
+<meta name="DC.creator" content="Enis Afgan">
 
         
         
@@ -37,7 +60,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Galaxy workflows in Dockstore" />
         <meta property="og:description" content="A collection of microtutorials explaining various feature..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         <script type="application/ld+json">
             
@@ -91,6 +115,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -117,6 +145,7 @@
   "learningResourceType": "slides",
   "name": "Slides for 'Galaxy workflows in Dockstore' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/galaxy-on-dockstore/slides.html",
+  "teaches": "What is Dockstore?\n - Why use Dockstore?\n - How to find workflows on Dockstore?\n - How to launch workflows from Dockstore?\n - Getting started with Galaxy workflows on Dockstore\n - Register your Galaxy workflow on Dockstore",
   "keywords": "galaxy-interface",
   "description": "The objectives are:\n - What is Dockstore?\n - Why use Dockstore?\n - How to find workflows on Dockstore?\n - How to launch workflows from Dockstore?\n - Getting started with Galaxy workflows on Dockstore\n - Register your Galaxy workflow on Dockstore\n\n",
   "inLanguage": {
@@ -129,8 +158,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/avani-k/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/avani-k/",
@@ -150,8 +179,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bethsheets/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bethsheets/",
@@ -171,8 +200,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/coverbeck/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/coverbeck/",
@@ -192,94 +221,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/afgane/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/afgane/",
-      "name": "Enis Afgan",
-      "image": "https://avatars.githubusercontent.com/afgane",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/avani-k/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/avani-k/",
-      "name": "Avani Khadilkar",
-      "image": "https://avatars.githubusercontent.com/avani-k",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bethsheets/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bethsheets/",
-      "name": "Elizabeth Sheets",
-      "image": "https://avatars.githubusercontent.com/bethsheets",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/coverbeck/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/coverbeck/",
-      "name": "Charles Overbeck",
-      "image": "https://avatars.githubusercontent.com/coverbeck",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/afgane/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/afgane/",
@@ -303,11 +246,18 @@
       "description": "A collection of microtutorials explaining various features of the Galaxy user interface and manipulating data within Galaxy.",
       "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "# What is Dockstore?"
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -421,7 +371,7 @@ Useful when presenting.
 
 - Dockstore integrates source control repositories like GitHub, Bitbucket, and GitLab for version control and automatic updates.
 
-- Integration with several cloud environments such as the usegalaxy.org, Galaxy Project's public server provides a succinct infrastructure to host high quality workflows
+- Integration with several cloud environments such as the usegalaxy.org, Galaxy Project&apos;s public server provides a succinct infrastructure to host high quality workflows
 
 ]
 
@@ -630,9 +580,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -644,7 +595,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

@@ -8,34 +8,58 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Multisample Analysis" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2023-01-24 14:22:01 +0000" />
-<meta name="DC.creator" content="Anton Nekrutenko" />
-<meta name="DC.creator" content="Anne Pajon" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Multisample Analysis">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-01-24 14:22:01 +0000">
+<meta name="DC.creator" content="Anton Nekrutenko">
+<meta name="DC.creator" content="Anne Pajon">
 
         
         
         
         
-        <meta name="description" content="A collection of microtutorials explaining various feature..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: Multisample Analysis" />
-        <meta property="og:description" content="A collection of microtutorials explaining various feature..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="A collection of microtutorials explaining various feature...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: Multisample Analysis">
+        <meta property="og:description" content="A collection of microtutorials explaining various feature...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -90,6 +114,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -129,8 +157,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nekrut/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nekrut/",
@@ -150,52 +178,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pajanne/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pajanne/",
-      "name": "Anne Pajon",
-      "image": "https://avatars.githubusercontent.com/pajanne",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nekrut/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nekrut/",
-      "name": "Anton Nekrutenko",
-      "image": "https://avatars.githubusercontent.com/nekrut",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pajanne/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pajanne/",
@@ -220,7 +204,14 @@
       "url": "https://training.galaxyproject.org/training-material/topics/galaxy-interface/"
     }
   ],
-  "educationalLevel": "Advanced"
+  "educationalLevel": "Advanced",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "collections"
+    }
+  ],
+  "abstract": "> <div class=\"box-title agenda-title\" id=\"agenda\">Agenda</div>"
 }
         </script>
         
@@ -232,7 +223,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -248,38 +241,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -321,8 +286,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -402,8 +366,13 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
+
+
+
+
 
 
 
@@ -425,12 +394,15 @@
   room: 'Galaxy-Training-Network/Lobby'
   };
 </script>
+
+
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
-<section class="tutorial topic-galaxy-interface">
+<article class="tutorial topic-galaxy-interface">
     <h1 data-toc-skip>Multisample Analysis</h1>
     
 
+    <section aria-labelledby="overview-box" id="tutorial-metadata">
     <div markdown="0">
 
 	<div class="contributors-line">
@@ -441,9 +413,9 @@
 
 
     <blockquote class="overview">
-        <div class="box-title" aria-label="overview box">Overview</div>
+        <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -481,12 +453,16 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 24, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
+        
+        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00156">https://gxy.io/GTN:T00156</a> </div>
+        
     </blockquote>
+    </section>
 
     <div class="container">
         <div class="row">
@@ -497,8 +473,9 @@
             <div class="col-sm-10">
                  
 
+                <section aria-label="Tutorial Content" id="tutorial-content">
                 <blockquote class="agenda">
-  <div id="agenda" class="box-title" aria-label="agenda box: ">Agenda</div>
+  <div class="box-title agenda-title" id="agenda">Agenda</div>
 
   <p>In this tutorial, we will deal with:</p>
 
@@ -522,19 +499,19 @@
 
 <h1 id="processing-many-samples-at-once">Processing many samples at once</h1>
 
-<p>Here we will show <span class="notranslate">Galaxy</span> features designed to help with the analysis of large numbers of samples. When you have just a few samples - clicking through them is easy. But once you’ve got hundreds - it becomes very annoying. In <span class="notranslate">Galaxy</span> we have introduced <strong>Dataset collections</strong> that allow you to combine numerous datasets in a single entity that can be easily manipulated.</p>
+<p>Here we will show Galaxy features designed to help with the analysis of large numbers of samples. When you have just a few samples - clicking through them is easy. But once you’ve got hundreds - it becomes very annoying. In Galaxy we have introduced <strong>Dataset collections</strong> that allow you to combine numerous datasets in a single entity that can be easily manipulated.</p>
 
 <h4 id="in-this-tutorial-we-assume-the-following">In this tutorial we assume the following:</h4>
 
 <ul>
-  <li>you already have basic understanding of how <span class="notranslate">Galaxy</span> works</li>
-  <li>you have an account in <span class="notranslate">Galaxy</span></li>
+  <li>you already have basic understanding of how Galaxy works</li>
+  <li>you have an account in Galaxy</li>
 </ul>
 
-<p><i class="fas fa-exclamation-triangle" aria-hidden="true"></i><span class="visually-hidden">warning</span> <em>At this time this tutorial is using <span class="notranslate">Galaxy</span>’s test server at https://test.<span class="notranslate">galaxy</span>project.org. Once the main site is updated this tutorial will be edited.</em></p>
+<p><i class="fas fa-exclamation-triangle" aria-hidden="true"></i><span class="visually-hidden">warning</span> <em>At this time this tutorial is using Galaxy’s test server at https://test.galaxyproject.org. Once the main site is updated this tutorial will be edited.</em></p>
 
 <h1 id="getting-data">Getting data</h1>
-<p><a href="https://test.galaxyproject.org/u/anton/h/collections-1">In this history</a> are a few datasets we will be practicing with (as always with <span class="notranslate">Galaxy</span> tutorial you can upload your own data and play with it instead of the provided datasets):</p>
+<p><a href="https://test.galaxyproject.org/u/anton/h/collections-1">In this history</a> are a few datasets we will be practicing with (as always with Galaxy tutorial you can upload your own data and play with it instead of the provided datasets):</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">M117-bl_1</code> - family 117, mother, 1-st (<strong>F</strong>) read from <strong>blood</strong></li>
@@ -547,7 +524,7 @@
   <li><code class="language-plaintext highlighter-rouge">M117C1-ch_2</code>- family 117, child, 2-nd (<strong>R</strong>) read from <strong>cheek</strong></li>
 </ul>
 
-<p>These datasets represent genomic <span class="notranslate">DNA</span> (enriched for mitochondria via a long range PCR) isolated from blood and cheek (buccal swab) of mother (<code class="language-plaintext highlighter-rouge">M117</code>) and her child (<code class="language-plaintext highlighter-rouge">M117C1</code>) that was sequenced on an Illumina miSeq machine as paired-read library (250-bp <span class="notranslate">reads</span>; see our <a href="http://www.pnas.org/content/111/43/15474.abstract">2014</a> manuscript for <strong>Methods</strong>).</p>
+<p>These datasets represent genomic DNA (enriched for mitochondria via a long range PCR) isolated from blood and cheek (buccal swab) of mother (<code class="language-plaintext highlighter-rouge">M117</code>) and her child (<code class="language-plaintext highlighter-rouge">M117C1</code>) that was sequenced on an Illumina miSeq machine as paired-read library (250-bp reads; see our <a href="http://www.pnas.org/content/111/43/15474.abstract">2014</a> manuscript for <strong>Methods</strong>).</p>
 
 <h1 id="creating-a-list-of-paired-datasets">Creating a list of paired datasets</h1>
 
@@ -567,7 +544,7 @@
 
 <p><img src="https://galaxyproject.org/tutorials/collections/collectionCreation.png" alt="collectionCreation. " loading="lazy" /></p>
 
-<p>In this case <span class="notranslate">Galaxy</span> automatically assigned pairs using the <code class="language-plaintext highlighter-rouge">_1</code> and <code class="language-plaintext highlighter-rouge">_2</code> endings of dataset names. Let’s however pretend that this did not happen. Click on <strong>Unpair all</strong> (highlighted in red in the figure above) link and then on <strong>Clear</strong> link (highlighted in blue in the figure above). The interface will change into its virgin state:</p>
+<p>In this case Galaxy automatically assigned pairs using the <code class="language-plaintext highlighter-rouge">_1</code> and <code class="language-plaintext highlighter-rouge">_2</code> endings of dataset names. Let’s however pretend that this did not happen. Click on <strong>Unpair all</strong> (highlighted in red in the figure above) link and then on <strong>Clear</strong> link (highlighted in blue in the figure above). The interface will change into its virgin state:</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/collectionCreationClean.png" alt="collectionCreationClean. " loading="lazy" /></p>
 
@@ -593,7 +570,7 @@
 
 <h1 id="using-collections">Using collections</h1>
 
-<p>By now we see that a collection can be used to bundle a large number of items into a single history item. This means that many <span class="notranslate">Galaxy</span> tools will be able to process all datasets in a collection transparently to you. Let’s try to map these datasets to human genome using <code class="language-plaintext highlighter-rouge">bwa-mem</code> mapper:</p>
+<p>By now we see that a collection can be used to bundle a large number of items into a single history item. This means that many Galaxy tools will be able to process all datasets in a collection transparently to you. Let’s try to map these datasets to human genome using <code class="language-plaintext highlighter-rouge">bwa-mem</code> mapper:</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/bwa_mem_collection_readGroups.png" alt="bwa_mem_collection_readGroups. " loading="lazy" /></p>
 
@@ -601,13 +578,13 @@
 
 <ul>
   <li>set <strong>Using reference genome</strong> to <code class="language-plaintext highlighter-rouge">hg38</code> (red outline);</li>
-  <li>set <strong>Single or Paired-end <span class="notranslate">reads</span></strong> to <code class="language-plaintext highlighter-rouge">Paired collection</code> (blue outline);</li>
+  <li>set <strong>Single or Paired-end reads</strong> to <code class="language-plaintext highlighter-rouge">Paired collection</code> (blue outline);</li>
   <li>select <code class="language-plaintext highlighter-rouge">M177-collection</code> from <strong>Select a paired collection</strong> dropdown (magenta outline);</li>
   <li>In <strong>Set read groups information</strong> select <code class="language-plaintext highlighter-rouge">Automatically assign ID</code> (green outline);</li>
   <li>scroll down and click <strong>Execute</strong>.</li>
 </ul>
 
-<p>You will see jobs being submitted and new datasets appearing in the history. IN particular below you can see that <span class="notranslate">Galaxy</span> has started four jobs (two yellow and two gray). This is because we have eight paired datasets with each pair being processed separately by <code class="language-plaintext highlighter-rouge">bwa-mem</code>. As a result we have four <code class="language-plaintext highlighter-rouge">bwa-mem</code> runs:</p>
+<p>You will see jobs being submitted and new datasets appearing in the history. IN particular below you can see that Galaxy has started four jobs (two yellow and two gray). This is because we have eight paired datasets with each pair being processed separately by <code class="language-plaintext highlighter-rouge">bwa-mem</code>. As a result we have four <code class="language-plaintext highlighter-rouge">bwa-mem</code> runs:</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/bwa_memCollectionRunning.png" alt="bwa_memCollectionRunning. " loading="lazy" /></p>
 
@@ -621,7 +598,7 @@
 
 <h1 id="processing-collection-as-a-single-entity">Processing collection as a single entity</h1>
 
-<p>Now that <code class="language-plaintext highlighter-rouge">bwa-mem</code> has finished and generated a collection of BAM datasets we can continue to analyze the entire collection as a single <span class="notranslate">Galaxy</span> ‘<em>item</em>’.</p>
+<p>Now that <code class="language-plaintext highlighter-rouge">bwa-mem</code> has finished and generated a collection of BAM datasets we can continue to analyze the entire collection as a single Galaxy ‘<em>item</em>’.</p>
 
 <h2 id="ensuring-consistency-of-bam-dataset">Ensuring consistency of BAM dataset</h2>
 
@@ -637,17 +614,17 @@
 
 <h2 id="retaining-proper-pairs">Retaining ‘proper pairs’</h2>
 
-<p>Now let’s clean the dataset further by only preserving truly paired <span class="notranslate">reads</span> (<span class="notranslate">reads</span> satisfying two requirements: (1) read is paired, and (2) it is mapped as a proper pair). For this we will use <code class="language-plaintext highlighter-rouge">Filter SAM or BAM</code> tools from <strong>SAMTools</strong> collection:</p>
+<p>Now let’s clean the dataset further by only preserving truly paired reads (reads satisfying two requirements: (1) read is paired, and (2) it is mapped as a proper pair). For this we will use <code class="language-plaintext highlighter-rouge">Filter SAM or BAM</code> tools from <strong>SAMTools</strong> collection:</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/filter.png" alt="filter. " loading="lazy" /></p>
 
-<p>parameters should be set as shown below. By setting <span class="notranslate">mapping</span> quality to <code class="language-plaintext highlighter-rouge">20</code> we avoid <span class="notranslate">reads</span> <span class="notranslate">mapping</span> to multiple locations and by using <strong>Filter on bitwise flag</strong> option we ensure that the resulting dataset will contain only properly paired <span class="notranslate">reads</span>. This operation will produce yet another collection containing now filtered datasets.</p>
+<p>parameters should be set as shown below. By setting mapping quality to <code class="language-plaintext highlighter-rouge">20</code> we avoid reads mapping to multiple locations and by using <strong>Filter on bitwise flag</strong> option we ensure that the resulting dataset will contain only properly paired reads. This operation will produce yet another collection containing now filtered datasets.</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/filter_closeup.png" alt="filter_closeup. " loading="lazy" /></p>
 
 <h2 id="merging-collection-into-a-single-dataset">Merging collection into a single dataset</h2>
 
-<p>The beauty of BAM datasets is that they can be combined in a single entity using so called <em>Read group</em> (<a href="https://wiki.galaxyproject.org/Learn/GalaxyNGS101#Understanding_and_manipulating_SAM.2FBAM_datasets">learn more</a> about Read Groups on old wiki, which will be migrated here shortly). This allows to bundle <span class="notranslate">reads</span> from multiple experiments into a single dataset where read identity is maintained by labelling every sequence with <em>read group</em> tags. So let’s finally reduce this collection to a single BAM dataset. For this we will use <code class="language-plaintext highlighter-rouge">MergeSamFiles</code> tool for the <code class="language-plaintext highlighter-rouge">Picard</code> suite:</p>
+<p>The beauty of BAM datasets is that they can be combined in a single entity using so called <em>Read group</em> (<a href="https://wiki.galaxyproject.org/Learn/GalaxyNGS101#Understanding_and_manipulating_SAM.2FBAM_datasets">learn more</a> about Read Groups on old wiki, which will be migrated here shortly). This allows to bundle reads from multiple experiments into a single dataset where read identity is maintained by labelling every sequence with <em>read group</em> tags. So let’s finally reduce this collection to a single BAM dataset. For this we will use <code class="language-plaintext highlighter-rouge">MergeSamFiles</code> tool for the <code class="language-plaintext highlighter-rouge">Picard</code> suite:</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/merge.png" alt="merge. " loading="lazy" /></p>
 
@@ -655,7 +632,7 @@
 
 <p><img src="https://galaxyproject.org/tutorials/collections/merge_closeup.png" alt="merge_closeup. " loading="lazy" /></p>
 
-<p>This operation will <strong>not</strong> generate a collection. Instead, it will generate a single BAM dataset containing mapped <span class="notranslate">reads</span> from our four samples (<code class="language-plaintext highlighter-rouge">M117-bl</code>, <code class="language-plaintext highlighter-rouge">M117-ch</code>, <code class="language-plaintext highlighter-rouge">M117C1-bl</code>, and <code class="language-plaintext highlighter-rouge">M117C1-ch</code>).</p>
+<p>This operation will <strong>not</strong> generate a collection. Instead, it will generate a single BAM dataset containing mapped reads from our four samples (<code class="language-plaintext highlighter-rouge">M117-bl</code>, <code class="language-plaintext highlighter-rouge">M117-ch</code>, <code class="language-plaintext highlighter-rouge">M117C1-bl</code>, and <code class="language-plaintext highlighter-rouge">M117C1-ch</code>).</p>
 
 <h1 id="lets-look-at-what-weve-got">Let’s look at what we’ve got!</h1>
 
@@ -667,16 +644,16 @@
 
 <p><img src="https://galaxyproject.org/tutorials/collections/downsample_closeup.png" alt="downsample_closeup. " loading="lazy" /></p>
 
-<p>This will generate another BAM dataset containing only 5% of the original <span class="notranslate">reads</span> and much smaller as a result. Click on this dataset and you will see links to various genome browsers:</p>
+<p>This will generate another BAM dataset containing only 5% of the original reads and much smaller as a result. Click on this dataset and you will see links to various genome browsers:</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/browserLinks.png" alt="browserLinks. " loading="lazy" /></p>
 
-<p>Click the <strong>Human hg38</strong> link in the <strong>display with IGV</strong> line as highlighted above (<a href="https://wiki.galaxyproject.org/Learn/GalaxyNGS101#Visualizing_multiple_datasets_in_Integrated_Genome_Viewer_.28IGV.29">learn</a> more about displaying <span class="notranslate">Galaxy</span> data in IGV with this <a href="https://vimeo.com/123442619#t=4m16s">movie</a>). Below is an example generated with IGV on these data. In this screenshot <span class="notranslate">reads</span> are colored by read group (four distinct colors). A yellow inset displays additional information about a single read. One can see that this read corresponds to read group <code class="language-plaintext highlighter-rouge">M117-bl</code>.</p>
+<p>Click the <strong>Human hg38</strong> link in the <strong>display with IGV</strong> line as highlighted above (<a href="https://wiki.galaxyproject.org/Learn/GalaxyNGS101#Visualizing_multiple_datasets_in_Integrated_Genome_Viewer_.28IGV.29">learn</a> more about displaying Galaxy data in IGV with this <a href="https://vimeo.com/123442619#t=4m16s">movie</a>). Below is an example generated with IGV on these data. In this screenshot reads are colored by read group (four distinct colors). A yellow inset displays additional information about a single read. One can see that this read corresponds to read group <code class="language-plaintext highlighter-rouge">M117-bl</code>.</p>
 
 <p><img src="https://galaxyproject.org/tutorials/collections/igv.png" alt="igv. " loading="lazy" /></p>
 
 <h1 id="we-did-not-fake-this">We did not fake this:</h1>
-<p>The two histories and the <span class="notranslate">workflow</span> described in this page are accessible directly from this page below:</p>
+<p>The two histories and the workflow described in this page are accessible directly from this page below:</p>
 
 <ul>
   <li>History <a href="https://test.galaxyproject.org/u/anton/h/collections-1"><strong>Collections</strong></a></li>
@@ -686,9 +663,11 @@
 <p>From there you can import histories to make them your own.</p>
 
 <h1 id="if-things-dont-work">If things don’t work…</h1>
-<p>…you need to complain. Use <a href="https://help.galaxyproject.org/"><span class="notranslate">Galaxy</span>’s Help Channel</a> to do this.</p>
+<p>…you need to complain. Use <a href="https://help.galaxyproject.org/">Galaxy’s Help Channel</a> to do this.</p>
 
+                </section>
 
+                <section aria-label="Tutorial Footer, Feedback, Citation" id="tutorial-footer">
                 
 
                 <h1>Frequently Asked Questions</h1>
@@ -710,33 +689,9 @@
                 <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
                 </p>
 
-                <div id="feedback-button">
-                    <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
-                </div>
-                <div id="feedback-form">
-                </div>
-                <script type="text/javascript">
-                    (function (window, document) {
-                        function onDocumentReady(fn) {
-                            if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-                                fn();
-                            } else {
-                                document.addEventListener('DOMContentLoaded', fn);
-                            }
-                        }
-
-                        onDocumentReady(function () {
-                            $("#feedback-button").click(function(evt){
-                                var e = $(evt.target)
-                                e.hide();
-
-                                $("#feedback-form").html(`
-                                    <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=Multisample Analysis (Using Galaxy and Managing your Data)">Loading...</iframe>
-                                `)
-                            })
-                        });
-                    })(window, document);
-                </script>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=Multisample Analysis (Using Galaxy and Managing your Data)" alt="Feedback form link">
+                    <img src="/training-material/shared/images/feedback.png" alt="Preview of the google form" />
+                </a>
 
                 <h1>Citing this Tutorial</h1>
                 <p>
@@ -754,7 +709,7 @@
                 <blockquote class="details">
 
                   <div id="citation-bibtex" class="box-title">
-                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false" aria-label="Toggle details box: BibTeX for citing this tutorial">
+                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false">
                       <i class="fas fa-info-circle" aria-hidden="true"></i>
                       <span class="visually-hidden"></span> BibTeX<span role="button" class="fold-unfold fa fa-minus-square" aria-hidden="true"></span>
                     </button>
@@ -795,11 +750,11 @@ note = "[Online; accessed TODAY]"
                 
 
 
-<script type="text/javascript">
+<script>
 // update the date on load, or leave fallback of 'today'
-d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -808,28 +763,93 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 
                 
 
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools: []
+</code></pre></div>
+                </blockquote>
+		
+
+
+                </section>
+
             </div>
         </div>
     </div>
-</section>
+</article>
 <br/>
 <br/>
 <br/>
 
         </div>
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00156">https://gxy.io/GTN:T00156</a>
+				</p>
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/galaxy-interface/tutorials/processing-many-samples-at-once/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

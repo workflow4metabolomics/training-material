@@ -8,36 +8,60 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/sql-game/tutorial.html" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/sql-game/tutorial.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="SQL Educational Game - Murder Mystery" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2021-12-14 14:52:15 +0000" />
-<meta name="DC.creator" content="Helena Rasche" />
-<meta name="DC.creator" content="NU Knight Lab" />
-<meta name="DC.creator" content="Erasmus+ Programme" />
-<meta name="DC.creator" content="Avans Hogeschool" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="SQL Educational Game - Murder Mystery">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2021-12-14 14:52:15 +0000">
+<meta name="DC.creator" content="Helena Rasche">
+<meta name="DC.creator" content="NU Knight Lab">
+<meta name="DC.creator" content="Erasmus+ Programme">
+<meta name="DC.creator" content="Avans Hogeschool">
 
         
         
         
         
-        <meta name="description" content="These lessons will help you get your feet in data science..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: SQL Educational Game - Murder Mystery" />
-        <meta property="og:description" content="These lessons will help you get your feet in data science..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="These lessons will help you get your feet in data science...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: SQL Educational Game - Murder Mystery">
+        <meta property="og:description" content="These lessons will help you get your feet in data science...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -92,6 +116,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -119,6 +147,7 @@
   "name": "Hands-on for 'SQL Educational Game - Murder Mystery' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/data-science/tutorials/sql-game/tutorial.html",
   "timeRequired": "PT2H",
+  "teaches": "Explore SQL City and discover who committed the murder\n - Reinforce your experiences with SQL such as querying, filtering, and joining data.",
   "keywords": "data-science, game, SQL, jupyter-notebook",
   "description": "The questions this  addresses are:\n - Who did the crime?\n\n\nThe objectives are:\n - Explore SQL City and discover who committed the murder\n - Reinforce your experiences with SQL such as querying, filtering, and joining data.\n\n",
   "inLanguage": {
@@ -163,8 +192,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
@@ -186,8 +215,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/NUKnightLab/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/NUKnightLab/",
@@ -207,8 +236,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
@@ -228,96 +257,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/",
-      "name": "Avans Hogeschool",
-      "image": "https://avatars.githubusercontent.com/avans-atgm",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/NUKnightLab/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/NUKnightLab/",
-      "name": "NU Knight Lab",
-      "image": "https://avatars.githubusercontent.com/NUKnightLab",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "name": "Erasmus+ Programme",
-      "image": "https://avatars.githubusercontent.com/erasmusplus",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/",
@@ -340,9 +281,31 @@
       "name": "Foundations of Data Science",
       "description": "These lessons will help you get your feet in data science and give you tools to help you slice and dice your data into results.",
       "url": "https://training.galaxyproject.org/training-material/topics/data-science/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "http://edamontology.org/topic_3372",
+      "inDefinedTermSet": "http://edamontology.org",
+      "termCode": "topic_3372",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3372"
     }
   ],
-  "educationalLevel": "Intermediate"
+  "educationalLevel": "Intermediate",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "game"
+    },
+    {
+      "@type": "Thing",
+      "name": "SQL"
+    },
+    {
+      "@type": "Thing",
+      "name": "jupyter-notebook"
+    }
+  ],
+  "abstract": "This is not a tutorial like most GTN content but a fun exercise for you to play around and learn a bit about SQL in a more 'practical', and hopefully re-inforce the skills you covered in Basic and Advanced SQL skills. It makes use of the [NUKnightLab/sql-mysteries](https://github.com/NUKnightLab/sql-mysteries) SQL murder mystery project and released under open licenses:"
 }
         </script>
         
@@ -354,7 +317,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -370,38 +335,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/sql-game/tutorial.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/sql-game/tutorial.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/sql-game/tutorial.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/sql-game/tutorial.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/sql-game/tutorial.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/sql-game/tutorial.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -443,8 +380,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/data-science/tutorials/sql-game/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/data-science/tutorials/sql-game/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -524,8 +460,13 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
+
+
+
+
 
 
 
@@ -547,12 +488,15 @@
   room: 'Galaxy-Training-Network/Lobby'
   };
 </script>
+
+
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
-<section class="tutorial topic-data-science">
+<article class="tutorial topic-data-science">
     <h1 data-toc-skip>SQL Educational Game - Murder Mystery</h1>
     
 
+    <section aria-labelledby="overview-box" id="tutorial-metadata">
     <div markdown="0">
 
 	<div class="contributors-line">
@@ -563,9 +507,9 @@
 
 
     <blockquote class="overview">
-        <div class="box-title" aria-label="overview box">Overview</div>
+        <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -599,6 +543,10 @@
         
             <ul>
                 
+                    
+                        
+                    
+                        
                     
                         
                     
@@ -678,19 +626,7 @@
                     
                         
                     
-                        
-                    
-                        
-                    
                 
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                     
                         
                     
@@ -706,6 +642,14 @@
                                 
                             
                             </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -796,15 +740,72 @@
         
 
         
+        <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials:</strong></div>
+        <ul class="supporting_material">
+            
+
+            
+
+            
+
+            
+
+            
+                <li class="btn btn-default supporting_material">
+
+
+    <a class="topic-icon" href="/training-material/topics/data-science/tutorials/sql-game/data-science-sql-game.ipynb" title="Jupyter Notebook" alt="SQL Educational Game - Murder Mystery Notebook">
+        <i class="far fa-file-code" aria-hidden="true"></i> Jupyter Notebook
+    </a>
+    
+
+</li>
+            
+
+            
+            
+            
+                <li class="btn btn-default supporting_material">    <a class="topic-icon" href="/training-material/topics/data-science/tutorials/sql-game/faqs/" title="Frequently Asked Questions">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+</li>
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+            
+        </ul>
+        
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Dec 14, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
+        
+        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00108">https://gxy.io/GTN:T00108</a> </div>
+        
     </blockquote>
+    </section>
 
     <div class="container">
         <div class="row">
@@ -814,13 +815,14 @@
             </div>
             <div class="col-sm-10">
                  
+                <section aria-label="Tutorial Notebook access information" id="tutorial-notebook">
                      
                      
                      
                      
                     
                         <blockquote class="comment">
-                            <div class="box-title" aria-label="comment box">Best viewed in a Jupyter Notebook</div>
+                            <div class="box-title">Best viewed in a Jupyter Notebook</div>
                             <p>
                                 This tutorial is best viewed in a Jupyter notebook! You can load this notebook one of the following ways<!--, or you can click to run it in MyBinder-->
                             </p>
@@ -847,8 +849,10 @@
                             </p>
                         </blockquote>
                     
-                 
+                </section>
+                
 
+                <section aria-label="Tutorial Content" id="tutorial-content">
                 <p>This is not a tutorial like most GTN content but a fun exercise for you to play around and learn a bit about SQL in a more ‘practical’, and hopefully re-inforce the skills you covered in Basic and Advanced SQL skills. It makes use of the <a href="https://github.com/NUKnightLab/sql-mysteries">NUKnightLab/sql-mysteries</a> SQL murder mystery project and released under open licenses:</p>
 
 <blockquote class="quote">
@@ -865,8 +869,8 @@ Original text and other content is released under Creative Commons CC BY-SA 4.0.
 
 <p>Setup the database connection:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sqlalchemy</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="n">sqlalchemy</span><span class="p">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s">"sqlite:///sql-murder-mystery.db"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sqlalchemy</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sqlalchemy</span><span class="p">.</span><span class="nf">create_engine</span><span class="p">(</span><span class="s">"sqlite:///sql-murder-mystery.db"</span><span class="p">)</span>
 <span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
 <span class="o">%</span><span class="n">sql</span> <span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">sql</span><span class="o">-</span><span class="n">murder</span><span class="o">-</span><span class="n">mystery</span><span class="p">.</span><span class="n">db</span>
 <span class="o">%</span><span class="n">config</span> <span class="n">SqlMagic</span><span class="p">.</span><span class="n">displaycon</span><span class="o">=</span><span class="bp">False</span>
@@ -876,15 +880,15 @@ Original text and other content is released under Creative Commons CC BY-SA 4.0.
 
 <p>Which tables are available to you? What columns do they contain? Here’s a handy reference for you:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">MetaData</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">MetaData</span><span class="p">()</span>
-<span class="n">m</span><span class="p">.</span><span class="n">reflect</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="n">sqlalchemy</span> <span class="kn">import</span> <span class="n">MetaData</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nc">MetaData</span><span class="p">()</span>
+<span class="n">m</span><span class="p">.</span><span class="nf">reflect</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">m</span><span class="p">.</span><span class="n">tables</span><span class="p">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="n">results</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="n">c</span><span class="p">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">table</span><span class="p">.</span><span class="n">c</span><span class="p">])])</span>
-<span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">'display.max_colwidth'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"Table"</span><span class="p">,</span> <span class="s">"Columns"</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">m</span><span class="p">.</span><span class="n">tables</span><span class="p">.</span><span class="nf">values</span><span class="p">():</span>
+    <span class="n">results</span><span class="p">.</span><span class="nf">append</span><span class="p">([</span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">', '</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="n">c</span><span class="p">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">table</span><span class="p">.</span><span class="n">c</span><span class="p">])])</span>
+<span class="n">pd</span><span class="p">.</span><span class="nf">set_option</span><span class="p">(</span><span class="s">'display.max_colwidth'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"Table"</span><span class="p">,</span> <span class="s">"Columns"</span><span class="p">])</span>
 </code></pre></div></div>
 
 <h2 id="the-search">The search!</h2>
@@ -918,14 +922,16 @@ skills to find the murderer.</p>
 <p>Write the following queries in your SQL environment to check whether you’ve found the right murderer:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">sql</span>
-<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">solution</span> <span class="n">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"Insert the name of the person you found here"</span><span class="p">);</span>
+<span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">solution</span> <span class="nc">VALUES </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"Insert the name of the person you found here"</span><span class="p">);</span>
 <span class="n">SELECT</span> <span class="n">value</span> <span class="n">FROM</span> <span class="n">solution</span><span class="p">;</span>
 </code></pre></div></div>
 
+                </section>
 
+                <section aria-label="Tutorial Footer, Feedback, Citation" id="tutorial-footer">
                 
                 <blockquote class="key_points">
-                    <div class="box-title" aria-label="key-points box"><i class="fas fa-key" aria-hidden="true"></i> Key points</div>
+                    <div class="box-title"><i class="fas fa-key" aria-hidden="true"></i> Key points</div>
                     <ul>
                         
                         <li><p>Learning SQL can be fun!</p>
@@ -936,7 +942,7 @@ skills to find the murderer.</p>
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/data-science/faqs/">FAQ page for the Foundations of Data Science topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/data-science/faqs/">FAQ page for the Foundations of Data Science topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -954,33 +960,9 @@ skills to find the murderer.</p>
                 <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
                 </p>
 
-                <div id="feedback-button">
-                    <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
-                </div>
-                <div id="feedback-form">
-                </div>
-                <script type="text/javascript">
-                    (function (window, document) {
-                        function onDocumentReady(fn) {
-                            if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-                                fn();
-                            } else {
-                                document.addEventListener('DOMContentLoaded', fn);
-                            }
-                        }
-
-                        onDocumentReady(function () {
-                            $("#feedback-button").click(function(evt){
-                                var e = $(evt.target)
-                                e.hide();
-
-                                $("#feedback-form").html(`
-                                    <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=SQL Educational Game - Murder Mystery (Foundations of Data Science)">Loading...</iframe>
-                                `)
-                            })
-                        });
-                    })(window, document);
-                </script>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=SQL Educational Game - Murder Mystery (Foundations of Data Science)" alt="Feedback form link">
+                    <img src="/training-material/shared/images/feedback.png" alt="Preview of the google form" />
+                </a>
 
                 <h1>Citing this Tutorial</h1>
                 <p>
@@ -998,7 +980,7 @@ skills to find the murderer.</p>
                 <blockquote class="details">
 
                   <div id="citation-bibtex" class="box-title">
-                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false" aria-label="Toggle details box: BibTeX for citing this tutorial">
+                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false">
                       <i class="fas fa-info-circle" aria-hidden="true"></i>
                       <span class="visually-hidden"></span> BibTeX<span role="button" class="fold-unfold fa fa-minus-square" aria-hidden="true"></span>
                     </button>
@@ -1039,11 +1021,11 @@ note = "[Online; accessed TODAY]"
                 
 
 
-<script type="text/javascript">
+<script>
 // update the date on load, or leave fallback of 'today'
-d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -1052,6 +1034,7 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 
                 
                 <blockquote class="agenda follow-up">
+                    <div class="box-title">Go Further</div>
                     <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
                     <ul>
                         
@@ -1059,28 +1042,93 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 </blockquote>
                 
 
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/data-science/tutorials/sql-game/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools: []
+</code></pre></div>
+                </blockquote>
+		
+
+
+                </section>
+
             </div>
         </div>
     </div>
-</section>
+</article>
 <br/>
 <br/>
 <br/>
 
         </div>
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00108">https://gxy.io/GTN:T00108</a>
+				</p>
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/data-science/tutorials/sql-game/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

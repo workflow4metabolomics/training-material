@@ -8,34 +8,58 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Creating the bulk RNA-seq dataset for deconvolution" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2023-02-03 15:18:05 +0000" />
-<meta name="DC.creator" content="Wendi Bacon" />
-<meta name="DC.creator" content="Mehmet Tekman" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Creating the bulk RNA-seq dataset for deconvolution">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-02-03 15:18:05 +0000">
+<meta name="DC.creator" content="Wendi Bacon">
+<meta name="DC.creator" content="Mehmet Tekman">
 
         
         
         
         
-        <meta name="description" content="Training material and practicals for all kinds of single ..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: Creating the bulk RNA-seq dataset for deconvolution" />
-        <meta property="og:description" content="Training material and practicals for all kinds of single ..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Training material and practicals for all kinds of single ...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: Creating the bulk RNA-seq dataset for deconvolution">
+        <meta property="og:description" content="Training material and practicals for all kinds of single ...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
         <script type="application/ld+json">
@@ -90,6 +114,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -117,6 +145,7 @@
   "name": "Hands-on for 'Creating the bulk RNA-seq dataset for deconvolution' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html",
   "timeRequired": "PT1H",
+  "teaches": "You will retrieve raw data from the EMBL-EBI Expression Atlas.\n - You will manipulate the metadata and matrix files.\n - You will combine the metadata and matrix files into an ESet object for MuSiC deconvolution.\n - You will create multiple ESet objects - both combined and separated out by disease phenotype for your bulk dataset.",
   "keywords": "single-cell, single-cell, human, deconvolution, bulk, transcriptomics",
   "description": "The questions this  addresses are:\n - Where can I find good quality RNA-seq datasets?\n - How can I reformat and manipulate these downloads to create the right format for MuSiC?\n\n\nThe objectives are:\n - You will retrieve raw data from the EMBL-EBI Expression Atlas.\n - You will manipulate the metadata and matrix files.\n - You will combine the metadata and matrix files into an ESet object for MuSiC deconvolution.\n - You will create multiple ESet objects - both combined and separated out by disease phenotype for your bulk dataset.\n\n",
   "inLanguage": {
@@ -169,6 +198,52 @@
       }
     }
   ],
+  "author": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/",
+      "name": "Wendi Bacon",
+      "image": "https://avatars.githubusercontent.com/nomadscientist",
+      "description": "Lecturer at The Open University",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0002-8170-8806",
+      "orcid": "https://orcid.org/0000-0002-8170-8806"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/",
+      "name": "Mehmet Tekman",
+      "image": "https://avatars.githubusercontent.com/mtekman",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
+    }
+  ],
   "about": [
     {
       "@type": "CreativeWork",
@@ -176,7 +251,31 @@
       "description": "Training material and practicals for all kinds of single cell analysis (particularly scRNA-seq!). When you generate your lovely gene lists for your cells, consider checking out our Transcriptomics tutorials for further network analysis!",
       "url": "https://training.galaxyproject.org/training-material/topics/single-cell/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "single-cell"
+    },
+    {
+      "@type": "Thing",
+      "name": "human"
+    },
+    {
+      "@type": "Thing",
+      "name": "deconvolution"
+    },
+    {
+      "@type": "Thing",
+      "name": "bulk"
+    },
+    {
+      "@type": "Thing",
+      "name": "transcriptomics"
+    }
+  ],
+  "abstract": "# Introduction"
 }
         </script>
         
@@ -188,7 +287,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -204,38 +305,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -277,8 +350,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/maintopics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.md" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -358,8 +430,13 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
+
+
+
+
 
 
 
@@ -381,12 +458,15 @@
   room: 'Galaxy-Training-Network/Lobby'
   };
 </script>
+
+
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
-<section class="tutorial topic-single-cell">
+<article class="tutorial topic-single-cell">
     <h1 data-toc-skip>Creating the bulk RNA-seq dataset for deconvolution</h1>
     
 
+    <section aria-labelledby="overview-box" id="tutorial-metadata">
     <div markdown="0">
 
 	<div class="contributors-line">
@@ -426,9 +506,9 @@
 
 
     <blockquote class="overview">
-        <div class="box-title" aria-label="overview box">Overview</div>
+        <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -486,6 +566,8 @@
                         
                     
                         
+                    
+                        
                             
                             <li> Bulk RNA Deconvolution with MuSiC:
                             
@@ -495,6 +577,8 @@
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -542,12 +626,6 @@
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
                             
                             <li> Creating the single-cell RNA-seq reference dataset for deconvolution:
                             
@@ -557,6 +635,16 @@
                                 
                             
                             </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -617,7 +705,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-    <a class="btn btn-default topic-icon" href="/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/workflows/" title="Workflows" alt="Creating the bulk RNA-seq dataset for deconvolution workflows">
+    <a class="btn btn-default topic-icon" href="/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/workflows/" title="Creating the bulk RNA-seq dataset for deconvolution workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>&nbsp;Workflows
     </a>
 
@@ -631,13 +719,10 @@
             
             
             
-                 <li class="btn btn-default supporting_material">
-    <a class="topic-icon" href="/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+                <li class="btn btn-default supporting_material">    <a class="topic-icon" href="/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/faqs/" title="Frequently Asked Questions">
         <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
     </a>
-  </li>
-
-
+</li>
             
 
             <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
@@ -660,195 +745,21 @@
 
 
             
-                <li class="btn btn-default supporting_material">
-
-
-    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
-    </a>
-    <ul class="dropdown-menu">
-    
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
-            Galaxy Africa
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
-            Galaxy India
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
-            Galaxy Test
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
-            Human Cell Atlas
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://plants.usegalaxy.eu/" title="Plant Anaylsis Workbench">
-            Plant Anaylsis Workbench
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://singlecell.usegalaxy.eu/" title="Single Cell Omics workbench">
-            Single Cell Omics workbench
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
-            Street Science
-        </a>
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
-            UseGalaxy.eu
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
-            UseGalaxy.org (Main)
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
-            UseGalaxy.org.au
-        </a>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    </ul>
-
-
-</li>
-            
         </ul>
         
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Feb 3, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
+        
+        <div><strong>Short Link:</strong> <a href="https://gxy.io/GTN:T00242">https://gxy.io/GTN:T00242</a> </div>
+        
     </blockquote>
+    </section>
 
     <div class="container">
         <div class="row">
@@ -859,12 +770,13 @@
             <div class="col-sm-10">
                  
 
+                <section aria-label="Tutorial Content" id="tutorial-content">
                 <h1 id="introduction">Introduction</h1>
 
-<p>After completing the <a href="https://xuranw.github.io/MuSiC/articles/MuSiC.html">MuSiC deconvolution tutorial</a> (<span class="citation"><a href="#wang2019bulk">Wang <i>et al.</i> 2019</a></span>), you are hopefully excited to apply this analysis to data of your choice. Annoyingly, getting data in the right format is often what prevents us from being able to successfully apply analyses. This tutorial is all about reformatting a raw bulk <span class="notranslate">RNA</span>-seq dataset pulled from a public resource (the EMBL-EBI <span class="notranslate">Expression</span> atlas (<span class="citation"><a href="#Moreno2021">Moreno <i>et al.</i> 2021</a></span>).  Let’s get started!</p>
+<p>After completing the <a href="https://xuranw.github.io/MuSiC/articles/MuSiC.html">MuSiC deconvolution tutorial</a> (<span class="citation"><a href="#wang2019bulk">Wang <i>et al.</i> 2019</a></span>), you are hopefully excited to apply this analysis to data of your choice. Annoyingly, getting data in the right format is often what prevents us from being able to successfully apply analyses. This tutorial is all about reformatting a raw bulk RNA-seq dataset pulled from a public resource (the EMBL-EBI Expression atlas (<span class="citation"><a href="#Moreno2021">Moreno <i>et al.</i> 2021</a></span>).  Let’s get started!</p>
 
 <blockquote class="agenda">
-  <div id="agenda" class="box-title" aria-label="agenda box: ">Agenda</div>
+  <div class="box-title agenda-title" id="agenda">Agenda</div>
 
   <p>In this tutorial, we will cover:</p>
 
@@ -874,8 +786,8 @@
       <li><a href="#find-the-data" id="markdown-toc-find-the-data">Find the data</a></li>
     </ol>
   </li>
-  <li><a href="#manipulate-the-expression-matrix" id="markdown-toc-manipulate-the-expression-matrix">Manipulate the <span class="notranslate">expression</span> matrix</a></li>
-  <li><a href="#construct-expression-set-objects" id="markdown-toc-construct-expression-set-objects">Construct <span class="notranslate">Expression</span> Set Objects</a></li>
+  <li><a href="#manipulate-the-expression-matrix" id="markdown-toc-manipulate-the-expression-matrix">Manipulate the expression matrix</a></li>
+  <li><a href="#construct-expression-set-objects" id="markdown-toc-construct-expression-set-objects">Construct Expression Set Objects</a></li>
   <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
 </ol>
 
@@ -883,25 +795,26 @@
 
 <h1 id="metadata-manipulation">Metadata Manipulation</h1>
 
-<p>Just as in our sc<span class="notranslate">RNA</span>-dataset preparation tutorial, we will tackle the metadata first. We are roughly following the same concept as in the previous bulk deconvolution tutorial, by comparing human pancreas data across a disease variable (type II diabetes vs healthy), but using public datasets to do it.</p>
+<p>Just as in our scRNA-dataset preparation tutorial, we will tackle the metadata first. We are roughly following the same concept as in the previous bulk deconvolution tutorial, by comparing human pancreas data across a disease variable (type II diabetes vs healthy), but using public datasets to do it.</p>
 
 <h2 id="find-the-data">Find the data</h2>
-<p>We explored the <a href="https://www.ebi.ac.uk/gxa/experiments"><span class="notranslate">expression</span> atlas</a>, browsing experiments in order to find the bulk <span class="notranslate">RNA</span>-seq pancreas dataset (<span class="citation"><a href="#segerstolpe2016single">Segerstolpe <i>et al.</i> 2016</a></span>). You can <a href="https://www.ebi.ac.uk/gxa/experiments/E-MTAB-5060/Results">explore this dataset here</a> using their browser. These cells come from 7 healthy individuals and 4 individuals with Type II diabetes, so we will create reference <span class="notranslate">Expression</span> Set objects for the total as well as separating out by phenotype, as you may have reason to do this in your analysis (or you may not!). This dataset is from the same lab that we built our sc<span class="notranslate">RNA</span>-seq reference from, so we should get quite accurate results given the same lab made both datasets!</p>
+<p>We explored the <a href="https://www.ebi.ac.uk/gxa/experiments">expression atlas</a>, browsing experiments in order to find the bulk RNA-seq pancreas dataset (<span class="citation"><a href="#segerstolpe2016single">Segerstolpe <i>et al.</i> 2016</a></span>). You can <a href="https://www.ebi.ac.uk/gxa/experiments/E-MTAB-5060/Results">explore this dataset here</a> using their browser. These cells come from 7 healthy individuals and 4 individuals with Type II diabetes, so we will create reference Expression Set objects for the total as well as separating out by phenotype, as you may have reason to do this in your analysis (or you may not!). This dataset is from the same lab that we built our scRNA-seq reference from, so we should get quite accurate results given the same lab made both datasets!</p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-data-upload" class="box-title" aria-label="hands-on box:  Data upload "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Data upload</div>
 
   <ol>
     <li>Create a new history for this tutorial</li>
     <li>
       <p>Import the files from <a href="https://zenodo.org/record/7319173">Zenodo</a> or from
-the shared data library (<code class="language-plaintext highlighter-rouge">GTN - Material</code> -&gt; <code class="language-plaintext highlighter-rouge"><span class="notranslate">single-cell</span></code>
- -&gt; <code class="language-plaintext highlighter-rouge">Creating the bulk <span class="notranslate">RNA</span>-seq dataset for deconvolution</code>):</p>
+the shared data library (<code class="language-plaintext highlighter-rouge">GTN - Material</code> -&gt; <code class="language-plaintext highlighter-rouge">single-cell</code>
+ -&gt; <code class="language-plaintext highlighter-rouge">Creating the bulk RNA-seq dataset for deconvolution</code>):</p>
 
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/record/7319173/files/E-MTAB-5060-experiment-design.tsv
 </code></pre></div>      </div>
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-importing-via-links" class="box-title"><button type="button" aria-controls="tip-importing-via-links-contents" aria-expanded="true" aria-label="Toggle tip box: Importing via links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Rename the datasets as needed</p>
@@ -910,30 +823,33 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
       <p>Check that the datatype is tabular</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-changing-the-datatype" class="box-title"><button type="button" aria-controls="tip-changing-the-datatype-contents" aria-expanded="true" aria-label="Toggle tip box: Changing the datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>   <li>Select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Add to <code class="language-plaintext highlighter-rouge">experiment-design</code> the following tags <code class="language-plaintext highlighter-rouge">#metadata #bulk #ebi</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-adding-a-tag" class="box-title"><button type="button" aria-controls="tip-adding-a-tag-contents" aria-expanded="true" aria-label="Toggle tip box: Adding a tag"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Adding a tag<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-adding-a-tag"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-adding-a-tag" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Adding a tag<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
   </ol>
 
 </blockquote>
 
-<p>As before, the metadata object annoyingly has a bunch of unnecessary columns. You can examine this with the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> in the <span class="notranslate">Galaxy</span> history. Let’s remove them!</p>
+<p>As before, the metadata object annoyingly has a bunch of unnecessary columns. You can examine this with the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> in the Galaxy history. Let’s remove them!</p>
 
 <p><img src="../../images/bulk-music/bulk-metadata-annoying.png" alt="Columns in a table where some contain run info or Sample Characteristic[age] while others are empty." title="Ridiculous metadata columns and labels" /></p>
 
 <!--SNIPPET-->
-<blockquote class="tip">   <div id="tip-using-tutorial-mode" class="box-title"><button type="button" aria-controls="tip-using-tutorial-mode-contents" aria-expanded="true" aria-label="Toggle tip box: Using tutorial mode"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Using tutorial mode<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Tools are frequently updated to new versions. Your <span class="notranslate">Galaxy</span> may have multiple versions of the same tool available. By default, you will be shown the latest version of the tool. This may NOT be the same tool used in the tutorial you are accessing. Furthermore, if you use a newer tool in one step, and try using an older tool in the next step… this may fail! To ensure you use the same tool versions of a given tutorial, use the <strong>Tutorial mode</strong> feature.</p>   <ul>   <li>Open your <span class="notranslate">Galaxy</span> server</li>   <li>Click on the <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> icon on the top menu, this will open the GTN inside <span class="notranslate">Galaxy</span>.</li>   <li>Navigate to your tutorial</li>   <li>Tool names in tutorials will be blue buttons that open the correct tool for you</li>   <li><strong>Note:</strong> this does not work for all tutorials (yet)   <img src="/training-material/topics/contributing/images/88277962-ddda4a80-cce1-11ea-92cd-41b1df063db0.gif" alt="gif showing how GTN-in-Galaxy works" /></li>   <li>You can click anywhere in the grey-ed out area outside of the tutorial box to return back to the <span class="notranslate">Galaxy</span> analytical interface</li> </ul> </blockquote>
+<blockquote class="tip">   <div class="box-title tip-title" id="tip-using-tutorial-mode"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-using-tutorial-mode" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Using tutorial mode<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Tools are frequently updated to new versions. Your Galaxy may have multiple versions of the same tool available. By default, you will be shown the latest version of the tool. This may NOT be the same tool used in the tutorial you are accessing. Furthermore, if you use a newer tool in one step, and try using an older tool in the next step… this may fail! To ensure you use the same tool versions of a given tutorial, use the <strong>Tutorial mode</strong> feature.</p>   <ul>   <li>Open your Galaxy server</li>   <li>Click on the <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> icon on the top menu, this will open the GTN inside Galaxy.</li>   <li>Navigate to your tutorial</li>   <li>Tool names in tutorials will be blue buttons that open the correct tool for you</li>   <li><strong>Note:</strong> this does not work for all tutorials (yet)   <img src="/training-material/topics/contributing/images/88277962-ddda4a80-cce1-11ea-92cd-41b1df063db0.gif" alt="gif showing how GTN-in-Galaxy works" /></li>   <li>You can click anywhere in the grey-ed out area outside of the tutorial box to return back to the Galaxy analytical interface</li> </ul>   <blockquote class="warning">   <div class="box-title warning-title" id="warning-not-all-browsers-work"><i class="fas fa-exclamation-triangle" aria-hidden="true" ></i> Warning: Not all browsers work!</div>   <ul>     <li>We’ve had some issues with Tutorial mode on Safari for Mac users.</li>     <li>Try a <strong>different browser</strong> if you aren’t seeing the button.</li>   </ul> </blockquote> </blockquote>
+<p><!--END_SNIPPET--></p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-remove-unnecessary-columns" class="box-title" aria-label="hands-on box:  Remove unnecessary columns "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Remove unnecessary columns</div>
+  <div class="box-title hands-on-title" id="hands-on-remove-unnecessary-columns"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Remove unnecessary columns</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0" title="Tested with toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0"><strong>Advanced Cut</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0" title="Advanced Cut tool" aria-role="link"><strong>Advanced Cut</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“File to cut”</em>: <code class="language-plaintext highlighter-rouge">output</code> (Input dataset)</li>
         <li><em>“Operation”</em>: <code class="language-plaintext highlighter-rouge">Discard</code></li>
@@ -945,9 +861,9 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
       </ul>
 
       <blockquote class="comment">
-        <div id="comment" class="box-title" aria-label="comment box: "><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden"></span> Comment</div>
+        <div class="box-title comment-title" id="comment"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
 
-        <p>Advanced cut works slightly differently in a <span class="notranslate">workflow</span> versus running the tool independently. Independently, there is a list and you can click through the list to note your columns, while in a <span class="notranslate">workflow</span> it appears as a text option and you put each column on a different line. The point is, each number above represents a column, so remove them!</p>
+        <p>Advanced cut works slightly differently in a workflow versus running the tool independently. Independently, there is a list and you can click through the list to note your columns, while in a workflow it appears as a text option and you put each column on a different line. The point is, each number above represents a column, so remove them!</p>
       </blockquote>
     </li>
   </ol>
@@ -957,15 +873,15 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 <p>Now let’s take care of the excessively wordy header titles - and note that oftentimes various programmes struggle with titles or cells that have any spaces ` ` in them, so removing those now often saves hassle later.</p>
 
 <blockquote class="comment">
-  <div id="comment-1" class="box-title" aria-label="comment box: "><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden"></span> Comment</div>
+  <div class="box-title comment-title" id="comment-1"><i class="far fa-comment-dots" aria-hidden="true"></i> Comment</div>
   <p>You might also remember in the MuSiC tutorial that we can analyse numeric parameters in the metadata (in that case, hbac1c content). Reformatting to ensure numerical values in these columns (i.e. taking the ` years` out of an age cell) is helpful then too.</p>
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-fixing-titles" class="box-title" aria-label="hands-on box:  Fixing titles "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Fixing titles</div>
+  <div class="box-title hands-on-title" id="hands-on-fixing-titles"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Fixing titles</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2" title="Tested with toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2"><strong>Regex Find And Replace</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/<span class="notranslate">galaxy</span>p/regex_find_replace/regex1/1.0.2</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2" title="Regex Find And Replace tool" aria-role="link"><strong>Regex Find And Replace</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select lines from”</em>: <code class="language-plaintext highlighter-rouge">output</code> (output of <strong>Advanced Cut</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
         <li>In <em>“Check”</em>:
@@ -1013,56 +929,60 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
       <p>Change the datatype to tabular</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-changing-the-datatype-1" class="box-title"><button type="button" aria-controls="tip-changing-the-datatype-1-contents" aria-expanded="true" aria-label="Toggle tip box: Changing the datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>   <li>Select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
   </ol>
 </blockquote>
 
-<p>Now examine <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> your resultant metadata file in the <span class="notranslate">Galaxy</span> history. Better, right?</p>
+<p>Now examine <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> your resultant metadata file in the Galaxy history. Better, right?</p>
 
-<figure id="figure-1"><img src="../../images/bulk-music/bulk-metadata-pretty.png" alt="5 columns with numerical or string information on Run, Age, BMI, Disease and Sex. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Look at the pretty metadata</figcaption></figure>
+<figure id="figure-1"><img src="../../images/bulk-music/bulk-metadata-pretty.png" alt="5 columns with numerical or string information on Run, Age, BMI, Disease and Sex. " width="770" height="366" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 1</strong>:</span> Look at the pretty metadata</figcaption></figure>
 
 <p>This is ready to go, so now we’ll reformat the matrix!</p>
 
-<h1 id="manipulate-the-expression-matrix">Manipulate the <span class="notranslate">expression</span> matrix</h1>
+<h1 id="manipulate-the-expression-matrix">Manipulate the expression matrix</h1>
 
 <p>Let’s upload the dataset.</p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-data-upload-1" class="box-title" aria-label="hands-on box:  Data upload "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Data upload</div>
+  <div class="box-title hands-on-title" id="hands-on-data-upload-1"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Data upload</div>
 
   <ol>
     <li>
       <p>Import the files from <a href="https://zenodo.org/record/7319173">Zenodo</a> or from
-the shared data library (<code class="language-plaintext highlighter-rouge">GTN - Material</code> -&gt; <code class="language-plaintext highlighter-rouge"><span class="notranslate">single-cell</span></code>
- -&gt; <code class="language-plaintext highlighter-rouge">Creating the bulk <span class="notranslate">RNA</span>-seq dataset for deconvolution</code>):</p>
+the shared data library (<code class="language-plaintext highlighter-rouge">GTN - Material</code> -&gt; <code class="language-plaintext highlighter-rouge">single-cell</code>
+ -&gt; <code class="language-plaintext highlighter-rouge">Creating the bulk RNA-seq dataset for deconvolution</code>):</p>
 
       <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/record/7319173/files/E-MTAB-5060-raw-counts.tsv
 </code></pre></div>      </div>
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-importing-via-links-1" class="box-title"><button type="button" aria-controls="tip-importing-via-links-1-contents" aria-expanded="true" aria-label="Toggle tip box: Importing via links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Open the Galaxy Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> on the top-right of the tool panel)</p>   </li>   <li>Select <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>Rename the dataset as needed</li>
     <li>
       <p>Check that the datatype is tabular</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-changing-the-datatype-2" class="box-title"><button type="button" aria-controls="tip-changing-the-datatype-2-contents" aria-expanded="true" aria-label="Toggle tip box: Changing the datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>   <li>Select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-changing-the-datatype-2"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-changing-the-datatype-2" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Changing the datatype<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> <strong>Convert</strong> tab on the top</li>   <li>In the lower part <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden">galaxy-chart-select-data</span> <strong>Datatypes</strong>, select <code class="language-plaintext highlighter-rouge">tabular</code>     <ul>       <li>tip: you can start typing the datatype into the field to filter the dropdown menu</li>     </ul>   </li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Add to <code class="language-plaintext highlighter-rouge">raw-counts</code> the following tags <code class="language-plaintext highlighter-rouge">#matrix #bulk #ebi</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-adding-a-tag-1" class="box-title"><button type="button" aria-controls="tip-adding-a-tag-1-contents" aria-expanded="true" aria-label="Toggle tip box: Adding a tag"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Adding a tag<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-adding-a-tag-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-adding-a-tag-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Adding a tag<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the dataset</li>   <li>Click on <i class="fas fa-tags" aria-hidden="true"></i><span class="visually-hidden">galaxy-tags</span> <strong>Add Tags</strong></li>   <li>     <p>Add a tag starting with <code class="language-plaintext highlighter-rouge">#</code></p>     <p>Tags starting with <code class="language-plaintext highlighter-rouge">#</code> will be automatically propagated to the outputs of tools using this dataset.</p>   </li>   <li>Check that the tag is appearing below the dataset name</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
   </ol>
 
 </blockquote>
 
-<p>Now examine <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> your raw counts file in the <span class="notranslate">Galaxy</span> history.</p>
+<p>Now examine <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> your raw counts file in the Galaxy history.</p>
 
 <blockquote class="question">
-  <div id="question" class="box-title" aria-label="question box: "><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden"></span> Question</div>
+  <div class="box-title question-title" id="question"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
 
   <ol>
     <li>Are samples in the rows or columns?</li>
@@ -1071,7 +991,7 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
   <blockquote class="solution">
     <div id="solution-1" class="box-title"><button type="button" aria-controls="solution-1-contents" aria-expanded="true" aria-label="Toggle solution box: "><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"></span> Solution<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>
 
-    <figure id="figure-2"><img src="../../images/bulk-music/raw-matrix.png" alt="Column 1 contains Gene ID followed by many lines of ENSG####. Column 2 contains the gene names. The following columns contain numerous iterations of ERR#####. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Gene info</figcaption></figure>
+    <figure id="figure-2"><img src="../../images/bulk-music/raw-matrix.png" alt="Column 1 contains Gene ID followed by many lines of ENSG####. Column 2 contains the gene names. The following columns contain numerous iterations of ERR#####. " width="1802" height="358" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 2</strong>:</span> Gene info</figcaption></figure>
 
     <ol>
       <li>By examining the matrix, you can find that genes are the rows while samples are the columns.</li>
@@ -1080,13 +1000,13 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
   </blockquote>
 </blockquote>
 
-<p>While it’s awesome that there’s a gene name column, unfortunately the gene names will be duplicated - different ENS IDs can refer to the same Gene Name. This going to be a problem later. So we need to get this in a format to collapse the ENS IDs, just as we did previously in the sc<span class="notranslate">RNA</span>-seq data reference preparation. Sadly, we’ll start by removing the column of gene names to prepare for the ENS ID collapse.</p>
+<p>While it’s awesome that there’s a gene name column, unfortunately the gene names will be duplicated - different ENS IDs can refer to the same Gene Name. This going to be a problem later. So we need to get this in a format to collapse the ENS IDs, just as we did previously in the scRNA-seq data reference preparation. Sadly, we’ll start by removing the column of gene names to prepare for the ENS ID collapse.</p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-remove-gene-names-column" class="box-title" aria-label="hands-on box:  Remove gene names column "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Remove gene names column</div>
+  <div class="box-title hands-on-title" id="hands-on-remove-gene-names-column"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Remove gene names column</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0"><strong>Remove columns</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0" title="Remove columns tool" aria-role="link"><strong>Remove columns</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Tabular file”</em>: <code class="language-plaintext highlighter-rouge">raw-counts</code> (Input dataset)</li>
         <li>In <em>“Select Columns”</em>:
@@ -1104,27 +1024,29 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 
 </blockquote>
 
-<p>Now that your data is in a format of having a rows of ENS IDs and samples as columns, you can apply the handy ENS ID collapsing <span class="notranslate">workflow</span> as we did in the sc<span class="notranslate">RNA</span>-seq reference. If you have already imported this <span class="notranslate">workflow</span> during the first tutorial, then you can use it again now.</p>
+<p>Now that your data is in a format of having a rows of ENS IDs and samples as columns, you can apply the handy ENS ID collapsing workflow as we did in the scRNA-seq reference. If you have already imported this workflow during the first tutorial, then you can use it again now.</p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-convert-from-ensembl-to-genesymbol-using-workflow" class="box-title" aria-label="hands-on box:  Convert from Ensembl to GeneSymbol using workflow "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Convert from Ensembl to GeneSymbol using <span class="notranslate">workflow</span></div>
+  <div class="box-title hands-on-title" id="hands-on-convert-from-ensembl-to-genesymbol-using-workflow"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Convert from Ensembl to GeneSymbol using workflow</div>
 
   <ol>
     <li>
-      <p>Import this <a href="https://usegalaxy.eu/u/wendi.bacon.training/w/convert-from-ensembl-to-genesymbol-summing-duplicate-genes"><span class="notranslate">workflow</span></a>.</p>
+      <p>Import this <a href="https://usegalaxy.eu/u/wendi.bacon.training/w/convert-from-ensembl-to-genesymbol-summing-duplicate-genes">workflow</a>.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-importing-a-workflow" class="box-title"><button type="button" aria-controls="tip-importing-a-workflow-contents" aria-expanded="true" aria-label="Toggle tip box: Importing a workflow"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing a <span class="notranslate">workflow</span><span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on <em><span class="notranslate">Workflow</span></em> on the top menu bar of <span class="notranslate">Galaxy</span>. You will see a list of all your workflows.</li>   <li>Click on the upload icon <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> at the top-right of the screen</li>   <li>Provide your <span class="notranslate">workflow</span>     <ul>       <li>Option 1: Paste the URL of the <span class="notranslate">workflow</span> into the box labelled <em>“Archived <span class="notranslate">Workflow</span> URL”</em></li>       <li>Option 2: Upload the <span class="notranslate">workflow</span> file in the box labelled <em>“Archived <span class="notranslate">Workflow</span> File”</em></li>     </ul>   </li>   <li>Click the <strong>Import <span class="notranslate">workflow</span></strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-a-workflow"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-a-workflow" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing a workflow<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on <em>Workflow</em> on the top menu bar of Galaxy. You will see a list of all your workflows.</li>   <li>Click on <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Import</strong> at the top-right of the screen</li>   <li>Provide your workflow     <ul>       <li>Option 1: Paste the URL of the workflow into the box labelled <em>“Archived Workflow URL”</em></li>       <li>Option 2: Upload the workflow file in the box labelled <em>“Archived Workflow File”</em></li>     </ul>   </li>   <li>Click the <strong>Import workflow</strong> button</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
     <li>
-      <p>Run the <span class="notranslate">workflow</span> on your sample with the following parameters:</p>
+      <p>Run the workflow on your sample with the following parameters:</p>
       <ul>
         <li><em>“Organism”</em>: <code class="language-plaintext highlighter-rouge">Human</code></li>
-        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“<span class="notranslate">Expression</span> Matrix (Gene Rows)”</em>: <code class="language-plaintext highlighter-rouge">output</code> (output of <strong>Remove columns</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Expression Matrix (Gene Rows)”</em>: <code class="language-plaintext highlighter-rouge">output</code> (output of <strong>Remove columns</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
       </ul>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div id="tip-running-a-workflow" class="box-title"><button type="button" aria-controls="tip-running-a-workflow-contents" aria-expanded="true" aria-label="Toggle tip box: Running a workflow"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Running a <span class="notranslate">workflow</span><span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on <em><span class="notranslate">Workflow</span></em> on the top menu bar of <span class="notranslate">Galaxy</span>. You will see a list of all your workflows.</li>   <li>Click on the <i class="fas fa-play" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">workflow</span>-run</span> (<em>Run <span class="notranslate">workflow</span></em>) button next to your <span class="notranslate">workflow</span></li>   <li>Configure the <span class="notranslate">workflow</span> as needed</li>   <li>Click the <strong>Run <span class="notranslate">Workflow</span></strong> button at the top-right of the screen</li>   <li>You may have to refresh your history to see the queued jobs</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-running-a-workflow"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-running-a-workflow" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Running a workflow<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on <em>Workflow</em> on the top menu bar of Galaxy. You will see a list of all your workflows.</li>   <li>Click on the <i class="fas fa-play" aria-hidden="true"></i><span class="visually-hidden">workflow-run</span> (<em>Run workflow</em>) button next to your workflow</li>   <li>Configure the workflow as needed</li>   <li>Click the <strong>Run Workflow</strong> button at the top-right of the screen</li>   <li>You may have to refresh your history to see the queued jobs</li> </ul> </blockquote>
+      <p><!--END_SNIPPET--></p>
     </li>
   </ol>
 
@@ -1132,19 +1054,19 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 
 <p>The output will likely be called <strong>Text transformation</strong> and will look like this:</p>
 
-<figure id="figure-3"><img src="../../images/bulk-music/ensidcollapse_bulk.png" alt="Alphabetised gene symbols appear in column one with integers in the following columns corresponding to samples. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Output of the ENS ID collapsing <span class="notranslate">workflow</span> for bulk dataset</figcaption></figure>
+<figure id="figure-3"><img src="../../images/bulk-music/ensidcollapse_bulk.png" alt="Alphabetised gene symbols appear in column one with integers in the following columns corresponding to samples. " width="448" height="288" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 3</strong>:</span> Output of the ENS ID collapsing workflow for bulk dataset</figcaption></figure>
 
-<p>Success! You’ve now prepared your metadata and your matrix. It’s time to put it together to create the <span class="notranslate">Expression</span> Set objects needed for MuSiC deconvolution.</p>
+<p>Success! You’ve now prepared your metadata and your matrix. It’s time to put it together to create the Expression Set objects needed for MuSiC deconvolution.</p>
 
-<h1 id="construct-expression-set-objects">Construct <span class="notranslate">Expression</span> Set Objects</h1>
+<h1 id="construct-expression-set-objects">Construct Expression Set Objects</h1>
 
-<p>We have three more tasks to do: first, we need to create the <span class="notranslate">expression</span> set object with all the phenotypes combined. Then, we will create the two objects we actually need - one for healthy and one for diseased.</p>
+<p>We have three more tasks to do: first, we need to create the expression set object with all the phenotypes combined. Then, we will create the two objects we actually need - one for healthy and one for diseased.</p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-creating-the-combined-object" class="box-title" aria-label="hands-on box:  Creating the combined object "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Creating the combined object</div>
+  <div class="box-title hands-on-title" id="hands-on-creating-the-combined-object"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Creating the combined object</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4" title="Tested with toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4"><strong>Construct <span class="notranslate">Expression</span> Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+<span class="notranslate">galaxy</span>4</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4" title="Construct Expression Set Object tool" aria-role="link"><strong>Construct Expression Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4</span></span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Assay Data”</em>: <code class="language-plaintext highlighter-rouge">out_file</code> #matrix (output of <strong>Text transformation</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Phenotype Data”</em>: <code class="language-plaintext highlighter-rouge">out_file1</code> #metadata (output of <strong>Regex Find And Replace</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
@@ -1156,7 +1078,7 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 </blockquote>
 
 <blockquote class="question">
-  <div id="question-1" class="box-title" aria-label="question box: "><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden"></span> Question</div>
+  <div class="box-title question-title" id="question-1"><i class="far fa-question-circle" aria-hidden="true"></i> Question</div>
 
   <ol>
     <li>How many genes are in your object?</li>
@@ -1167,8 +1089,8 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
   <blockquote class="solution">
     <div id="solution-1" class="box-title"><button type="button" aria-controls="solution-1-contents" aria-expanded="true" aria-label="Toggle solution box: "><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"></span> Solution<span role="button" class="fold-unfold fa fa-minus-square"></span></button></div>
 
-    <p>The trick with all of these questions is to examine <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> the <code class="language-plaintext highlighter-rouge">General info</code> output <i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> of the <strong>Construct <span class="notranslate">Expression</span> Set Object</strong> tool.</p>
-    <figure id="figure-4"><img src="../../images/bulk-music/generalinfo.png" alt="Lines showing ExpressionSet'; assayData: 34997 features, 7 samples; protocolData: none; phenoData; sampleNames: ERR### (7 total); varLabels: Age BMI Disease Sex; varMetadata: labelDescription; and 3 more useless lines . " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> General info output</figcaption></figure>
+    <p>The trick with all of these questions is to examine <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">galaxy-eye</span> the <code class="language-plaintext highlighter-rouge">General info</code> output <i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> of the <strong>Construct Expression Set Object</strong> tool.</p>
+    <figure id="figure-4"><img src="../../images/bulk-music/generalinfo.png" alt="Lines showing ExpressionSet'; assayData: 34997 features, 7 samples; protocolData: none; phenoData; sampleNames: ERR### (7 total); varLabels: Age BMI Disease Sex; varMetadata: labelDescription; and 3 more useless lines . " width="844" height="312" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 4</strong>:</span> General info output</figcaption></figure>
 
     <ol>
       <li>There are <code class="language-plaintext highlighter-rouge">34997</code> features, which are the genes.</li>
@@ -1180,13 +1102,13 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 </blockquote>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-creating-the-disease-only-object" class="box-title" aria-label="hands-on box:  Creating the disease-only object "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Creating the disease-only object</div>
+  <div class="box-title hands-on-title" id="hands-on-creating-the-disease-only-object"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Creating the disease-only object</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4" title="Tested with toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4"><strong>Manipulate <span class="notranslate">Expression</span> Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+<span class="notranslate">galaxy</span>4</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4" title="Manipulate Expression Set Object tool" aria-role="link"><strong>Manipulate Expression Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4</span></span> with the following parameters:
       <ul>
-        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“<span class="notranslate">Expression</span> Set Dataset”</em>: <code class="language-plaintext highlighter-rouge">out_rds</code> (output of <strong>Construct <span class="notranslate">Expression</span> Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
-        <li><em>“Concatenate other <span class="notranslate">Expression</span> Set objects?”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Expression Set Dataset”</em>: <code class="language-plaintext highlighter-rouge">out_rds</code> (output of <strong>Construct Expression Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
+        <li><em>“Concatenate other Expression Set objects?”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
         <li><em>“Subset the dataset?”</em>: <code class="language-plaintext highlighter-rouge">Yes</code>
           <ul>
             <li><em>“By”</em>: <code class="language-plaintext highlighter-rouge">Filter Samples and Genes by Phenotype Values</code>
@@ -1215,13 +1137,13 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 <p>You can either re-run this tool or set it up again to create the healthy-only object.</p>
 
 <blockquote class="notranslate hands_on">
-  <div id="hands-on-creating-the-healthy-only-object" class="box-title" aria-label="hands-on box:  Creating the healthy-only object "><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on:  Creating the healthy-only object</div>
+  <div class="box-title hands-on-title" id="hands-on-creating-the-healthy-only-object"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Hands-on:  Creating the healthy-only object</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4" title="Tested with toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4"><strong>Manipulate <span class="notranslate">Expression</span> Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+<span class="notranslate">galaxy</span>4</span></span>  with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4" title="Manipulate Expression Set Object tool" aria-role="link"><strong>Manipulate Expression Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4</span></span> with the following parameters:
       <ul>
-        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“<span class="notranslate">Expression</span> Set Dataset”</em>: <code class="language-plaintext highlighter-rouge">out_rds</code> (output of <strong>Construct <span class="notranslate">Expression</span> Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
-        <li><em>“Concatenate other <span class="notranslate">Expression</span> Set objects?”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Expression Set Dataset”</em>: <code class="language-plaintext highlighter-rouge">out_rds</code> (output of <strong>Construct Expression Set Object</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
+        <li><em>“Concatenate other Expression Set objects?”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
         <li><em>“Subset the dataset?”</em>: <code class="language-plaintext highlighter-rouge">Yes</code>
           <ul>
             <li><em>“By”</em>: <code class="language-plaintext highlighter-rouge">Filter Samples and Genes by Phenotype Values</code>
@@ -1249,18 +1171,20 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
 
 <h1 id="conclusion">Conclusion</h1>
 
-<p><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congrats! You have successfully reformatted the <span class="notranslate">RNA</span>-seq samples into two ESet objects consisting of disease-only or healthy-only samples. You’re ready to take all this hard work and start comparing cell compositions in the next tutorial.</p>
+<p><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congrats! You have successfully reformatted the RNA-seq samples into two ESet objects consisting of disease-only or healthy-only samples. You’re ready to take all this hard work and start comparing cell compositions in the next tutorial.</p>
 
-<p>You can find the <a href="https://usegalaxy.eu/u/wendi.bacon.training/w/music-deconvolution-data-generation--bulk--eset"><span class="notranslate">workflow</span> for generating the ESet object</a> and the <a href="https://usegalaxy.eu/u/wendi.bacon.training/h/music-deconvolution-data-generation--bulk--eset">answer key history</a>.</p>
+<p>You can find the <a href="https://usegalaxy.eu/u/wendi.bacon.training/w/music-deconvolution-data-generation--bulk--eset">workflow for generating the ESet object</a> and the <a href="https://usegalaxy.eu/u/wendi.bacon.training/h/music-deconvolution-data-generation--bulk--eset">answer key history</a>.</p>
 
-<figure id="figure-5"><img src="../../images/bulk-music/workflow-bulk.png" alt="7 boxes in the workflow editor and a subworkflow box for converting Ensembl to GeneSymbol. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> <span class="notranslate">Workflow</span>: Generating the bulk ESet Objects</figcaption></figure>
+<figure id="figure-5"><img src="../../images/bulk-music/workflow-bulk.png" alt="7 boxes in the workflow editor and a subworkflow box for converting Ensembl to GeneSymbol. " width="2302" height="1292" loading="lazy" /><figcaption><span class="figcaption-prefix"><strong>Figure 5</strong>:</span> Workflow: Generating the bulk ESet Objects</figcaption></figure>
 
-<p>This tutorial is part of the <a href="https://singlecell.usegalaxy.eu">https://singlecell.use<span class="notranslate">galaxy</span>.eu</a> portal (<span class="citation"><a href="#tekman2020single">Tekman <i>et al.</i> 2020</a></span>).</p>
+<p>This tutorial is part of the <a href="https://singlecell.usegalaxy.eu">https://singlecell.usegalaxy.eu</a> portal (<span class="citation"><a href="#tekman2020single">Tekman <i>et al.</i> 2020</a></span>).</p>
 
+                </section>
 
+                <section aria-label="Tutorial Footer, Feedback, Citation" id="tutorial-footer">
                 
                 <blockquote class="key_points">
-                    <div class="box-title" aria-label="key-points box"><i class="fas fa-key" aria-hidden="true"></i> Key points</div>
+                    <div class="box-title"><i class="fas fa-key" aria-hidden="true"></i> Key points</div>
                     <ul>
                         
                         <li><p>The EMBL-EBI Expression Atlas contains high quality datasets.</p>
@@ -1301,33 +1225,9 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
                 <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
                 </p>
 
-                <div id="feedback-button">
-                    <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
-                </div>
-                <div id="feedback-form">
-                </div>
-                <script type="text/javascript">
-                    (function (window, document) {
-                        function onDocumentReady(fn) {
-                            if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-                                fn();
-                            } else {
-                                document.addEventListener('DOMContentLoaded', fn);
-                            }
-                        }
-
-                        onDocumentReady(function () {
-                            $("#feedback-button").click(function(evt){
-                                var e = $(evt.target)
-                                e.hide();
-
-                                $("#feedback-form").html(`
-                                    <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=Creating the bulk RNA-seq dataset for deconvolution (Single Cell)">Loading...</iframe>
-                                `)
-                            })
-                        });
-                    })(window, document);
-                </script>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=Creating the bulk RNA-seq dataset for deconvolution (Single Cell)" alt="Feedback form link">
+                    <img src="/training-material/shared/images/feedback.png" alt="Preview of the google form" />
+                </a>
 
                 <h1>Citing this Tutorial</h1>
                 <p>
@@ -1345,7 +1245,7 @@ the shared data library (<code class="language-plaintext highlighter-rouge">GTN 
                 <blockquote class="details">
 
                   <div id="citation-bibtex" class="box-title">
-                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false" aria-label="Toggle details box: BibTeX for citing this tutorial">
+                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false">
                       <i class="fas fa-info-circle" aria-hidden="true"></i>
                       <span class="visually-hidden"></span> BibTeX<span role="button" class="fold-unfold fa fa-minus-square" aria-hidden="true"></span>
                     </button>
@@ -1389,11 +1289,11 @@ note = "[Online; accessed TODAY]"
                 
 
 
-<script type="text/javascript">
+<script>
 // update the date on load, or leave fallback of 'today'
-d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
                 <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
@@ -1402,6 +1302,7 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 
                 
                 <blockquote class="agenda follow-up">
+                    <div class="box-title">Go Further</div>
                     <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
                     <ul>
                         
@@ -1413,6 +1314,8 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
         
             <ul>
                 
+                    
+                        
                     
                         
                     
@@ -1462,6 +1365,8 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                     
                         
                     
+                        
+                    
                 
             </ul>
         
@@ -1472,28 +1377,143 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 </blockquote>
                 
 
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools:
+- name: music_construct_eset
+  owner: bgruening
+  revisions: 282819d09a4f
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: music_manipulate_eset
+  owner: bgruening
+  revisions: 22232092be53
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: text_processing
+  owner: bgruening
+  revisions: d698c222f354
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: text_processing
+  owner: bgruening
+  revisions: d698c222f354
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: text_processing
+  owner: bgruening
+  revisions: d698c222f354
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: text_processing
+  owner: bgruening
+  revisions: d698c222f354
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: regex_find_replace
+  owner: galaxyp
+  revisions: 399da6b5ec21
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: annotatemyids
+  owner: iuc
+  revisions: fe3ca740a485
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: column_remove_by_header
+  owner: iuc
+  revisions: 2040e4c2750a
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: table_compute
+  owner: iuc
+  revisions: 3bf5661c0280
+  tool_panel_section_label: Single Cell
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+</code></pre></div>
+                </blockquote>
+		
+
+
+                </section>
+
             </div>
         </div>
     </div>
-</section>
+</article>
 <br/>
 <br/>
 <br/>
 
         </div>
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00242">https://gxy.io/GTN:T00242</a>
+				</p>
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

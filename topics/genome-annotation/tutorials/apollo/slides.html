@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,16 +42,16 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/apollo/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Refining Genome Annotations with Apollo" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2022-09-28 13:13:58 +0000" />
-<meta name="DC.creator" content="Anthony Bretaudeau" />
-<meta name="DC.creator" content="Helena Rasche" />
-<meta name="DC.creator" content="Nathan Dunn" />
-<meta name="DC.creator" content="Mateo Boudet" />
-<meta name="DC.creator" content="Erasmus+ Programme" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Refining Genome Annotations with Apollo">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-05-03 14:30:45 +0000">
+<meta name="DC.creator" content="Anthony Bretaudeau">
+<meta name="DC.creator" content="Helena Rasche">
+<meta name="DC.creator" content="Nathan Dunn">
+<meta name="DC.creator" content="Mateo Boudet">
+<meta name="DC.creator" content="Erasmus+ Programme">
 
         
         
@@ -38,7 +61,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Refining Genome Annotations with Apollo" />
         <meta property="og:description" content="Genome annotation is a multi-level process that includes ..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/gga.png">
 
         <script type="application/ld+json">
             
@@ -66,7 +90,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2022-09-28 13:13:58 +0000",
+  "dateModified": "2023-05-03 14:30:45 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Refining Genome Annotations with Apollo",
   "interactivityType": "mixed",
@@ -92,6 +116,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -119,6 +147,7 @@
   "name": "Slides for 'Refining Genome Annotations with Apollo' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/apollo/slides.html",
   "timeRequired": "PT5M",
+  "teaches": "Load a genome into Galaxy\n - View annotations in JBrowse\n - Learn how to load JBrowse data into Apollo\n - Learn how to manually refine genome annotations within Apollo\n - Export refined genome annotations",
   "keywords": "genome-annotation, prokaryote",
   "description": "The questions this  addresses are:\n - How to visualize your genome after automated annotations have been performed?\n - How to manually annotate genome after automated annotations have been performed?\n - How to evaluate and visualize annotated genomic features?\n - How do I collaborate when doing genome annotation?\n\n\nThe objectives are:\n - Load a genome into Galaxy\n - View annotations in JBrowse\n - Learn how to load JBrowse data into Apollo\n - Learn how to manually refine genome annotations within Apollo\n - Export refined genome annotations\n\n",
   "inLanguage": {
@@ -146,8 +175,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
@@ -169,8 +198,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
@@ -192,8 +221,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nathandunn/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nathandunn/",
@@ -213,8 +242,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
@@ -236,121 +265,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "name": "Erasmus+ Programme",
-      "image": "https://avatars.githubusercontent.com/erasmusplus",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/",
-      "name": "Anthony Bretaudeau",
-      "image": "https://avatars.githubusercontent.com/abretaud",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0003-0914-2470",
-      "orcid": "https://orcid.org/0000-0003-0914-2470"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nathandunn/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nathandunn/",
-      "name": "Nathan Dunn",
-      "image": "https://avatars.githubusercontent.com/nathandunn",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/",
-      "name": "Mateo Boudet",
-      "image": "https://avatars.githubusercontent.com/mboudet",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-7028-7620",
-      "orcid": "https://orcid.org/0000-0002-7028-7620"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
@@ -373,12 +289,29 @@
       "name": "Genome Annotation",
       "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
       "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "http://edamontology.org/topic_0362",
+      "inDefinedTermSet": "http://edamontology.org",
+      "termCode": "topic_0362",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0362"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "prokaryote"
+    }
+  ],
+  "abstract": "### Genome annotation"
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -560,22 +493,22 @@ Before diving into this slide deck, we recommend you to have a look at:
 
 ### Manual curation refines genome annotations
 
-- Make use of the researcher's expertise
+- Make use of the researcher&apos;s expertise
 
 - Include additional analysis results
 
 - Integrate all underlying evidence
 
-- A Human finds problems algorithms can't
+- A Human finds problems algorithms can&apos;t
 
-.pull-left[.image-90[![Schema showing how automated annotation, experimental evidences (cDNAs, HMM domain searches, RNASeq, similarity with other species), and human analysis are used by Apollo to manually curate an annotation](../../images/apollo/apollo_workflow.png)]]
+.pull-left[.image-75[![Schema showing how automated annotation, experimental evidences (cDNAs, HMM domain searches, RNASeq, similarity with other species), and human analysis are used by Apollo to manually curate an annotation](../../images/apollo/apollo_workflow.png)]]
 
-.pull-right[.image-40[![Apollo screenshot showing how RNASeq reads align mostly within some exons limits, but not perfectly](../../images/apollo/rnaseq_cov.png)]]
+.pull-right[.image-25[![Apollo screenshot showing how RNASeq reads align mostly within some exons limits, but not perfectly](../../images/apollo/rnaseq_cov.png)]]
 
 ???
 
 - Performing a manual curation step after automatic annotation allows to improve annotation quality.
-- It is a way to make use of a researcher's expertise, and to integrate more knowledge to improve gene structures and functional annotation.
+- It is a way to make use of a researcher&apos;s expertise, and to integrate more knowledge to improve gene structures and functional annotation.
 
 ---
 
@@ -654,7 +587,7 @@ Available on [https://usegalaxy.eu](https://usegalaxy.eu)
 - Within Galaxy, you can start by assembling a new genome, then aligning as many evidence tracks as possible (like RNASeq data).
 - You can then continue with an automatic annotation step, with Prokka or Maker for example.
 - Then you can generate a JBrowse instance representing all the data you have generated, and load it into Apollo.
-- Apollo let's you perform the manual curation, in collaboration with any other colleague you invite to help you.
+- Apollo let&apos;s you perform the manual curation, in collaboration with any other colleague you invite to help you.
 - Finally when you are satisfied with your changes, you can export them to your Galaxy history, and continue other analyses.
 - At any time later you can come back to Apollo to continue improving the annotation, based on new experiment results.
 
@@ -673,7 +606,7 @@ Invite any other Galaxy user to your curation project
 
 ---
 
-&lt;div id=&quot;hands-on-hands-on&quot; class=&quot;box-title&quot; aria-label=&quot;hands-on box: Hands on!&quot;&gt;&lt;i class=&quot;fas fa-pencil-alt&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;visually-hidden&quot;&gt;&lt;/span&gt; Hands-on: Hands on!&lt;/div&gt;
+&lt;div class=&quot;box-title hands-on-title&quot; id=&quot;hands-on-hands-on&quot;&gt;&lt;i class=&quot;fas fa-pencil-alt&quot; aria-hidden=&quot;true&quot; &gt;&lt;/i&gt; Hands-on: Hands on!&lt;/div&gt;
 
 Time to follow the [Apollo tutorial](/training-material/topics/genome-annotation/tutorials/apollo/tutorial.html)!
 
@@ -731,9 +664,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -745,7 +679,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

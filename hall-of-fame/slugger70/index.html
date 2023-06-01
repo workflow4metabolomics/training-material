@@ -8,32 +8,56 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="GTN Contributor: Simon Gladman" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="1970-01-01 00:00:00 +0000" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="GTN Contributor: Simon Gladman">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="1970-01-01 00:00:00 +0000">
 
         
         
         
         
-        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: GTN Contributor: Simon Gladman" />
-        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Collection of tutorials developed and maintained by the w...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: GTN Contributor: Simon Gladman">
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -44,7 +68,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,38 +87,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/slugger70/&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/slugger70/&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/slugger70/&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/slugger70/&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/slugger70/&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/slugger70/&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -128,8 +126,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/hall-of-fame/slugger70/" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainhall-of-fame/slugger70/index.html" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -206,6 +203,7 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
 
@@ -215,8 +213,8 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-    "@type": "Person"
+    "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+    "@type": "CreativeWork"
   },
   "url": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
   "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
@@ -247,11 +245,13 @@
 		<div class="row">
 
 			<div class="col-md-3">
+				<div>
 				
 					<img src="https://avatars.githubusercontent.com/slugger70" alt="github avatar" >
 				
+				</div>
 
-                
+				
 
 				
 
@@ -264,11 +264,15 @@
 				
 
 				
+
+				
 				<div class="contact-items">
 					<a title="E-mail" href="mailto:simon.gladman@unimelb.edu.au">
 						<i class="far fa-envelope" aria-hidden="true"></i><span class="visually-hidden">email</span> simon.gladman@unimelb.edu.au
 					</a>
 				</div>
+				
+
 				
 
 				
@@ -303,6 +307,7 @@
 					Simon Gladman
 				</h1>
 				
+				
 				<div class="alert alert-dark" role="alert">
 					<h2 class="alert-heading">In Memoriam</h2>
 					<p><p><a href="https://www.biocommons.org.au/news/simon-gladman">Simon Gladman, system administrator of UseGalaxy.org.au, passed away on November 26, 2022</a></p>
@@ -324,6 +329,7 @@
 
                 
                 <br><br>
+		
                 <h3> GitHub Activity</h4>
                 <ul>
                   <li><a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3Aslugger70"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Pull Requests</a> </li>
@@ -331,6 +337,7 @@
                   <li><a href="https://github.com/galaxyproject/training-material/issues?q=+is%3Aissue+author%3Aslugger70"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Issues Reported</a></li>
                 </ul>
                 
+		
                 </p>
 
 				
@@ -340,63 +347,12 @@
 					<li>
 						
 						
-						<a href="/training-material/topics/genome-annotation">
-							Genome Annotation
+						<a href="/training-material/topics/assembly">
+							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html">
-						Genome annotation with Prokka
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/galaxy-interface">
-							Using Galaxy and Managing your Data
-						</a>
-						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
-						Downloading and Deleting Data in Galaxy
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/variant-analysis">
-							Variant Analysis
-						</a>
-						/
-						<a href="/training-material//topics/variant-analysis/tutorials/microbial-variants/tutorial.html">
-						Microbial Variant Calling
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/variant-analysis">
-							Variant Analysis
-						</a>
-						/
-						<a href="/training-material//topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">
-						M. tuberculosis Variant Analysis
+						<a href="/training-material//topics/assembly/tutorials/general-introduction/tutorial.html">
+						An Introduction to Genome Assembly
 						</a>
 						
 						
@@ -429,8 +385,8 @@
 							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/general-introduction/tutorial.html">
-						An Introduction to Genome Assembly
+						<a href="/training-material//topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html">
+						De Bruijn Graph Assembly
 						</a>
 						
 						
@@ -442,12 +398,12 @@
 					<li>
 						
 						
-						<a href="/training-material/topics/assembly">
-							Assembly
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html">
-						De Bruijn Graph Assembly
+						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html">
+						Genome annotation with Prokka
 						</a>
 						
 						
@@ -463,8 +419,59 @@
 							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
-						Galaxy Monitoring with Reports
+						<a href="/training-material//topics/admin/tutorials/reference-genomes/tutorial.html">
+						Reference Data with Data Managers
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
+						Running Jobs on Remote Resources with Pulsar
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/cvmfs/tutorial.html">
+						Reference Data with CVMFS
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/interactive-tools/tutorial.html">
+						Galaxy Interactive Tools
 						</a>
 						
 						
@@ -514,40 +521,6 @@
 							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
-						Running Jobs on Remote Resources with Pulsar
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs/tutorial.html">
-						Reference Data with CVMFS
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
 						<a href="/training-material//topics/admin/tutorials/cvmfs-manual/tutorial.html">
 						Reference Data with CVMFS without Ansible
 						</a>
@@ -565,8 +538,59 @@
 							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/interactive-tools/tutorial.html">
-						Galaxy Interactive Tools
+						<a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
+						Galaxy Monitoring with Reports
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/variant-analysis">
+							Variant Analysis
+						</a>
+						/
+						<a href="/training-material//topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">
+						M. tuberculosis Variant Analysis
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/variant-analysis">
+							Variant Analysis
+						</a>
+						/
+						<a href="/training-material//topics/variant-analysis/tutorials/microbial-variants/tutorial.html">
+						Microbial Variant Calling
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/galaxy-interface">
+							Using Galaxy and Managing your Data
+						</a>
+						/
+						<a href="/training-material//topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
+						Downloading and Deleting Data in Galaxy
 						</a>
 						
 						
@@ -581,40 +605,6 @@
 				
 				<h3>Slides</h3>
 				<ul>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/genome-annotation">
-							Genome Annotation
-						</a>
-						/
-						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/slides.html">
-						Genome annotation with Prokka
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/assembly">
-							Assembly
-						</a>
-						/
-						<a href="/training-material//topics/assembly/tutorials/unicycler-assembly/slides.html">
-						Unicycler Assembly
-						</a>
-						
-						
-	
-
-
-					</li>
 				
 					<li>
 						
@@ -657,8 +647,76 @@
 							Assembly
 						</a>
 						/
+						<a href="/training-material//topics/assembly/tutorials/unicycler-assembly/slides.html">
+						Unicycler Assembly
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/assembly">
+							Assembly
+						</a>
+						/
 						<a href="/training-material//topics/assembly/tutorials/debruijn-graph-assembly/slides.html">
 						De Bruijn Graph Assembly
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
+						</a>
+						/
+						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/slides.html">
+						Genome annotation with Prokka
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/reference-genomes/slides.html">
+						Reference Genomes in Galaxy
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/backup-cleanup/slides.html">
+						Server Maintenance: Cleanup, Backup, and Restoration
 						</a>
 						
 						
@@ -691,12 +749,114 @@
 							Galaxy Server administration
 						</a>
 						/
+						<a href="/training-material//topics/admin/tutorials/pulsar/slides.html">
+						Running Jobs on Remote Resources with Pulsar
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/tool-management/slides.html">
+						Galaxy Tool Management with Ephemeris
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/cvmfs/slides.html">
+						Reference Data with CVMFS
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/general-monitoring/slides.html">
+						Galaxy Monitoring
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/stuff/slides.html">
+						Server: Other
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/monitoring/slides.html">
+						Galaxy Monitoring with Telegraf and Grafana
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
 						<a href="/training-material//topics/admin/tutorials/ansible-galaxy/slides.html">
 						Galaxy Installation with Ansible
 						</a>
 						
 						
-	
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
 
 
 					</li>
@@ -735,149 +895,13 @@
 
 					</li>
 				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/stuff/slides.html">
-						Server: Other
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/tool-management/slides.html">
-						Galaxy Tool Management with Ephemeris
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/general-monitoring/slides.html">
-						Galaxy Monitoring
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/maintenance/slides.html">
-						Server Maintenance and Backups
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/reference-genomes/slides.html">
-						Reference Genomes in Galaxy
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/pulsar/slides.html">
-						Running Jobs on Remote Resources with Pulsar
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/monitoring/slides.html">
-						Galaxy Monitoring with Telegraf and Grafana
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs/slides.html">
-						Reference Data with CVMFS
-						</a>
-						
-						
-	
-
-
-					</li>
-				
 				</ul>
 				
 
 				
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+<script src="/training-material/assets/js/Chart.bundle.js"></script>
 
-<script type="text/javascript">
+<script>
 const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 if(isReduced){
     Chart.defaults.global.animation.duration = 0;
@@ -890,19 +914,64 @@ var topics = [
 
 	
 	
+	"Assembly",
+
+	
+	
+	"Assembly",
+
+	
+	
+	"Assembly",
+
+	
+	
 	"Genome Annotation",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Variant Analysis",
+
+	
+	
+	"Variant Analysis",
 
 	
 	
 	"Using Galaxy and Managing your Data",
 
-	
-	
-	"Variant Analysis",
-
-	
-	
-	"Variant Analysis",
 
 	
 	
@@ -918,52 +987,11 @@ var topics = [
 
 	
 	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
+	"Assembly",
 
 	
 	
 	"Genome Annotation",
-
-	
-	
-	"Assembly",
-
-	
-	
-	"Assembly",
-
-	
-	
-	"Assembly",
-
-	
-	
-	"Assembly",
 
 	
 	
@@ -1016,6 +1044,8 @@ var topics = [
 ];
 
 var slidesVsTutos = [
+
+	"Tutorials",
 
 	"Tutorials",
 
@@ -1174,35 +1204,62 @@ var chart2 = new Chart(ctx2, {
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/hall-of-fame/slugger70/index.html" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/68264bea90fe177e6ff5a91ddafb1bba86584b98">68264bea90fe177e6ff5a91ddafb1bba86584b98</a></p>
+
     </div>
 </footer>
 
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{

@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,12 +42,12 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/assembly/tutorials/general-introduction/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="An Introduction to Genome Assembly" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2021-07-26 11:29:38 +0000" />
-<meta name="DC.creator" content="Simon Gladman" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="An Introduction to Genome Assembly">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2021-07-26 11:29:38 +0000">
+<meta name="DC.creator" content="Simon Gladman">
 
         
         
@@ -34,7 +57,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: An Introduction to Genome Assembly" />
         <meta property="og:description" content="DNA sequence data has become an indispensable tool for Mo..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         <script type="application/ld+json">
             
@@ -88,6 +112,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -115,6 +143,7 @@
   "name": "Slides for 'An Introduction to Genome Assembly' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/general-introduction/slides.html",
   "timeRequired": "PT30M",
+  "teaches": "assemble some paired end reads using Velvet\n - examine the output of the assembly.",
   "keywords": "assembly",
   "description": "The questions this  addresses are:\n - How do we perform a very basic genome assembly from short read data?\n\n\nThe objectives are:\n - assemble some paired end reads using Velvet\n - examine the output of the assembly.\n\n",
   "inLanguage": {
@@ -172,33 +201,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
-      "name": "Simon Gladman",
-      "image": "https://avatars.githubusercontent.com/slugger70",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-6100-4385",
-      "orcid": "https://orcid.org/0000-0002-6100-4385"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/slugger70/",
@@ -223,12 +227,26 @@
       "name": "Assembly",
       "description": "DNA sequence data has become an indispensable tool for Molecular Biology & Evolutionary Biology. Study in these fields now require a genome sequence to work from. We call this a 'Reference Sequence.' We need to build a reference for each species. We do this by Genome Assembly. De novo Genome Assembly is the process of reconstructing the original DNA sequence from the fragment reads alone.",
       "url": "https://training.galaxyproject.org/training-material/topics/assembly/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "http://edamontology.org/topic_0196",
+      "inDefinedTermSet": "http://edamontology.org",
+      "termCode": "topic_0196",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0196"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": ".enlarge120["
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -400,7 +418,7 @@ Before diving into this slide deck, we recommend you to have a look at:
 
 # **A small &quot;genome&quot;**
 
-![The text &quot;Friends, romans, countrymen, lend me your ears;&quot;. A small drawing of Shakespeare has a speech bubble reading &quot;I'll return them tomorrow&quot;](../../images/shakespear1.png)
+![The text &quot;Friends, romans, countrymen, lend me your ears;&quot;. A small drawing of Shakespeare has a speech bubble reading &quot;I&apos;ll return them tomorrow&quot;](../../images/shakespear1.png)
 
 ---
 
@@ -412,7 +430,7 @@ Before diving into this slide deck, we recommend you to have a look at:
 
 # **Shakespearomics**
 
-![The reads are shown again, now with overlaps below, reconstructing the sentence from the fragments. Shakespeare says I'm good with words. Crymen and &quot;send me your ears&quot; have their first letters highlighted in yellow due to their typos.](../../images/shakespear3.png)
+![The reads are shown again, now with overlaps below, reconstructing the sentence from the fragments. Shakespeare says I&apos;m good with words. Crymen and &quot;send me your ears&quot; have their first letters highlighted in yellow due to their typos.](../../images/shakespear3.png)
 
 ---
 
@@ -444,12 +462,12 @@ Before diving into this slide deck, we recommend you to have a look at:
   * Much, much shorter than the genome
   * Lots of them look similar
 * Missing pieces
-  * Some parts can't be sequenced easily
+  * Some parts can&apos;t be sequenced easily
 * Dirty Pieces
   * Lots of errors in reads
 ]
 
-.pull-right[ ![A picture of a jigsaw puzzle titled &quot;The world's most difficult&quot; and showing a field of small round candies. It boasts the same artwork on both sides.](../../images/worlds_hardest.png) ]
+.pull-right[ ![A picture of a jigsaw puzzle titled &quot;The world&apos;s most difficult&quot; and showing a field of small round candies. It boasts the same artwork on both sides.](../../images/worlds_hardest.png) ]
 
 ---
 
@@ -543,7 +561,7 @@ Before diving into this slide deck, we recommend you to have a look at:
 Contig sizes are limited by:
 
 * the length of the repeats in your genome
-  * Can't change this
+  * Can&apos;t change this
 
 
 * the length (or &quot;span&quot;) of the reads
@@ -734,9 +752,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -748,7 +767,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

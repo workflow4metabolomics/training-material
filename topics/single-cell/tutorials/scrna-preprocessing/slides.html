@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,13 +42,13 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-preprocessing/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Dealing with Cross-Contamination in Fixed Barcode Protocols" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2022-11-15 12:55:43 +0000" />
-<meta name="DC.creator" content="Mehmet Tekman" />
-<meta name="DC.creator" content="Alex Ostrovsky" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Dealing with Cross-Contamination in Fixed Barcode Protocols">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2022-11-15 12:55:43 +0000">
+<meta name="DC.creator" content="Mehmet Tekman">
+<meta name="DC.creator" content="Alex Ostrovsky">
 
         
         
@@ -35,7 +58,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Dealing with Cross-Contamination in Fixed Barcode Protocols" />
         <meta property="og:description" content="Training material and practicals for all kinds of single ..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
 
         <script type="application/ld+json">
             
@@ -89,6 +113,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -116,6 +144,7 @@
   "name": "Slides for 'Dealing with Cross-Contamination in Fixed Barcode Protocols' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-preprocessing/slides.html",
   "timeRequired": "PT1H",
+  "teaches": "How to describe a plating setup\n - Proper naming conventions when dealing with multiple batches\n - Checking for false positives across batches",
   "keywords": "single-cell, single-cell",
   "description": "The questions this  addresses are:\n - What is cross-contamination?\n - What are fixed barcodes?\n - Why are plating setups important to know?\n - Is it necessary to check barcodes that don't exist in a batch?\n\n\nThe objectives are:\n - How to describe a plating setup\n - Proper naming conventions when dealing with multiple batches\n - Checking for false positives across batches\n\n",
   "inLanguage": {
@@ -158,8 +187,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/",
@@ -179,8 +208,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/astrovsky01/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/astrovsky01/",
@@ -194,51 +223,9 @@
           "name": "Galaxy Training Network",
           "url": "https://galaxyproject.org/teach/gtn/"
         }
-      ]
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/",
-      "name": "Mehmet Tekman",
-      "image": "https://avatars.githubusercontent.com/mtekman",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/astrovsky01/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/astrovsky01/",
-      "name": "Alex Ostrovsky",
-      "image": "https://avatars.githubusercontent.com/astrovsky01",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
+      ],
+      "identifier": "https://orcid.org/0000-0002-7901-7109",
+      "orcid": "https://orcid.org/0000-0002-7901-7109"
     }
   ],
   "about": [
@@ -248,11 +235,21 @@
       "description": "Training material and practicals for all kinds of single cell analysis (particularly scRNA-seq!). When you generate your lovely gene lists for your cells, consider checking out our Transcriptomics tutorials for further network analysis!",
       "url": "https://training.galaxyproject.org/training-material/topics/single-cell/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "single-cell"
+    }
+  ],
+  "abstract": "### Fixed Barcode Protocols and Multiplexing"
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -285,7 +282,7 @@ class: center, middle, inverse
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=27" alt="Avatar">Mehmet Tekman</a><a href="/training-material/hall-of-fame/astrovsky01/" class="contributor-badge contributor-astrovsky01"><img src="https://avatars.githubusercontent.com/astrovsky01?s=27" alt="Avatar">Alex Ostrovsky</a>
+		Authors: <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=27" alt="Avatar">Mehmet Tekman</a><a href="/training-material/hall-of-fame/astrovsky01/" class="contributor-badge contributor-astrovsky01"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/astrovsky01?s=27" alt="Avatar">Alex Ostrovsky</a>
 	</div>
 
 </div>
@@ -370,7 +367,7 @@ Before diving into this slide deck, we recommend you to have a look at:
 
 - Why are plating setups important to know?
 
-- Is it necessary to check barcodes that don't exist in a batch?
+- Is it necessary to check barcodes that don&apos;t exist in a batch?
 
 
 ---
@@ -511,7 +508,7 @@ Available Barcodes
 
 ???
 Here we use all barcodes since these batches will be sequenced at the same time
-Let's look at one final example to see why using all our barcodes on a plate might not be optimal.
+Let&apos;s look at one final example to see why using all our barcodes on a plate might not be optimal.
 
 ---
 
@@ -686,7 +683,7 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=27" alt="Avatar">Mehmet Tekman</a><a href="/training-material/hall-of-fame/astrovsky01/" class="contributor-badge contributor-astrovsky01"><img src="https://avatars.githubusercontent.com/astrovsky01?s=27" alt="Avatar">Alex Ostrovsky</a>
+		Authors: <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=27" alt="Avatar">Mehmet Tekman</a><a href="/training-material/hall-of-fame/astrovsky01/" class="contributor-badge contributor-astrovsky01"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/astrovsky01?s=27" alt="Avatar">Alex Ostrovsky</a>
 	</div>
 
 </div>
@@ -704,9 +701,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -718,7 +716,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

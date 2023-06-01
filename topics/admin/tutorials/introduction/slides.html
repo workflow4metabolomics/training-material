@@ -10,6 +10,29 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
         <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
@@ -19,15 +42,15 @@
         <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/introduction/slides.html" />
         <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="Galaxy from an administrator's point of view" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="2023-01-12 10:17:08 +0000" />
-<meta name="DC.creator" content="Valentin Marcon" />
-<meta name="DC.creator" content="Nate Coraor" />
-<meta name="DC.creator" content="Björn Grüning" />
-<meta name="DC.creator" content="Helena Rasche" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Galaxy from an administrator's point of view">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-04-17 12:26:56 +0000">
+<meta name="DC.creator" content="Valentin Marcon">
+<meta name="DC.creator" content="Nate Coraor">
+<meta name="DC.creator" content="Björn Grüning">
+<meta name="DC.creator" content="Helena Rasche">
 
         
         
@@ -37,7 +60,8 @@
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Galaxy from an administrator's point of view" />
         <meta property="og:description" content="Resources related to configuration and maintenance of Gal..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        
+        <meta property="og:image" content="/training-material/assets/images/gat.png">
 
         <script type="application/ld+json">
             
@@ -65,7 +89,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2023-01-12 10:17:08 +0000",
+  "dateModified": "2023-04-17 12:26:56 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Galaxy from an administrator's point of view",
   "interactivityType": "mixed",
@@ -91,6 +115,10 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
   "accessMode": [
     "textual",
     "visual"
@@ -118,6 +146,7 @@
   "name": "Slides for 'Galaxy from an administrator's point of view' tutorial",
   "url": "https://training.galaxyproject.org/training-material/topics/admin/tutorials/introduction/slides.html",
   "timeRequired": "PT20M",
+  "teaches": "Learn about different options about Galaxy deployment.\n - Make an educated decision about your preferred deployment model.",
   "keywords": "admin",
   "description": "The questions this  addresses are:\n - What options to deploy Galaxy do I have?\n - Which platforms are supported by Galaxy?\n - What requirements does Galaxy have?\n\n\nThe objectives are:\n - Learn about different options about Galaxy deployment.\n - Make an educated decision about your preferred deployment model.\n\n",
   "inLanguage": {
@@ -130,8 +159,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/valentinmarcon/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/valentinmarcon/",
@@ -151,8 +180,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
@@ -174,8 +203,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
@@ -197,100 +226,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
-      "name": "Helena Rasche",
-      "image": "https://avatars.githubusercontent.com/hexylena",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-9760-8992",
-      "orcid": "https://orcid.org/0000-0001-9760-8992"
-    }
-  ],
-  "contributor": [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/valentinmarcon/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/valentinmarcon/",
-      "name": "Valentin Marcon",
-      "image": "https://avatars.githubusercontent.com/valentinmarcon",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/natefoo/",
-      "name": "Nate Coraor",
-      "image": "https://avatars.githubusercontent.com/natefoo",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0001-8083-2963",
-      "orcid": "https://orcid.org/0000-0001-8083-2963"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
-      },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/",
-      "name": "Björn Grüning",
-      "image": "https://avatars.githubusercontent.com/bgruening",
-      "description": "A contributor to the GTN project.",
-      "memberOf": [
-        {
-          "@type": "Organization",
-          "email": "galaxytrainingnetwork@gmail.com",
-          "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
-        }
-      ],
-      "identifier": "https://orcid.org/0000-0002-3079-6586",
-      "orcid": "https://orcid.org/0000-0002-3079-6586"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "http://purl.org/dc/terms/conformsTo": {
-        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-        "@type": "Person"
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
       },
       "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
       "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
@@ -316,11 +253,18 @@
       "description": "Resources related to configuration and maintenance of Galaxy servers",
       "url": "https://training.galaxyproject.org/training-material/topics/admin/"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "![Picture with 125+ platforms for using galaxy written and a number of screenshots of those galaxies.](../../images/use-resource-banner.png)"
 }
         </script>
     </head>
   <body>
+
+
     <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
@@ -423,16 +367,16 @@ Useful when presenting.
 
 [Resource Directory](https://galaxyproject.org/use/)
 
-Supported                                         | Main | Local | Cloud | Appliance
----------                                         | ---- | ----- | ----- | ---------
-Your data sets are moderately sized               | yes  | yes   | yes   | yes
-Your computation requirements are moderate        | yes  | yes   | yes   | yes
-You want to share your Galaxy objects with others | yes  | yes   | yes   | yes
-All needed Tools are installed on Main            | yes  | ?     | yes   | yes
-Your data sets are very large                     | no   | ?     | yes   | yes
-Your computation requirements are very large      | no   | ?     | yes   | yes
-You have absolute data security requirements      | no   | yes   | yes   | yes
-No network transfer of data                       | no   | yes   | no    | yes
+Supported                                         | UseGalaxy.* | Local     | Cloud
+---------                                         | ----        | -----     | -----
+Moderate Data                                     | ✅          | ✅        | ✅
+Big Data                                          | ❌          | 🤷‍♀️ | ✅
+Moderate Computations                             | ✅          | ✅        | ✅
+Long/Expensive Computations                       | ❌          | 🤷‍  | ✅
+You want to share your Galaxy objects with others | ✅          | ✅        | ✅
+All needed Tools are pre-installed                | ✅          | 🤷‍♂️ | ✅
+Human Data / Proprietary Data                     | ❌          | ✅        | ✅
+No network transfer of data                       | ❌          | ✅        | ❌
 
 ---
 
@@ -515,7 +459,7 @@ An &quot;average&quot; 2018 NGS analysis (by Anton Nekrutenko): **66 GB**
 Solutions:
 
 - Quotas
-- Set job limits in `job_conf.yml`
+- Set job limits in the job conf
 - Clean up deleted data (with a cron job)
 - Forced removal based on age
 - Users can configure their workflows to delete intermediate tool outputs
@@ -572,7 +516,7 @@ In future:
 
 - Whether you use configuration management or not, *record every change you make on a version control system* (e.g. git):
   - Large, complex deployments grow organically
-  - If you don't know what you did, you can't do it again
+  - If you don&apos;t know what you did, you can&apos;t do it again
 
 ---
 
@@ -597,6 +541,22 @@ Back up everything (except that which is managed by configuration management)
 
 ## Related tutorials
 
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
 
     
         
@@ -805,9 +765,10 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -819,7 +780,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;

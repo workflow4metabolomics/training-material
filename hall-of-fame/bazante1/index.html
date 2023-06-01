@@ -8,32 +8,56 @@
         
             <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+<script type="text/javascript">
+Sentry.init({
+  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+  release: "galaxy-training-network@c7c213be450c13d64551e41fbe653db4c1b2095c",
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+  sampleRate: 0.1,
+  tracesSampleRate: 0.1,
+  // Capture Replay for no sessions by default
+  replaysSessionSampleRate: 0.01,
+  // plus for 1% of sessions with an error
+  replaysOnErrorSampleRate: 0.01,
+  // PII OFF
+  sendDefaultPii: false, // Off by default but just in case.
+  environment: "production",
+});
+</script>
+
         
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
         <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/training-material/assets/fontawesome/css/all.css">
         <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-        <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/" />
-        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
 
-        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
-<meta name="DC.type" content="text" />
-<meta name="DC.title" content="GTN Contributor: Bazante Sanders" />
-<meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="1970-01-01 00:00:00 +0000" />
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="GTN Contributor: Bazante Sanders">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="1970-01-01 00:00:00 +0000">
 
         
         
         
         
-        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:site_name" content="Galaxy Training Network" />
-        <meta property="og:title" content="Galaxy Training: GTN Contributor: Bazante Sanders" />
-        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta name="description" content="Collection of tutorials developed and maintained by the w...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: GTN Contributor: Bazante Sanders">
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTN.png">
 
         
     </head>
@@ -44,7 +68,9 @@
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,38 +87,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/bazante1/&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/bazante1/&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/bazante1/&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/bazante1/&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/bazante1/&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/bazante1/&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -128,8 +126,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/hall-of-fame/bazante1/" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/mainhall-of-fame/bazante1/index.html" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -206,6 +203,7 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         
 
@@ -215,8 +213,8 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "http://purl.org/dc/terms/conformsTo": {
-    "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
-    "@type": "Person"
+    "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+    "@type": "CreativeWork"
   },
   "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/",
   "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/",
@@ -245,11 +243,13 @@
 		<div class="row">
 
 			<div class="col-md-3">
+				<div>
 				
 					<img src="https://avatars.githubusercontent.com/bazante1" alt="github avatar" >
 				
+				</div>
 
-                
+				
 
 				
 
@@ -259,6 +259,10 @@
 						<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> bazante1
 					</a>
 				</div>
+				
+
+				
+
 				
 
 				
@@ -285,6 +289,7 @@
 					Bazante Sanders
 				</h1>
 				
+				
 
 				<h2>Contributions</h2>
 
@@ -295,6 +300,7 @@
 
                 
                 <br><br>
+		
                 <h3> GitHub Activity</h4>
                 <ul>
                   <li><a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3Abazante1"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Pull Requests</a> </li>
@@ -302,6 +308,7 @@
                   <li><a href="https://github.com/galaxyproject/training-material/issues?q=+is%3Aissue+author%3Abazante1"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Issues Reported</a></li>
                 </ul>
                 
+		
                 </p>
 
 				
@@ -315,40 +322,6 @@
 							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/mrsa-nanopore/tutorial.html">
-						Genome Assembly of MRSA using Oxford Nanopore MinION Data
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/assembly">
-							Assembly
-						</a>
-						/
-						<a href="/training-material//topics/assembly/tutorials/mrsa-nanopore/tutorial.html">
-						Genome Assembly of MRSA using Oxford Nanopore MinION Data
-						</a>
-						
-						
-	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/assembly">
-							Assembly
-						</a>
-						/
 						<a href="/training-material//topics/assembly/tutorials/mrsa-illumina/tutorial.html">
 						Genome Assembly of MRSA using Illumina MiSeq Data
 						</a>
@@ -379,50 +352,33 @@
 					<li>
 						
 						
-						<a href="/training-material/topics/contributing">
-							Contributing to the Galaxy Training Material
+						<a href="/training-material/topics/assembly">
+							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/contributing/tutorials/python/tutorial.html">
-						Teaching Python
+						<a href="/training-material//topics/assembly/tutorials/mrsa-nanopore/tutorial.html">
+						Genome Assembly of MRSA using Oxford Nanopore MinION Data
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/assembly">
+							Assembly
+						</a>
+						/
+						<a href="/training-material//topics/assembly/tutorials/mrsa-nanopore/tutorial.html">
+						Genome Assembly of MRSA using Oxford Nanopore MinION Data
 						</a>
 						
 						
 	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-flow/tutorial.html">
-						Python - Flow Control
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-subprocess/tutorial.html">
-						Python - Subprocess
-						</a>
-						
-						
-	
 
 
 					</li>
@@ -436,40 +392,6 @@
 						/
 						<a href="/training-material//topics/data-science/tutorials/python-iterables/tutorial.html">
 						Python - Lists & Strings & Dictionaries
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/cli-advanced/tutorial.html">
-						Advanced CLI in Galaxy
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-functions/tutorial.html">
-						Python - Functions
 						</a>
 						
 						
@@ -502,110 +424,8 @@
 							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/data-science/tutorials/python-glob/tutorial.html">
-						Python - Globbing
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-files/tutorial.html">
-						Python - Files & CSV
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-basics-recap/tutorial.html">
-						Python - Introductory Graduation
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-loops/tutorial.html">
-						Python - Loops
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/sql-basic/tutorial.html">
-						Introduction to SQL
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-argparse/tutorial.html">
-						Python - Argparse
-						</a>
-						
-						
-	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/snakemake/tutorial.html">
-						Make & Snakemake
+						<a href="/training-material//topics/data-science/tutorials/python-exceptions/tutorial.html">
+						Python - Try & Except
 						</a>
 						
 						
@@ -638,6 +458,176 @@
 							Foundations of Data Science
 						</a>
 						/
+						<a href="/training-material//topics/data-science/tutorials/python-basics-recap/tutorial.html">
+						Python - Introductory Graduation
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/cli-advanced/tutorial.html">
+						Advanced CLI in Galaxy
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/python-flow/tutorial.html">
+						Python - Flow Control
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/python-glob/tutorial.html">
+						Python - Globbing
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/python-subprocess/tutorial.html">
+						Python - Subprocess
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/python-loops/tutorial.html">
+						Python - Loops
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/python-files/tutorial.html">
+						Python - Files & CSV
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/sql-basic/tutorial.html">
+						Introduction to SQL
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/snakemake/tutorial.html">
+						Make & Snakemake
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/python-functions/tutorial.html">
+						Python - Functions
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
 						<a href="/training-material//topics/data-science/tutorials/python-types/tutorial.html">
 						Python - Basic Types & Type Conversion
 						</a>
@@ -655,25 +645,8 @@
 							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/data-science/tutorials/python-exceptions/tutorial.html">
-						Python - Try & Except
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/data-science">
-							Foundations of Data Science
-						</a>
-						/
-						<a href="/training-material//topics/data-science/tutorials/python-typing/tutorial.html">
-						Python - Type annotations
+						<a href="/training-material//topics/data-science/tutorials/python-argparse/tutorial.html">
+						Python - Argparse
 						</a>
 						
 						
@@ -706,12 +679,46 @@
 							Foundations of Data Science
 						</a>
 						/
+						<a href="/training-material//topics/data-science/tutorials/python-typing/tutorial.html">
+						Python - Type annotations
+						</a>
+						
+						
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
 						<a href="/training-material//topics/data-science/tutorials/python-math/tutorial.html">
 						Python - Math
 						</a>
 						
 						
 	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/contributing">
+							Contributing to the Galaxy Training Material
+						</a>
+						/
+						<a href="/training-material//topics/contributing/tutorials/python/tutorial.html">
+						Teaching Python
+						</a>
+						
+						
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
 
 
 					</li>
@@ -726,7 +733,8 @@
                 <div class="newslist">
                 
                 
-                   
+                   <article>
+
 
 
 
@@ -747,24 +755,47 @@
         <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=27" alt="Avatar">Bazante Sanders</a><a href="/training-material/hall-of-fame/miaomiaozhou88/" class="contributor-badge contributor-miaomiaozhou88"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/miaomiaozhou88?s=27" alt="Avatar">Miaomiao Zhou</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+		
+<table class="contributions">
+	
+	<tr>
+		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
+		<td>
+			<a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=27" alt="Avatar">Bazante Sanders</a><a href="/training-material/hall-of-fame/miaomiaozhou88/" class="contributor-badge contributor-miaomiaozhou88"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/miaomiaozhou88?s=27" alt="Avatar">Miaomiao Zhou</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+		</td>
+	</tr>
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+</table>
+
+
 	</div>
 
 </div>
 
 
         
-<button class="label label-default tutorial_tag" id="new tutorial" style="--color-primary: #ffd1ab; --color-darker: #ffb254; --color-dimmed: #ffc287;" title="Click to show all tutorials with this tag">new tutorial</button>
+<span class="label label-default tutorial_tag" style="--color-primary: #ffad3c; --color-darker: #e89800; --color-dimmed: #f6a200;">new tutorial</span>
 
-<button class="label label-default tutorial_tag" id="assembly" style="--color-primary: #ffcbe7; --color-darker: #ffa7d8; --color-dimmed: #ffb9df;" title="Click to show all tutorials with this tag">assembly</button>
+<span class="label label-default tutorial_tag" style="--color-primary: #ffa1d6; --color-darker: #ff7bca; --color-dimmed: #ff8fd0;">assembly</span>
 
-<button class="label label-default tutorial_tag" id="mrsa" style="--color-primary: #00f1fa; --color-darker: #00d7de; --color-dimmed: #00e4ec;" title="Click to show all tutorials with this tag">mrsa</button>
+<span class="label label-default tutorial_tag" style="--color-primary: #00d3da; --color-darker: #00bcc2; --color-dimmed: #00c7ce;">mrsa</span>
 
-<button class="label label-default tutorial_tag" id="amr" style="--color-primary: #cdd9ff; --color-darker: #a9c1ff; --color-dimmed: #bbcdff;" title="Click to show all tutorials with this tag">amr</button>
+<span class="label label-default tutorial_tag" style="--color-primary: #a4bdff; --color-darker: #80a8ff; --color-dimmed: #92b3ff;">amr</span>
 
-<button class="label label-default tutorial_tag" id="nanopore" style="--color-primary: #bcdeff; --color-darker: #84c9ff; --color-dimmed: #a2d3ff;" title="Click to show all tutorials with this tag">nanopore</button>
+<span class="label label-default tutorial_tag" style="--color-primary: #7ac6ff; --color-darker: #00b4ff; --color-dimmed: #56bcff;">nanopore</span>
 
-<button class="label label-default tutorial_tag" id="illumina" style="--color-primary: #ffd29f; --color-darker: #feb400; --color-dimmed: #ffc370;" title="Click to show all tutorials with this tag">illumina</button>
+<span class="label label-default tutorial_tag" style="--color-primary: #fab100; --color-darker: #df9d00; --color-dimmed: #eca700;">illumina</span>
 
     <hr/>
     <p class="card-text">
@@ -784,14 +815,14 @@ JBrowse.
   </div>
  </div>
 </div>
-
+</article>
 
                 
                 </div>
 				
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+<script src="/training-material/assets/js/Chart.bundle.js"></script>
 
-<script type="text/javascript">
+<script>
 const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 if(isReduced){
     Chart.defaults.global.animation.duration = 0;
@@ -820,83 +851,83 @@ var topics = [
 
 	
 	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
 	"Contributing to the Galaxy Training Material",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
-
-	
-	
-	"Foundations of Data Science",
 
 
 ];
@@ -1031,35 +1062,62 @@ var chart2 = new Chart(ctx2, {
 </section>
 
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-        The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-        </p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/c7c213be450c13d64551e41fbe653db4c1b2095c">c7c213b</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					It is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/hall-of-fame/bazante1/index.html" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/68264bea90fe177e6ff5a91ddafb1bba86584b98">68264bea90fe177e6ff5a91ddafb1bba86584b98</a></p>
+
     </div>
 </footer>
 
-        
-        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-        <script type="text/javascript">
-        var snippets=document.querySelectorAll('div.highlight');
-        [].forEach.call(snippets,function(snippet){
-            snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+        <script src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script src="/training-material/assets/js/popper.min.js"></script>
+        <script src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script src="/training-material/assets/js/main.js"></script>
+        <script src="/training-material/assets/js/clipboard.min.js"></script>
+        <script>
+        document.querySelectorAll('div.highlight').forEach((snippet) => {
+                // Google translate has additional #text nodes mixed in with
+                // the pre for some reason.
+                var gtn_snippet_pres = [...snippet.childNodes].filter(x => x.tagName == "PRE")
+                if(gtn_snippet_pres && gtn_snippet_pres.length > 0){
+                        gtn_snippet_pres[0].insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet tabindex="0"><i class="fa fa-copy"></i>&nbsp;Copy</button>');
+                }
         });
 
         var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
