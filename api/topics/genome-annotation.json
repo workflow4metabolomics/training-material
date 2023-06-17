@@ -241,6 +241,11 @@
       "supported_servers": {
         "exact": [
           {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
+          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -735,6 +740,11 @@
             "url": "https://galaxy.genouest.org",
             "name": "Galaxy@GenOuest",
             "usegalaxy": "false"
+          },
+          {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
           },
           {
             "url": "https://usegalaxy.eu",
@@ -1726,6 +1736,11 @@
             "usegalaxy": "false"
           },
           {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
+          {
             "url": "https://usegalaxy.org.au",
             "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
@@ -2025,6 +2040,11 @@
         ],
         "inexact": [
           {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
+          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -2212,6 +2232,11 @@
       ],
       "supported_servers": {
         "exact": [
+          {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
@@ -2413,6 +2438,11 @@
       ],
       "supported_servers": {
         "exact": [
+          {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -3285,6 +3315,11 @@
           }
         ],
         "inexact": [
+          {
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
