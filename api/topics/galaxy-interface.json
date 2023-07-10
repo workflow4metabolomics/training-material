@@ -1173,11 +1173,6 @@
             "usegalaxy": "false"
           },
           {
-            "url": "https://galaxy.hyphy.org/",
-            "name": "HyPhy HIV NGS Tools",
-            "usegalaxy": "false"
-          },
-          {
             "url": "http://pepsimili.e-nios.com:8080/",
             "name": "PepSimili",
             "usegalaxy": "false"
@@ -2807,11 +2802,6 @@
             "usegalaxy": "false"
           },
           {
-            "url": "https://galaxy.hyphy.org/",
-            "name": "HyPhy HIV NGS Tools",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
             "usegalaxy": "true"
@@ -3010,6 +3000,11 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org.au",
+            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
