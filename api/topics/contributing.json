@@ -1000,6 +1000,11 @@
             "url": "https://galaxytrakr.org/",
             "name": "GalaxyTrakr",
             "usegalaxy": "false"
+          },
+          {
+            "url": "https://galaxy.hyphy.org/",
+            "name": "HyPhy HIV NGS Tools",
+            "usegalaxy": "false"
           }
         ]
       },
