@@ -77,111 +77,116 @@
   "materials": [
     {
       "layout": "tutorial_hands_on",
-      "title": "Generating a single cell matrix using Alevin",
-      "subtopic": "single-cell-CS",
-      "priority": 1,
-      "zenodo_link": "https://zenodo.org/record/4574153",
+      "title": "Bulk RNA Deconvolution with MuSiC",
+      "subtopic": "deconvo",
       "redirect_from": [
-        "/topics/transcriptomics/tutorials/droplet-quantification-preprocessing/tutorial",
-        "/topics/transcriptomics/tutorials/scrna-case_alevin/tutorial",
-        "/short/single-cell/scrna-case_alevin",
-        "/short/T00245"
+        "/topics/transcriptomics/tutorials/bulk-music/tutorial",
+        "/short/single-cell/bulk-music",
+        "/short/T00240"
       ],
-      "questions": [
-        "I have some single cell FASTQ files I want to analyse. Where do I start?"
-      ],
-      "objectives": [
-        "Generate a cellxgene matrix for droplet-based single cell sequencing data",
-        "Interpret quality control (QC) plots to make informed decisions on cell thresholds",
-        "Find relevant information in GTF files for the particulars of their study, and include this in data matrix metadata"
-      ],
-      "time_estimation": "2H",
-      "key_points": [
-        "Create a scanpy-accessible AnnData object from FASTQ files, including relevant gene metadata"
-      ],
+      "priority": 1,
+      "zenodo_link": "https://zenodo.org/record/5719228",
       "tags": [
         "single-cell",
-        "10x",
-        "paper-replication",
-        "español",
+        "mouse",
+        "human",
+        "deconvolution",
+        "bulk",
         "transcriptomics"
       ],
-      "contributions": {
-        "authorship": [
-          "nomadscientist",
-          "pinin4fjords"
-        ],
-        "editing": [
-          "hexylena"
-        ],
-        "testing": [
-          "wee-snufkin"
-        ]
-      },
+      "questions": [
+        "How do we infer cell type proportions from bulk RNA-seq data?",
+        "How are these cell types grouped together?"
+      ],
+      "objectives": [
+        "Construct Bulk and scRNA Expression Set Objects",
+        "Inspect these objects for various properties",
+        "Measure the abundance of certain cell type cluster markers compared to others"
+      ],
+      "time_estimation": "2h",
+      "key_points": [
+        "Deconvolution tools show individual cell type proportions in bulk RNA-seq data",
+        "Bulk RNA-seq can be complimented by scRNA-seq data"
+      ],
       "requirements": [
         {
           "type": "internal",
           "topic_name": "single-cell",
           "tutorials": [
-            "scrna-intro",
-            "scrna-umis"
+            "scrna-intro"
           ]
         }
       ],
-      "translations": {
-        "tutorial": [
-          "es"
-        ],
-        "slides": [
-
-        ],
-        "video": false
-      },
-      "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+      "contributors": [
+        {
+          "name": "Mehmet Tekman",
+          "email": "mtekman89@gmail.com",
+          "joined": "2018-11",
+          "elixir_node": "de",
+          "id": "mtekman",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
+        },
+        {
+          "name": "Wendi Bacon",
+          "email": "wendi.bacon@open.ac.uk",
+          "twitter": "WendiBacon1",
+          "matrix": "nomadscientist:matrix.org",
+          "joined": "2020-03",
+          "elixir_node": "uk",
+          "orcid": "0000-0002-8170-8806",
+          "bio": "Lecturer at The Open University",
+          "id": "nomadscientist",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
+        }
+      ],
       "follow_up_training": [
         {
           "type": "internal",
           "topic_name": "single-cell",
           "tutorials": [
-            "scrna-case_alevin-combine-datasets"
+            "bulk-music-2-preparescref"
           ]
         }
       ],
-      "url": "/topics/single-cell/tutorials/scrna-case_alevin/tutorial.html",
+      "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+      "url": "/topics/single-cell/tutorials/bulk-music/tutorial.html",
       "topic_name": "single-cell",
-      "tutorial_name": "scrna-case_alevin",
-      "dir": "topics/single-cell/tutorials/scrna-case_alevin",
-      "id": "single-cell/scrna-case_alevin",
+      "tutorial_name": "bulk-music",
+      "dir": "topics/single-cell/tutorials/bulk-music",
+      "id": "single-cell/bulk-music",
       "video_library": {
         "tutorial": {
-          "description": "This tutorial will take you from raw FASTQ files to a cell x gene data matrix in AnnData format. What’s a data matrix, and what’s AnnData format? Well you’ll find out! Importantly, this is the first step in processing single cell data in order to start analysing it.",
+          "description": "Bulk RNA-seq data contains a mixture of transcript signatures from\nseveral types of cells. We wish to deconvolve this mixture to obtain\nestimates of the proportions of cell types within the bulk sample. To\ndo this, we can use single cell RNA-seq data as a reference for\nestimating the cell type proportions within the bulk data.\n\nIn this tutorial, we will use bulk and single-cell RNA-seq data, including\nmatrices of similar tissues from different sources, to illustrate how to infer\ncell type abundances from bulk RNA-seq.\n",
           "materials": [
             {
-              "link": "topics/single-cell/tutorials/scrna-case_alevin/tutorial.html",
+              "link": "topics/single-cell/tutorials/bulk-music/tutorial.html",
               "type": "Tutorial"
             }
           ],
           "tags": [
-            "single-cell",
-            "transcriptomics"
+            "transcriptomics",
+            "single-cell"
           ],
-          "type": "Demo",
+          "type": "Tutorial",
           "versions": [
             {
               "captions": [
+                "mtekman",
                 "nomadscientist"
               ],
-              "date": "2021-02-15",
-              "galaxy_version": "21.01",
-              "length": "30M",
-              "link": "3ytm2AU6QUc",
+              "date": "2021-03-08",
+              "galaxy_version": "21.09",
+              "length": "20M",
+              "link": "nfAUXP3W-jM",
               "speakers": [
                 "nomadscientist"
               ]
             }
           ],
-          "gtn_id": "single-cell/scrna-case_alevin",
-          "title": "Generating a single cell matrix using Alevin",
+          "gtn_id": "single-cell/bulk-music",
+          "title": "Bulk RNA Deconvolution with MuSiC",
           "captioned": true
         },
         "slides": null,
@@ -193,59 +198,26 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "Generating-a-single-cell-matrix-using-Alevin-1.9.ga",
-          "tests": true,
-          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin-1.9.ga",
-          "path": "topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin-1.9.ga",
-          "wfid": "single-cell-scrna-case_alevin",
-          "wfname": "generating-a-single-cell-matrix-using-alevin-1.9",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-scrna-case_alevin/versions/generating-a-single-cell-matrix-using-alevin-1.9",
-          "license": "CC-BY-4.0",
-          "creators": [
-            {
-              "class": "Person",
-              "identifier": "0000-0002-8170-8806",
-              "name": "Wendi Bacon"
-            },
-            {
-              "class": "Person",
-              "identifier": "0009-0001-2017-8805",
-              "name": "Julia Jakiela"
-            }
-          ],
-          "test_results": null
-        },
-        {
-          "workflow": "Generating-a-single-cell-matrix-using-Alevin.ga",
+          "workflow": "main_workflow.ga",
           "tests": false,
-          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin.ga",
-          "path": "topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin.ga",
-          "wfid": "single-cell-scrna-case_alevin",
-          "wfname": "generating-a-single-cell-matrix-using-alevin",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-scrna-case_alevin/versions/generating-a-single-cell-matrix-using-alevin",
+          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music/workflows/main_workflow.ga",
+          "path": "topics/single-cell/tutorials/bulk-music/workflows/main_workflow.ga",
+          "wfid": "single-cell-bulk-music",
+          "wfname": "main_workflow",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-bulk-music/versions/main_workflow",
           "license": null,
           "creators": [
-            {
-              "class": "Person",
-              "identifier": "0000-0002-8170-8806",
-              "name": "Wendi Bacon"
-            }
+
           ],
           "test_results": null
         }
       ],
-      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json",
+      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json",
       "tools": [
-        "Cut1",
-        "join1",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/alevin/alevin/1.5.1+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/alevin/alevin/1.9.0+galaxy2",
-        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/droplet_barcode_plot/_dropletBarcodePlot/1.6.1+galaxy2",
-        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/dropletutils_empty_drops/dropletutils_empty_drops/1.0.4+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/dropletutils_read_10x/dropletutils_read_10x/1.0.4+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/gtf2gene_list/_ensembl_gtf2gene_list/1.52.0+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/salmon_kallisto_mtx_to_10x/_salmon_kallisto_mtx_to_10x/0.0.1+galaxy6",
-        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/sceasy_convert/sceasy_convert/0.0.5+galaxy1"
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy3",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy3",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_inspect_eset/music_inspect_eset/0.1.1+galaxy3"
       ],
       "supported_servers": {
         "exact": [
@@ -261,7 +233,11 @@
           }
         ],
         "inexact": [
-
+          {
+            "url": "https://usegalaxy.org.au",
+            "name": "UseGalaxy.org.au",
+            "usegalaxy": "true"
+          }
         ]
       },
       "topic_name_human": "Single Cell",
@@ -271,120 +247,51 @@
         "install_resolver_dependencies": true,
         "tools": [
           {
-            "name": "alevin",
+            "name": "music_construct_eset",
             "owner": "bgruening",
-            "revisions": "e4c01dcece8b",
+            "revisions": "2cfd0db49bbc",
             "tool_panel_section_label": "Single Cell",
             "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
           },
           {
-            "name": "alevin",
+            "name": "music_construct_eset",
             "owner": "bgruening",
-            "revisions": "f2000bc73102",
+            "revisions": "7ffaa0968da3",
             "tool_panel_section_label": "Single Cell",
             "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
           },
           {
-            "name": "droplet_barcode_plot",
-            "owner": "ebi-gxa",
-            "revisions": "8f605643ccfd",
+            "name": "music_deconvolution",
+            "owner": "bgruening",
+            "revisions": "56371b5a2da9",
             "tool_panel_section_label": "Single Cell",
             "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
           },
           {
-            "name": "dropletutils_empty_drops",
-            "owner": "ebi-gxa",
-            "revisions": "fa662ca7ae7f",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "dropletutils_read_10x",
-            "owner": "ebi-gxa",
-            "revisions": "ca62f52e0d7f",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "gtf2gene_list",
-            "owner": "ebi-gxa",
-            "revisions": "14b3f2a4523b",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "salmon_kallisto_mtx_to_10x",
-            "owner": "ebi-gxa",
-            "revisions": "88f5a0a6a818",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "sceasy_convert",
-            "owner": "ebi-gxa",
-            "revisions": "f62bc418173f",
+            "name": "music_inspect_eset",
+            "owner": "bgruening",
+            "revisions": "8c64a2da3869",
             "tool_panel_section_label": "Single Cell",
             "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
           }
         ]
       },
-      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: alevin\n  owner: bgruening\n  revisions: e4c01dcece8b\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: alevin\n  owner: bgruening\n  revisions: f2000bc73102\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: droplet_barcode_plot\n  owner: ebi-gxa\n  revisions: 8f605643ccfd\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: dropletutils_empty_drops\n  owner: ebi-gxa\n  revisions: fa662ca7ae7f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: dropletutils_read_10x\n  owner: ebi-gxa\n  revisions: ca62f52e0d7f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: gtf2gene_list\n  owner: ebi-gxa\n  revisions: 14b3f2a4523b\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: salmon_kallisto_mtx_to_10x\n  owner: ebi-gxa\n  revisions: 88f5a0a6a818\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: sceasy_convert\n  owner: ebi-gxa\n  revisions: f62bc418173f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: music_construct_eset\n  owner: bgruening\n  revisions: 2cfd0db49bbc\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_construct_eset\n  owner: bgruening\n  revisions: 7ffaa0968da3\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_deconvolution\n  owner: bgruening\n  revisions: 56371b5a2da9\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_inspect_eset\n  owner: bgruening\n  revisions: 8c64a2da3869\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
       "tours": false,
       "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
       "type": "tutorial",
-      "contributors": [
-        {
-          "name": "Wendi Bacon",
-          "email": "wendi.bacon@open.ac.uk",
-          "twitter": "WendiBacon1",
-          "matrix": "nomadscientist:matrix.org",
-          "joined": "2020-03",
-          "elixir_node": "uk",
-          "orcid": "0000-0002-8170-8806",
-          "bio": "Lecturer at The Open University",
-          "id": "nomadscientist",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
-        },
-        {
-          "name": "Jonathan Manning",
-          "email": "jmanning@ebi.ac.uk",
-          "joined": "2021-02",
-          "id": "pinin4fjords",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/pinin4fjords.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pinin4fjords/"
-        },
-        {
-          "name": "Helena Rasche",
-          "email": "hexylena@galaxians.org",
-          "orcid": "0000-0001-9760-8992",
-          "maintainer_contact": "gitter",
-          "matrix": "hexylena:matrix.org",
-          "joined": "2017-09",
-          "elixir_node": "nl",
-          "fediverse": "https://galaxians.garden/hexylena",
-          "contact_for_training": false,
-          "location": {
-            "country": "NL",
-            "lat": 51.91,
-            "lon": 4.46
-          },
-          "id": "hexylena",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
-        },
-        {
-          "name": "Julia Jakiela",
-          "email": "juliajot36@gmail.com",
-          "joined": "2022-06",
-          "id": "wee-snufkin",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/wee-snufkin.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/wee-snufkin/"
-        }
-      ],
       "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json"
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json"
       }
     },
     {
@@ -709,6 +616,318 @@
     },
     {
       "layout": "tutorial_hands_on",
+      "title": "Generating a single cell matrix using Alevin",
+      "subtopic": "single-cell-CS",
+      "priority": 1,
+      "zenodo_link": "https://zenodo.org/record/4574153",
+      "redirect_from": [
+        "/topics/transcriptomics/tutorials/droplet-quantification-preprocessing/tutorial",
+        "/topics/transcriptomics/tutorials/scrna-case_alevin/tutorial",
+        "/short/single-cell/scrna-case_alevin",
+        "/short/T00245"
+      ],
+      "questions": [
+        "I have some single cell FASTQ files I want to analyse. Where do I start?"
+      ],
+      "objectives": [
+        "Generate a cellxgene matrix for droplet-based single cell sequencing data",
+        "Interpret quality control (QC) plots to make informed decisions on cell thresholds",
+        "Find relevant information in GTF files for the particulars of their study, and include this in data matrix metadata"
+      ],
+      "time_estimation": "2H",
+      "key_points": [
+        "Create a scanpy-accessible AnnData object from FASTQ files, including relevant gene metadata"
+      ],
+      "tags": [
+        "single-cell",
+        "10x",
+        "paper-replication",
+        "español",
+        "transcriptomics"
+      ],
+      "contributions": {
+        "authorship": [
+          "nomadscientist",
+          "pinin4fjords"
+        ],
+        "editing": [
+          "hexylena"
+        ],
+        "testing": [
+          "wee-snufkin"
+        ]
+      },
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "scrna-intro",
+            "scrna-umis"
+          ]
+        }
+      ],
+      "translations": {
+        "tutorial": [
+          "es"
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+      "follow_up_training": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "scrna-case_alevin-combine-datasets"
+          ]
+        }
+      ],
+      "url": "/topics/single-cell/tutorials/scrna-case_alevin/tutorial.html",
+      "topic_name": "single-cell",
+      "tutorial_name": "scrna-case_alevin",
+      "dir": "topics/single-cell/tutorials/scrna-case_alevin",
+      "id": "single-cell/scrna-case_alevin",
+      "video_library": {
+        "tutorial": {
+          "description": "This tutorial will take you from raw FASTQ files to a cell x gene data matrix in AnnData format. What’s a data matrix, and what’s AnnData format? Well you’ll find out! Importantly, this is the first step in processing single cell data in order to start analysing it.",
+          "materials": [
+            {
+              "link": "topics/single-cell/tutorials/scrna-case_alevin/tutorial.html",
+              "type": "Tutorial"
+            }
+          ],
+          "tags": [
+            "single-cell",
+            "transcriptomics"
+          ],
+          "type": "Demo",
+          "versions": [
+            {
+              "captions": [
+                "nomadscientist"
+              ],
+              "date": "2021-02-15",
+              "galaxy_version": "21.01",
+              "length": "30M",
+              "link": "3ytm2AU6QUc",
+              "speakers": [
+                "nomadscientist"
+              ]
+            }
+          ],
+          "gtn_id": "single-cell/scrna-case_alevin",
+          "title": "Generating a single cell matrix using Alevin",
+          "captioned": true
+        },
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
+      "hands_on": true,
+      "slides": false,
+      "workflows": [
+        {
+          "workflow": "Generating-a-single-cell-matrix-using-Alevin-1.9.ga",
+          "tests": true,
+          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin-1.9.ga",
+          "path": "topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin-1.9.ga",
+          "wfid": "single-cell-scrna-case_alevin",
+          "wfname": "generating-a-single-cell-matrix-using-alevin-1.9",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-scrna-case_alevin/versions/generating-a-single-cell-matrix-using-alevin-1.9",
+          "license": "CC-BY-4.0",
+          "creators": [
+            {
+              "class": "Person",
+              "identifier": "0000-0002-8170-8806",
+              "name": "Wendi Bacon"
+            },
+            {
+              "class": "Person",
+              "identifier": "0009-0001-2017-8805",
+              "name": "Julia Jakiela"
+            }
+          ],
+          "test_results": null
+        },
+        {
+          "workflow": "Generating-a-single-cell-matrix-using-Alevin.ga",
+          "tests": false,
+          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin.ga",
+          "path": "topics/single-cell/tutorials/scrna-case_alevin/workflows/Generating-a-single-cell-matrix-using-Alevin.ga",
+          "wfid": "single-cell-scrna-case_alevin",
+          "wfname": "generating-a-single-cell-matrix-using-alevin",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-scrna-case_alevin/versions/generating-a-single-cell-matrix-using-alevin",
+          "license": null,
+          "creators": [
+            {
+              "class": "Person",
+              "identifier": "0000-0002-8170-8806",
+              "name": "Wendi Bacon"
+            }
+          ],
+          "test_results": null
+        }
+      ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json",
+      "tools": [
+        "Cut1",
+        "join1",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/alevin/alevin/1.5.1+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/alevin/alevin/1.9.0+galaxy2",
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/droplet_barcode_plot/_dropletBarcodePlot/1.6.1+galaxy2",
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/dropletutils_empty_drops/dropletutils_empty_drops/1.0.4+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/dropletutils_read_10x/dropletutils_read_10x/1.0.4+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/gtf2gene_list/_ensembl_gtf2gene_list/1.52.0+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/salmon_kallisto_mtx_to_10x/_salmon_kallisto_mtx_to_10x/0.0.1+galaxy6",
+        "toolshed.g2.bx.psu.edu/repos/ebi-gxa/sceasy_convert/sceasy_convert/0.0.5+galaxy1"
+      ],
+      "supported_servers": {
+        "exact": [
+          {
+            "url": "https://usegalaxy.eu",
+            "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org",
+            "name": "UseGalaxy.org (Main)",
+            "usegalaxy": "true"
+          }
+        ],
+        "inexact": [
+
+        ]
+      },
+      "topic_name_human": "Single Cell",
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+          {
+            "name": "alevin",
+            "owner": "bgruening",
+            "revisions": "e4c01dcece8b",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "alevin",
+            "owner": "bgruening",
+            "revisions": "f2000bc73102",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "droplet_barcode_plot",
+            "owner": "ebi-gxa",
+            "revisions": "8f605643ccfd",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "dropletutils_empty_drops",
+            "owner": "ebi-gxa",
+            "revisions": "fa662ca7ae7f",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "dropletutils_read_10x",
+            "owner": "ebi-gxa",
+            "revisions": "ca62f52e0d7f",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "gtf2gene_list",
+            "owner": "ebi-gxa",
+            "revisions": "14b3f2a4523b",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "salmon_kallisto_mtx_to_10x",
+            "owner": "ebi-gxa",
+            "revisions": "88f5a0a6a818",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "sceasy_convert",
+            "owner": "ebi-gxa",
+            "revisions": "f62bc418173f",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          }
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: alevin\n  owner: bgruening\n  revisions: e4c01dcece8b\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: alevin\n  owner: bgruening\n  revisions: f2000bc73102\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: droplet_barcode_plot\n  owner: ebi-gxa\n  revisions: 8f605643ccfd\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: dropletutils_empty_drops\n  owner: ebi-gxa\n  revisions: fa662ca7ae7f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: dropletutils_read_10x\n  owner: ebi-gxa\n  revisions: ca62f52e0d7f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: gtf2gene_list\n  owner: ebi-gxa\n  revisions: 14b3f2a4523b\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: salmon_kallisto_mtx_to_10x\n  owner: ebi-gxa\n  revisions: 88f5a0a6a818\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: sceasy_convert\n  owner: ebi-gxa\n  revisions: f62bc418173f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
+      "tours": false,
+      "video": false,
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Wendi Bacon",
+          "email": "wendi.bacon@open.ac.uk",
+          "twitter": "WendiBacon1",
+          "matrix": "nomadscientist:matrix.org",
+          "joined": "2020-03",
+          "elixir_node": "uk",
+          "orcid": "0000-0002-8170-8806",
+          "bio": "Lecturer at The Open University",
+          "id": "nomadscientist",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
+        },
+        {
+          "name": "Jonathan Manning",
+          "email": "jmanning@ebi.ac.uk",
+          "joined": "2021-02",
+          "id": "pinin4fjords",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/pinin4fjords.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/pinin4fjords/"
+        },
+        {
+          "name": "Helena Rasche",
+          "email": "hexylena@galaxians.org",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "matrix": "hexylena:matrix.org",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "fediverse": "https://galaxians.garden/hexylena",
+          "contact_for_training": false,
+          "location": {
+            "country": "NL",
+            "lat": 51.91,
+            "lon": 4.46
+          },
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/"
+        },
+        {
+          "name": "Julia Jakiela",
+          "email": "juliajot36@gmail.com",
+          "joined": "2022-06",
+          "id": "wee-snufkin",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/wee-snufkin.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/wee-snufkin/"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
       "title": "Single-cell quality control with scater",
       "subtopic": "tricks",
       "priority": 1,
@@ -891,225 +1110,6 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-scater-qc/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-scater-qc/tutorial.json"
-      }
-    },
-    {
-      "layout": "tutorial_hands_on",
-      "title": "Bulk RNA Deconvolution with MuSiC",
-      "subtopic": "deconvo",
-      "redirect_from": [
-        "/topics/transcriptomics/tutorials/bulk-music/tutorial",
-        "/short/single-cell/bulk-music",
-        "/short/T00240"
-      ],
-      "priority": 1,
-      "zenodo_link": "https://zenodo.org/record/5719228",
-      "tags": [
-        "single-cell",
-        "mouse",
-        "human",
-        "deconvolution",
-        "bulk",
-        "transcriptomics"
-      ],
-      "questions": [
-        "How do we infer cell type proportions from bulk RNA-seq data?",
-        "How are these cell types grouped together?"
-      ],
-      "objectives": [
-        "Construct Bulk and scRNA Expression Set Objects",
-        "Inspect these objects for various properties",
-        "Measure the abundance of certain cell type cluster markers compared to others"
-      ],
-      "time_estimation": "2h",
-      "key_points": [
-        "Deconvolution tools show individual cell type proportions in bulk RNA-seq data",
-        "Bulk RNA-seq can be complimented by scRNA-seq data"
-      ],
-      "requirements": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "scrna-intro"
-          ]
-        }
-      ],
-      "contributors": [
-        {
-          "name": "Mehmet Tekman",
-          "email": "mtekman89@gmail.com",
-          "joined": "2018-11",
-          "elixir_node": "de",
-          "id": "mtekman",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
-        },
-        {
-          "name": "Wendi Bacon",
-          "email": "wendi.bacon@open.ac.uk",
-          "twitter": "WendiBacon1",
-          "matrix": "nomadscientist:matrix.org",
-          "joined": "2020-03",
-          "elixir_node": "uk",
-          "orcid": "0000-0002-8170-8806",
-          "bio": "Lecturer at The Open University",
-          "id": "nomadscientist",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
-        }
-      ],
-      "follow_up_training": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "bulk-music-2-preparescref"
-          ]
-        }
-      ],
-      "gitter": "Galaxy-Training-Network/galaxy-single-cell",
-      "url": "/topics/single-cell/tutorials/bulk-music/tutorial.html",
-      "topic_name": "single-cell",
-      "tutorial_name": "bulk-music",
-      "dir": "topics/single-cell/tutorials/bulk-music",
-      "id": "single-cell/bulk-music",
-      "video_library": {
-        "tutorial": {
-          "description": "Bulk RNA-seq data contains a mixture of transcript signatures from\nseveral types of cells. We wish to deconvolve this mixture to obtain\nestimates of the proportions of cell types within the bulk sample. To\ndo this, we can use single cell RNA-seq data as a reference for\nestimating the cell type proportions within the bulk data.\n\nIn this tutorial, we will use bulk and single-cell RNA-seq data, including\nmatrices of similar tissues from different sources, to illustrate how to infer\ncell type abundances from bulk RNA-seq.\n",
-          "materials": [
-            {
-              "link": "topics/single-cell/tutorials/bulk-music/tutorial.html",
-              "type": "Tutorial"
-            }
-          ],
-          "tags": [
-            "transcriptomics",
-            "single-cell"
-          ],
-          "type": "Tutorial",
-          "versions": [
-            {
-              "captions": [
-                "mtekman",
-                "nomadscientist"
-              ],
-              "date": "2021-03-08",
-              "galaxy_version": "21.09",
-              "length": "20M",
-              "link": "nfAUXP3W-jM",
-              "speakers": [
-                "nomadscientist"
-              ]
-            }
-          ],
-          "gtn_id": "single-cell/bulk-music",
-          "title": "Bulk RNA Deconvolution with MuSiC",
-          "captioned": true
-        },
-        "slides": null,
-        "demo": null,
-        "both": null,
-        "session": null
-      },
-      "hands_on": true,
-      "slides": false,
-      "workflows": [
-        {
-          "workflow": "main_workflow.ga",
-          "tests": false,
-          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music/workflows/main_workflow.ga",
-          "path": "topics/single-cell/tutorials/bulk-music/workflows/main_workflow.ga",
-          "wfid": "single-cell-bulk-music",
-          "wfname": "main_workflow",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-bulk-music/versions/main_workflow",
-          "license": null,
-          "creators": [
-
-          ],
-          "test_results": null
-        }
-      ],
-      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json",
-      "tools": [
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy3",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy3",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_inspect_eset/music_inspect_eset/0.1.1+galaxy3"
-      ],
-      "supported_servers": {
-        "exact": [
-          {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org",
-            "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          }
-        ],
-        "inexact": [
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
-            "usegalaxy": "true"
-          }
-        ]
-      },
-      "topic_name_human": "Single Cell",
-      "admin_install": {
-        "install_tool_dependencies": true,
-        "install_repository_dependencies": true,
-        "install_resolver_dependencies": true,
-        "tools": [
-          {
-            "name": "music_construct_eset",
-            "owner": "bgruening",
-            "revisions": "2cfd0db49bbc",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "music_construct_eset",
-            "owner": "bgruening",
-            "revisions": "7ffaa0968da3",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "music_deconvolution",
-            "owner": "bgruening",
-            "revisions": "56371b5a2da9",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "music_inspect_eset",
-            "owner": "bgruening",
-            "revisions": "8c64a2da3869",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          }
-        ]
-      },
-      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: music_construct_eset\n  owner: bgruening\n  revisions: 2cfd0db49bbc\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_construct_eset\n  owner: bgruening\n  revisions: 7ffaa0968da3\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_deconvolution\n  owner: bgruening\n  revisions: 56371b5a2da9\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_inspect_eset\n  owner: bgruening\n  revisions: 8c64a2da3869\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
-      "tours": false,
-      "video": false,
-      "translations": {
-        "tutorial": [
-
-        ],
-        "slides": [
-
-        ],
-        "video": false
-      },
-      "type": "tutorial",
-      "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music/tutorial.json"
       }
     },
     {
@@ -1512,6 +1512,225 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Downstream Single-cell RNA analysis with RaceID",
+      "subtopic": "end-to-end",
+      "priority": 2,
+      "redirect_from": [
+        "/topics/transcriptomics/tutorials/scrna-raceid/tutorial",
+        "/short/single-cell/scrna-raceid",
+        "/short/T00253"
+      ],
+      "zenodo_link": "https://zenodo.org/record/1511582",
+      "tags": [
+        "single-cell"
+      ],
+      "questions": [
+        "What is normalisation and why is it necessary?",
+        "How many types of unwanted variation are there?",
+        "How are biological phenotypes clustered?",
+        "What is the difference between PCA and tSNE?",
+        "What is the difference between cell trajectory and cell fate?"
+      ],
+      "objectives": [
+        "Filtering, normalising, and clustering cells in a matrix",
+        "Assessing the quality of individual clusters",
+        "Inferring cell type lineages",
+        "Examining gene expression",
+        "Determining the top most expressive genes per cluster",
+        "Correcting for unwanted variation"
+      ],
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "scrna-scater-qc"
+          ]
+        }
+      ],
+      "follow_up_training": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "scrna-preprocessing-tenx"
+          ]
+        }
+      ],
+      "time_estimation": "3H",
+      "key_points": [
+        "Clustering single-cell RNA-seq data is often noisy",
+        "RaceID can be used to cluster cells based on the their gene expression profiles",
+        "StemID describes a hierarchical relationship between clusters to find multipotent progenitor stem cells to provide an understanding of cell development",
+        "FateID predicts the potential lineages that cells within specific clusters are inclined towards"
+      ],
+      "contributors": [
+        {
+          "name": "Mehmet Tekman",
+          "email": "mtekman89@gmail.com",
+          "joined": "2018-11",
+          "elixir_node": "de",
+          "id": "mtekman",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
+        },
+        {
+          "name": "Alex Ostrovsky",
+          "email": "a.ostrovsky@mac.com",
+          "orcid": "0000-0002-7901-7109",
+          "joined": "2019-06",
+          "id": "astrovsky01",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/astrovsky01.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/astrovsky01/"
+        }
+      ],
+      "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+      "url": "/topics/single-cell/tutorials/scrna-raceid/tutorial.html",
+      "topic_name": "single-cell",
+      "tutorial_name": "scrna-raceid",
+      "dir": "topics/single-cell/tutorials/scrna-raceid",
+      "id": "single-cell/scrna-raceid",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
+      "hands_on": true,
+      "slides": false,
+      "workflows": [
+        {
+          "workflow": "main_workflow.ga",
+          "tests": false,
+          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-raceid/workflows/main_workflow.ga",
+          "path": "topics/single-cell/tutorials/scrna-raceid/workflows/main_workflow.ga",
+          "wfid": "single-cell-scrna-raceid",
+          "wfname": "main_workflow",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-scrna-raceid/versions/main_workflow",
+          "license": null,
+          "creators": [
+
+          ],
+          "test_results": null
+        }
+      ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-raceid/tutorial.json",
+      "tools": [
+        "raceid_clustering",
+        "raceid_filtnormconf",
+        "raceid_inspectclusters",
+        "raceid_inspecttrajectory",
+        "raceid_trajectory",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_head_tool/1.1.0",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+        "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/datamash_transpose/datamash_transpose/1.1.0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_clustering/raceid_clustering/0.2.3+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_filtnormconf/raceid_filtnormconf/0.2.3+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspectclusters/raceid_inspectclusters/0.2.3+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspecttrajectory/raceid_inspecttrajectory/0.2.3+galaxy0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/raceid_trajectory/0.2.3+galaxy0"
+      ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+
+        ]
+      },
+      "topic_name_human": "Single Cell",
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+          {
+            "name": "text_processing",
+            "owner": "bgruening",
+            "revisions": "d698c222f354",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "text_processing",
+            "owner": "bgruening",
+            "revisions": "d698c222f354",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "datamash_ops",
+            "owner": "iuc",
+            "revisions": "562f3c677828",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "datamash_transpose",
+            "owner": "iuc",
+            "revisions": "22c2a1ac7ae3",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "raceid_clustering",
+            "owner": "iuc",
+            "revisions": "a4b734cd253b",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "raceid_filtnormconf",
+            "owner": "iuc",
+            "revisions": "43c146e25a43",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "raceid_inspectclusters",
+            "owner": "iuc",
+            "revisions": "41f34e925bd5",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "raceid_inspecttrajectory",
+            "owner": "iuc",
+            "revisions": "c8434a623268",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "raceid_trajectory",
+            "owner": "iuc",
+            "revisions": "72979cac22b2",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          }
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: datamash_ops\n  owner: iuc\n  revisions: 562f3c677828\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: datamash_transpose\n  owner: iuc\n  revisions: 22c2a1ac7ae3\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_clustering\n  owner: iuc\n  revisions: a4b734cd253b\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_filtnormconf\n  owner: iuc\n  revisions: 43c146e25a43\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_inspectclusters\n  owner: iuc\n  revisions: 41f34e925bd5\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_inspecttrajectory\n  owner: iuc\n  revisions: c8434a623268\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_trajectory\n  owner: iuc\n  revisions: 72979cac22b2\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-raceid/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-raceid/tutorial.json"
       }
     },
     {
@@ -2114,225 +2333,6 @@
     },
     {
       "layout": "tutorial_hands_on",
-      "title": "Downstream Single-cell RNA analysis with RaceID",
-      "subtopic": "end-to-end",
-      "priority": 2,
-      "redirect_from": [
-        "/topics/transcriptomics/tutorials/scrna-raceid/tutorial",
-        "/short/single-cell/scrna-raceid",
-        "/short/T00253"
-      ],
-      "zenodo_link": "https://zenodo.org/record/1511582",
-      "tags": [
-        "single-cell"
-      ],
-      "questions": [
-        "What is normalisation and why is it necessary?",
-        "How many types of unwanted variation are there?",
-        "How are biological phenotypes clustered?",
-        "What is the difference between PCA and tSNE?",
-        "What is the difference between cell trajectory and cell fate?"
-      ],
-      "objectives": [
-        "Filtering, normalising, and clustering cells in a matrix",
-        "Assessing the quality of individual clusters",
-        "Inferring cell type lineages",
-        "Examining gene expression",
-        "Determining the top most expressive genes per cluster",
-        "Correcting for unwanted variation"
-      ],
-      "requirements": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "scrna-scater-qc"
-          ]
-        }
-      ],
-      "follow_up_training": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "scrna-preprocessing-tenx"
-          ]
-        }
-      ],
-      "time_estimation": "3H",
-      "key_points": [
-        "Clustering single-cell RNA-seq data is often noisy",
-        "RaceID can be used to cluster cells based on the their gene expression profiles",
-        "StemID describes a hierarchical relationship between clusters to find multipotent progenitor stem cells to provide an understanding of cell development",
-        "FateID predicts the potential lineages that cells within specific clusters are inclined towards"
-      ],
-      "contributors": [
-        {
-          "name": "Mehmet Tekman",
-          "email": "mtekman89@gmail.com",
-          "joined": "2018-11",
-          "elixir_node": "de",
-          "id": "mtekman",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
-        },
-        {
-          "name": "Alex Ostrovsky",
-          "email": "a.ostrovsky@mac.com",
-          "orcid": "0000-0002-7901-7109",
-          "joined": "2019-06",
-          "id": "astrovsky01",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/astrovsky01.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/astrovsky01/"
-        }
-      ],
-      "gitter": "Galaxy-Training-Network/galaxy-single-cell",
-      "url": "/topics/single-cell/tutorials/scrna-raceid/tutorial.html",
-      "topic_name": "single-cell",
-      "tutorial_name": "scrna-raceid",
-      "dir": "topics/single-cell/tutorials/scrna-raceid",
-      "id": "single-cell/scrna-raceid",
-      "video_library": {
-        "tutorial": null,
-        "slides": null,
-        "demo": null,
-        "both": null,
-        "session": null
-      },
-      "hands_on": true,
-      "slides": false,
-      "workflows": [
-        {
-          "workflow": "main_workflow.ga",
-          "tests": false,
-          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-raceid/workflows/main_workflow.ga",
-          "path": "topics/single-cell/tutorials/scrna-raceid/workflows/main_workflow.ga",
-          "wfid": "single-cell-scrna-raceid",
-          "wfname": "main_workflow",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-scrna-raceid/versions/main_workflow",
-          "license": null,
-          "creators": [
-
-          ],
-          "test_results": null
-        }
-      ],
-      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-raceid/tutorial.json",
-      "tools": [
-        "raceid_clustering",
-        "raceid_filtnormconf",
-        "raceid_inspectclusters",
-        "raceid_inspecttrajectory",
-        "raceid_trajectory",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_head_tool/1.1.0",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
-        "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/datamash_transpose/datamash_transpose/1.1.0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_clustering/raceid_clustering/0.2.3+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_filtnormconf/raceid_filtnormconf/0.2.3+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspectclusters/raceid_inspectclusters/0.2.3+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_inspecttrajectory/raceid_inspecttrajectory/0.2.3+galaxy0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/raceid_trajectory/raceid_trajectory/0.2.3+galaxy0"
-      ],
-      "supported_servers": {
-        "exact": [
-
-        ],
-        "inexact": [
-
-        ]
-      },
-      "topic_name_human": "Single Cell",
-      "admin_install": {
-        "install_tool_dependencies": true,
-        "install_repository_dependencies": true,
-        "install_resolver_dependencies": true,
-        "tools": [
-          {
-            "name": "text_processing",
-            "owner": "bgruening",
-            "revisions": "d698c222f354",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "text_processing",
-            "owner": "bgruening",
-            "revisions": "d698c222f354",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "datamash_ops",
-            "owner": "iuc",
-            "revisions": "562f3c677828",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "datamash_transpose",
-            "owner": "iuc",
-            "revisions": "22c2a1ac7ae3",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "raceid_clustering",
-            "owner": "iuc",
-            "revisions": "a4b734cd253b",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "raceid_filtnormconf",
-            "owner": "iuc",
-            "revisions": "43c146e25a43",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "raceid_inspectclusters",
-            "owner": "iuc",
-            "revisions": "41f34e925bd5",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "raceid_inspecttrajectory",
-            "owner": "iuc",
-            "revisions": "c8434a623268",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "raceid_trajectory",
-            "owner": "iuc",
-            "revisions": "72979cac22b2",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          }
-        ]
-      },
-      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: datamash_ops\n  owner: iuc\n  revisions: 562f3c677828\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: datamash_transpose\n  owner: iuc\n  revisions: 22c2a1ac7ae3\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_clustering\n  owner: iuc\n  revisions: a4b734cd253b\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_filtnormconf\n  owner: iuc\n  revisions: 43c146e25a43\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_inspectclusters\n  owner: iuc\n  revisions: 41f34e925bd5\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_inspecttrajectory\n  owner: iuc\n  revisions: c8434a623268\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: raceid_trajectory\n  owner: iuc\n  revisions: 72979cac22b2\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
-      "tours": false,
-      "video": false,
-      "translations": {
-        "tutorial": [
-
-        ],
-        "slides": [
-
-        ],
-        "video": false
-      },
-      "type": "tutorial",
-      "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-raceid/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-raceid/tutorial.json"
-      }
-    },
-    {
-      "layout": "tutorial_hands_on",
       "title": "Understanding Barcodes",
       "subtopic": "scintroduction",
       "priority": 2,
@@ -2493,6 +2493,257 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-umis/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-umis/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "subtopic": "deconvo",
+      "priority": 3,
+      "title": "Creating the bulk RNA-seq dataset for deconvolution",
+      "zenodo_link": "https://zenodo.org/record/7319173",
+      "questions": [
+        "Where can I find good quality RNA-seq datasets?",
+        "How can I reformat and manipulate these downloads to create the right format for MuSiC?"
+      ],
+      "objectives": [
+        "You will retrieve raw data from the EMBL-EBI Expression Atlas.",
+        "You will manipulate the metadata and matrix files.",
+        "You will combine the metadata and matrix files into an ESet object for MuSiC deconvolution.",
+        "You will create multiple ESet objects - both combined and separated out by disease phenotype for your bulk dataset."
+      ],
+      "time_estimation": "1H",
+      "key_points": [
+        "The EMBL-EBI Expression Atlas contains high quality datasets.",
+        "Metadata manipulation is key for generating the correctly formatted resource."
+      ],
+      "contributions": {
+        "authorship": [
+          "nomadscientist",
+          "mtekman"
+        ],
+        "testing": [
+          "MarisaJL"
+        ]
+      },
+      "tags": [
+        "single-cell",
+        "human",
+        "deconvolution",
+        "bulk",
+        "transcriptomics"
+      ],
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "bulk-music",
+            "bulk-music-2-preparescref"
+          ]
+        }
+      ],
+      "follow_up_training": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "bulk-music-4-compare"
+          ]
+        }
+      ],
+      "url": "/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html",
+      "topic_name": "single-cell",
+      "tutorial_name": "bulk-music-3-preparebulk",
+      "dir": "topics/single-cell/tutorials/bulk-music-3-preparebulk",
+      "id": "single-cell/bulk-music-3-preparebulk",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
+      "hands_on": true,
+      "slides": false,
+      "workflows": [
+        {
+          "workflow": "bulk_ESet.ga",
+          "tests": false,
+          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/workflows/bulk_ESet.ga",
+          "path": "topics/single-cell/tutorials/bulk-music-3-preparebulk/workflows/bulk_ESet.ga",
+          "wfid": "single-cell-bulk-music-3-preparebulk",
+          "wfname": "bulk_eset",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-bulk-music-3-preparebulk/versions/bulk_eset",
+          "license": null,
+          "creators": [
+            {
+              "class": "Person",
+              "identifier": "0000-0002-8170-8806",
+              "name": "Wendi Bacon"
+            },
+            {
+              "class": "Person",
+              "identifier": "0000-0002-4181-2676",
+              "name": "Mehmet Tekman"
+            }
+          ],
+          "test_results": null
+        }
+      ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json",
+      "tools": [
+        "sort1",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_easyjoin_tool/1.1.2",
+        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+        "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
+        "toolshed.g2.bx.psu.edu/repos/iuc/annotatemyids/annotatemyids/3.14.0+galaxy1",
+        "toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0",
+        "toolshed.g2.bx.psu.edu/repos/iuc/table_compute/table_compute/1.2.4+galaxy0"
+      ],
+      "supported_servers": {
+        "exact": [
+          {
+            "url": "https://usegalaxy.org.au",
+            "name": "UseGalaxy.org.au",
+            "usegalaxy": "true"
+          }
+        ],
+        "inexact": [
+
+        ]
+      },
+      "topic_name_human": "Single Cell",
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+          {
+            "name": "music_construct_eset",
+            "owner": "bgruening",
+            "revisions": "282819d09a4f",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "music_manipulate_eset",
+            "owner": "bgruening",
+            "revisions": "22232092be53",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "text_processing",
+            "owner": "bgruening",
+            "revisions": "d698c222f354",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "text_processing",
+            "owner": "bgruening",
+            "revisions": "d698c222f354",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "text_processing",
+            "owner": "bgruening",
+            "revisions": "d698c222f354",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "text_processing",
+            "owner": "bgruening",
+            "revisions": "d698c222f354",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "regex_find_replace",
+            "owner": "galaxyp",
+            "revisions": "399da6b5ec21",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "annotatemyids",
+            "owner": "iuc",
+            "revisions": "fe3ca740a485",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "column_remove_by_header",
+            "owner": "iuc",
+            "revisions": "2040e4c2750a",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          },
+          {
+            "name": "table_compute",
+            "owner": "iuc",
+            "revisions": "3bf5661c0280",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          }
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: music_construct_eset\n  owner: bgruening\n  revisions: 282819d09a4f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_manipulate_eset\n  owner: bgruening\n  revisions: 22232092be53\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: regex_find_replace\n  owner: galaxyp\n  revisions: 399da6b5ec21\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: annotatemyids\n  owner: iuc\n  revisions: fe3ca740a485\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: column_remove_by_header\n  owner: iuc\n  revisions: 2040e4c2750a\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: table_compute\n  owner: iuc\n  revisions: 3bf5661c0280\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Wendi Bacon",
+          "email": "wendi.bacon@open.ac.uk",
+          "twitter": "WendiBacon1",
+          "matrix": "nomadscientist:matrix.org",
+          "joined": "2020-03",
+          "elixir_node": "uk",
+          "orcid": "0000-0002-8170-8806",
+          "bio": "Lecturer at The Open University",
+          "id": "nomadscientist",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
+        },
+        {
+          "name": "Mehmet Tekman",
+          "email": "mtekman89@gmail.com",
+          "joined": "2018-11",
+          "elixir_node": "de",
+          "id": "mtekman",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
+        },
+        {
+          "name": "Marisa Loach",
+          "orcid": "0000-0001-6979-6930",
+          "twitter": "Marisa_Loach",
+          "email": "marisa.loach@open.ac.uk",
+          "joined": "2022-10",
+          "id": "MarisaJL",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/MarisaJL.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/MarisaJL/"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json"
       }
     },
     {
@@ -3398,257 +3649,6 @@
       }
     },
     {
-      "layout": "tutorial_hands_on",
-      "subtopic": "deconvo",
-      "priority": 3,
-      "title": "Creating the bulk RNA-seq dataset for deconvolution",
-      "zenodo_link": "https://zenodo.org/record/7319173",
-      "questions": [
-        "Where can I find good quality RNA-seq datasets?",
-        "How can I reformat and manipulate these downloads to create the right format for MuSiC?"
-      ],
-      "objectives": [
-        "You will retrieve raw data from the EMBL-EBI Expression Atlas.",
-        "You will manipulate the metadata and matrix files.",
-        "You will combine the metadata and matrix files into an ESet object for MuSiC deconvolution.",
-        "You will create multiple ESet objects - both combined and separated out by disease phenotype for your bulk dataset."
-      ],
-      "time_estimation": "1H",
-      "key_points": [
-        "The EMBL-EBI Expression Atlas contains high quality datasets.",
-        "Metadata manipulation is key for generating the correctly formatted resource."
-      ],
-      "contributions": {
-        "authorship": [
-          "nomadscientist",
-          "mtekman"
-        ],
-        "testing": [
-          "MarisaJL"
-        ]
-      },
-      "tags": [
-        "single-cell",
-        "human",
-        "deconvolution",
-        "bulk",
-        "transcriptomics"
-      ],
-      "requirements": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "bulk-music",
-            "bulk-music-2-preparescref"
-          ]
-        }
-      ],
-      "follow_up_training": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "bulk-music-4-compare"
-          ]
-        }
-      ],
-      "url": "/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html",
-      "topic_name": "single-cell",
-      "tutorial_name": "bulk-music-3-preparebulk",
-      "dir": "topics/single-cell/tutorials/bulk-music-3-preparebulk",
-      "id": "single-cell/bulk-music-3-preparebulk",
-      "video_library": {
-        "tutorial": null,
-        "slides": null,
-        "demo": null,
-        "both": null,
-        "session": null
-      },
-      "hands_on": true,
-      "slides": false,
-      "workflows": [
-        {
-          "workflow": "bulk_ESet.ga",
-          "tests": false,
-          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-3-preparebulk/workflows/bulk_ESet.ga",
-          "path": "topics/single-cell/tutorials/bulk-music-3-preparebulk/workflows/bulk_ESet.ga",
-          "wfid": "single-cell-bulk-music-3-preparebulk",
-          "wfname": "bulk_eset",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-bulk-music-3-preparebulk/versions/bulk_eset",
-          "license": null,
-          "creators": [
-            {
-              "class": "Person",
-              "identifier": "0000-0002-8170-8806",
-              "name": "Wendi Bacon"
-            },
-            {
-              "class": "Person",
-              "identifier": "0000-0002-4181-2676",
-              "name": "Mehmet Tekman"
-            }
-          ],
-          "test_results": null
-        }
-      ],
-      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json",
-      "tools": [
-        "sort1",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_manipulate_eset/music_manipulate_eset/0.1.1+galaxy4",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_easyjoin_tool/1.1.2",
-        "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
-        "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.2",
-        "toolshed.g2.bx.psu.edu/repos/iuc/annotatemyids/annotatemyids/3.14.0+galaxy1",
-        "toolshed.g2.bx.psu.edu/repos/iuc/column_remove_by_header/column_remove_by_header/1.0",
-        "toolshed.g2.bx.psu.edu/repos/iuc/table_compute/table_compute/1.2.4+galaxy0"
-      ],
-      "supported_servers": {
-        "exact": [
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
-            "usegalaxy": "true"
-          }
-        ],
-        "inexact": [
-
-        ]
-      },
-      "topic_name_human": "Single Cell",
-      "admin_install": {
-        "install_tool_dependencies": true,
-        "install_repository_dependencies": true,
-        "install_resolver_dependencies": true,
-        "tools": [
-          {
-            "name": "music_construct_eset",
-            "owner": "bgruening",
-            "revisions": "282819d09a4f",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "music_manipulate_eset",
-            "owner": "bgruening",
-            "revisions": "22232092be53",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "text_processing",
-            "owner": "bgruening",
-            "revisions": "d698c222f354",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "text_processing",
-            "owner": "bgruening",
-            "revisions": "d698c222f354",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "text_processing",
-            "owner": "bgruening",
-            "revisions": "d698c222f354",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "text_processing",
-            "owner": "bgruening",
-            "revisions": "d698c222f354",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "regex_find_replace",
-            "owner": "galaxyp",
-            "revisions": "399da6b5ec21",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "annotatemyids",
-            "owner": "iuc",
-            "revisions": "fe3ca740a485",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "column_remove_by_header",
-            "owner": "iuc",
-            "revisions": "2040e4c2750a",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          },
-          {
-            "name": "table_compute",
-            "owner": "iuc",
-            "revisions": "3bf5661c0280",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          }
-        ]
-      },
-      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: music_construct_eset\n  owner: bgruening\n  revisions: 282819d09a4f\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: music_manipulate_eset\n  owner: bgruening\n  revisions: 22232092be53\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: text_processing\n  owner: bgruening\n  revisions: d698c222f354\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: regex_find_replace\n  owner: galaxyp\n  revisions: 399da6b5ec21\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: annotatemyids\n  owner: iuc\n  revisions: fe3ca740a485\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: column_remove_by_header\n  owner: iuc\n  revisions: 2040e4c2750a\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n- name: table_compute\n  owner: iuc\n  revisions: 3bf5661c0280\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
-      "tours": false,
-      "video": false,
-      "translations": {
-        "tutorial": [
-
-        ],
-        "slides": [
-
-        ],
-        "video": false
-      },
-      "type": "tutorial",
-      "contributors": [
-        {
-          "name": "Wendi Bacon",
-          "email": "wendi.bacon@open.ac.uk",
-          "twitter": "WendiBacon1",
-          "matrix": "nomadscientist:matrix.org",
-          "joined": "2020-03",
-          "elixir_node": "uk",
-          "orcid": "0000-0002-8170-8806",
-          "bio": "Lecturer at The Open University",
-          "id": "nomadscientist",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
-        },
-        {
-          "name": "Mehmet Tekman",
-          "email": "mtekman89@gmail.com",
-          "joined": "2018-11",
-          "elixir_node": "de",
-          "id": "mtekman",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
-        },
-        {
-          "name": "Marisa Loach",
-          "orcid": "0000-0001-6979-6930",
-          "twitter": "Marisa_Loach",
-          "email": "marisa.loach@open.ac.uk",
-          "joined": "2022-10",
-          "id": "MarisaJL",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/MarisaJL.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/MarisaJL/"
-        }
-      ],
-      "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.json"
-      }
-    },
-    {
       "layout": "tutorial_slides",
       "logo": "GTN",
       "title": "Plates, Batches, and Barcodes",
@@ -3776,6 +3776,184 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-plates-batches-barcodes/slides.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-plates-batches-barcodes/slides.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "subtopic": "deconvo",
+      "priority": 4,
+      "title": "Comparing inferred cell compositions using MuSiC deconvolution",
+      "zenodo_link": "https://zenodo.org/record/7319925",
+      "tags": [
+        "single-cell",
+        "mouse",
+        "human",
+        "deconvolution",
+        "bulk",
+        "transcriptomics"
+      ],
+      "questions": [
+        "How do the cell type distributions vary in bulk RNA samples across my variable of interest?",
+        "For example, are beta cell proportions different in the pancreas data from diabetes and healthy patients?"
+      ],
+      "objectives": [
+        "Apply the MuSiC deconvolution to samples and compare the cell type distributions",
+        "Compare the results from analysing different types of input, for example, whether combining disease and healthy references or not yields better results"
+      ],
+      "time_estimation": "1H",
+      "key_points": [
+        "Deconvolution can be used to compare cell type distributions from bulk RNA-seq datasets"
+      ],
+      "contributions": {
+        "authorship": [
+          "nomadscientist",
+          "mtekman"
+        ],
+        "testing": [
+          "MarisaJL"
+        ]
+      },
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "single-cell",
+          "tutorials": [
+            "bulk-music",
+            "bulk-music-2-preparescref",
+            "bulk-music-3-preparebulk"
+          ]
+        }
+      ],
+      "url": "/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.html",
+      "topic_name": "single-cell",
+      "tutorial_name": "bulk-music-4-compare",
+      "dir": "topics/single-cell/tutorials/bulk-music-4-compare",
+      "id": "single-cell/bulk-music-4-compare",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
+      "hands_on": true,
+      "slides": false,
+      "workflows": [
+        {
+          "workflow": "compare.ga",
+          "tests": false,
+          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-4-compare/workflows/compare.ga",
+          "path": "topics/single-cell/tutorials/bulk-music-4-compare/workflows/compare.ga",
+          "wfid": "single-cell-bulk-music-4-compare",
+          "wfname": "compare",
+          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-bulk-music-4-compare/versions/compare",
+          "license": null,
+          "creators": [
+            {
+              "class": "Person",
+              "identifier": "https://orcid.org/0000-0002-8170-8806",
+              "name": "Wendi Bacon"
+            },
+            {
+              "class": "Person",
+              "identifier": "0000-0002-4181-2676",
+              "name": "Mehmet Tekman"
+            }
+          ],
+          "test_results": null
+        }
+      ],
+      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.json",
+      "tools": [
+        "toolshed.g2.bx.psu.edu/repos/bgruening/music_compare/music_compare/0.1.1+galaxy4"
+      ],
+      "supported_servers": {
+        "exact": [
+          {
+            "url": "https://usegalaxy.eu",
+            "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org",
+            "name": "UseGalaxy.org (Main)",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.org.au",
+            "name": "UseGalaxy.org.au",
+            "usegalaxy": "true"
+          }
+        ],
+        "inexact": [
+
+        ]
+      },
+      "topic_name_human": "Single Cell",
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+          {
+            "name": "music_compare",
+            "owner": "bgruening",
+            "revisions": "4447ed460308",
+            "tool_panel_section_label": "Single Cell",
+            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
+          }
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: music_compare\n  owner: bgruening\n  revisions: 4447ed460308\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Wendi Bacon",
+          "email": "wendi.bacon@open.ac.uk",
+          "twitter": "WendiBacon1",
+          "matrix": "nomadscientist:matrix.org",
+          "joined": "2020-03",
+          "elixir_node": "uk",
+          "orcid": "0000-0002-8170-8806",
+          "bio": "Lecturer at The Open University",
+          "id": "nomadscientist",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
+        },
+        {
+          "name": "Mehmet Tekman",
+          "email": "mtekman89@gmail.com",
+          "joined": "2018-11",
+          "elixir_node": "de",
+          "id": "mtekman",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
+        },
+        {
+          "name": "Marisa Loach",
+          "orcid": "0000-0001-6979-6930",
+          "twitter": "Marisa_Loach",
+          "email": "marisa.loach@open.ac.uk",
+          "joined": "2022-10",
+          "id": "MarisaJL",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/MarisaJL.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/MarisaJL/"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.json"
       }
     },
     {
@@ -4123,184 +4301,6 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.json"
-      }
-    },
-    {
-      "layout": "tutorial_hands_on",
-      "subtopic": "deconvo",
-      "priority": 4,
-      "title": "Comparing inferred cell compositions using MuSiC deconvolution",
-      "zenodo_link": "https://zenodo.org/record/7319925",
-      "tags": [
-        "single-cell",
-        "mouse",
-        "human",
-        "deconvolution",
-        "bulk",
-        "transcriptomics"
-      ],
-      "questions": [
-        "How do the cell type distributions vary in bulk RNA samples across my variable of interest?",
-        "For example, are beta cell proportions different in the pancreas data from diabetes and healthy patients?"
-      ],
-      "objectives": [
-        "Apply the MuSiC deconvolution to samples and compare the cell type distributions",
-        "Compare the results from analysing different types of input, for example, whether combining disease and healthy references or not yields better results"
-      ],
-      "time_estimation": "1H",
-      "key_points": [
-        "Deconvolution can be used to compare cell type distributions from bulk RNA-seq datasets"
-      ],
-      "contributions": {
-        "authorship": [
-          "nomadscientist",
-          "mtekman"
-        ],
-        "testing": [
-          "MarisaJL"
-        ]
-      },
-      "requirements": [
-        {
-          "type": "internal",
-          "topic_name": "single-cell",
-          "tutorials": [
-            "bulk-music",
-            "bulk-music-2-preparescref",
-            "bulk-music-3-preparebulk"
-          ]
-        }
-      ],
-      "url": "/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.html",
-      "topic_name": "single-cell",
-      "tutorial_name": "bulk-music-4-compare",
-      "dir": "topics/single-cell/tutorials/bulk-music-4-compare",
-      "id": "single-cell/bulk-music-4-compare",
-      "video_library": {
-        "tutorial": null,
-        "slides": null,
-        "demo": null,
-        "both": null,
-        "session": null
-      },
-      "hands_on": true,
-      "slides": false,
-      "workflows": [
-        {
-          "workflow": "compare.ga",
-          "tests": false,
-          "url": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/bulk-music-4-compare/workflows/compare.ga",
-          "path": "topics/single-cell/tutorials/bulk-music-4-compare/workflows/compare.ga",
-          "wfid": "single-cell-bulk-music-4-compare",
-          "wfname": "compare",
-          "trs_endpoint": "https://training.galaxyproject.org/training-material/api/ga4gh/trs/v2/tools/single-cell-bulk-music-4-compare/versions/compare",
-          "license": null,
-          "creators": [
-            {
-              "class": "Person",
-              "identifier": "https://orcid.org/0000-0002-8170-8806",
-              "name": "Wendi Bacon"
-            },
-            {
-              "class": "Person",
-              "identifier": "0000-0002-4181-2676",
-              "name": "Mehmet Tekman"
-            }
-          ],
-          "test_results": null
-        }
-      ],
-      "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.json",
-      "tools": [
-        "toolshed.g2.bx.psu.edu/repos/bgruening/music_compare/music_compare/0.1.1+galaxy4"
-      ],
-      "supported_servers": {
-        "exact": [
-          {
-            "url": "https://usegalaxy.eu",
-            "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org",
-            "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
-            "usegalaxy": "true"
-          }
-        ],
-        "inexact": [
-
-        ]
-      },
-      "topic_name_human": "Single Cell",
-      "admin_install": {
-        "install_tool_dependencies": true,
-        "install_repository_dependencies": true,
-        "install_resolver_dependencies": true,
-        "tools": [
-          {
-            "name": "music_compare",
-            "owner": "bgruening",
-            "revisions": "4447ed460308",
-            "tool_panel_section_label": "Single Cell",
-            "tool_shed_url": "https://toolshed.g2.bx.psu.edu/"
-          }
-        ]
-      },
-      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools:\n- name: music_compare\n  owner: bgruening\n  revisions: 4447ed460308\n  tool_panel_section_label: Single Cell\n  tool_shed_url: https://toolshed.g2.bx.psu.edu/\n",
-      "tours": false,
-      "video": false,
-      "translations": {
-        "tutorial": [
-
-        ],
-        "slides": [
-
-        ],
-        "video": false
-      },
-      "type": "tutorial",
-      "contributors": [
-        {
-          "name": "Wendi Bacon",
-          "email": "wendi.bacon@open.ac.uk",
-          "twitter": "WendiBacon1",
-          "matrix": "nomadscientist:matrix.org",
-          "joined": "2020-03",
-          "elixir_node": "uk",
-          "orcid": "0000-0002-8170-8806",
-          "bio": "Lecturer at The Open University",
-          "id": "nomadscientist",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/nomadscientist/"
-        },
-        {
-          "name": "Mehmet Tekman",
-          "email": "mtekman89@gmail.com",
-          "joined": "2018-11",
-          "elixir_node": "de",
-          "id": "mtekman",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mtekman/"
-        },
-        {
-          "name": "Marisa Loach",
-          "orcid": "0000-0001-6979-6930",
-          "twitter": "Marisa_Loach",
-          "email": "marisa.loach@open.ac.uk",
-          "joined": "2022-10",
-          "id": "MarisaJL",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/MarisaJL.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/MarisaJL/"
-        }
-      ],
-      "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-4-compare/tutorial.json"
       }
     },
     {
