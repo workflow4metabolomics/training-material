@@ -175,7 +175,11 @@
           }
         ],
         "inexact": [
-
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          }
         ]
       },
       "topic_name_human": "Assembly",
@@ -692,6 +696,11 @@
           }
         ],
         "inexact": [
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          },
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
@@ -1746,8 +1755,18 @@
         ],
         "inexact": [
           {
+            "url": "https://mississippi.sorbonne-universite.fr",
+            "name": "MISSISSIPPI",
+            "usegalaxy": "false"
+          },
+          {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
