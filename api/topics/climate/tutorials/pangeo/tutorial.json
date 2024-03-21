@@ -133,7 +133,11 @@
       }
     ],
     "inexact": [
-
+      {
+        "url": "https://galaxy.metacentrum.cz/",
+        "name": "MetaCentrum",
+        "usegalaxy": "false"
+      }
     ]
   },
   "topic_name_human": "Climate",
