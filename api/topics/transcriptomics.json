@@ -244,11 +244,6 @@
         ],
         "inexact": [
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -399,11 +394,6 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
@@ -642,11 +632,6 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
           {
             "url": "https://usegalaxy.fr/",
             "name": "UseGalaxy.fr",
@@ -919,11 +904,6 @@
         ],
         "inexact": [
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -1115,11 +1095,6 @@
         ],
         "inexact": [
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.fr/",
             "name": "UseGalaxy.fr",
             "usegalaxy": "true"
@@ -1275,11 +1250,6 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
@@ -1501,11 +1471,6 @@
             "usegalaxy": "false"
           },
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -1687,11 +1652,6 @@
 
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -2078,11 +2038,6 @@
             "usegalaxy": "true"
           },
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -2305,11 +2260,6 @@
             "usegalaxy": "true"
           },
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -2486,11 +2436,6 @@
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
             "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
           }
         ]
       },
@@ -2652,11 +2597,6 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
@@ -2864,11 +2804,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://usegalaxy.be/",
-            "name": "UseGalaxy.be",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
             "usegalaxy": "true"
@@ -2876,8 +2811,8 @@
         ],
         "inexact": [
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
+            "url": "https://usegalaxy.be/",
+            "name": "UseGalaxy.be",
             "usegalaxy": "true"
           },
           {
@@ -3190,11 +3125,6 @@
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
             "usegalaxy": "true"
           },
           {
@@ -4795,11 +4725,6 @@
             "usegalaxy": "true"
           },
           {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
             "usegalaxy": "true"
@@ -5311,11 +5236,6 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.cz/",
-            "name": "UseGalaxy.cz",
-            "usegalaxy": "true"
-          },
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
