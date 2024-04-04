@@ -2503,11 +2503,6 @@
       "supported_servers": {
         "exact": [
           {
-            "url": "https://mississippi.sorbonne-universite.fr",
-            "name": "MISSISSIPPI",
-            "usegalaxy": "false"
-          },
-          {
             "url": "https://usegalaxy.fr/",
             "name": "UseGalaxy.fr",
             "usegalaxy": "true"
@@ -2527,6 +2522,11 @@
           {
             "url": "https://galaxytrakr.org/",
             "name": "GalaxyTrakr",
+            "usegalaxy": "false"
+          },
+          {
+            "url": "https://mississippi.sorbonne-universite.fr",
+            "name": "MISSISSIPPI",
             "usegalaxy": "false"
           },
           {
@@ -4099,6 +4099,11 @@
           }
         ],
         "inexact": [
+          {
+            "url": "https://galaxy.mesocentre.uca.fr",
+            "name": "Galaxy@AuBi",
+            "usegalaxy": "false"
+          },
           {
             "url": "https://usegalaxy.cz/",
             "name": "UseGalaxy.cz",
