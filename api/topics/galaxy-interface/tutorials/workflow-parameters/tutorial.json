@@ -164,11 +164,7 @@
       }
     ],
     "inexact": [
-      {
-        "url": "https://mississippi.sorbonne-universite.fr",
-        "name": "MISSISSIPPI",
-        "usegalaxy": "false"
-      }
+
     ]
   },
   "topic_name_human": "Using Galaxy and Managing your Data",
