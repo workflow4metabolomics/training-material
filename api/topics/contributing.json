@@ -2451,9 +2451,8 @@
             "usegalaxy": "false"
           },
           {
-            "url": "https://mississippi.sorbonne-universite.fr",
-            "name": "MISSISSIPPI",
-            "usegalaxy": "false"
+            "url": "https://galaxy.bio.di.uminho.pt/",
+            "name": "PhagePromotor"
           }
         ]
       },
