@@ -25,8 +25,7 @@ contributors:
     - yguitton
     - melpetera
     - workflow4metabolomics
- editing: []
-  funding:
+ funding:
     - elixir-europe
     
 --- 
