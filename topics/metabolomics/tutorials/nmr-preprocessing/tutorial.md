@@ -192,10 +192,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > in the Figure 4?
 > 
 > > <solution-title></solution-title>
-> > Explanations CCA
-> > 1. 10^6
-> > 2. 1
-> > 3. 10^9
+> > The smaller the lambda value, the smoother the signals. The value lambda = 1 corresponds to the second spectrum: the solvent signal is well suppressed, but this value is too small: all metabolite signals > > > are diminished. A compromise must therefore be found between suppressing the solvent signal and smoothing the metabolite signals. The value lamba = 10^9 corresponds to spectrum n°3 and lambda = 10^6 to> > > > spectrum n°1. There is very little difference between these 2 spectra. Default value seems to be a good compromise.
 > > 
 > {: .solution}
 > 
