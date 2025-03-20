@@ -307,7 +307,7 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 >        - *"Shift Referencing: definition of the search zone"*: `window`
 >        - In *"Shift Referencing: definition of the search zone"*
 >            - In *"Search zone"*
->               - *"Search zone: left border"*: -2.0
+>               - *"Search zone: left border"*: 2.0
 >               - *"Search zone: right border"*: -2.0
 >        - *"Shift Referencing: shiftHandling"*: `zerofilling`
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
