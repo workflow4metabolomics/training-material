@@ -157,8 +157,8 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > <hands-on-title> 1st order phase correction </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file resulting from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file resulting fromt the NMR_Read tool
 >    - In *"Group delay correction"*: 
 >        - *"Display the FIDs after 1st order phase correction?"*: `yes`
 > 
@@ -182,7 +182,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 >        - *"Display the FIDs after solvent suppression?"*: `no`
 > 
 > You can leave other parameters with their default values.
-> 
+
 > <question-title></question-title>
 > 
 > Based on explanations given in [](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression_illustration), :
@@ -192,6 +192,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > in the Figure 4?
 > 
 > > <solution-title></solution-title>
+> >
 > > The smaller the lambda value, the smoother the signals. The value lambda = 1 corresponds to the second spectrum: the solvent signal is well suppressed, but this value is too small: all metabolite signals > > > are diminished. A compromise must therefore be found between suppressing the solvent signal and smoothing the metabolite signals. The value lamba = 10^9 corresponds to spectrum n°3 and lambda = 10^6 to> > > > spectrum n°1. There is very little difference between these 2 spectra. Default value seems to be a good compromise.
 > > 
 > {: .solution}
@@ -229,9 +230,9 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >        - *"Apodization: method"*: `exp`
 >        - *"Apodization: Line broadening"*: `0.3`
 >        - *"Display the FIDs after Apodization?"*: `no`
-> 
+
 > You can leave other parameters with their default values.
->
+
 > <question-title></Effect of the weighting function >
 > 
 > Based on the "2016-61-UR-N4-CD" spectrum, which is the effet of the line broadening value on FID?
@@ -239,6 +240,7 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 > > <solution-title></Effect of the weighting function>
 > > 
 > > CCA
+> >
 > {: .solution}
 > 
 {: .question}
