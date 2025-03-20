@@ -4,27 +4,30 @@ draft: true
 
 title: 'Mass spectrometry : GC-MS analysis with metaMS package'
 level: Introductory
-zenodo_link : 'https://zenodo.org/record/3244991' 
+zenodo_link : 'https://zenodo.org/record/3631074' 
 questions : 
-    - What are the main steps of GC-MS datas processing for metabolomic analysis ? 
-    - How te be able to annotate the maximum of unknowns using Galaxy ? 
+    - What are the main steps of untargeted GC-MS data processing for metabolomic analysis?
+    - How to conduct metabolomic GC-MS data analysis from preprocessing to annotation using Galaxy?
 objectives : 
     - To be sure you have already comprehend the diversity of MS pre-processing analysis. 
     - To learn the principal functions of metaMS package through Galaxy.
-    - To evaluate the potential of this new GC-MS workflow for GC-MS metabolomic analysis. 
+    - To evaluate the potential of a workflow approach and available Galaxy tools when dealing with GC-MS metabolomic analysis. 
 time_estimation : 2H 
 key_points : 
-    - Have a good file containing all your peaks during the first stopover 
-    - Find all your unknowns in your datas
-    - Find your stanards if you have some 
+    - To process untargeted GC-MS metabolomic data preprocessing, you need a large variety of steps and tools.
+    - Although main steps are standard, various ways to combine and to set parameters for tools exist, depending on your data.
+    - Resources are available in Galaxy, but do not forget that you need appropriate knowledge to perform a relevant analysis. 
 requirements :
   - type: "internal"
     topic_name: metabolomics
-    tutorials: 
-      - lcms
 contributors : 
     - jsaintvanne
-
+    - yguitton
+    - melpetera
+    - workflow4metabolomics
+ editing: []
+  funding:
+    - elixir-europe
 --- 
 
 
