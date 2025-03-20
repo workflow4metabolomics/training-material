@@ -81,13 +81,14 @@ The first step is to upload files into your Galaxy history. Bruker files have to
 > 
 >    {% snippet faqs/galaxy/histories_create_new.md %}
 > 
-> 2. Import your own `zip` file 
-> 
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
-> 
-> or create an history from a shared history
-> 
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md astype="" %}
+> 2. Import the zip file in your history. Two possibilities: 
+>    - Option 1: from a shared data library (ask your instructor)
+>    - Option 2: from [Zenodo](https://zenodo.org/record/xx) using the URLs given below:
+>
+>    ```
+> https://zenodo.org/record/xx/files/AAP_urine.zip
+>    ```
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 > 
 > > <tip-title>Comment to W4M users</tip-title>
 > > If you are a W4M user, please note that you can find at the following link a ready-to-start history:
