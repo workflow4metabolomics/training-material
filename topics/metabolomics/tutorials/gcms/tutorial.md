@@ -30,7 +30,6 @@ funding:
     
 --- 
 
-
 You may already know that there are different types of *-omic* sciences; out of these, metabolomics is most closely related to phenotypes.
 Metabolomics involves the study of different types of matrices, such as blood, urine, tissues, in various organisms including plants. It  focuses on studying the very small molecules
 which are called *metabolites*, to better understand matters linked to the metabolism. However, studying metabolites is not a piece of cake
@@ -39,26 +38,29 @@ kinds of specific challenges.
 
 One of the three main technologies used to perform metabolomic analysis is **Gas-Chromatography Mass Spectrometry** (GC-MS). Data analysis
 for this technology requires a large variety of steps, ranging from extracting information from the raw data, to statistical analysis
-and annotation. To be able to **perform a complete GC-MS analysis** in a single environment, the [Wokflow4Metabolomics](http://workflow4metabolomics.org/)
-team provides Galaxy tools dedicated to metabolomics. This tutorial explains the main steps involved in untargeted **GC-MS** data processing
-for metabolomic analysis, and shows how to conduct metabolomic data analysis from preprocessing to annotation using Galaxy.
+and annotation. Many packages in R/Python are available for the analysis of GC-MS or LC-MS data - for more details see the reviews by {% cite Stanstrup2019 %} and {% cite Misra2021 %}.
 
-Many packages are available for the analysis of GC-MS or LC-MS data - for more details see the reviews by {% cite Stanstrup2019 %} and {% cite Misra2021 %}. In this tutorial, we focus on open-source solutions integrated within the Galaxy framework, namely **XCMS**, **metaMS**. In this tutorial, we will learn how to (1) extract features from the raw data using **XCMS** ({% cite Smith2006 %}), (2) deconvolute the detected features into spectra with **metaMS** ({% cite Wehrens2014 %})
+This tutorial explains the main steps involved in untargeted **GC-MS** data processing, to do so we focus on some open-source solutions integrated within the Galaxy framework, namely **XCMS**, **metaMS**. The selected tools and functionnalities only covers a small portion of available tools but allow to **perform a complete GC-MS analysis** in a single environment.
+In this tutorial, we will learn how to (1) extract features from the raw data using **XCMS** ({% cite Smith2006 %}), (2) deconvolute the detected features into spectra with **metaMS** ({% cite Wehrens2014 %}). 
 
 To illustrate this approach, we will use data from {% cite Dittami2012 %}. Due to time constraints in processing the original dataset, a limited subset of samples was utilized to illustrate the workflow. This subset (see details bellow) demonstrates the key steps of metabolomic analysis, from pre-processing to annotation. Although the results derived from this reduced sample size may not be scientifically robust, they provide insight into essential methodological foundations of GC-MS data-processing workflow.
 
 > <details-title> Algae samples </details-title>
 >
 > The objectives of this study was to investigates the adaptation mechanisms of the brown algae Ectocarpus to low-salinity environments. The research focused on examining physiological tolerance and metabolic changes in freshwater and marine strains of Ectocarpus. Using transcriptomic and metabolic analyses, the authors identified significant, reversible changes occurring in the freshwater strain when exposed to seawater. Both strains exhibited similarities in gene expression under identical conditions; however, substantial differences were observed in metabolite profiles.
-> The study utilized a freshwater strain of Ectocarpus and a marine strain for comparative analysis. The algae were cultured in media with varying salinities, prepared by diluting natural seawater or adding NaCl. The algae were acclimated to these conditions before extraction.
-> The 6 samples used in this training were analysed by GC-MS (low resolution instrument). A marine strains raised in sea water media (2 replicats) and a Fresh Water strains raised either in 5 or 100% sea water media (2 replicats each)
+> 
+> The study utilized a **freshwater strain** of Ectocarpus and a **marine strain** for comparative analysis. The algae were cultured in media with varying salinities, prepared by diluting natural seawater or adding NaCl. The algae were acclimated to these conditions before extraction.
+> 
+> The 6 samples used in this training were analysed by GC-MS (low resolution instrument). A marine strains raised in sea water media (2 replicats) and a Fresh Water strains raised either in 5 or 100% sea water media (2 replicats each). [Link](https://zenodo.org/record/3631074/)
 >
 {: .details}
 
-To process the GC-MS data, we use several tools. **XCMS** ({% cite Smith2006 %}) is a general package for untargeted metabolomics profiling. It can be used for any type of mass spectrometry acquisition (centroid and profile) or resolution (from low to high resolution), including FT-MS data coupled with a different kind of chromatography (liquid or gas). Because of the generality of packages like **XCMS**, several other packages have been developed to use the functionality of **XCMS** for optimal performance in a particular context. Package **metaMS** ({% cite Wehrens2014 %}) does so for the field of GC-MS untargeted metabolomics. One of the goals **metaMS** was to set up a simple system with few user-settable parameters, capable of handling untargeted metabolomics experiments. 
-In this tutorial we use **XCMS** to detect chromatographic peaks within our samples. Once we have detected them, they need to be deconvoluted into spectra representing chemical compounds. For that, we use **metaMS**. To normalise the retention time of deconvoluted spectra in our sample, we compute the retention index using Alkane references and **metaMS**. Finally, we identify detected spectra by aligning them with a database of known compounds. This can be achieved using **metaMS**, resulting in a table of identified compounds. 
+To process the GC-MS data, we use several tools. **XCMS** ({% cite Smith2006 %}) is a general R package for untargeted metabolomics profiling. It can be used for any type of mass spectrometry acquisition (centroid and profile) or resolution (from low to high resolution), including FT-MS data coupled with a different kind of chromatography (liquid or gas). Because of the generality of packages like **XCMS**, several other packages have been developed to use the functionality of **XCMS** for optimal performance in a particular context. The R package **metaMS** ({% cite Wehrens2014 %}) does so for the field of GC-MS untargeted metabolomics. One of the goals **metaMS** was to set up a simple system with few user-settable parameters, capable of handling untargeted metabolomics experiments. 
+In this tutorial we use **XCMS** to detect chromatographic peaks within our samples. Once we have detected them, they need to be deconvoluted into mass spectra representing chemical compounds. For that, we use **metaMS** functions. To normalise the retention time of deconvoluted spectra in our sample, we compute the retention index using Alkane references and a dedicated function of **metaMS**. Finally, we identify detected spectra by aligning them with a database of known compounds. This can be achieved using in-house build database in the common .msp format (used in the NIST MS search program for example), resulting in a table of identified compounds. 
 
-In Galaxy other GC-MS data processing workflows are available and may be of interest for more advanced Galaxy users [Add link]
+> <comment-title></comment-title>
+> - In Galaxy other GC-MS data processing workflows are available and may be of interest for more advanced Galaxy users [Add link]
+{: .comment}
 
 > <agenda-title></agenda-title>
 >
@@ -85,12 +87,15 @@ Before we can start with the actual analysis pipeline, we first need to download
 > 2. Import the files from [Zenodo]({{ page.zenodo_link }}) into a collection:
 >
 >    ```
->    https://zenodo.org/record/7890956/files/8_qc_no_dil_milliq.raw
->    https://zenodo.org/record/7890956/files/21_qc_no_dil_milliq.raw
->    https://zenodo.org/record/7890956/files/29_qc_no_dil_milliq.raw
+>    https://zenodo.org/record/3631074/files/alg11.mzData
+>    https://zenodo.org/record/3631074/files/alg2.mzData
+>    https://zenodo.org/record/3631074/files/alg3.mzData
+>    https://zenodo.org/record/3631074/files/alg7.mzData
+>    https://zenodo.org/record/3631074/files/alg8.mzData
+>    https://zenodo.org/record/3631074/files/alg9.mzData
 >    ```
 >
->    {% snippet faqs/galaxy/datasets_import_via_link.md collection=true format="mzml" collection_name="input" renaming=false %}
+>    {% snippet faqs/galaxy/datasets_import_via_link.md collection=true format="mzdata" collection_name="input" renaming=false %}
 >
 > 3. Make sure your data is in a **collection**. You can always manually create the collection from separate files:
 >
@@ -101,26 +106,21 @@ Before we can start with the actual analysis pipeline, we first need to download
 > 4. Import the following extra files from [Zenodo]({{ page.zenodo_link }}):
 >
 >    ```
->    https://zenodo.org/record/7890956/files/reference_alkanes.csv
->    https://zenodo.org/record/7890956/files/reference_spectral_library.msp
->    https://zenodo.org/record/7890956/files/sample_metadata.tsv
+>    https://zenodo.org/record/3631074/files/reference_alkanes.csv
+>    https://zenodo.org/record/3631074/files/W4M0004_database_small.msp
+>    https://zenodo.org/record/3631074/files/sampleMetadata.tsv
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
-> 
->    Please pay attention to the format of all uploaded files, and make sure they were correctly imported.
->
->    {% snippet faqs/galaxy/datatypes_understanding_datatypes.md %}
 >
 >    > <comment-title> The extra files </comment-title>
 >    >
->    > The three additional files contain the **reference alkanes**, the **reference spectral library**, and the **sample metadata**. Those files are auxiliary inputs used in the data processing and contain either extra information about the samples or serve as reference data for indexing and identification.
+>    > The three additional files contain the **reference alkanes**, the **W4M0004_database_small**, and the **sampleMetadata**. Those files are auxiliary inputs used in the data processing and contain either extra information about the samples or serve as reference data for indexing and identification.
 >    > 
 >    > The **list of alkanes** (`.tsv` or `.csv`) with retention times and carbon number or retention index is used to compute the retention index of the deconvoluted peaks. The alkanes should be measured in the same batch as the input sample collection.
 >    > 
->    > The **reference spectral library** (`.msp`) is used for the identification of spectra. It contains the recorded and annotated mass spectra of chemical standards, ideally from a similar instrument. The unknown spectra which can be detected in the sample can then be confirmed via comparison with this library. The specific library is an in-house library of metabolite standards extracted with **metaMS** .
+>    > The **W4M0004_database_small** (`.msp`) is a reference database used for the identification of spectra. It contains the recorded and annotated mass spectra of chemical standards, ideally from a similar instrument. The unknown spectra which can be detected in the sample can then be confirmed via comparison with this library. The specific library is an in-house library of metabolite standards extracted with **metaMS** .
 >    > 
 >    > The **sample metadata** (`.csv` or `.tsv`) is a table containing information about our samples. In particular, the tabular file contains for each sample its associated sample name, class (SW, FWS, etc.). It is possible to add more columns to include additional details about the samples (e.g : batch number, injection order...).
 >    {: .comment}
