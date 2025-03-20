@@ -157,8 +157,8 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > <hands-on-title> 1st order phase correction </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file resulting from the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file resulting fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Group delay correction"*: 
 >        - *"Display the FIDs after 1st order phase correction?"*: `yes`
 > 
@@ -175,8 +175,8 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > <hands-on-title> Effect of `Smoothing parameter` on signal intensity </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Solvent Suppression"*: the lambda smoother used to penalized the non-parametric estimation of the solvent signal
 >        - *"Solvent Suppression: Smoothing parameter"*: `1.0`
 >        - *"Display the FIDs after solvent suppression?"*: `no`
@@ -215,8 +215,8 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 > <hands-on-title> Task description </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Apodization"*:
 >        - *"Apodization: method"*: `exp`
 >        - *"Apodization: Line broadening"*: `5`
@@ -224,8 +224,8 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >        - *"Display the FIDs after Apodization?"*: `no`
 > 
 > 2. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Apodization"*:
 >        - *"Apodization: method"*: `exp`
 >        - *"Apodization: Line broadening"*: `0.3`
@@ -277,8 +277,8 @@ In the fifth step, correction of the zero order phase is applied ([Check the nex
 > <hands-on-title> Zero order phase correction </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Zero Order Phase Correction"*:
 >        - *"Zero Order Phase Correction: method"*: ` RMS `
 >        - *"Zero Order Phase Correction: exclusion area(s)"*: ` YES `
@@ -303,8 +303,8 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 > <hands-on-title> Shift Referencing </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Shift Referencing"*:
 >        - *"Shift Referencing: definition of the search zone"*: `window`
 >        - In *"Shift Referencing: definition of the search zone"*
@@ -313,7 +313,7 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 >               - *"Search zone: right border"*: -2.0
 >        - *"Shift Referencing: shiftHandling"*: `zerofilling`
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
-> 
+
 > <question-title></Effect of Search zone parameter>
 > 
 > Run the NMR_Preprocessing tool with `Nearvalue` and `window` as values for the "Shift Referencing:   definition of the search zone" parameter, and `-2.0` and `2.0` respectively for left and right borders for the `window` search zone. What do you observe on spectra obtained for individual "X2016.61.UR.N4.CD"?
@@ -325,23 +325,22 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 > {: .solution}
 > 
 {: .question}
-> 
->    > <comment-title> How does Shift referencing work in NMR_Preprocessing? </comment-title>
->    > 
->    > The algorithm proposes two ways to locate the reference compound peak in each spectrum within a range of intensities (search zone: `nearvalue`, `all`, (user-defined) `window`): it selects either the maximum intensity or the first peak in the search range higher than a predefined threshold. [Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#zero_order_phase) to see the impact of the Search zone parameter.
->    > 
->    {: .comment}
-> 
->    > <comment-title> Comment to W4M users </comment-title>
->    > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to different search zone and shiftHandling values:
->    > 
->    > - definition of the search zone: `nearvalue`; shiftHandling: `zerofilling` = datasets 47 - 50
->    > - definition of the search zone: `all`; shiftHandling: `zerofilling`       = datasets 51 - 54
->    > - definition of the search zone: `window`; Search zone: left border: `-2.0`; Search zone: right border: `2.0`; shiftHandling: `zerofilling `                                      = datasets 55 - 58
->    >  - definition of the search zone: `nearvalue`; shiftHandling: `cut`        = datasets 59 - 62
->    > - definition of the search zone: `nearvalue`; shiftHandling: `circular`    = datasets 63 - 66
->    {: .comment}
-> 
+
+> > <comment-title> How does Shift referencing work in NMR_Preprocessing? </comment-title>
+> > 
+> > The algorithm proposes two ways to locate the reference compound peak in each spectrum within a range of intensities (search zone: `nearvalue`, `all`, (user-defined) `window`): it selects either the maximum intensity or the first peak in the search range higher than a predefined threshold. [Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#zero_order_phase) to see the impact of the Search zone parameter.
+> > 
+> {: .comment}
+
+> > <comment-title> Comment to W4M users </comment-title>
+> > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to different search zone and shiftHandling values:
+> > 
+> > - definition of the search zone: `nearvalue`; shiftHandling: `zerofilling` = datasets 47 - 50
+> > - definition of the search zone: `all`; shiftHandling: `zerofilling`       = datasets 51 - 54
+> > - definition of the search zone: `window`; Search zone: left border: `-2.0`; Search zone: right border: `2.0`; shiftHandling: `zerofilling `                                      = datasets 55 - 58
+> >  - definition of the search zone: `nearvalue`; shiftHandling: `cut`        = datasets 59 - 62
+> > - definition of the search zone: `nearvalue`; shiftHandling: `circular`    = datasets 63 - 66
+> {: .comment}
 {: .hands_on}
 
 
@@ -352,31 +351,31 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 > <hands-on-title> Baseline correction </hands-on-title>
 > 
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Baseline Correction"*:
 >        - *"Baseline Correction: smoothing parameter"*: `100000`
 >        - *"Baseline Correction:asymmetry parameter"*: `0.05`
 >        - *"Baseline Correction: exclusion area(s)"*: `NO`
->
->    > <comment-title> How does Baseline correction work in NMR_Preprocessing? </comment-title>
->    > 
->    > Algorithm uses uses asymmetric least squares with a roughness penalty:
->    > 
->    > - smoothing (default value=`1e7`): the larger it is, the smoother will be. With smoothing=`0`, the baseline will be equal to the signal and the corrected signal will be zero.
->    > 
->    > asymetry (default value=`0.05`): the smaller it is, the less the smoother will try to follow peaks when it is under the function and the more it will try to be under the function.
->    > 
->    {: .comment}
-> 
->    > <comment-title> Comment to W4M users </comment-title>
->    > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that       >    > corresponds to different "smoothing" and "asymetry" values:
->    > - smoothing parameter: `100`; asymetry parameter: `0.05`   = datasets 67 - 70
->    > - smoothing parameter: `10^9`; asymetry parameter: `0.05`  = datasets 71 - 74
->    > - smoothing parameter: `10^5`; asymetry parameter: `0.001` = datasets 75 - 78
->    > - smoothing parameter: `10^5`; asymetry parameter: `0.5`   = datasets 79 - 82
->    > - smoothing parameter: `10^5`; asymetry parameter: `1.0`   = datasets 83 - 86
->    {: .comment}
+
+> > <comment-title> How does Baseline correction work in NMR_Preprocessing? </comment-title>
+> > 
+> > Algorithm uses uses asymmetric least squares with a roughness penalty:
+> > 
+> > - smoothing (default value=`1e7`): the larger it is, the smoother will be. With smoothing=`0`, the baseline will be equal to the signal and the corrected signal will be zero.
+> > 
+> > asymetry (default value=`0.05`): the smaller it is, the less the smoother will try to follow peaks when it is under the function and the more it will try to be under the function.
+> > 
+> {: .comment}
+
+> > <comment-title> Comment to W4M users </comment-title>
+> > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that       >    > corresponds to different "smoothing" and "asymetry" values:
+> > - smoothing parameter: `100`; asymetry parameter: `0.05`   = datasets 67 - 70
+> > - smoothing parameter: `10^9`; asymetry parameter: `0.05`  = datasets 71 - 74
+> > - smoothing parameter: `10^5`; asymetry parameter: `0.001` = datasets 75 - 78
+> > - smoothing parameter: `10^5`; asymetry parameter: `0.5`   = datasets 79 - 82
+> > - smoothing parameter: `10^5`; asymetry parameter: `1.0`   = datasets 83 - 86
+> {: .comment}
 > 
 {: .hands_on}
 
