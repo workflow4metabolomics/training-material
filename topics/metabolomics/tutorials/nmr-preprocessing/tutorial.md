@@ -147,7 +147,8 @@ Your data are now ready for preprocessing. This step can be done with the NMR_Pr
 
 The NMR_preprocessing tool includes several steps as described in Figure 1. This tutorial ends up after the "Negative values zeroing step."
 
-![Figure 1: Steps of NMR spectra preprocessing](../../images/tutorial-nmr-workflow.png "The full tutorial workflow")
+![Figure 1: Steps of NMR spectra preprocessing](../../images/tutorial-nmr-workflow.png)
+
 ## 1. Group delay correction
 
 Phase correction ([check the next 3 slides](../../tutorials/nmr-preprocessing/slides.html#phase_shifts), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction_illustration) and Figure 2) is a very important adjustment that needs to be made to a spectrum. Phase of a signal is related to the amount of signal observed above and below the baseline. Phase correction works to provide a signal in pure-absorption mode, which means a signal totally above and/or totally below the baseline.
@@ -198,10 +199,8 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > > The smaller the lambda value, the smoother the signals. The value lambda = 1 corresponds to the second spectrum: the solvent signal is well suppressed, but this value is too small: all metabolite signals are diminished. A compromise must therefore be found between suppressing the solvent signal and smoothing the metabolite signals. The value lamba = 10^9 corresponds to spectrum n°3 and lambda = 10^6 to spectrum n°1. There is very little difference between these 2 spectra. Default value seems to be a good compromise.
 >
 > {: .solution}
->
 {: .question}
 > > <comment-title> Comment to W4M users </comment-title>
->
 > > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, this step corresponds to the datasets number 11 to 14.
 > > You can also run this tool with default value (1000000.0, datasets 7 to 10) and 10^9 (datasets 15 to 18)
 >    {: .comment}
@@ -313,6 +312,7 @@ A known standard (called internal reference compound),  for example tetramethyls
 >        - *"Shift Referencing: shiftHandling"*: `zerofilling`
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
 >
+> You can leave other parameters with their default values.
 >
 > <question-title> Effect of Search zone parameter </question-title>
 >
