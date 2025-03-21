@@ -3,6 +3,7 @@ layout: tutorial_hands_on
 
 title: 'Nuclear Magnetic Resonance Data preprocessing'
 zenodo_link: 'https://zenodo.org/record/15064443'
+level: Intermediate
 questions:
 - What are the main steps of untargeted 1H-NMR data preprocessing for metabolomic analyses?
 - How to conduct 1H-NMR-based metabolomic data preprocessing using Galaxy?
@@ -153,7 +154,7 @@ The NMR_preprocessing tool includes several steps as described in Figure 1. This
 
 Phase correction ([check the next 3 slides](../../tutorials/nmr-preprocessing/slides.html#phase_shifts), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction_illustration) and Figure 2) is a very important adjustment that needs to be made to a spectrum. Phase of a signal is related to the amount of signal observed above and below the baseline. Phase correction works to provide a signal in pure-absorption mode, which means a signal totally above and/or totally below the baseline.
 
-![Figure 2: Illustration of the Group Delay recorded before the signal acquisition](../../images/tutorial-nmr-workflow-firstorderphasecorrection.png)
+![Figure 2: Illustration of the Group Delay recorded before the signal acquisition](../../images/tutorial-nmr-workflow-firstorderphasecorrection.png "Illustration of the Group Delay recorded before the signal acquisition")
 
 Phase correction involves adjusting both zero (ph0, see 5th step) and first-order (ph1) phases. This step corresponds to the 1st order phase correction. First-order phase shift leads to a frequency-dependent phase distortion that is proportional to the chemical shift. In cases where these delays are small compared to the frequency offset, the phase error can be corrected. Otherwise, in the presence of large delays, this correction will introduce baseline distortions.
 
@@ -173,9 +174,9 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 
 [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression), [](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression_illustration) for explanations on solvent suppression. Smoothing parameter determines how smooth is the solvent signal. Figure 3 below illustrates the effect of the Smoothing parameter on spectra. Spectra have been obtained with Smoothing parameter values of `1`, `10^6` and`1^9`.
 
-![Figure 3: Effect of the Smoothing parameter in the Solvent suppression step](../../images/tutorial-nmr-workflow-solventsuppression.png)
+![Figure 3: Effect of the Smoothing parameter in the Solvent suppression step](../../images/tutorial-nmr-workflow-solventsuppression.png "Effect of the Smoothing parameter in the Solvent suppression step")
 
-> <hands-on-title> Effect of `Smoothing parameter` on signal intensity </hands-on-title>
+> <hands-on-title> Effect of Smoothing parameter on signal intensity </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
@@ -212,7 +213,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 This step aims at improving the sensitivity by multiplying the FID by a factor called a weighting. Several classes of factors are available in W4M (Negative exponential, Gaussian, Hanning, Hamming, 
 Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#apodization), [](../../tutorials/nmr-preprocessing/slides.html#apodization_illustration). 
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Apodization </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
@@ -264,7 +265,7 @@ Nest step corresponds to conversion of the signal in the time domain into a spec
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
 >    - In *"Fourier transform"*:
->        - *"Display the FIDs after solvent suppression?"*: `no`
+>        - *"Display the FIDs after Fourier transform?"*: `no`
 > You can leave other parameters with their default values.
 > {: .hands_on}
 
@@ -313,6 +314,10 @@ A known standard (called internal reference compound),  for example tetramethyls
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
 >
 > You can leave other parameters with their default values.
+>
+>
+>
+>
 >
 >
 >
