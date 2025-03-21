@@ -123,11 +123,11 @@ You can add columns for analytical and biological information such as biological
 > > <comment-title> NMR_Read parameters </comment-title>
 >
 >    {% tool [NMR_Read](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
-> 
+>
 > > If use of _title_ file and presence of sub-directories: set the FID Title line, `subdirs = TRUE`,  `dirs.names = FALSE`
-> > 
+>
 > > If use of _title_ file and no sub-directories: set the FID Title line, `subdirs = FALSE`,  `dirs.names = FALSE`
-> > 
+>
 > > If no use of _title_ file and presence of sub-directories: `subdirs = TRUE`,  `dirs.names = TRUE`
 >
 > > If no use of _title_ file and no sub-directories: `subdirs = FALSE`,  `dirs.names = TRUE`
@@ -199,9 +199,8 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > {: .solution}
 >
 {: .question}
->
 > > <comment-title> Comment to W4M users </comment-title>
-> > 
+>
 > > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, this step corresponds to the datasets number 11 to 14.
 > > You can also run this tool with default value (1000000.0, datasets 7 to 10) and 10^9 (datasets 15 to 18)
 >    {: .comment}
@@ -233,15 +232,15 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >        - *"Display the FIDs after Apodization?"*: `no`
 >
 > You can leave other parameters with their default values.
+
+> <question-title> Effect of the weighting function </question-title>
 >
-> <question-title></Effect of the weighting function >
+> Based on the "2016-61-UR-N4-CD" spectrum, which is the effect of the line broadening value on FID?
 >
-> Based on the "2016-61-UR-N4-CD" spectrum, which is the effet of the line broadening value on FID?
+> > <solution-title>Effect of the weighting function</solution-title>
 >
-> > <solution-title></Effect of the weighting function>
-> > 
-> > CCA
-> >
+> > Apodisation by an exponential function reduces the noise, but if the line broadening (LB) factor is too high, for example LB equal to 5, the signals are very wide and structural information is lost. A compromise must therefore be found between noise suppression and acceptable signal width. An LB of 0.3 for proton NMR spectra is a good compromise.
+>
 > {: .solution}
 >
 {: .question}
