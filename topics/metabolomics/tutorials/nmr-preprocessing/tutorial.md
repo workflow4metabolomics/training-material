@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: 'Nuclear Magnetic Resonance Data preprocessing'
-zenodo_link: ''
+zenodo_link: 'https://zenodo.org/record/15064443'
 questions:
 - What are the main steps of untargeted 1H-NMR data preprocessing for metabolomic analyses?
 - How to conduct 1H-NMR-based metabolomic data preprocessing using Galaxy?
@@ -88,7 +88,7 @@ The first step is to upload files into your Galaxy history. Bruker files have to
 >    - Option 2: from [Zenodo](https://zenodo.org/record/15064443) using the URLs given below:
 >
 >    ```
-> https://zenodo.org/record/15064443/AAP_Urine.zip
+> https://zenodo.org/record/files/15064443/AAP_Urine.zip
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
@@ -313,6 +313,8 @@ A known standard (called internal reference compound),  for example tetramethyls
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
 >
 > You can leave other parameters with their default values.
+>
+>
 >
 > <question-title> Effect of Search zone parameter </question-title>
 >
