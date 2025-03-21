@@ -134,11 +134,9 @@ You can add columns for analytical and biological information such as biological
 >    {: .comment}
 >
 > > <comment-title> Comment to W4M users </comment-title>
->
 > > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history,
 > > this step corresponds to the datasets number 3 to 6.
 >    {: .comment}
->
 {: .hands_on}
 
 # Preprocessing fids with the NMR_Preprocessing tool
@@ -196,7 +194,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 >
 > > <solution-title></solution-title>
 >
-> > The smaller the lambda value, the smoother the signals. The value lambda = 1 corresponds to the second spectrum: the solvent signal is well suppressed, but this value is too small: all metabolite signals > > > are diminished. A compromise must therefore be found between suppressing the solvent signal and smoothing the metabolite signals. The value lamba = 10^9 corresponds to spectrum n°3 and lambda = 10^6 to> > > > spectrum n°1. There is very little difference between these 2 spectra. Default value seems to be a good compromise.
+> > The smaller the lambda value, the smoother the signals. The value lambda = 1 corresponds to the second spectrum: the solvent signal is well suppressed, but this value is too small: all metabolite signals are diminished. A compromise must therefore be found between suppressing the solvent signal and smoothing the metabolite signals. The value lamba = 10^9 corresponds to spectrum n°3 and lambda = 10^6 to spectrum n°1. There is very little difference between these 2 spectra. Default value seems to be a good compromise.
 >
 > {: .solution}
 >
