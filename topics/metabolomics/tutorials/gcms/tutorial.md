@@ -134,7 +134,7 @@ As a result of this step, we should have in our history a green Dataset collecti
 The first part of data processing is using the **XCMS** tool to detect peaks in the MS signal. For that, we first need to take the `.mzData` files and create a format usable by the **XCMS** tool. {% tool [MSnbase readMSData](toolshed.g2.bx.psu.edu/repos/lecorguille/msnbase_readmsdata/msnbase_readmsdata/2.16.1+galaxy0) %} ({% cite gatto2012msnbase %}. {% cite gatto2020msnbase %}) takes as input our files and prepares `RData` files for the first **XCMS** step.
 
 > <comment-title></comment-title>
-> **MSnbase readMSData** {% icon tool %} function, prior to **XCMS**, is able to read files with open format as `mzXML`, `mzML`, `mzData` and `netCDF`, which are independent of the constructors' formats. Working with open MS data format allows users to us tools developped outside of the MS This set of functions gives modularity, and thus is particularly well adapted to define workflows, one of the key points of Galaxy.
+> **MSnbase readMSData** {% icon tool %} function, prior to **XCMS**, is able to read files with open format as `mzXML`, `mzML`, `mzData` and `netCDF`, which are independent of the constructors' formats. Working with open MS data file format allows users to us tools developped outside of the MS instrument provider. This set of packages/functions gives modularity, and thus is particularly well adapted to define workflows, one of the key points of Galaxy.
 {: .comment}
 
 > <hands-on-title> Create the XCMS object </hands-on-title>
@@ -154,11 +154,11 @@ The first part of data processing is using the **XCMS** tool to detect peaks in 
 
 # Peak detection using XCMS
 
-The first step in the workflow is to detect the peaks in our data using **XCMS**. This part, however, is covered by a [separate tutorial]({{ site.baseurl }}/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html). Although the tutorial is dedicated to LC-MS data, it can also be followed for our GC-MS data. Therefore, in this section, we do not explain this part of the workflow in detail but rather refer the reader to the dedicated tutorial. Please also pay attention to the parameter values for individual Galaxy tools, as these can differ from the referred tutorial and are adjusted to our dataset.
+The first step in the workflow is to detect the peaks in our data using **XCMS** functions. This part, however, is covered by a [separate tutorial]({{ site.baseurl }}/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html). Although the tutorial is dedicated to LC-MS data, it can also be followed for our GC-MS data. Therefore, in this section, we do not explain this part of the workflow in detail but rather refer the reader to the dedicated tutorial. Please also pay attention to the parameter values for individual Galaxy tools, as these can differ from the referred tutorial and are adjusted to our dataset.
 
 > <details-title> Skip this step </details-title>
 > 
-> Since this step is already covered in a [separate tutorial]({{ site.baseurl }}/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html), it is possible to skip it. Instead, you can continue with [Peak deconvolution]({{ site.baseurl }}/topics/metabolomics/tutorials/gcms/tutorial.html#peak-deconvolution-metams) step using a preprocessed **XCMS** object file prepared for you.
+> Since this step is already covered in a [separate tutorial]({{ site.baseurl }}/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html), it is possible to skip it. Instead, you can continue with [Peak deconvolution]({{ site.baseurl }}/topics/metabolomics/tutorials/gcms/tutorial.html#processing-with-metams-option-1) step using a preprocessed **XCMS** object file prepared for you.
 >
 > > <hands-on-title> Upload data </hands-on-title>
 > >
@@ -241,22 +241,20 @@ There are two available options:
 - using a full XCMS process for GC-MS data processing 
 The two options are illustrated in this tutorial.
 
-{% include _includes/cyoa-choices.html option1="Deconvolution and annotation using metaMS" option2="Process GC-MS data with XCMS function" default="Deconvolution and annotation using metaMS"
-       text="Choose below if you just want to follow the pipeline using **metaMS** or **XCMS** for GC-MS deconvolution and annotation" disambiguation="single_vs_multiple" %}
+{% include _includes/cyoa-choices.html option1="Deconvolution and annotation using metaMS" option2="Process GC-MS data with XCMS function" default="Deconvolution and annotation using metaMS" text="Choose below if you just want to follow the pipeline using **metaMS** or **XCMS** for GC-MS deconvolution and annotation" disambiguation="single_vs_multiple" %}
 
-<div class="Deconvolution and annotation using metaMS" markdown="1">
+<div class="Deconvolution-and-annotation-using-metaMS" markdown="1">
 
-# Processing with metaMS part (option 1)
+# Processing with metaMS (option 1)
 
-**metaMS** is a R package for MS-based metabolomics data. It can do basic peak picking and grouping using functions from **XCMS** and **CAMERA** packages. The main output of **metaMS** is a table of feature intensities in all samples which can be analyzed with multivariate methods immediately. The package also offers the possibility to create in-house databases of mass spectra (including retention information) of pure chemical compounds. These databases can then be used for annotation purposes. The most important functions of this package are *runGC* and *runLC* (and each one to create databases *createSTDdbGC* and *createSTDdbLC*).
+**metaMS** is an R package for MS-based metabolomics data, it was made to easy peak picking and deconvolution steps using functions from **XCMS** and **CAMERA** packages. The 2 mains outputs of **metaMS** are : a table of feature intensities in all samples which can be analyzed with multivariate methods immediately and an .msp. The package also offers the possibility to create in-house databases of mass spectra (including retention information) of pure chemical compounds. These databases can then be used for annotation purposes. The most important functions of this package are *runGC* and *runLC* (and each one to create databases *createSTDdbGC* and *createSTDdbLC*).
 {: .text-justify}
 During this tutorial we are interested in GC-MS analysis, so we will use the *runGC* function of **metaMS** and described it in details to be able to understand this function. The standard workflow of **metaMS** for GC-MS data is the following : 
 
 ![Workflow metaMS](../../images/tuto_gcms_workflow_metaMS.png "Workflow of metaMS for GC datas")
 
-The *runGC* function is implemented in **metaMS.runGC {% icon tool %} tool** in W4M Galaxy. It takes a vector of file names, corresponding to the samples, and a settings list as mandatory arguments. In addition, some extra arguments can be provided. In particular, a database of standards, as discussed later in the tutorial, can be provided for annotation purposes. This tool regroups all these steps that are described in the following parts to be able to understand all its functionalities and particularities. We will run the tool after we understand each of its steps because it is important to know what are the best parameters for our data and why each parameter is done. 
+The *runGC* function is implemented in **metaMS.runGC {% icon tool %} tool** in Galaxy. It takes as inputs a .RData file after XCMS and optionnaly an alkane reference file for RI calculation and a spectra database in .msp for annotation purposes. 
 {: .text-justify}
-
 
 ## Peak picking
 
@@ -374,7 +372,7 @@ Concerning EICs, it is possible to choose for which compound you want to draw an
 
 </div>
 
-<div class="Process GC-MS data with XCMS function" markdown="1">
+<div class="Process-GC-MS-data-with-XCMS-function" markdown="1">
   
 # Carrying on using the standard XCMS workflow (option 2)
 
