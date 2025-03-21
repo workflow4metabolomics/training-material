@@ -51,7 +51,7 @@ To illustrate this approach, we will use data from {% cite Dittami2012 %}. Due t
 > 
 > The study utilized a **freshwater strain** of Ectocarpus and a **marine strain** for comparative analysis. The algae were cultured in media with varying salinities, prepared by diluting natural seawater or adding NaCl. The algae were acclimated to these conditions before extraction.
 > 
-> The 6 samples used in this training were analysed by GC-MS (low resolution instrument). A marine strains raised in sea water media (2 replicats) and a Fresh Water strains raised either in 5 or 100% sea water media (2 replicats each). [Link](https://zenodo.org/record/3631074/)
+> The 6 samples used in this training were analysed by GC-MS (low resolution instrument). A marine strains raised in sea water media (2 replicats) and a freshwater strains raised either in 5 or 100% sea water media (2 replicats each). [Link](https://zenodo.org/record/3631074/)
 >
 {: .details}
 
@@ -131,12 +131,16 @@ As a result of this step, we should have in our history a green Dataset collecti
 
 ## Create the XCMS object
 
-The first part of data processing is using the **XCMS** tool to detect peaks in the MS signal. For that, we first need to take the `.mzML` files and create a format usable by the **XCMS** tool. {% tool [MSnbase readMSData](toolshed.g2.bx.psu.edu/repos/lecorguille/msnbase_readmsdata/msnbase_readmsdata/2.16.1+galaxy0) %} ({% cite gatto2012msnbase %}. {% cite gatto2020msnbase %}) takes as input our files and prepares `RData` files for the first **XCMS** step.
+The first part of data processing is using the **XCMS** tool to detect peaks in the MS signal. For that, we first need to take the `.mzData` files and create a format usable by the **XCMS** tool. {% tool [MSnbase readMSData](toolshed.g2.bx.psu.edu/repos/lecorguille/msnbase_readmsdata/msnbase_readmsdata/2.16.1+galaxy0) %} ({% cite gatto2012msnbase %}. {% cite gatto2020msnbase %}) takes as input our files and prepares `RData` files for the first **XCMS** step.
+
+> <comment-title></comment-title>
+> **MSnbase readMSData** {% icon tool %} function, prior to **XCMS**, is able to read files with open format as `mzXML`, `mzML`, `mzData` and `netCDF`, which are independent of the constructors' formats. Working with open MS data format allows users to us tools developped outside of the MS This set of functions gives modularity, and thus is particularly well adapted to define workflows, one of the key points of Galaxy.
+{: .comment}
 
 > <hands-on-title> Create the XCMS object </hands-on-title>
 >
 > 1. {% tool [MSnbase readMSData](toolshed.g2.bx.psu.edu/repos/lecorguille/msnbase_readmsdata/msnbase_readmsdata/2.16.1+galaxy0) %} with the following parameters:
->    - {% icon param-collection %} *"File(s) from your history containing your chromatograms"*: `input.mzML` (output of **msconvert** {% icon tool %})
+>    - {% icon param-collection %} *"File(s) from your history containing your chromatograms"*: `input`
 >
 >    {% snippet faqs/galaxy/tools_select_collection.md %}
 >
@@ -147,81 +151,52 @@ The first part of data processing is using the **XCMS** tool to detect peaks in 
 {: .hands_on}
 >    >
 >    > 
-# First steps of pre-processing using a standard XCMS workflow (mandatory)
 
-The first step of the workflow is the pre-processing of the raw GC-MS data with **XCMS** ({% cite Smith2006 %}).
-{: .text-justify}
+# Peak detection using XCMS
 
-**MSnbase readMSData** {% icon tool %} function, prior to **XCMS**, is able to read files with open format as `mzXML`, `mzML`, `mzData` and `netCDF`, which are independent of the constructors' formats. Working with open MS data format allows users to us tools developped outside of the MS This set of functions gives modularity, and thus is particularly well adapted to define workflows, one of the key points of Galaxy.
-{: .text-justify}
+The first step in the workflow is to detect the peaks in our data using **XCMS**. This part, however, is covered by a [separate tutorial]({{ site.baseurl }}/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html). Although the tutorial is dedicated to LC-MS data, it can also be followed for our GC-MS data. Therefore, in this section, we do not explain this part of the workflow in detail but rather refer the reader to the dedicated tutorial. Please also pay attention to the parameter values for individual Galaxy tools, as these can differ from the referred tutorial and are adjusted to our dataset.
 
-First step of this tutorial is to download the data test. As describe in the introduction, we will use datas from {% cite Dittami2012 %}. We will only process on a subset of their data. 
-So, you can **import your files directly in Galaxy from Zenodo (see hands-on below)** or download files into your computer using the following link then upload them on Galaxy: 
-{: .text-justify}
+> <details-title> Skip this step </details-title>
+> 
+> Since this step is already covered in a [separate tutorial]({{ site.baseurl }}/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.html), it is possible to skip it. Instead, you can continue with [Peak deconvolution]({{ site.baseurl }}/topics/metabolomics/tutorials/gcms/tutorial.html#peak-deconvolution-metams) step using a preprocessed **XCMS** object file prepared for you.
+>
+> > <hands-on-title> Upload data </hands-on-title>
+> >
+> > 1. Create a new history for this tutorial
+> >
+> >    {% snippet faqs/galaxy/histories_create_new.md %}
+> >
+> > 2. Import the following files from [Zenodo]({{ page.zenodo_link }}):
+> >
+> >    ```
+> >    https://zenodo.org/record/3631074/files/xcms_outputs
+> >    ```
+> >
+> >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+> >
+> >    The format of uploaded file containing **XCMS** object should be `rdata.xcms.fillpeaks`.
+> >
+> >    {% snippet faqs/galaxy/datatypes_understanding_datatypes.md %}
+> >
+> {: .hands_on}
+>
+{: .details}
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3631074.svg)](https://doi.org/10.5281/zenodo.3631074)
+## Peak picking
 
+The first step is to extract peaks from each of your data files independently. For this purpose, we use the _MatchedFilter_ chromatographic peak detection algorithm implemented in {% tool [xcms findChromPeaks (xcmsSet)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_xcmsset/abims_xcms_xcmsSet/3.12.0+galaxy0) %}.
 
-Then, to be able to pre-process our GC-MS data, we need to **start with the peakpicking of MS data**. 
+ 
 One Galaxy Training material already explains how to act with MS data. We encourage you to **follow this link and complete the corresponding tutorial**: [Mass spectrometry: LC-MS preprocessing with XCMS]({% link topics/metabolomics/tutorials/lcms-preprocessing/tutorial.md %}). 
 For GC-MS analysis you **don't really need to follow all of this previous tutorial** but for a better understanding of your data, it is recommanded to try it with their test dataset.
 Concerning the current GC-MS tutorial, you **just have to compute the following steps and specific parameters** described in the hands-on part below (please follow parameters values to have the same results during the training).
 {: .text-justify}
 
-## 1 - Import the data into Galaxy 
 
-> <hands-on-title>Data upload</hands-on-title>
+> <hands-on-title>Peakpicking of GC-MS data with XCMS</hands-on-title>
 >
-> 1. Create a new history for this tutorial
->
->    {% snippet faqs/galaxy/histories_create_new.md %}
->
-> 2. Import the following 6 `mzData` files into a collection named `mzData`
->    - Option 1: from a shared data library (ask your instructor)
->    - Option 2: from Zenodo using the URLs given below
->
->    ```
->    https://zenodo.org/record/3631074/files/alg11.mzData
->    https://zenodo.org/record/3631074/files/alg2.mzData
->    https://zenodo.org/record/3631074/files/alg3.mzData
->    https://zenodo.org/record/3631074/files/alg7.mzData
->    https://zenodo.org/record/3631074/files/alg8.mzData
->    https://zenodo.org/record/3631074/files/alg9.mzData
->    ```
->
->    {% snippet faqs/galaxy/datasets_import_via_link.md collection=true format="mzml" collection_name="mzData" renaming=false %}
->
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md astype="as a Collection" %}
->
-> 3. Make sure your data is in a **collection**. Make sure it is named `mzData`
->    - If you forgot to select the collection option during import, you can create the collection now:
->
->    {% snippet faqs/galaxy/collections_build_list.md %}
->
-> 4. Import the following 2 files from Zenodo or from a shared data library (ask your instructor). 
-> Beware: these files must not be in a collection. 
->
->    ```
->    https://zenodo.org/record/3631074/files/sampleMetadata.tsv
->    https://zenodo.org/record/3631074/files/W4M0004_database_small.msp
->    ```
->
->    {% snippet faqs/galaxy/datasets_import_via_link.md %}
->
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
->
->
-{: .hands_on}
-
-## 2 - First steps using XCMS
-
-> <hands-on-title>First steps using a standard XCMS workflow</hands-on-title>
->
-> 1. {% tool [MSnbase readMSData](toolshed.g2.bx.psu.edu/repos/lecorguille/msnbase_readmsdata/msnbase_readmsdata/2.16.1+galaxy0) %} with the following parameters:
->    - {% icon param-collection %} *"File(s) from your history containing your chromatograms"*: `mzData` (Input dataset collection)
->
-> 2. {% tool [xcms findChromPeaks (xcmsSet)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_xcmsset/abims_xcms_xcmsSet/3.12.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"RData file"*: `mzData.raw.RData` (output of the **MSnbase readMSData** {% icon tool %} job)
+> 1. {% tool [xcms findChromPeaks (xcmsSet)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_xcmsset/abims_xcms_xcmsSet/3.12.0+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"RData file"*: `input.raw.RData` (output of the **MSnbase readMSData** {% icon tool %} job)
 >    - *"Extraction method for peaks detection"*: `MatchedFilter - peak detection in chromatographic space`
 >        - *"Full width at half maximum of matched filtration gaussian model peak"*: `5`
 >        - *"Step size to use for profile generation"*: `0.5`
@@ -236,8 +211,8 @@ Concerning the current GC-MS tutorial, you **just have to compute the following 
 >    > With GC-MS data in profile mode, we need to use the *MatchedFilter* algorithm instead of the *Centwave* one used in the LC-MS tutorial.
 >    {: .comment}
 >
-> 3. {% tool [xcms findChromPeaks Merger](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_merge/xcms_merge/3.12.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"RData file"*: `mzData.raw.xset.RData` (output of the **xcms findChromPeaks (xcmsSet)** {% icon tool %} job)
+> 2. {% tool [xcms findChromPeaks Merger](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_merge/xcms_merge/3.12.0+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"RData file"*: `input.raw.xset.RData` (output of the **xcms findChromPeaks (xcmsSet)** {% icon tool %} job)
 >    - {% icon param-file %} *"Sample metadata file "*: `sampleMetadata.tsv` (One of the uploaded files from Zenodo)
 >
 >    > <comment-title></comment-title>
@@ -250,122 +225,28 @@ Concerning the current GC-MS tutorial, you **just have to compute the following 
 >    >
 >    > | sample_name |  class  | 
 >    > |:-----------:|:-------:|
->    > |    file1    |   man   |
+>    > |    file1    |   marine strain   |
 >    > |-------------+---------|
->    > |    file2    |  woman  |
+>    > |    file2    |  pool  |
 >    > |-------------+---------|
->    > |    file3    |   man   |
+>    > |    file3    |   freshwater strain  |
 >    >
 >    {: .comment}
 >
 {: .hands_on}
 
-The output from **xcms findChromPeaks Merger** {% icon tool %} is a *.RData* file that is mandatory to proceed with the end of the extraction process.
+The output from **xcms findChromPeaks Merger** {% icon tool %} is a *.RData* file that is mandatory to follow the next steps of the process.
 There are two available options: 
-- carrying on using the standard XCMS workflow similarly to the one used in the LC-MS tutorial
-- using the metaMS strategy specifically designed for GC-MS data
-The two options are illustrated in this tutorial. 
+- using the metaMS strategy specifically designed for GC-MS data deconvolution and annotation
+- using a full XCMS process for GC-MS data processing 
+The two options are illustrated in this tutorial.
 
-# Carrying on using the standard XCMS workflow (option 1)
+{% include _includes/cyoa-choices.html option1="Deconvolution and annotation using metaMS" option2="Process GC-MS data with XCMS function" default="Deconvolution and annotation using metaMS"
+       text="Choose below if you just want to follow the pipeline using **metaMS** or **XCMS** for GC-MS deconvolution and annotation" disambiguation="single_vs_multiple" %}
 
-This option follows the standard LC-MS workflow to obtain in the end a dataMatrix file and its corresponding variableMetadata file. 
+<div class="Deconvolution and annotation using metaMS" markdown="1">
 
-> <hands-on-title>Example of end of extraction when using the standard XCMS workflow</hands-on-title>
->
-> 1. {% tool [xcms groupChromPeaks (group)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_group/abims_xcms_group/3.12.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"RData file"*: `xset.merged.RData` (output of the **xcms findChromPeaks Merger** {% icon tool %} job)
->    - *"Method to use for grouping"*: `PeakDensity - peak grouping based on time dimension peak densities`
->        - *"Bandwidth"*: `10.0`
->        - *"Width of overlapping m/z slices"*: `0.05`
->
-> 2. {% tool [xcms fillChromPeaks (fillPeaks)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_fillpeaks/abims_xcms_fillPeaks/3.12.0+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"RData file"*: `xset.merged.groupChromPeaks.RData` (output of the **xcms groupChromPeaks (group)** {% icon tool %} job)
->    - In *"Peak List"*:
->        - *"Convert retention time (seconds) into minutes"*: `Yes`
->        - *"Number of decimal places for retention time values reported in ions' identifiers."*: `2`
->        - *"Reported intensity values"*: `maxo`
->
->
-{: .hands_on}
-
-The outputs of this strategy are similar to the ones discribed in the LC-MS tutotial mentioned previously. 
-
-> <comment-title>Important : Be careful of the file format</comment-title>
->
-> During each step of pre-processing, your dataset has its format changed and can have also its name changed.
-> To be able to continue to MSMS processing, you need to have a RData object wich is **merged and grouped** (from **xcms findChromPeaks Merger** {% icon tool %} and **xcms groupChromPeaks (group)** {% icon tool %}) at least. 
-> It means that you should have a file named `xset.merged.groupChromPeaks.RData` (and maybe with some step more in it).
-{: .comment} 
-
-
-# Stopover : Verify your data after the XCMS pre-processing
-
-When you have processed **all or only needed** steps described before, you can continue with the MS/MS processing part with **msPurity** package. 
-Don't forget to always check your files format! For the next step you need to have this file `xset.merged.groupChromPeaks.*.RData` where * is the name of **optionnal** steps you could do during the pre-processing. 
-For our example, your file should be named `xset.merged.groupchromPeaks.RData`. 
-{: .text-justify}
-
-> <comment-title></comment-title>
-> 
-> The pre-processing part of this analysis can be **quite time-consuming**, and already corresponds to quite a few number of steps, depending of your analysis. We highly recommend, at this step of the MS/MS workflow, to split your analysis by beginning a new Galaxy history with **only the files you need** (final xset Rdata file and your data collection of mzML). This will help you in limiting selecting the wrong dataset in further analysis, and bring a little **tidiness** for future review of your MS/MS analysis process. You should also be able to make a better peakpicking in the future in the same history and it will not be polluated by MS/MS part of your process.
-> {: .text-justify}
-> 
-> > <tip-title>Copy dataset to a new history</tip-title>
-> >
-> > 1. Click on the {% icon galaxy-gear %} icon (**History options**) on the top of the history panel
-> > 2. Click on **Copy Dataset**
-> > 3. Select the desired files
-> > 4. Give a relevant name to the "New history"
-> > 5. Click on the new history name in the green box that have just appear to switch to this history
-> {: .tip}
-> 
-> To begin a new history with the files from your current history, you can **use the functionality ‘copy dataset’** and copy it into a new history (the option is hidden behind the notched wheel at the top right of the history).
-> {: .text-justify}
-> 
-> You may have notice that the XCMS tools generate **output names that contain the different XCMS steps you used**, allowing easy traceability while browsing your history. Hence, we highly recommend you to rename it **with something short**, e.g. "xset", "XCMSSetObject", or anything not too long that you may find convenient.
-> {: .text-justify}
-> {% snippet faqs/galaxy/datasets_rename.md %}
->
-{: .comment}
-
-Before the next step with msPurity package on MS/MS datas, here are some questions to be able to verify if your file is ready and if you have the same results as us. Please check these questions : 
-{: .text-justify}
-
-> <question-title>before MS/MS steps</question-title>
-> 
->  **1** - What are the steps of XCMS you made before your final file ?
-> > <solution-title></solution-title>
-> > 
-> > Here are the different steps made for our example : 
-> >  - **(Not with XCMS)** import your datas into Galaxy instance
-> >  - **MSNbase readMSData** {% icon tool %} to read our MS datas
-> >  - XCMS peakpicking with **xcms findChromPeaks (xcmsSet)** {% icon tool %} tool
-> >  - (Not with XCMS but necessary) merge my datas into one file with **xcms findChromPeaks Merger** {% icon tool %} tool
-> >  - XCMS grouping with **xcms groupChromPeaks (group)** {% icon tool %} tool
-> >  - **(Not done)** XCMS retention time correction, then grouping again with xcms adjustRtime (retcor) {% icon tool %} tool
-> >  - XCMS integration of missing peaks with **xcms fillChromPeaks (fillPeaks)** {% icon tool %} tool
-> > 
-> {: .solution}
-> <br>
->  **2** - Concerning what we said before and the previous answer, what is the complete name of your final RData file ?
-> > <solution-title></solution-title>
-> > 
-> > During each step of XCMS pre-processing, the name of the file which is processing is completed by the name of the step you were doing. So, finally your file should be name `xset.merged.groupChromPeaks.fillChromPeaks.RData`. That because (as seen in previous answer) you ran a grouping and the integration after merged datas.
-> > {: .text-justify}
-> > 
-> {: .solution}
-> <br>
-> **3** - What is the size (in MB) of your final RData file ?
-> > <solution-title></solution-title>
-> > 
-> > To be able to see the size of a file in your history, you just have to select it. It will deploy informations about it and you can see the size of yours. For our example, the size of the final file is **1.4 MB**.
-> > {: .text-justify}
-> > 
-> {: .solution}
-{: .question}
-
-
-# Processing with metaMS part (option 2)
+# Processing with metaMS part (option 1)
 
 **metaMS** is a R package for MS-based metabolomics data. It can do basic peak picking and grouping using functions from **XCMS** and **CAMERA** packages. The main output of **metaMS** is a table of feature intensities in all samples which can be analyzed with multivariate methods immediately. The package also offers the possibility to create in-house databases of mass spectra (including retention information) of pure chemical compounds. These databases can then be used for annotation purposes. The most important functions of this package are *runGC* and *runLC* (and each one to create databases *createSTDdbGC* and *createSTDdbLC*).
 {: .text-justify}
@@ -488,8 +369,115 @@ Concerning EICs, it is possible to choose for which compound you want to draw an
 >
 {: .hands_on}
 
+# Conclusion
+{% icon trophy %} Well done, you’ve processed GC-MS data! You might want to consult your results with the [key history](https://usegalaxy.eu/u/hechth/h/end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms-1) or use [the workflow](https://usegalaxy.eu/u/hechth/h/end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms-1) associated with this tutorial. 
+
+</div>
+
+<div class="Process GC-MS data with XCMS function" markdown="1">
+  
+# Carrying on using the standard XCMS workflow (option 2)
+
+This option follows the standard LC-MS workflow to obtain in the end a dataMatrix file and its corresponding variableMetadata file. 
+
+> <hands-on-title>Example of end of extraction when using the standard XCMS workflow</hands-on-title>
+>
+> 1. {% tool [xcms groupChromPeaks (group)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_group/abims_xcms_group/3.12.0+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"RData file"*: `xset.merged.RData` (output of the **xcms findChromPeaks Merger** {% icon tool %} job)
+>    - *"Method to use for grouping"*: `PeakDensity - peak grouping based on time dimension peak densities`
+>        - *"Bandwidth"*: `10.0`
+>        - *"Width of overlapping m/z slices"*: `0.05`
+>
+> 2. {% tool [xcms fillChromPeaks (fillPeaks)](toolshed.g2.bx.psu.edu/repos/lecorguille/xcms_fillpeaks/abims_xcms_fillPeaks/3.12.0+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"RData file"*: `xset.merged.groupChromPeaks.RData` (output of the **xcms groupChromPeaks (group)** {% icon tool %} job)
+>    - In *"Peak List"*:
+>        - *"Convert retention time (seconds) into minutes"*: `Yes`
+>        - *"Number of decimal places for retention time values reported in ions' identifiers."*: `2`
+>        - *"Reported intensity values"*: `maxo`
+>
+>
+{: .hands_on}
+
+The outputs of this strategy are similar to the ones discribed in the LC-MS tutotial mentioned previously. 
+
+> <comment-title>Important : Be careful of the file format</comment-title>
+>
+> During each step of pre-processing, your dataset has its format changed and can have also its name changed.
+> To be able to continue to MSMS processing, you need to have a RData object wich is **merged and grouped** (from **xcms findChromPeaks Merger** {% icon tool %} and **xcms groupChromPeaks (group)** {% icon tool %}) at least. 
+> It means that you should have a file named `xset.merged.groupChromPeaks.RData` (and maybe with some step more in it).
+{: .comment} 
+
+
+# Stopover : Verify your data after the XCMS pre-processing
+
+When you have processed **all or only needed** steps described before, you can continue with the MS/MS processing part with **msPurity** package. 
+Don't forget to always check your files format! For the next step you need to have this file `xset.merged.groupChromPeaks.*.RData` where * is the name of **optionnal** steps you could do during the pre-processing. 
+For our example, your file should be named `xset.merged.groupchromPeaks.RData`. 
+{: .text-justify}
+
+> <comment-title></comment-title>
+> 
+> The pre-processing part of this analysis can be **quite time-consuming**, and already corresponds to quite a few number of steps, depending of your analysis. We highly recommend, at this step of the MS/MS workflow, to split your analysis by beginning a new Galaxy history with **only the files you need** (final xset Rdata file and your data collection of mzML). This will help you in limiting selecting the wrong dataset in further analysis, and bring a little **tidiness** for future review of your MS/MS analysis process. You should also be able to make a better peakpicking in the future in the same history and it will not be polluated by MS/MS part of your process.
+> {: .text-justify}
+> 
+> > <tip-title>Copy dataset to a new history</tip-title>
+> >
+> > 1. Click on the {% icon galaxy-gear %} icon (**History options**) on the top of the history panel
+> > 2. Click on **Copy Dataset**
+> > 3. Select the desired files
+> > 4. Give a relevant name to the "New history"
+> > 5. Click on the new history name in the green box that have just appear to switch to this history
+> {: .tip}
+> 
+> To begin a new history with the files from your current history, you can **use the functionality ‘copy dataset’** and copy it into a new history (the option is hidden behind the notched wheel at the top right of the history).
+> {: .text-justify}
+> 
+> You may have notice that the XCMS tools generate **output names that contain the different XCMS steps you used**, allowing easy traceability while browsing your history. Hence, we highly recommend you to rename it **with something short**, e.g. "xset", "XCMSSetObject", or anything not too long that you may find convenient.
+> {: .text-justify}
+> {% snippet faqs/galaxy/datasets_rename.md %}
+>
+{: .comment}
+
+Before the next step with msPurity package on MS/MS datas, here are some questions to be able to verify if your file is ready and if you have the same results as us. Please check these questions : 
+{: .text-justify}
+
+> <question-title>before MS/MS steps</question-title>
+> 
+>  **1** - What are the steps of XCMS you made before your final file ?
+> > <solution-title></solution-title>
+> > 
+> > Here are the different steps made for our example : 
+> >  - **(Not with XCMS)** import your datas into Galaxy instance
+> >  - **MSNbase readMSData** {% icon tool %} to read our MS datas
+> >  - XCMS peakpicking with **xcms findChromPeaks (xcmsSet)** {% icon tool %} tool
+> >  - (Not with XCMS but necessary) merge my datas into one file with **xcms findChromPeaks Merger** {% icon tool %} tool
+> >  - XCMS grouping with **xcms groupChromPeaks (group)** {% icon tool %} tool
+> >  - **(Not done)** XCMS retention time correction, then grouping again with xcms adjustRtime (retcor) {% icon tool %} tool
+> >  - XCMS integration of missing peaks with **xcms fillChromPeaks (fillPeaks)** {% icon tool %} tool
+> > 
+> {: .solution}
+> <br>
+>  **2** - Concerning what we said before and the previous answer, what is the complete name of your final RData file ?
+> > <solution-title></solution-title>
+> > 
+> > During each step of XCMS pre-processing, the name of the file which is processing is completed by the name of the step you were doing. So, finally your file should be name `xset.merged.groupChromPeaks.fillChromPeaks.RData`. That because (as seen in previous answer) you ran a grouping and the integration after merged datas.
+> > {: .text-justify}
+> > 
+> {: .solution}
+> <br>
+> **3** - What is the size (in MB) of your final RData file ?
+> > <solution-title></solution-title>
+> > 
+> > To be able to see the size of a file in your history, you just have to select it. It will deploy informations about it and you can see the size of yours. For our example, the size of the final file is **1.4 MB**.
+> > {: .text-justify}
+> > 
+> {: .solution}
+{: .question}
 
 # Conclusion 
- 
+{% icon trophy %} Well done, you’ve processed GC-MS data! You might want to consult your results with the [key history](https://usegalaxy.eu/u/hechth/h/end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms-1) or use [the workflow](https://usegalaxy.eu/u/hechth/h/end-to-end-ei-mass-spectra-prediction-workflow-using-qcxms-1) associated with this tutorial. 
+
+</div>
+
 
 
