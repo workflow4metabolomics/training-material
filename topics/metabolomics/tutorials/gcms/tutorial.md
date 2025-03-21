@@ -247,35 +247,41 @@ The two options are illustrated in this tutorial.
 
 # Processing with metaMS (option 1)
 
-**metaMS** is an R package for MS-based metabolomics data, it was made to easy peak picking and deconvolution steps using functions from **XCMS** and **CAMERA** packages. The 2 mains outputs of **metaMS** are : a table of feature intensities in all samples which can be analyzed with multivariate methods immediately and an .msp. The package also offers the possibility to create in-house databases of mass spectra (including retention information) of pure chemical compounds. These databases can then be used for annotation purposes. The most important functions of this package are *runGC* and *runLC* (and each one to create databases *createSTDdbGC* and *createSTDdbLC*).
+**metaMS** is an R package for MS-based metabolomics data, it was made to eas peak picking and deconvolution steps using functions from **XCMS** and **CAMERA** packages. In it's Galaxy implementaion, the 2 mains outputs of **metaMS** are : a table of feature intensities in all samples which can be analyzed with multivariate methods immediately and an `.msp`. 
+
+> <comment-title></comment-title>
+>
+> *-Note: Not all **metaMS** R packages functions have been made available in Galaxy.-*
+When run in R the **metaMS** package offers a lot of possibilities among which functions to create in-house databases of mass spectra (including retention time or indices information) of pure chemical compounds. These databases can then be used for annotation purposes. The most important functions of this package are *runGC* and *runLC* (and each one to create databases *createSTDdbGC* and *createSTDdbLC*).
+>
+> {: .comment}
+ 
 {: .text-justify}
-During this tutorial we are interested in GC-MS analysis, so we will use the *runGC* function of **metaMS** and described it in details to be able to understand this function. The standard workflow of **metaMS** for GC-MS data is the following : 
+During this tutorial we are interested in GC-MS analysis, so we will use the *runGC* function of **metaMS** and described it in details to be able to understand all capacities of that function. 
+The standard workflow of **metaMS** for GC-MS data is the following : 
 
 ![Workflow metaMS](../../images/tuto_gcms_workflow_metaMS.png "Workflow of metaMS for GC datas")
 
-The *runGC* function is implemented in **metaMS.runGC {% icon tool %} tool** in Galaxy. It takes as inputs a .RData file after XCMS and optionnaly an alkane reference file for RI calculation and a spectra database in .msp for annotation purposes. 
+The *runGC* function is implemented in **metaMS.runGC {% icon tool %} tool** in Galaxy. It takes as inputs a .RData file after XCMS and optionnaly for annotation purposes an alkane reference file for RI calculation and/or a spectra database in `.msp`. 
 {: .text-justify}
 
 ## Peak picking
 
-The peak picking is performed by the usual **XCMS** functions. A function has been written in **metaMS** to allow the individual parameters to be passed to the function as a settings list. The result is that the whole of the **XCMS** functionality is available, simply by changing the values of some settings, or by adding fields. 
- {: .text-justify}
-Whereas the package is not up-to-date since the new version of **XCMS** (3.x). This new version brought a lot of new objects and transformed the peak picking process. To have the last version of this process, **metaMS** authorized **to start its function directly with the file containing all peak picking results**. 
-{: .text-justify}
-Due to this update, **we have already processed the peak picking during the first part** of this tutorial. So we can continue it with the file outputted from the peak picking part. This also allow us to make a good peak picking without the following step include in **metaMS** functions. So it takes less time of processing and we can verify our peaks with this cut between peak picking and the following steps of GC-MS analysis. 
+The peak picking is performed by the usual **XCMS** functions and the output file in `.RData` is used for deconvolution and annotation steps.
+ 
 {: .text-justify}
 
 ## Definition of pseudo-spectra
 
-Rather than a feature-based analysis with individual peaks, as is the case with **XCMS**, **metaMS** performs a pseudospectrum-based analysis. So, the basic entity is a set of m/z values showing a chromatographic peak at the same retention time.
+The biggest difference between **XCMS** only or **XCMS + metaMS** GC-MS data processing is that rather than a feature-based analysis with individual peaks, as is the case with **XCMS**, **metaMS** performs a pseudospectrum-based analysis. So, the basic entity is a set of m/z values showing a chromatographic peak at the same retention time. The idea behind that is that Electron Ionization (EI), which is the most widely used ionization mode in GC-MS analysis, generates a lot more ions for the same molecule than Electrospray Ionisation used in LC-MS. **metaMS** runGC is able to group all ions belonging to a molecule into one single information that will be used for statistical analysis. For each compound found by **metaMS** a list of gouped m/z and their intensity is exported as pseudospectrum and this will be used for annotation purpose.
 {: .text-justify}
 
 ![Pseudospectrum example](../../images/tuto_gcms_pseudospectrum_example.png "Pseudospectrum example from `msp` file")
 
-This choice is motivated by several considerations. First of all, **in GC the amount of overlap is much less than in LC** : peaks are much narrower. This means that even a one- or two-second difference in retention time can be enough to separate the corresponding mass spectra. Secondly, fragmentation patterns for many compounds are **available in extensive libraries like the [NIST library](http://www.nist.gov/srd/nist1a.cfm "NIST library")**. In addition, the spectra are somewhat easier to interpret since adducts, such as found in LC, are not present. The main advantage of pseudo-spectra, however, is that their use allows the results to be interpreted directly as relative concentrations of chemical compounds : **a fingerprint in terms of chemical composition is obtained**, rather than a fingerprint in terms of hard-to-interpret features. The pseudo-spectra are obtained by simply clustering on retention time, using the *runCAMERA* function, which for GC data calls *groupFWHM*. All the usual parameters for the *groupFWHM* function are included in W4M Galaxy **metaMS.runGC {% icon tool %} tool**. The most important parameter is *perfwhm*, which determines the maximal retention time difference of features in one pseudospectrum. 
+This choice is motivated by several considerations. First of all, **in GC the amount of overlap is much less than in LC** : peaks are much narrower. This means that even a one- or two-second difference in retention time can be enough to separate the corresponding mass spectra. Secondly, EI MS spectra for many compounds are **available in extensive libraries like the [NIST library](http://www.nist.gov/srd/nist1a.cfm "NIST library")** or other online ones like [Golm Metabolome library](http://gmd.mpimp-golm.mpg.de/) 
 {: .text-justify}
 
-The final step is to convert the **CAMERA** objects into easily handled lists, which are basically the R equivalent of the often-used `msp` format from the AMDIS software ({% cite Stein1999 %}). The `msp`  file is a nested list, with one entry for each sample, and each sample represented by a number of fields. The pseudo-spectra are three-column matrices, containing m/z, intensity and retention time information, respectively. They can be draw with the *plotPseudoSpectrum* function of **metaMS** package easily (Figure 2).
+The  `.msp` format created by **metaMS** is the same as the one used the AMDIS software ({% cite Stein1999 %}) generally available on GC-MS instrument. The `.msp`  file is a nested list, with one entry for each compound pseudo-spectra. The pseudo-spectra are three-column matrices, containing m/z, intensity and retention time information, respectively. They can be draw with the *plotPseudoSpectrum* function of **metaMS** package easily (Figure 2).
 {: .text-justify}
 
 
