@@ -302,7 +302,6 @@ When you have process **all or only needed** steps described before, you can con
 > 
 > You may have notice that the XCMS tools generate **output names that contain the different XCMS steps you used**, allowing easy traceability while browsing your history. Hence, we highly recommend you to rename it **with something short**, e.g. "xset", "XCMSSetObject", or anything not too long that you may find convenient.
 > {: .text-justify}
-> {% include snippets/rename_dataset.md %}
 >
 {: .comment}
 
@@ -523,7 +522,7 @@ The `frag4feature` function from msPurity package will link the fragmentation sp
 >
 > Just find the **msPurity.frag4feature** {% icon tool %} tool in the Galaxy instance to be able to run this function. As result, it will give you all your MS/MS datas which have a good precursor found during the XCMS processus. But before, you have to enter the right parameters: 
 > {: .text-justify}
->  - **xcmsSet object**: the Rdata file you made during the XCMS preprocessing. Its name should be `xset.merged.groupChromPeaks.fillChromPeaks.RData` (or your new name if your rename it).
+>  - **xcmsSet object**: the Rdata file you made during the XCMS preprocessing. Its name should be `xset.merged.groupChromPeaks.fillChromPeaks.RData` (or your new name if you have renamed it).
 > {: .text-justify}
 >  - **purityA object**: the RData file ouputed the step before containing all your MS/MS spectra. Should be named `msPurity.purityA_on_yourdata.RData`.
 > {: .text-justify}
