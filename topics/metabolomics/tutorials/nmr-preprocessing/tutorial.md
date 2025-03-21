@@ -68,34 +68,36 @@ To this aim, the authors collected samples from 59 male C57b mice divided in fou
 
 # Get data
 
->    > <comment-title>On the supported files</comment-title>
->    > 
->    > Only Bruker files are currently supported in the W4M plateform.
+> > <comment-title>On the supported files</comment-title>
+> > 
+> > Only Bruker files are currently supported in the W4M plateform.
 >    {: .comment}
 
 The first step is to upload files into your Galaxy history. Bruker files have to be included in a zip file. Two directory structures are possible. FID can be organized into sub-directories or not. You can upload data your own zip file from the 'Upload Data' button or you can used a shared zip file. 
 
 > <hands-on-title>Data upload</hands-on-title>
-> 
+>
 > 1. Create a new history and give it a name.
-> 
+>
 >    {% snippet faqs/galaxy/histories_create_new.md %}
-> 
+>
 > 2. Import the zip file in your history. Two possibilities: 
 >    - Option 1: from a shared data library (ask your instructor)
->    - Option 2: from [Zenodo](https://zenodo.org/record/xx) using the URLs given below:
+>    - Option 2: from [Zenodo](https://zenodo.org/record/5179809) using the URLs given below:
 >
 >    ```
-> https://zenodo.org/record/xx/files/AAP_urine.zip
+> https://zenodo.org/record/5179809/files/Dataprocessing_dataMatrix.txt
 >    ```
+>
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
-> 
+>
 > > <tip-title>Comment to W4M users</tip-title>
 > > If you are a W4M user, please note that you can find at the following link a ready-to-start history:
 > > [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing).
 > > We highly recommend to get started by importing this history.
 > > this step corresponds to the dataset 1.
 > {: .tip}
+>
 {: .hands_on}
 
 You should have in your history a green zip file (`AAP_Urine`).
@@ -112,30 +114,31 @@ The sampleMetadata file is a table containing information about the samples. The
 You can add columns for analytical and biological information such as biological groups of interest for the supposed study (Sex, Exposition, Diet, Pathology...) to this table. If needed (further statistical analysis), you have to download the generated table in your local environment. For this, You can look at [the dedicated training material]({% link topics/galaxy-interface/tutorials/download-delete-data/tutorial.md %}).
 
 > <hands-on-title> Read raw NMR fids </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Read](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Read/3.3.0) %} with the following parameters:
 >    - *"Bruker FID file"*: `AAP_Urine`
 >    - *"Presence of subdirectories?"*: ` TRUE `
 >    - *"Use (sub)directories names as FID names?"*: ` TRUE `
-> 
->    > <comment-title> NMR_Read parameters </comment-title>
+>
+> > <comment-title> NMR_Read parameters </comment-title>
+>
 >    {% tool [NMR_Read](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    > 
->    > If use of _title_ file and presence of sub-directories: set the FID Title line, `subdirs = TRUE`,  `dirs.names = FALSE`
->    > 
->    > If use of _title_ file and no sub-directories: set the FID Title line, `subdirs = FALSE`,  `dirs.names = FALSE`
->    > 
->    > If no use of _title_ file and presence of sub-directories: `subdirs = TRUE`,  `dirs.names = TRUE`
->    > 
->    > If no use of _title_ file and no sub-directories: `subdirs = FALSE`,  `dirs.names = TRUE`
->    {: .comment}
 > 
->    > <comment-title> Comment to W4M users </comment-title>
->    > 
->    > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history,
->    > this step corresponds to the datasets number 3 to 6.
+> > If use of _title_ file and presence of sub-directories: set the FID Title line, `subdirs = TRUE`,  `dirs.names = FALSE`
+> > 
+> > If use of _title_ file and no sub-directories: set the FID Title line, `subdirs = FALSE`,  `dirs.names = FALSE`
+> > 
+> > If no use of _title_ file and presence of sub-directories: `subdirs = TRUE`,  `dirs.names = TRUE`
+>
+> > If no use of _title_ file and no sub-directories: `subdirs = FALSE`,  `dirs.names = TRUE`
 >    {: .comment}
-> 
+>
+> > <comment-title> Comment to W4M users </comment-title>
+>
+> > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history,
+> > this step corresponds to the datasets number 3 to 6.
+>    {: .comment}
+>
 {: .hands_on}
 
 # Preprocessing fids with the NMR_Preprocessing tool
@@ -155,15 +158,15 @@ Phase correction ([check the next 3 slides](../../tutorials/nmr-preprocessing/sl
 Phase correction involves adjusting both zero (ph0, see 5th step) and first-order (ph1) phases. This step corresponds to the 1st order phase correction. First-order phase shift leads to a frequency-dependent phase distortion that is proportional to the chemical shift. In cases where these delays are small compared to the frequency offset, the phase error can be corrected. Otherwise, in the presence of large delays, this correction will introduce baseline distortions.
 
 > <hands-on-title> 1st order phase correction </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Group delay correction"*: 
 >        - *"Display the FIDs after 1st order phase correction?"*: `yes`
-> 
+>
 > You can leave all parameters with their default values.
-> 
+>
 {: .hands_on}
 
 ## 2. Solvent supression
@@ -173,38 +176,38 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 ![Figure 4: Effect of the Smoothing parameter in the Solvent suppression step](../../images/tutorial-nmr-workflow-solventsuppression.png)
 
 > <hands-on-title> Effect of `Smoothing parameter` on signal intensity </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
 >    - In *"Solvent Suppression"*: the lambda smoother used to penalized the non-parametric estimation of the solvent signal
 >        - *"Solvent Suppression: Smoothing parameter"*: `1.0`
 >        - *"Display the FIDs after solvent suppression?"*: `no`
-> 
+>
 > You can leave other parameters with their default values.
 
 > <question-title></question-title>
-> 
+>
 > Based on explanations given in [](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression_illustration), :
 > 1. Which graph (Left/Middle/Right) corresponds to a value 1,
 > 2. Which graph (Left/Middle/Right) corresponds to a value 10^6, 
 > 3. Which graph (Left/Middle/Right) corresponds to a value 10^9 
 > in the Figure 4?
-> 
+>
 > > <solution-title></solution-title>
-> >
+>
 > > The smaller the lambda value, the smoother the signals. The value lambda = 1 corresponds to the second spectrum: the solvent signal is well suppressed, but this value is too small: all metabolite signals > > > are diminished. A compromise must therefore be found between suppressing the solvent signal and smoothing the metabolite signals. The value lamba = 10^9 corresponds to spectrum n°3 and lambda = 10^6 to> > > > spectrum n°1. There is very little difference between these 2 spectra. Default value seems to be a good compromise.
-> > 
+>
 > {: .solution}
-> 
+>
 {: .question}
-> 
->    > <comment-title> Comment to W4M users </comment-title>
->    > 
->    > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, this step corresponds to the datasets number 11 to 14.
->    > You can also run this tool with default value (1000000.0, datasets 7 to 10) and 10^9 (datasets 15 to 18)
+>
+> > <comment-title> Comment to W4M users </comment-title>
+> > 
+> > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, this step corresponds to the datasets number 11 to 14.
+> > You can also run this tool with default value (1000000.0, datasets 7 to 10) and 10^9 (datasets 15 to 18)
 >    {: .comment}
-> 
+>
 {: .hands_on}
 
 ## 3. Apodization
@@ -213,7 +216,7 @@ This step aims at improving the sensitivity by multiplying the FID by a factor c
 Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#apodization), [](../../tutorials/nmr-preprocessing/slides.html#apodization_illustration). 
 
 > <hands-on-title> Task description </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
@@ -222,7 +225,7 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >        - *"Apodization: Line broadening"*: `5`
 >        - *"Display the FIDs after solvent suppression?"*: `no`
 >        - *"Display the FIDs after Apodization?"*: `no`
-> 
+>
 > 2. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
@@ -230,24 +233,24 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >        - *"Apodization: method"*: `exp`
 >        - *"Apodization: Line broadening"*: `0.3`
 >        - *"Display the FIDs after Apodization?"*: `no`
-
+>
 > You can leave other parameters with their default values.
-
+>
 > <question-title></Effect of the weighting function >
-> 
+>
 > Based on the "2016-61-UR-N4-CD" spectrum, which is the effet of the line broadening value on FID?
-> 
+>
 > > <solution-title></Effect of the weighting function>
 > > 
 > > CCA
 > >
 > {: .solution}
-> 
+>
 {: .question}
-> 
->    > <comment-title> Comment to W4M users </comment-title>
->    > 
->    > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, several datasets are available to evaluate effects of parameter on preprocessed spectra:
+>
+> > <comment-title> Comment to W4M users </comment-title>
+>
+> > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, several datasets are available to evaluate effects of parameter on preprocessed spectra:
 > - Method: negative exponential and Line broadening: 0.3 = datasets 19 - 22
 > - Method: negative exponential and Line broadening: 5.0 = datasets 23 - 26
 > - Method: cos2 and Phase: 0.0                           = datasets 27 - 30
@@ -261,7 +264,7 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 Nest step corresponds to conversion of the signal in the time domain into a spectrum in the frequency domain, performed in the "Fourier transform" step ([Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#fourier_transform)).
 
 > <hands-on-title> Fourier transform </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file
@@ -275,7 +278,7 @@ Nest step corresponds to conversion of the signal in the time domain into a spec
 In the fifth step, correction of the zero order phase is applied ([Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#zero_order_phase)). The zero-order phase arises because the relative phase of the transmitter pulse and receiver are offset. This results in a mixing of the desired real part of the spectrum with a portion of the corresponding imaginary part, so one side of the base of each peak is observed to dip below the baseline). Zero-order phase correction undoes this mixing. The zero-order phase shift affects all frequencies in the same way.
 
 > <hands-on-title> Zero order phase correction </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
@@ -285,12 +288,12 @@ In the fifth step, correction of the zero order phase is applied ([Check the nex
 >        - In *"Zero Order Phase Correction: exclusion area(s)"*:
 >           - *"Exclusion zone: left border"*: ` 5.1 `
 >           - *"Exclusion zone: right border"*: ` 4.5 `
-> 
+>
 > You can leave other parameters with their default values.
-> 
->    > <comment-title> Comment to W4M users </comment-title>
->    > 
->    > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, several datasets are available to evaluate effects of the method applied for phase correction:
+>
+> > <comment-title> Comment to W4M users </comment-title>
+> > 
+> > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, several datasets are available to evaluate effects of the method applied for phase correction:
 > - Method: RMS = datasets 39 - 42
 > - Method: MAX = datasets 43 - 46
 >    {: .comment}
@@ -301,7 +304,7 @@ In the fifth step, correction of the zero order phase is applied ([Check the nex
 A known standard (called internal reference compound), TMS or TSP, is usually added to the samples to refine the scale calibration. In this step, the chemical shift is defined relative to this reference and a ppm value is attributed to the reference peak (usually 0 ppm) and spectra are aligned to this peak. 
 
 > <hands-on-title> Shift Referencing </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
@@ -313,28 +316,27 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 >               - *"Search zone: right border"*: -2.0
 >        - *"Shift Referencing: shiftHandling"*: `zerofilling`
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
-
+>
 > <question-title></Effect of Search zone parameter>
-> 
+>
 > Run the NMR_Preprocessing tool with `Nearvalue` and `window` as values for the "Shift Referencing:   definition of the search zone" parameter, and `-2.0` and `2.0` respectively for left and right borders for the `window` search zone. What do you observe on spectra obtained for individual "X2016.61.UR.N4.CD"?
-> 
+>
 > > <solution-title></solution-title>
 > > 
 > > Shift towards the right for the `window` value
 > > 
 > {: .solution}
-> 
+>
 {: .question}
-
 > > <comment-title> How does Shift referencing work in NMR_Preprocessing? </comment-title>
-> > 
+>
 > > The algorithm proposes two ways to locate the reference compound peak in each spectrum within a range of intensities (search zone: `nearvalue`, `all`, (user-defined) `window`): it selects either the maximum intensity or the first peak in the search range higher than a predefined threshold. [Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#zero_order_phase) to see the impact of the Search zone parameter.
-> > 
+>
 > {: .comment}
 
 > > <comment-title> Comment to W4M users </comment-title>
 > > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to different search zone and shiftHandling values:
-> > 
+>
 > > - definition of the search zone: `nearvalue`; shiftHandling: `zerofilling` = datasets 47 - 50
 > > - definition of the search zone: `all`; shiftHandling: `zerofilling`       = datasets 51 - 54
 > > - definition of the search zone: `window`; Search zone: left border: `-2.0`; Search zone: right border: `2.0`; shiftHandling: `zerofilling `                                      = datasets 55 - 58
@@ -349,7 +351,7 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 To ensure successful integration, baseline should be flat with no distortion. Baseline artefacts have to be removed. These artefacts result from multiple sources, such as the presence of macromolecules, a not entirely linear electronic detection process or calibration errors from the 180° pulse. Function used in this step estimates and removes the smoothed baseline from the spectra, based on two parameters `smoothing` and `asymmetry`.
 
 > <hands-on-title> Baseline correction </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
 >    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
@@ -359,36 +361,36 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 >        - *"Baseline Correction: exclusion area(s)"*: `NO`
 
 > > <comment-title> How does Baseline correction work in NMR_Preprocessing? </comment-title>
-> > 
+>
 > > Algorithm uses uses asymmetric least squares with a roughness penalty:
-> > 
+>
 > > - smoothing (default value=`1e7`): the larger it is, the smoother will be. With smoothing=`0`, the baseline will be equal to the signal and the corrected signal will be zero.
-> > 
+>
 > > asymetry (default value=`0.05`): the smaller it is, the less the smoother will try to follow peaks when it is under the function and the more it will try to be under the function.
-> > 
+>
 > {: .comment}
 
 > > <comment-title> Comment to W4M users </comment-title>
-> > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that       >    > corresponds to different "smoothing" and "asymetry" values:
+> > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that       > > corresponds to different "smoothing" and "asymetry" values:
 > > - smoothing parameter: `100`; asymetry parameter: `0.05`   = datasets 67 - 70
 > > - smoothing parameter: `10^9`; asymetry parameter: `0.05`  = datasets 71 - 74
 > > - smoothing parameter: `10^5`; asymetry parameter: `0.001` = datasets 75 - 78
 > > - smoothing parameter: `10^5`; asymetry parameter: `0.5`   = datasets 79 - 82
 > > - smoothing parameter: `10^5`; asymetry parameter: `1.0`   = datasets 83 - 86
 > {: .comment}
-> 
+>
 {: .hands_on}
 
 > <question-title></Effect of the Asymetry parameter>
-> 
+>
 > Run the NMR_Preprocessing tool with `0.001`, `0.5` and `1.0` as values for the Baseline correction: asymmetry parameter. What do you observe on spectra ofbatined for individual X2016.61.UR.N4.CD" (compare also with the default value?
-> 
+>
 > > <solution-title></solution-title>
-> > 
+>
 > > CCA
-> >
+>
 > {: .solution}
-> 
+>
 {: .question}
 
 ## 8. Negative values zeroing
@@ -396,18 +398,18 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 Despite the application of baseline and phase corrections, spectra may still have negative intensities at specific frequency values. These cannot be properly interpreted and can have bad impacts on  statistical analyses. This filter simply sets them to zero.
 
 > <hands-on-title> Negative values zeroing </hands-on-title>
-> 
+>
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - In *"Negative intensities to Zero?"*:
 >        - *"Set negative intensities to zero?"*: `YES`
-> 
->    > <comment-title> Comment to W4M users </comment-title>
->    > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to `NO` and `YES` values:
->    > 
->    > - Set negative intensities to zero?: `YES` = datasets 89 - 90
->    > - Set negative intensities to zero?: `NO`  = datasets 91 - 94
+>
+> > <comment-title> Comment to W4M users </comment-title>
+> > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to `NO` and `YES` values:
+>
+> > - Set negative intensities to zero?: `YES` = datasets 89 - 90
+> > - Set negative intensities to zero?: `NO`  = datasets 91 - 94
 >    {: .comment}
-> 
+>
 {: .hands_on}
 
 
