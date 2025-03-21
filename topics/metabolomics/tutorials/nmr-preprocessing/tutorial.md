@@ -52,10 +52,12 @@ for complementary material about PepsNMR R package.
 
 NMR data preprocessing is based on the PepsNMR R package (% cite Martin2018 %). It covers several steps included in two tools (NMR_Read and NMR_Preprocessing). You can see the NMR preprocessing workflow available in W4M [check the first slide](../../tutorials/nmr-preprocessing/slides.html#nmrpreprocessing_workflow).
 
-In this tutorial we will focus on xx main steps:
-- xx
-- xx
-- xx
+In this tutorial we will describe all the steps involved in pre-processing NMR spectra focusing on 4 main steps with an explanation of various parameters:
+ - Solvent suppression
+ - Apodization
+ - Shift referencing
+ - Baseline correction
+
 
 # Data description
 
@@ -237,7 +239,7 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >
 > Based on the "2016-61-UR-N4-CD" spectrum, which is the effect of the line broadening value on FID?
 >
-> > <solution-title>Effect of the weighting function</solution-title>
+> > <solution-title> Effect of the weighting function </solution-title>
 >
 > > Apodisation by an exponential function reduces the noise, but if the line broadening (LB) factor is too high, for example LB equal to 5, the signals are very wide and structural information is lost. A compromise must therefore be found between noise suppression and acceptable signal width. An LB of 0.3 for proton NMR spectra is a good compromise.
 >
@@ -246,7 +248,6 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 {: .question}
 >
 > > <comment-title> Comment to W4M users </comment-title>
->
 > > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, several datasets are available to evaluate effects of parameter on preprocessed spectra:
 > - Method: negative exponential and Line broadening: 0.3 = datasets 19 - 22
 > - Method: negative exponential and Line broadening: 5.0 = datasets 23 - 26
@@ -298,7 +299,7 @@ In the fifth step, correction of the zero order phase is applied ([Check the nex
 
 ## 6. Shift Referencing
 
-A known standard (called internal reference compound), TMS or TSP, is usually added to the samples to refine the scale calibration. In this step, the chemical shift is defined relative to this reference and a ppm value is attributed to the reference peak (usually 0 ppm) and spectra are aligned to this peak. 
+A known standard (called internal reference compound),  for example tetramethylsilane (TMS) for lipidic samples or sodium trimethylsilylpropionate (TSP) for aqueous samples, is usually added to the samples to refine the scale calibration. In this step, the chemical shift is defined relative to this reference and a ppm value is attributed to the reference peak (usually 0 ppm) and spectra are aligned to this peak. The algorithm uses several methods to locate the reference compound peak in each spectrum within a range of intensities : it selects either the maximum intensity (“window”) or the first peak in the search range greater than a predefined threshold (“nearvalue”).
 
 > <hands-on-title> Shift Referencing </hands-on-title>
 >
@@ -314,13 +315,13 @@ A known standard (called internal reference compound), TMS or TSP, is usually ad
 >        - *"Shift Referencing: shiftHandling"*: `zerofilling`
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
 >
-> <question-title></Effect of Search zone parameter>
+> <question-title> Effect of Search zone parameter </question-title>
 >
 > Run the NMR_Preprocessing tool with `Nearvalue` and `window` as values for the "Shift Referencing:   definition of the search zone" parameter, and `-2.0` and `2.0` respectively for left and right borders for the `window` search zone. What do you observe on spectra obtained for individual "X2016.61.UR.N4.CD"?
 >
 > > <solution-title></solution-title>
 > > 
-> > Shift towards the right for the `window` value
+> > The spectrum using the ‘nearvalue’ method is well calibrated at 0 ppm, whereas the spectrum using the ‘window’ methods is not.
 > > 
 > {: .solution}
 >
@@ -378,7 +379,7 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 >
 {: .hands_on}
 
-> <question-title></Effect of the Asymetry parameter>
+> <question-title> Effect of the Asymetry parameter </question-title>
 >
 > Run the NMR_Preprocessing tool with `0.001`, `0.5` and `1.0` as values for the Baseline correction: asymmetry parameter. What do you observe on spectra ofbatined for individual X2016.61.UR.N4.CD" (compare also with the default value?
 >
