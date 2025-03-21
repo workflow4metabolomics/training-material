@@ -85,10 +85,10 @@ The first step is to upload files into your Galaxy history. Bruker files have to
 >
 > 2. Import the zip file in your history. Two possibilities: 
 >    - Option 1: from a shared data library (ask your instructor)
->    - Option 2: from [Zenodo](https://zenodo.org/record/5179809) using the URLs given below:
+>    - Option 2: from [Zenodo](https://zenodo.org/record/15064443) using the URLs given below:
 >
 >    ```
-> https://zenodo.org/record/5179809/files/Dataprocessing_dataMatrix.txt
+> https://zenodo.org/record/15064443/AAP_Urine.zip
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
@@ -145,15 +145,14 @@ You can add columns for analytical and biological information such as biological
 
 Your data are now ready for preprocessing. This step can be done with the NMR_Preprocessing tool. It will produce a datamatrix (`NMR_Preprocessing_dataMatrix`) including the preprocessed fid with row corresponding to chemical shifts and columns to samples, a variablemetadata file (`NMR_Preprocessing_variableMetadata`) including information on variables (NMR chemical shifts) and a graph with intermediate (depending on the graph option chosen for each sub-step) and final preprocessed spectra. These spectra will help you to have an idea about the effect of chosen parameters on the preprocessing step. 
 
-The NMR_preprocessing tool includes several steps as described in Figure 2. This tutorial ends up after the "Negative values zeroing step."
+The NMR_preprocessing tool includes several steps as described in Figure 1. This tutorial ends up after the "Negative values zeroing step."
 
-![Figure 2: Steps of NMR spectra preprocessing](../../images/tutorial-nmr-workflow.png)
-
+![Figure 1: Steps of NMR spectra preprocessing](../../images/tutorial-nmr-workflow.png "The full tutorial workflow")
 ## 1. Group delay correction
 
-Phase correction ([check the next 3 slides](../../tutorials/nmr-preprocessing/slides.html#phase_shifts), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction_illustration) and Figure 3) is a very important adjustment that needs to be made to a spectrum. Phase of a signal is related to the amount of signal observed above and below the baseline. Phase correction works to provide a signal in pure-absorption mode, which means a signal totally above and/or totally below the baseline.
+Phase correction ([check the next 3 slides](../../tutorials/nmr-preprocessing/slides.html#phase_shifts), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction), [](../../tutorials/nmr-preprocessing/slides.html#group_delay_correction_illustration) and Figure 2) is a very important adjustment that needs to be made to a spectrum. Phase of a signal is related to the amount of signal observed above and below the baseline. Phase correction works to provide a signal in pure-absorption mode, which means a signal totally above and/or totally below the baseline.
 
-![Figure 3: Illustration of the Group Delay recorded before the signal acquisition](../../images/tutorial-nmr-workflow-firstorderphasecorrection.png)
+![Figure 2: Illustration of the Group Delay recorded before the signal acquisition](../../images/tutorial-nmr-workflow-firstorderphasecorrection.png)
 
 Phase correction involves adjusting both zero (ph0, see 5th step) and first-order (ph1) phases. This step corresponds to the 1st order phase correction. First-order phase shift leads to a frequency-dependent phase distortion that is proportional to the chemical shift. In cases where these delays are small compared to the frequency offset, the phase error can be corrected. Otherwise, in the presence of large delays, this correction will introduce baseline distortions.
 
@@ -171,9 +170,9 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 
 ## 2. Solvent supression
 
-[Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression), [](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression_illustration) for explanations on solvent suppression. Smoothing parameter determines how smooth is the solvent signal. Figure 4 below illustrates the effect of the Smoothing parameter on spectra. Spectra have been obtained with Smoothing parameter values of `1`, `10^6` and`1^9`.
+[Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression), [](../../tutorials/nmr-preprocessing/slides.html#solvent_suppression_illustration) for explanations on solvent suppression. Smoothing parameter determines how smooth is the solvent signal. Figure 3 below illustrates the effect of the Smoothing parameter on spectra. Spectra have been obtained with Smoothing parameter values of `1`, `10^6` and`1^9`.
 
-![Figure 4: Effect of the Smoothing parameter in the Solvent suppression step](../../images/tutorial-nmr-workflow-solventsuppression.png)
+![Figure 3: Effect of the Smoothing parameter in the Solvent suppression step](../../images/tutorial-nmr-workflow-solventsuppression.png)
 
 > <hands-on-title> Effect of `Smoothing parameter` on signal intensity </hands-on-title>
 >
@@ -192,7 +191,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > 1. Which graph (Left/Middle/Right) corresponds to a value 1,
 > 2. Which graph (Left/Middle/Right) corresponds to a value 10^6, 
 > 3. Which graph (Left/Middle/Right) corresponds to a value 10^9 
-> in the Figure 4?
+> in the Figure 3?
 >
 > > <solution-title></solution-title>
 >
