@@ -246,7 +246,6 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 > {: .solution}
 >
 {: .question}
->
 > > <comment-title> Comment to W4M users </comment-title>
 > > In the [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing) history, several datasets are available to evaluate effects of parameter on preprocessed spectra:
 > - Method: negative exponential and Line broadening: 0.3 = datasets 19 - 22
@@ -315,6 +314,7 @@ A known standard (called internal reference compound),  for example tetramethyls
 >        - *"Shift Referencing: shiftHandling"*: `zerofilling`
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
 >
+>
 > <question-title> Effect of Search zone parameter </question-title>
 >
 > Run the NMR_Preprocessing tool with `Nearvalue` and `window` as values for the "Shift Referencing:   definition of the search zone" parameter, and `-2.0` and `2.0` respectively for left and right borders for the `window` search zone. What do you observe on spectra obtained for individual "X2016.61.UR.N4.CD"?
@@ -331,14 +331,12 @@ A known standard (called internal reference compound),  for example tetramethyls
 > > The algorithm proposes two ways to locate the reference compound peak in each spectrum within a range of intensities (search zone: `nearvalue`, `all`, (user-defined) `window`): it selects either the maximum intensity or the first peak in the search range higher than a predefined threshold. [Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#zero_order_phase) to see the impact of the Search zone parameter.
 >
 > {: .comment}
-
 > > <comment-title> Comment to W4M users </comment-title>
 > > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to different search zone and shiftHandling values:
->
 > > - definition of the search zone: `nearvalue`; shiftHandling: `zerofilling` = datasets 47 - 50
 > > - definition of the search zone: `all`; shiftHandling: `zerofilling`       = datasets 51 - 54
 > > - definition of the search zone: `window`; Search zone: left border: `-2.0`; Search zone: right border: `2.0`; shiftHandling: `zerofilling `                                      = datasets 55 - 58
-> >  - definition of the search zone: `nearvalue`; shiftHandling: `cut`        = datasets 59 - 62
+> > - definition of the search zone: `nearvalue`; shiftHandling: `cut`        = datasets 59 - 62
 > > - definition of the search zone: `nearvalue`; shiftHandling: `circular`    = datasets 63 - 66
 > {: .comment}
 {: .hands_on}
@@ -367,7 +365,6 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 > > asymetry (default value=`0.05`): the smaller it is, the less the smoother will try to follow peaks when it is under the function and the more it will try to be under the function.
 >
 > {: .comment}
-
 > > <comment-title> Comment to W4M users </comment-title>
 > > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that       > > corresponds to different "smoothing" and "asymetry" values:
 > > - smoothing parameter: `100`; asymetry parameter: `0.05`   = datasets 67 - 70
@@ -403,11 +400,9 @@ Despite the application of baseline and phase corrections, spectra may still hav
 >
 > > <comment-title> Comment to W4M users </comment-title>
 > > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to `NO` and `YES` values:
->
 > > - Set negative intensities to zero?: `YES` = datasets 89 - 90
 > > - Set negative intensities to zero?: `NO`  = datasets 91 - 94
 >    {: .comment}
->
 {: .hands_on}
 
 
