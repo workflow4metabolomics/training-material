@@ -346,7 +346,7 @@ A known standard (called internal reference compound),  for example tetramethyls
 
 ## 7. Baseline correction
 
-To ensure successful integration, baseline should be flat with no distortion. Baseline artefacts have to be removed. These artefacts result from multiple sources, such as the presence of macromolecules, a not entirely linear electronic detection process or calibration errors from the 180° pulse. Function used in this step estimates and removes the smoothed baseline from the spectra, based on two parameters `smoothing` and `asymmetry`.
+To ensure successful integration, baseline should be flat with no distortion. Baseline artefacts must be removed. These artefacts result from multiple sources, such as the presence of macromolecules, a not entirely linear electronic detection process, and calibration errors from the 180° pulse. The function used in this step estimates and removes the smoothed baseline from the spectra, based on two parameters `smoothing` and `asymmetry`.
 
 > <hands-on-title> Baseline correction </hands-on-title>
 >
@@ -381,11 +381,11 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 
 > <question-title> Effect of the Asymetry parameter </question-title>
 >
-> Run the NMR_Preprocessing tool with `0.001`, `0.5` and `1.0` as values for the Baseline correction: asymmetry parameter. What do you observe on spectra ofbatined for individual X2016.61.UR.N4.CD" (compare also with the default value?
+> Run the NMR_Preprocessing tool with `0.001`, `0.5` and `1.0` as values for the Baseline correction: asymmetry parameter. What do you observe on spectra obtained for individual X2016.61.UR.N4.CD" (compare also with the default value?
 >
 > > <solution-title></solution-title>
 >
-> > CCA
+> > The baseline is well corrected for the spectrum with the value of 0.5 for the asymmetry parameter, but some peaks disappeared compared to default value (0.05). On the other hand, in the spectrum with the value of 0.001 for the asymmetry parameter, broad signals appeared at the base of the peaks, and in the spectrum with the value of 1 for the asymmetry parameter, additional peaks appeared.
 >
 > {: .solution}
 >
