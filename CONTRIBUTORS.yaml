@@ -493,6 +493,8 @@ cat-bro:
 
 cecilecanlet:
     name: Cécile Canlet
+    email: cecile.canlet@inrae.fr
+    orcid: 0000-0002-6389-0712
     github: false
     joined: 2018-09
 
@@ -546,6 +548,7 @@ cjoly:
     bio: "Assistant Engineer in mass spectrometry applied to metabolomics. On my free time I play handball and I'm also a firefighter."
     location:
       country: FR
+    github: false
     joined: 2025-06
 
 claraurf:
