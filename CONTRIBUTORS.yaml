@@ -538,6 +538,16 @@ ChaoZhang123:
     maintainer_contact: https://hi-it.org
     joined: 2018-08
 
+cjoly:
+    name: Charlotte Joly
+    email: charlotte.joly@inrae.fr
+    linkedin: charlotte-joly-b9335238
+    orcid: 0000-0003-2534-1867
+    bio: "Assistant Engineer in mass spectrometry applied to metabolomics. On my free time I play handball and I'm also a firefighter."
+    location:
+      country: FR
+    joined: 2025-06
+
 claraurf:
     name: Clara Urfer
     joined: 2019-03
@@ -1770,7 +1780,7 @@ Melkeb:
     joined: 2022-03
 
 melpetera:
-    name: Mélanie Petera
+    name: Mélanie Pétéra
     joined: 2019-06
 
 meltemktn:
