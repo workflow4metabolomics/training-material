@@ -28,12 +28,12 @@ contributors:
 Metabolomics is an -omic science known for being one of the most closely related to phenotype. It focuses on studying the very small molecules which are called metabolites, to better understand matters linked to the metabolism. It involves the study of different types of matrices, such as blood, urine, tissues, in various organisms including plants and humans.
 One of the three main technologies used to perform metabolomic analyses is Proton Nuclear Magnetic Resonance (1H NMR). Data analysis for this technology requires several steps, ranging from Fourier transform of Free Induction Decay (raw spectra) to statistical analysis and annotation. But, an inadequate preprocessing will never be compensated by a powerful data analysis. Some crucial steps must be carefully performed before the statistical analysis. Moreover, metabolomics studies can have several hundreds of samples. Manual preprocessing can be very time-consuming. 
 
-To be able to perform semi-automatically a complete 1H NMR analysis with advanced methods (solvent suppression, baseline correction, etc.) in a single environment, the Wokflow4Metabolomics team provides Galaxy tools dedicated to metabolomics. This tutorial details the steps involved in the first part of untargeted 1H-NMR data processing: extracting information from FID data to obtain what is called a peak table. This step is commonly refered to as the preprocessing step. This tutorial will show you how to perform such a step using the Galaxy implementation of the PepsNMR R package (% cite Martin2018 %).
+To be able to perform semi-automatically a complete 1H NMR analysis with advanced methods (solvent suppression, baseline correction, etc.) in a single environment, the Wokflow4Metabolomics team provides Galaxy tools dedicated to metabolomics. This tutorial details the steps involved in the first part of untargeted 1H-NMR data processing: extracting information from FID data to obtain what is called a peak table. This step is commonly refered to as the preprocessing step. This tutorial will show you how to perform such a step using the Galaxy implementation of the PepsNMR R package ({% cite Martin2018 %).
 
 To illustrate this approach, we will use data from {% cite EscribanoVasquez2018 %}. One of the objectives of this work was to assess the influence of microbiota and high fat diet on the urinary metabolome. To analyze these data, we will then follow a Galaxy workflow developed by the Wokflow4metabolomics group ({% cite Giacomoni2014 %}, {% cite Guitton2017 %}).
 
 Since sometimes a couple of pictures is worth a thousand words, you will find in the following slides some material to help
-you understand how the NMR_PReprocessing tool works:
+you understand how the NMR_Preprocessing tool works:
 [link to slides](../../tutorials/nmr-preprocessing/slides.html).
 This document is refered to as "Check the next X slides" in the present training material.
 As an example, [check the 1st slide](../../tutorials/nmr-preprocessing/slides.html#pepsnmr_rpackage)
@@ -51,7 +51,7 @@ for complementary material about PepsNMR R package.
 
 # Overview
 
-NMR data preprocessing is based on the PepsNMR R package (% cite Martin2018 %). It covers several steps included in two tools (NMR_Read and NMR_Preprocessing). You can see the NMR preprocessing workflow available in W4M [check the first slide](../../tutorials/nmr-preprocessing/slides.html#nmrpreprocessing_workflow).
+NMR data preprocessing is based on the PepsNMR R package ({% cite Martin2018 %}). It covers several steps included in two tools (NMR_Read and NMR_Preprocessing). You can see the NMR preprocessing workflow available in W4M [check the first slide](../../tutorials/nmr-preprocessing/slides.html#nmrpreprocessing_workflow).
 
 In this tutorial we will describe all the steps involved in pre-processing NMR spectra focusing on 4 main steps with an explanation of various parameters:
  - Solvent suppression
@@ -67,13 +67,13 @@ The intestinal microbiota is involved in the regulation of several metabolic pat
 consumption has increased considerably in recent decades. This high consumption of fat is harmful for health. On a high fat diet, the intestinal microbiota is in a dysbiotic state.
 The objective of this study was to investigate the impact of a bacterial species, E. coli, which increases during fat consumption, on the metabolomic trajectory of mono-associated mice fed a standard and high fat diet. Two strains of E. coli were used in our study: the CEC15 strain we previously isolated from freshly pooled faecal samples of 15-day-old suckling rodents and the Nissle 1917 strain, as a representative member of the B2 E. coli phylogroup that has shown to increase in the human gut microbiote during the last decades.
 
-To this aim, the authors collected samples from 59 male C57b mice divided in four microbiota groups (Germ Free / Germ Free+CEC 15 / Germ Free+Nissle1917 / Conventionally raised mice) and two diets (Normal / High fat) and performed 1-H NMR analysis.
+To this aim, the authors collected urine samples from 59 male C57b mice divided in four microbiota groups (Germ Free / Germ Free+CEC 15 / Germ Free+Nissle1917 / Conventionally raised mice) and two diets (Normal / High fat) and performed 1-H NMR analysis.
 
 # Get data
 
 > > <comment-title>On the supported files</comment-title>
 > > 
-> > Only Bruker files are currently supported in the W4M plateform.
+> > Only Bruker files are currently supported in the W4M platform.
 >    {: .comment}
 
 The first step is to upload files into your Galaxy history. Bruker files have to be included in a zip file. Two directory structures are possible. FID can be organized into sub-directories or not. You can upload data your own zip file from the 'Upload Data' button or you can used a shared zip file. 
@@ -107,7 +107,7 @@ You should have in your history a green zip file (`AAP_Urine`).
 
 # Reading the zip file with the NMR_Read tool
 
-The NMR_Read tool is used to read 'fid' files included in the zip file you previously added into your history. Parameters of this tool are linked with the possible options to organize fid files to preprocess ([check the next slide](../../tutorials/nmr-preprocessing/slides.html#nmrpreprocessing_workflow)).
+The NMR_Read tool is used to read 'fid' files included in the zip file you previously added into your history. Parameters of this tool are linked with the possible options to organize fid files to preprocess ([check the next slide](../../tutorials/nmr-preprocessing/slides.html#files_organization)).
 This tool will return a FID data matrix saved as `NMR_Read_datamatrix` and a samplemetadata matrix saved as `NMR_Read_sampleMetadata`.
 
 The dataMatrix file is a table containing intensities of NMR chemical shifts (variables, in rows) for every samples (in columns). The first column is for variables’ identifiers while the first row is for samples’ identifiers. 
@@ -134,6 +134,7 @@ You can add columns for analytical and biological information such as biological
 > > If no use of _title_ file and presence of sub-directories: `subdirs = TRUE`,  `dirs.names = TRUE`
 >
 > > If no use of _title_ file and no sub-directories: `subdirs = FALSE`,  `dirs.names = TRUE`
+>
 >    {: .comment}
 >
 > > <comment-title> Comment to W4M users </comment-title>
@@ -148,7 +149,7 @@ Your data are now ready for preprocessing. This step can be done with the NMR_Pr
 
 The NMR_preprocessing tool includes several steps as described in Figure 1. This tutorial ends up after the "Negative values zeroing step."
 
-![Figure 1: Steps of NMR spectra preprocessing](../../images/tutorial-nmr-workflow.png)
+![Figure 1: Steps of NMR spectra preprocessing](../../images/tutorial-nmr-workflow.png "Steps of NMR spectra preprocessing")
 
 ## 1. Group delay correction
 
@@ -162,7 +163,7 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
 >    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Group delay correction"*: 
 >        - *"Display the FIDs after 1st order phase correction?"*: `yes`
 >
@@ -179,8 +180,8 @@ Phase correction involves adjusting both zero (ph0, see 5th step) and first-orde
 > <hands-on-title> Effect of Smoothing parameter on signal intensity </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Solvent Suppression"*: the lambda smoother used to penalized the non-parametric estimation of the solvent signal
 >        - *"Solvent Suppression: Smoothing parameter"*: `1.0`
 >        - *"Display the FIDs after solvent suppression?"*: `no`
@@ -216,8 +217,8 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 > <hands-on-title> Apodization </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Apodization"*:
 >        - *"Apodization: method"*: `exp`
 >        - *"Apodization: Line broadening"*: `5`
@@ -225,8 +226,8 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 >        - *"Display the FIDs after Apodization?"*: `no`
 >
 > 2. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Apodization"*:
 >        - *"Apodization: method"*: `exp`
 >        - *"Apodization: Line broadening"*: `0.3`
@@ -257,7 +258,7 @@ Cos2). [Check the next 2 slides](../../tutorials/nmr-preprocessing/slides.html#a
 	
 ## 4. Fourier transform
 
-Nest step corresponds to conversion of the signal in the time domain into a spectrum in the frequency domain, performed in the "Fourier transform" step ([Check the next  slide](../../tutorials/nmr-preprocessing/slides.html#fourier_transform)).
+Next step corresponds to conversion of the signal in the time domain into a spectrum in the frequency domain, performed in the "Fourier transform" step ([Check the next slide](../../tutorials/nmr-preprocessing/slides.html#fourier_transform)).
 
 > <hands-on-title> Fourier transform </hands-on-title>
 >
@@ -276,8 +277,8 @@ In the fifth step, correction of the zero order phase is applied ([Check the nex
 > <hands-on-title> Zero order phase correction </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Zero Order Phase Correction"*:
 >        - *"Zero Order Phase Correction: method"*: ` RMS `
 >        - *"Zero Order Phase Correction: exclusion area(s)"*: ` YES `
@@ -302,8 +303,8 @@ A known standard (called internal reference compound),  for example tetramethyls
 > <hands-on-title> Shift Referencing </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Shift Referencing"*:
 >        - *"Shift Referencing: definition of the search zone"*: `window`
 >        - In *"Shift Referencing: definition of the search zone"*
@@ -314,16 +315,10 @@ A known standard (called internal reference compound),  for example tetramethyls
 >        - *"Shift Referencing: the value of the reference peak in ppm"*: `0.0`
 >
 > You can leave other parameters with their default values.
->
->
->
->
->
->
->
+> 
 > <question-title> Effect of Search zone parameter </question-title>
 >
-> Run the NMR_Preprocessing tool with `Nearvalue` and `window` as values for the "Shift Referencing:   definition of the search zone" parameter, and `-2.0` and `2.0` respectively for left and right borders for the `window` search zone. What do you observe on spectra obtained for individual "X2016.61.UR.N4.CD"?
+> Run the NMR_Preprocessing tool with `Nearvalue` and `window` as values for the "Shift Referencing: definition of the search zone" parameter, and `2.0` and `-2.0` respectively for left and right borders for the `window` search zone. What do you observe on spectra obtained for individual "X2016.61.UR.N4.CD"?
 >
 > > <solution-title></solution-title>
 > > 
@@ -341,7 +336,7 @@ A known standard (called internal reference compound),  for example tetramethyls
 > > Several datasets are available in the history [GTN_NMRpreprocessing](https://workflow4metabolomics.usegalaxy.fr/u/mtremblayfranco/h/gtnnmrpreprocessing), that corresponds to different search zone and shiftHandling values:
 > > - definition of the search zone: `nearvalue`; shiftHandling: `zerofilling` = datasets 47 - 50
 > > - definition of the search zone: `all`; shiftHandling: `zerofilling`       = datasets 51 - 54
-> > - definition of the search zone: `window`; Search zone: left border: `-2.0`; Search zone: right border: `2.0`; shiftHandling: `zerofilling `                                      = datasets 55 - 58
+> > - definition of the search zone: `window`; Search zone: left border: `2.0`; Search zone: right border: `-2.0`; shiftHandling: `zerofilling `                                      = datasets 55 - 58
 > > - definition of the search zone: `nearvalue`; shiftHandling: `cut`        = datasets 59 - 62
 > > - definition of the search zone: `nearvalue`; shiftHandling: `circular`    = datasets 63 - 66
 > {: .comment}
@@ -355,8 +350,8 @@ To ensure successful integration, baseline should be flat with no distortion. Ba
 > <hands-on-title> Baseline correction </hands-on-title>
 >
 > 1. {% tool [NMR_Preprocessing](toolshed.g2.bx.psu.edu/repos/marie-tremblay-metatoul/nmr_preprocessing/NMR_Preprocessing/3.3.0) %} with the following parameters:
->    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming fromt the NMR_Read tool
->    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming fromt the NMR_Read tool
+>    - {% icon param-file %} *"Data matrix of FIDs"*: the `dataMatrix` file coming from the NMR_Read tool
+>    - {% icon param-file %} *"Sample metadata file"*: the `sampleMetadata` file coming from the NMR_Read tool
 >    - In *"Baseline Correction"*:
 >        - *"Baseline Correction: smoothing parameter"*: `100000`
 >        - *"Baseline Correction:asymmetry parameter"*: `0.05`
