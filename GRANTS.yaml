@@ -192,6 +192,13 @@ h2020-defend:
       This work has received funding from the DEFEND project (www.defend2020.eu) with funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 773701.
     url: https://www.defend2020.eu
 
+metabohub:
+    name: MetaboHUB
+    github: false
+    joined: 2025-07
+    url: https://www.metabohub.fr/
+    avatar: "/training-material/shared/images/metabohub.fr"
+
 nfdi4bioimage:
     name:  NFDI4Bioimage
     short_name: "NFDI4Bioimage"
@@ -254,7 +261,15 @@ oscars:
     url: https://oscars-project.eu/
     github: false
     avatar: "/training-material/shared/images/logos/OSCARS-logo-EUflag.png"
-    
+
+rfmf:
+    name: Réseau Francophone de Metabolomique et Fluxomique
+    short_name: RFMF
+    github: false
+    joined: 2025-07
+    url: https://www.rfmf.fr/
+    avatar: "/training-material/shared/images/rfmf.fr"
+
 skills4eosc:
     name: Skills for European Open Science Cloud
     short_name: "Skills4SEOSC"
