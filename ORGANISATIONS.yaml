@@ -36,6 +36,11 @@ avans-atgm:
     avatar: "/training-material/shared/images/logo-avans.png"
     ror: "015d5s513"
 
+cesnet:
+    name: cesnet
+    joined: 2025-09
+    url: https://www.cesnet.cz/
+
 carpentries:
     name: The Carpentries
     joined: 2021-09
@@ -431,6 +436,11 @@ uni-freiburg:
     avatar: https://raw.githubusercontent.com/bgruening/presentations/a2e38e4b007994af798320db3a0131c4bb891c0e/shared/resources/img/logo_freiburg.jpg
     github: false
     ror: "0245cg223"
+
+uni-manchester:
+    name: University of Manchester
+    joined: 2025-08
+    url: https://www.manchester.ac.uk/
 
 unimelb:
     name: The University of Melbourne

@@ -528,6 +528,14 @@ carloscheemendonca:
     name: Carlos Chee Mendonça
     joined: 2025-01
 
+carolegoble:
+    name: Carole Goble
+    joined: 2025-08
+    elixir_node: uk
+    affiliations:
+      - elixir-europe
+      - uni-manchester
+
 charitylaw:
     name: Charity Law
     joined: 2018-09
@@ -918,6 +926,14 @@ cumbof:
     linkedin: fabiocumbo
     orcid: 0000-0003-2920-5838
     joined: 2018-02
+
+fbacall:
+    name: Finn Bacall
+    joined: 2025-08
+    elixir_node: uk
+    affiliations:
+      - elixir-europe
+      - uni-manchester
 
 felicitas215:
     name: Felicitas Kindel
@@ -1969,7 +1985,7 @@ moheydarian:
     orcid: 0000-0001-9449-9364
     joined: 2017-09
 
-Morphy427: 
+Morphy427:
     name: Elouan Le Mestric
     joined: 2025-05
 
@@ -2004,6 +2020,10 @@ mwolfien:
     name: Markus Wolfien
     joined: 2017-09
 
+martindemko:
+    name: Martin Demko
+    joined: 2025-09
+
 martinwolst:
     name: Martin Wolstencroft
     joined: 2024-01
@@ -2020,6 +2040,11 @@ Nilchia:
       - uni-freiburg
       - elixir-europe
       - spoc
+    email: nilchia@informatik.uni-freiburg.de
+    linkedin: nilchia
+    matrix: 'nilchia:matrix.org'
+    elixir_node: de
+
 
 smza:
     name: Munazah Andrabi
@@ -2790,7 +2815,8 @@ supernord:
     orcid: 0000-0002-2977-5032
     elixir_node: au
     affiliations:
-      - elixir-europe
+      - unimelb
+      - AustralianBioCommons
 
 sunyi000:
     name: Yi Sun
@@ -2989,6 +3015,14 @@ twishigulati:
 tuncK:
     name:  Tunc Kayikcioglu
     joined: 2023-10
+
+uwwint:
+    name: Uwe Winter
+    joined: 2025-09
+    elixir_node: au
+    affiliations:
+      - unimelb
+      - AustralianBioCommons
 
 valentinmarcon:
     name: Valentin Marcon
