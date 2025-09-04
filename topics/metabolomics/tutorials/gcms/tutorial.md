@@ -32,7 +32,7 @@ contributions:
     - jsaintvanne
   testing:
     - workflow4metabolomics
-funding:
+  funding:
     - metabohub
     - rfmf
     
